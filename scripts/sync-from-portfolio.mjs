@@ -13,7 +13,7 @@ const site = join(brand, "my-portfolio", "src");
 
 const copies = [
   [join(brand, "01-tokens", "figma-tokens.json"), join(root, "tokens", "figma-tokens.json")],
-  [join(site, "css", "tokens.css"), join(root, "src", "css", "tokens.css")],
+  // tokens.css is not copied: scripts/generate-tokens.mjs generates it here.
   [join(site, "css", "fonts.css"), join(root, "src", "css", "fonts.css")],
   [join(site, "css", "components.css"), join(root, "src", "css", "components.css")],
   [join(site, "css", "case-study.css"), join(root, "src", "css", "case-study.css")],
