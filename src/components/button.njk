@@ -1,0 +1,72 @@
+---
+title: "Button"
+eyebrow: "Components"
+lead: "Three types for three levels of importance. Every button is 48px tall, square, and takes the focus ring."
+permalink: /components/button/
+---
+{% from "components.njk" import button %}
+<section aria-labelledby="types-h">
+  <h2 id="types-h" class="type-h2">Types</h2>
+  <p><strong>Primary</strong> is filled. Use one per context, for the action you most want taken. <strong>Secondary</strong> is outlined, for page actions. <strong>Tertiary</strong> has no border or fill until hovered, for low-emphasis actions such as a back link.</p>
+  {% demo "Primary, secondary and tertiary buttons" %}
+  {{ button("Primary", type="primary", href="#") }}
+  {{ button("Secondary", type="secondary", href="#") }}
+  {{ button("Tertiary", type="tertiary", href="#") }}
+  {% enddemo %}
+</section>
+
+<section aria-labelledby="icons-h">
+  <h2 id="icons-h" class="type-h2">With an icon</h2>
+  <p>Icons are 20px, from the Material Icons library (Outlined), with an 8px gap to the label. An icon-only button is 48 by 48 and needs an <code>aria-label</code>.</p>
+  {% demo "Leading, trailing and icon-only" %}
+  {{ button("Leading", type="secondary", href="#", icon="arrow_back", iconPosition="leading") }}
+  {{ button("Trailing", type="secondary", href="#", icon="arrow_forward", iconPosition="trailing") }}
+  {{ button("", type="secondary", href="#", icon="open_in_new", iconPosition="only", ariaLabel="Open in new tab") }}
+  {% enddemo %}
+</section>
+
+<section aria-labelledby="states-h">
+  <h2 id="states-h" class="type-h2">States</h2>
+  <p>Hover, press and tab to these buttons to see each state. Disabled and active are shown as static examples.</p>
+  {% demo "Default, active (current) and disabled" %}
+  {{ button("Default", type="primary", href="#") }}
+  {{ button("Active", type="primary", href="#", active=true) }}
+  {{ button("Disabled", type="primary", disabled=true) }}
+  {% enddemo %}
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Button states, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Type</th><th scope="col">Rest</th><th scope="col">Hover</th><th scope="col">Pressed</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Primary</th><td>Blue 500 fill, white label</td><td>Blue 600 fill</td><td>Blue 700 fill</td></tr>
+        <tr><th scope="row">Secondary</th><td>1px Blue 500 border and label</td><td>2px border</td><td>2px border, Blue 50 fill</td></tr>
+        <tr><th scope="row">Tertiary</th><td>Label only</td><td>Blue 50 fill</td><td>Blue 100 fill</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>An active button, the current or selected one, adds a 4px bar along its bottom edge. In dark mode the primary fill becomes Blue 200 with a Blue 900 label; the tokens do this, the component does not change.</p>
+</section>
+
+<section aria-labelledby="brand-h">
+  <h2 id="brand-h" class="type-h2">On a blue surface</h2>
+  <p>On the Blue 500 band, use the secondary button with the <code>on-brand</code> context: white border and label, and a white focus ring.</p>
+  {% demo "Secondary, on brand", "brand" %}
+  {{ button("View the work", type="secondary", href="#", onBrand=true) }}
+  {{ button("Disabled", type="secondary", disabled=true, onBrand=true) }}
+  {% enddemo %}
+</section>
+
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using buttons</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use one primary button per context.</li>
+      <li>Write labels as a verb or a clear destination: "Send message", "View HCP website".</li>
+      <li>Use an <code>&lt;a&gt;</code> when the button goes somewhere and a <code>&lt;button&gt;</code> when it does something.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Put two primary buttons side by side.</li>
+      <li>Rely on color alone to show which button is current. Use the active bar.</li>
+      <li>Use an icon-only button without an <code>aria-label</code>.</li>
+    </ul></div>
+  </div>
+</section>

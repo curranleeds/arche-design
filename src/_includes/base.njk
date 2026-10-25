@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if page.url == "/" %}{{ site.name }}{% else %}{{ title }} · {{ site.name }}{% endif %}</title>
+    {#- Remove this line when the site is ready to be found by search engines. -#}
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="{{ description or 'Documentation for the Arche Design System: the tokens, type, color and components behind my personal brand.' }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:title" content="{{ title or site.name }}" />
+    <meta property="og:description" content="{{ description or 'Tokens, type, color and components, documented from the source files.' }}" />
+    <script>
+      // Runs before first paint: apply a saved Light or Dark choice so the page never flashes.
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+    <script src="/assets/js/theme.js" defer></script>
+    <script src="/assets/js/docs.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="docs-header">
+      <a class="docs-header__name type-h3" href="/">{{ site.name }}</a>
+      <div class="docs-header__tools">
+        <a class="link docs-header__portfolio" href="{{ site.portfolio }}"><span class="link__text">curranleeds.com</span></a>
+        {% include "theme-toggle.njk" %}
+      </div>
+    </header>
+    <div class="docs-shell">
+      <nav class="docs-nav" aria-label="Design system">
+        <details class="docs-nav__details" open>
+          <summary class="docs-nav__summary type-button"><span>Menu</span>{% icon "expand_more" %}</summary>
+          {% for group in nav %}
+          <div class="docs-nav__group">
+            <p class="docs-nav__heading type-label">{{ group.title }}</p>
+            <ul class="docs-nav__list" role="list">
+              {% for item in group.items %}
+              <li><a class="docs-nav__link type-body" href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </details>
+      </nav>
+      <main class="docs-main" id="main">
+        {% if eyebrow %}<p class="docs-eyebrow type-label">{{ eyebrow }}</p>{% endif %}
+        <h1 class="docs-title type-h1">{{ title }}</h1>
+        {% if lead %}<p class="docs-lead type-lead">{{ lead }}</p>{% endif %}
+        <div class="docs-content">
+          {{ content | safe }}
+        </div>
+        <footer class="docs-footer type-small">
+          <p>{{ site.name }} v{{ site.version }}, {{ site.updated }}. Tokens are read from the source file at build time. Built by <a class="link" href="{{ site.portfolio }}"><span class="link__text">{{ site.author }}</span></a>.</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

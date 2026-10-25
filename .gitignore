@@ -1,0 +1,9 @@
+node_modules/
+_site/
+.cache/
+.DS_Store
+.wrangler/
+.dev.vars
+
+# Holds one broken zero-byte file from setup. Safe to delete this whole folder.
+_to_delete/

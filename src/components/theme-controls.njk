@@ -1,0 +1,28 @@
+---
+title: "Theme controls"
+eyebrow: "Components"
+lead: "Dark mode ships with the system. It follows the browser's setting, and visitors can override it."
+permalink: /components/theme-controls/
+---
+<section aria-labelledby="toggle-h">
+  <h2 id="toggle-h" class="type-h2">Theme toggle</h2>
+  <p>A tertiary button that names the mode it switches to: "Dark" with a moon in light mode, "Light" with a sun in dark mode. Both labels are in the markup and CSS shows the right one, so it is correct on first paint, before any script runs. The same button is in this site's header.</p>
+  {% demo "Theme toggle" %}
+  {% include "theme-toggle.njk" %}
+  {% enddemo %}
+</section>
+<section aria-labelledby="switch-h">
+  <h2 id="switch-h" class="type-h2">Theme switch</h2>
+  <p>A segmented Light | Dark control for blue surfaces such as a footer or menu overlay. It is two native radio buttons, so the arrow keys work without a script.</p>
+  {% demo "Theme switch", "brand" %}
+  {% set themeSwitchName = "theme-demo" %}{% include "theme-switch.njk" %}
+  {% enddemo %}
+</section>
+<section aria-labelledby="how-h">
+  <h2 id="how-h" class="type-h2">How it works</h2>
+  <ol>
+    <li>A small script in the page head reads a saved choice and sets <code>data-theme</code> on the <code>&lt;html&gt;</code> element before the page paints, so there is no flash.</li>
+    <li>With no saved choice, the page follows the browser through <code>prefers-color-scheme</code>.</li>
+    <li>Clicking a control saves the choice in <code>localStorage</code>. Storage can be blocked, so the theme still applies for the visit if it is.</li>
+  </ol>
+</section>

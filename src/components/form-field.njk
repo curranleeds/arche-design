@@ -1,0 +1,46 @@
+---
+title: "Form field"
+eyebrow: "Components"
+lead: "A 56px box with the label inside it. The only border is a rule along the bottom."
+permalink: /components/form-field/
+---
+{% from "components.njk" import field %}
+<section aria-labelledby="basic-h">
+  <h2 id="basic-h" class="type-h2">Single line and message</h2>
+  <p>The label sits inside the field and floats up when the field has focus or text. It is a real <code>&lt;label&gt;</code> connected to a real <code>&lt;input&gt;</code>, so browsers and screen readers treat it as a normal field. Click into these to try it.</p>
+  {% demo "Single-line and multi-line fields", "form" %}
+  {{ field("ff-name", "name", "Name", autocomplete="name") }}
+  {{ field("ff-message", "message", "Message", multiline=true) }}
+  {% enddemo %}
+</section>
+<section aria-labelledby="err-h">
+  <h2 id="err-h" class="type-h2">Error</h2>
+  <p>An error adds a red rule along the bottom, an icon, and a message in words that starts with "Error:". The field is marked <code>aria-invalid</code> and the message is linked with <code>aria-describedby</code>. The focus ring stays black, never red.</p>
+  {% demo "Field with an error", "form" %}
+  {{ field("ff-email", "email", "Email", type="email", error="Error: Enter a valid email address.") }}
+  {% enddemo %}
+</section>
+<section aria-labelledby="other-h">
+  <h2 id="other-h" class="type-h2">Disabled and sending</h2>
+  <p>While a form is sending, fields are read-only, not disabled, so their values still submit. Disabled fields use grey text and a quiet rule.</p>
+  {% demo "Disabled and read-only (sending)", "form" %}
+  {{ field("ff-dis", "disabled", "Disabled", disabled=true) }}
+  {{ field("ff-send", "sending", "Sending", value="Typed text", readonly=true) }}
+  {% enddemo %}
+</section>
+<section aria-labelledby="states-h">
+  <h2 id="states-h" class="type-h2">States</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Field states, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">State</th><th scope="col">Bottom rule</th><th scope="col">Other</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Rest</th><td>1px, strong neutral</td><td>Label inside the box</td></tr>
+        <tr><th scope="row">Hover</th><td>2px</td><td>No fill change</td></tr>
+        <tr><th scope="row">Focus</th><td>2px</td><td>4px focus ring, label floats up</td></tr>
+        <tr><th scope="row">Error</th><td>1px alert (2px on focus)</td><td>Icon and "Error:" message below</td></tr>
+        <tr><th scope="row">Disabled or sending</th><td>1px, quiet</td><td>Grey text, no hover change</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Color says valid or invalid. Stroke thickness says interaction. Those are two separate channels, so neither is the only signal.</p>
+</section>

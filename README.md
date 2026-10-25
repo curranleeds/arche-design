@@ -1,0 +1,102 @@
+# Arche Design System
+
+Arche (AR-kee, from the Greek *arche*, "first principle") is the design system behind my personal brand. This repo is its documentation site: the tokens, type, color and components, and the reasons behind them.
+
+It began as the design system for my portfolio at [curranleeds.com](https://curranleeds.com) and is written so other designers and teams could use it.
+
+This README tells how Arche came to be, what has been decided, and what is still open. For how to run and publish the site, skip to [Run it on your computer](#run-it-on-your-computer).
+
+## How Arche came to be
+
+**October 2026: a brand becomes a system.** I built my personal brand and portfolio site on a small design system: a Figma file with variables for color, spacing and role tokens, 45 text styles, and a set of components. The site's CSS is generated from that Figma file, so the design and the code share one source.
+
+Once it worked for the portfolio, I saw it could do more than one job. A design system that holds up in regulated healthcare work (WCAG AA, visible focus, clear states, dark mode) is useful beyond a portfolio. The first step was to document it in public, so this site came first. It doubles as a portfolio piece and as a demo of how I think about systems.
+
+**One system, five color modes.** I then rethought the system as one system with several color modes, not one fixed palette. Each mode takes its character from one of the four national traditions in my heritage, Swiss, Norwegian, Swedish and Greek, plus a default. That pushed the name too: a system with modes for several traditions needed a name that belonged to none of them.
+
+**The name.** The working name was "Leeds Design System", after me. That did not fit a system meant to be shared. "Koine" (Greek for "common" or "shared") came next, and I set it aside while I looked at other options, including "Common" and "Meridian". I settled on **Arche**: the Greek word for a beginning and a first principle. It describes how the system works. It starts from a few rules and lets everything else follow.
+
+The mode name "Ethos" was chosen over "Arche" for the Greek mode, because "Ethos" points at character and "Arche" now names the whole system.
+
+## What has been decided
+
+| Decision | Choice |
+|---|---|
+| System name | Arche Design System (pronounced AR-kee) |
+| Repo and npm package name | `arche-design` |
+| Source of truth | The Figma file "Arche Design System": tokens, text styles and components |
+| Modes | Canon (`canon`, default), Klarheit (`klarheit`, Swiss), Nøktern (`noktern`, Norwegian), Omtanke (`omtanke`, Swedish), Ethos (`ethos`, Greek) |
+| What a mode changes | Only the semantic color roles. Primitives, type, spacing, grid, corner radius, motion and component structure are the same in every mode. |
+| What a mode never changes | Status colors: Alert/Error, Success and Warning |
+| How components read color | From semantic roles, never from color primitives |
+| Code names | Plain ASCII in code, file names, CSS and token paths. Display names can keep the ø. |
+| Hosting | A free Cloudflare Pages address first, with no custom domain yet |
+| Search engines | The site asks not to be indexed (`noindex`) until it is ready |
+| Norway Red | Part of the palette, with no job on any page or component yet |
+
+## Still open
+
+- **Mode colors.** The color primitives so far are Greece Blue `#014488`, Sweden Blue `#004B87`, Norway Blue `#003698`, Sweden Yellow `#FFCD00`, Norway Red `#D21034`, Swiss Red `#FF0000` (also the Alert/Error color), black and white. What color does in each mode is not yet defined, and no mode values have been written.
+- **Variable prefix.** Token names are unprefixed today (`--primary-500`). A prefix such as `--arche-` protects against clashes when others install the system. The plan is to decide before the first npm publish, or when modes land.
+- **License.** Not chosen yet. Until one is added, the code is visible but not licensed for reuse. The fonts keep their own license (SIL Open Font License).
+- **Domain.** Not bought yet.
+
+## Where modes will fit
+
+The system has three layers. Modes go in the middle one.
+
+1. **Primitives:** raw colors such as `--primary-500`. The same in every mode.
+2. **Semantic roles:** names by job, such as `--text-brand-primary` or `--surface-neutral-base`. This is where a mode changes values. Canon is the default set.
+3. **Components:** read only roles, so they never change between modes.
+
+Dark and light already work with a `data-theme` attribute on the `<html>` tag. A mode would be a second attribute, `data-mode`, with one block of role values per mode, each with a light and a dark version. Status colors stay out of every mode block. Nothing for modes has been built yet.
+
+## What is in the docs site today
+
+Version 0.1.0: the foundations (color, type, spacing and grid, motion and focus, accessibility) and seven components (button, link, form field, theme controls, stat strip, quote, list row). Every color, size and contrast ratio on the foundations pages is read from `tokens/figma-tokens.json` when the site builds, so the docs cannot drift from the tokens. The demo numbers and quotes on the component pages are placeholders, not results.
+
+## How it was made
+
+I made the design decisions and set the rules. I used Claude and Claude Code as working tools to build the documentation site and to draft copy, and I review what goes public.
+
+## Run it on your computer
+
+You need Node.js 20 or newer.
+
+```
+npm install
+npm start
+```
+
+`npm install` downloads the build tool (Eleventy). `npm start` builds the site and serves it at http://localhost:8080, and rebuilds when you save a file. `npm run build` writes the finished site to `_site/`.
+
+## What is in here
+
+| Path | What it is |
+|---|---|
+| `src/css/tokens.css` | The design tokens as CSS variables. Generated from Figma. Do not edit by hand. |
+| `src/css/components.css`, `src/css/case-study.css` | Component styles. They read only role tokens. |
+| `src/css/fonts.css`, `src/assets/fonts/` | Archivo and Work Sans, self-hosted (SIL Open Font License). Both include the Latin accents, including ø. Neither includes Greek script. |
+| `src/css/docs.css` | Styles for the documentation pages only. |
+| `tokens/figma-tokens.json` | Export of the Figma variables. The foundations pages are built from it. |
+| `src/_data/` | `tokens.js` prepares the token data. `nav.js` is the side navigation. `site.js` holds the site name and URL. |
+| `src/foundations/`, `src/components/` | One page per topic. |
+| `.eleventy.js` | Build settings, the icon helper and the `demo` helper that shows live HTML next to its code. |
+
+## Add a component page
+
+1. Copy a file in `src/components/` and rename it.
+2. Change the front matter at the top (`title`, `lead`, `permalink`).
+3. Put the live example between `{% demo "Caption" %}` and `{% enddemo %}`. The site shows it and prints its HTML underneath.
+4. Add the page to `src/_data/nav.js`.
+
+## Publish with Cloudflare Pages
+
+Cloudflare Pages builds the site from this repo each time you push to `main`.
+
+- Framework preset: Eleventy (or None)
+- Build command: `npm run build`
+- Build output directory: `_site`
+- Environment variable: `NODE_VERSION` = `20`
+
+After the first deploy, set `url` in `src/_data/site.js` to the real address so canonical links are right. When the site is ready to be found, remove the `noindex` line in `src/_includes/base.njk`.

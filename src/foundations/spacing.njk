@@ -1,0 +1,63 @@
+---
+title: "Spacing and grid"
+eyebrow: "Foundations"
+lead: "A short set of spacing values, a 12-column grid, and three breakpoints. Asymmetry comes from how content fills the columns, never from an even 50/50 split."
+permalink: /foundations/spacing/
+---
+<section aria-labelledby="space-h">
+  <h2 id="space-h" class="type-h2">Spacing</h2>
+  <p>Two scales. <strong>Fine</strong> (4 to 16) is for small gaps inside a component. <strong>Base</strong> (8 to 128) is for layout: gaps, margins and section padding. Use the variable, not the number.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Spacing values, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Token</th><th scope="col">CSS name</th><th scope="col">Size</th><th scope="col">Preview</th></tr></thead>
+      <tbody>
+      {% for s in tokens.spacingList %}{% if s.group != "stroke" %}
+        <tr>
+          <th scope="row">{{ s.name }}</th>
+          <td><code>{{ s.cssVar }}</code></td>
+          <td>{{ s.px }}px</td>
+          <td><span class="space-bar" style="width: {{ s.px }}px"></span></td>
+        </tr>
+      {% endif %}{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <h3 class="type-h3">Stroke</h3>
+  <p>Three line weights. 1px is rest, 2px is hover, 4px is the focus ring or the active bar. Borders are drawn inside the box with an inset shadow, so a thicker border never changes the size of a component.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Stroke values, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Token</th><th scope="col">CSS name</th><th scope="col">Size</th><th scope="col">Preview</th></tr></thead>
+      <tbody>
+      {% for s in tokens.spacingList %}{% if s.group == "stroke" %}
+        <tr>
+          <th scope="row">{{ s.name }}</th>
+          <td><code>{{ s.cssVar }}</code></td>
+          <td>{{ s.px }}px</td>
+          <td><span class="stroke-bar" style="height: {{ s.px }}px"></span></td>
+        </tr>
+      {% endif %}{% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="grid-h">
+  <h2 id="grid-h" class="type-h2">Grid and breakpoints</h2>
+  <p>Layouts are designed at three widths. In code the grid is 12 columns from 1024px up, so layouts scale between 1024 and 1440. Above 1440 the content stops growing and stays centered.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Grid table, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Design width</th><th scope="col">Columns</th><th scope="col">Gutter</th><th scope="col">Margin</th><th scope="col">Applies</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Desktop</th><td>1440</td><td>12</td><td>24</td><td>64</td><td>1024 and up</td></tr>
+        <tr><th scope="row">Tablet</th><td>768</td><td>8</td><td>16</td><td>32</td><td>768 to 1023</td></tr>
+        <tr><th scope="row">Mobile</th><td>375</td><td>4</td><td>16</td><td>16</td><td>up to 767</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 class="type-h3">Sizes to match</h3>
+  <ul>
+    <li>Buttons, nav links and touch targets are 48px tall. The minimum target is 44 by 44.</li>
+    <li>The top nav is 80px on desktop and tablet, and 72px on mobile.</li>
+    <li>Corners are square.</li>
+  </ul>
+</section>

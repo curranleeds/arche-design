@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Self-hosted web fonts. Hand-written (tokens.css is the generated file).
+   Both are variable fonts: one file holds a range of weights.
+   Weights are limited to the ones in 01-tokens/type.md. No italics.
+   Built from the Google Fonts downloads by 05-build/convert-fonts.py.
+   Licenses (SIL OFL 1.1): Archivo-OFL.txt, WorkSans-OFL.txt in assets/fonts/.
+   font-display: swap shows text in a fallback font right away, then swaps in
+   the real font when it has loaded, so text is never invisible.
+   ========================================================================== */
+
+/* Archivo: headlines. Medium 500 (Subhead, Quote), SemiBold 600 (H3), Bold 700 (Display, H1, H2, Stat). */
+@font-face {
+  font-family: 'Archivo';
+  src: url('../assets/fonts/archivo-variable.woff2') format('woff2');
+  font-weight: 500 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Work Sans: everything else. Regular 400, Medium 500, SemiBold 600 (Button, Label, nav). */
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../assets/fonts/work-sans-variable.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}

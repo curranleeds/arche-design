@@ -1,0 +1,131 @@
+---
+title: "Color"
+eyebrow: "Foundations"
+lead: "Three brand families do three different jobs, and neutrals carry the rest. Components never use these raw colors directly. They use role tokens that point at them."
+permalink: /foundations/color/
+---
+<section aria-labelledby="families-h">
+  <h2 id="families-h" class="type-h2">Color families</h2>
+  <p>Each family runs from 50 (lightest) to 900 (darkest). The 500 step is the base color. The CSS name is under each swatch.</p>
+  {% for f in tokens.families %}
+  <h3 class="type-h3">{{ f.name }}</h3>
+  <p>{{ f.job }}</p>
+  <ul class="swatch-row" role="list" aria-label="{{ f.name }} steps">
+    {% for s in f.swatches %}
+    <li class="swatch">
+      <span class="swatch__chip" style="background: {{ s.hex }}"></span>
+      <span class="swatch__meta type-small"><strong>{{ s.step }}</strong><span>{{ s.hex }}</span><span>{{ s.cssVar }}</span></span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</section>
+
+<section aria-labelledby="jobs-h">
+  <h2 id="jobs-h" class="type-h2">Which color does which job</h2>
+  <p>Proportions are about 60 percent neutral, 30 percent blue and 10 percent accent. Blue is the structural color. Yellow and red stay sparing and single-purpose.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Color jobs, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Job</th><th scope="col">Role token</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
+      <tbody>
+      {% set featured = [
+        ["Page background", "surface/neutral/base"],
+        ["Raised surface (form fields, image tiles)", "surface/neutral/raised"],
+        ["Tinted section (stat strip, Problem, Outcome)", "surface/brand/primary-subtle"],
+        ["Blue band", "surface/brand/primary"],
+        ["Headings", "text/neutral/primary"],
+        ["Body copy", "text/neutral/body"],
+        ["Captions and meta", "text/neutral/secondary"],
+        ["Links and stat numbers", "text/brand/primary"],
+        ["Text on blue", "text/on-brand/primary"],
+        ["Dividers", "border/neutral/default"],
+        ["Form bar at rest", "border/neutral/strong"],
+        ["Error text", "text/system/alert"]
+      ] %}
+      {% for pair in featured %}
+        {% for g in tokens.roleList %}{% for r in g.items %}{% if r.name == pair[1] %}
+        <tr>
+          <th scope="row">{{ pair[0] }}</th>
+          <td><code>{{ r.cssVar }}</code></td>
+          <td><span class="dot" style="background: {{ r.light.hex }}"></span>{{ r.light.primitive }} <span class="tok">{{ r.light.hex }}</span></td>
+          <td><span class="dot" style="background: {{ r.dark.hex }}"></span>{{ r.dark.primitive }} <span class="tok">{{ r.dark.hex }}</span></td>
+        </tr>
+        {% endif %}{% endfor %}{% endfor %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use blue for structure, links, buttons and stat numbers.</li>
+      <li>Use yellow only for identity: a name or the Credits band.</li>
+      <li>Pair color with a second signal: weight, a label, an icon or a stroke.</li>
+      <li>Use Greece Blue plus neutrals in charts and diagrams.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Use Norway Red anywhere on a page. It has no job yet.</li>
+      <li>Use alert, success or warning colors decoratively. They mean status only.</li>
+      <li>Reach for a primitive such as <code>--primary-500</code> inside a component.</li>
+      <li>Use yellow text on white. It fails contrast.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section aria-labelledby="contrast-h">
+  <h2 id="contrast-h" class="type-h2">Contrast</h2>
+  <p>WCAG AA needs 4.5:1 for text and 3:1 for large text and interface parts such as borders and focus rings. These ratios are calculated from the token values when the site builds, so they are never typed by hand.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Contrast table, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Pair</th><th scope="col">Needs</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
+      <tbody>
+      {% for p in tokens.pairs %}
+        <tr>
+          <th scope="row">{{ p.label }}</th>
+          <td>{{ p.min }}:1</td>
+          <td>{{ p.light.ratio }}:1 <span class="{{ 'pass' if p.light.pass else 'fail' }}">{{ 'Pass' if p.light.pass else 'Fail' }}</span></td>
+          <td>{{ p.dark.ratio }}:1 <span class="{{ 'pass' if p.dark.pass else 'fail' }}">{{ 'Pass' if p.dark.pass else 'Fail' }}</span></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p>One known limit: a black focus ring on the Blue 500 band is only 2.18:1, which fails. That is why on-blue surfaces use a separate white ring token, <code>--border-focus-ring-on-brand</code>.</p>
+</section>
+
+<section aria-labelledby="dark-h">
+  <h2 id="dark-h" class="type-h2">Dark mode</h2>
+  <p>Role tokens have two values, Light and Dark. Light sits on <code>:root</code>. Dark is written in two places: once for visitors who chose it with the theme toggle, and once for visitors whose browser is set to dark and who have not chosen.</p>
+<pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--surface-brand-primary-subtle)" tabindex="0"><code>:root[data-theme="dark"] {
+  --surface-neutral-base: var(--neutral-900);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface-neutral-base: var(--neutral-900);
+  }
+}</code></pre>
+  <p>Use the Dark button in the header to try it on this page.</p>
+</section>
+
+<section aria-labelledby="roles-h">
+  <h2 id="roles-h" class="type-h2">All role tokens</h2>
+  <p>{{ tokens.counts.roles }} tokens in total. Each group opens to show its Light and Dark values and the primitive it points at.</p>
+  {% for g in tokens.roleList %}
+  <details class="demo__code" style="margin-bottom:8px">
+    <summary>{{ g.label }} ({{ g.items | length }})</summary>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="{{ g.label }} tokens, scrollable" style="margin:0;padding:0 16px 16px">
+      <table class="docs-table type-small">
+        <thead><tr><th scope="col">CSS name</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
+        <tbody>
+        {% for r in g.items %}
+          <tr>
+            <th scope="row"><code>{{ r.cssVar }}</code></th>
+            <td><span class="dot" style="background: {{ r.light.hex }}"></span>{{ r.light.primitive }}</td>
+            <td><span class="dot" style="background: {{ r.dark.hex }}"></span>{{ r.dark.primitive }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </details>
+  {% endfor %}
+</section>

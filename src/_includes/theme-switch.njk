@@ -1,0 +1,12 @@
+{% set switchName = themeSwitchName or "theme-switch" %}
+<fieldset class="theme-switch" data-theme-switch>
+  <legend class="visually-hidden">Theme</legend>
+  <label class="theme-switch__segment">
+    <input class="visually-hidden" type="radio" name="{{ switchName }}" value="light">
+    <span class="theme-switch__label type-button">Light</span>
+  </label>
+  <label class="theme-switch__segment">
+    <input class="visually-hidden" type="radio" name="{{ switchName }}" value="dark">
+    <span class="theme-switch__label type-button">Dark</span>
+  </label>
+</fieldset>

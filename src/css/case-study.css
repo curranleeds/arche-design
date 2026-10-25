@@ -1,0 +1,789 @@
+/* ==========================================================================
+   Case-study page: hero, stat strip, jump nav, section split, image tiles,
+   strip, lightbox, outcome, credits, disclaimer, next case study, more case studies.
+   HAND-WRITTEN. Role tokens only (never primitives like --primary-500), so Light
+   and Dark come from tokens.css. Loaded only by case-study pages (base.njk `styles`).
+   Specs: Figma file "2026 Personal Branding", page "Design layouts", frame
+   the desktop case-study layout and its tablet and mobile frames.
+   Breakpoints: mobile up to 767, tablet 768 to 1023, desktop 1024 and up.
+   Page grid: 4 columns (16px gutter) on mobile, 8 (16px) on tablet, 12 (24px) on desktop.
+   ========================================================================== */
+
+:root {
+  /* Height of the main header when the script has not set --site-nav-offset yet. */
+  --cs-nav-fallback: 72px;
+  --cs-fade: 200ms;
+}
+@media (min-width: 768px) { :root { --cs-nav-fallback: 80px; } }
+@media (prefers-reduced-motion: reduce) { :root { --cs-fade: 0ms; } }
+
+.cs-page { display: block; }
+
+/* A paragraph of body copy: 16px between paragraphs, no widow on the last line. */
+.cs-copy p { margin: 0 0 var(--space-base-16); text-wrap: pretty; color: var(--text-neutral-body); }
+.cs-copy p:last-child { margin-bottom: 0; }
+
+/* Two-column row used by the section split, outcome, credits and disclaimer:
+   label on the left, a 4-column text column on the right (desktop); stacked with the
+   text pushed to a 6-column measure on tablet; stacked full width on mobile.
+   Never an even 50/50. */
+.cs-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: var(--space-fine-16);
+  row-gap: var(--space-base-24);
+}
+.cs-row > :first-child { grid-column: 1 / -1; min-width: 0; }
+.cs-row > :last-child { grid-column: 1 / -1; min-width: 0; }
+@media (min-width: 768px) {
+  .cs-row { grid-template-columns: repeat(8, minmax(0, 1fr)); row-gap: var(--space-base-32); }
+  .cs-row > :last-child { grid-column: 3 / -1; }
+}
+@media (min-width: 1024px) {
+  .cs-row { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-base-24); }
+  .cs-row > :first-child { grid-column: 1 / span 8; }
+  .cs-row > :last-child { grid-column: 9 / span 4; }
+}
+
+/* ---------- Hero (plain tone) ----------
+   Back row on the page surface, then the band: text left (6 columns), 16:9 image right
+   (644 x 362 at 1440). Tablet and mobile: text first, image full width below.
+   Eyebrow, title and subtitle are .type-label, .type-h1 and .type-lead. */
+.cs-hero { background: var(--surface-neutral-base); }
+.cs-hero__back {
+  padding: var(--space-base-8) var(--page-pad);
+}
+@media (min-width: 768px) { .cs-hero__back { padding-block: var(--space-base-16); } }
+/* The arrow lines up with the grid, not the button's own 12px inset (Figma note). */
+.cs-hero__back .button { margin-left: calc(-1 * var(--space-fine-12)); }
+
+.cs-hero__band {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base-24);
+  padding: var(--space-base-32) var(--page-pad);
+}
+.cs-hero__text { display: flex; flex-direction: column; gap: var(--space-base-32); }
+.cs-hero__heading { display: flex; flex-direction: column; gap: var(--space-base-16); }
+.cs-hero__eyebrow { margin: 0; color: var(--text-neutral-secondary); }
+.cs-hero__title { margin: 0; color: var(--text-brand-primary); text-wrap: balance; }
+.cs-hero__subtitle { margin: 0; color: var(--text-neutral-body); text-wrap: pretty; }
+/* Subtitle and the optional action buttons (secondary, open in a new tab). The buttons stack
+   full width on mobile and sit in a row from 768 up. 24px between subtitle and buttons. */
+.cs-hero__lede { display: flex; flex-direction: column; gap: var(--space-base-24); }
+.cs-hero__actions { display: flex; flex-direction: column; gap: var(--space-base-16); }
+.cs-hero__actions .button { width: 100%; }
+@media (min-width: 768px) {
+  .cs-hero__actions { flex-direction: row; flex-wrap: wrap; }
+  .cs-hero__actions .button { width: auto; }
+}
+.cs-hero__image { margin: 0; }
+.cs-hero__image img {
+  display: block;
+  width: 100%;
+  /* The img has width and height attributes (they reserve space before it loads). Browsers turn
+     them into CSS sizes, so without this the height attribute (1215px) beats aspect-ratio. */
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .cs-hero__band { gap: var(--space-base-32); padding-block: var(--space-base-48); }
+  .cs-hero__text { gap: var(--space-base-40); }
+}
+@media (min-width: 1024px) {
+  .cs-hero__band {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-base-24);
+    padding-block: var(--space-base-64);
+  }
+  /* Eyebrow and title at the top, subtitle at the bottom, next to the image. */
+  .cs-hero__text { grid-column: 1 / span 6; justify-content: space-between; gap: var(--space-base-32); }
+  .cs-hero__image { grid-column: 7 / span 6; }
+}
+
+/* ---------- Stat strip ----------
+   Numbers are dark brand blue on the light-blue tint.
+   Desktop: one row. Tablet: 2 x 2 grid. Mobile: one stat per row, number left (136px),
+   label beside it, 1px rule between rows. The same markup is mirrored in the Outcome
+   (.cs-stats--inline: no tint, no padding). */
+.cs-stats {
+  background: var(--surface-brand-primary-subtle);
+  padding: var(--space-base-32) var(--page-pad);
+}
+.cs-stats--inline { padding: 0; background: none; }
+.cs-stats__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base-16);
+  padding-top: var(--space-base-24);
+  border-top: var(--stroke-2) solid var(--border-neutral-emphasis);
+}
+.cs-stats__heading { margin: 0; color: var(--text-neutral-secondary); }
+.cs-stats__list { display: flex; flex-direction: column; margin: 0; padding: 0; }
+.cs-stat {
+  display: flex;
+  gap: var(--space-base-16);
+  padding-block: var(--space-base-16);
+  border-top: var(--stroke-1) solid var(--border-neutral-default);
+  margin: 0;
+}
+.cs-stat__number { order: -1; flex: none; width: 136px; margin: 0; color: var(--text-brand-primary); }
+.cs-stat__label { flex: 1; min-width: 0; margin: 0; color: var(--text-neutral-body); }
+.cs-stats__footnote { margin: 0; color: var(--text-neutral-primary); }
+@media (min-width: 768px) {
+  .cs-stats { padding-block: var(--space-base-40); }
+  .cs-stats__inner { gap: var(--space-base-24); }
+  .cs-stats__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-base-32) var(--space-base-24);
+  }
+  .cs-stat {
+    flex-direction: column;
+    gap: var(--space-base-8);
+    padding: 0;
+    border-top: 0;
+  }
+  .cs-stat__number { width: auto; }
+}
+@media (min-width: 1024px) {
+  .cs-stats { padding-block: var(--space-base-48); }
+  .cs-stats__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ---------- Jump nav ----------
+   Desktop: a row of section links that pins under the main header. Tablet and mobile:
+   a bar ("On this page" + the current section) that opens a list. No progress line.
+   The main header hides on scroll down and returns on scroll up; this bar
+   follows it through --site-nav-offset (set by nav.js). z-index 10, under the header's 20. */
+.cs-jump {
+  position: sticky;
+  top: var(--site-nav-offset, var(--cs-nav-fallback));
+  z-index: 10;
+  transition: top var(--motion-medium) var(--motion-ease);
+}
+.cs-jump__bar { position: relative; background: var(--surface-neutral-base); }
+.cs-jump__trigger {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-fine-12);
+  padding: 6px var(--page-pad);
+  border: 0;
+  border-bottom: var(--stroke-1) solid var(--border-neutral-default);
+  background: none;
+  color: var(--text-neutral-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.cs-jump__trigger:focus-visible {
+  outline: var(--focus-ring-width) solid var(--border-focus-ring);
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+.cs-jump__labels { display: flex; flex-direction: column; gap: 2px; }
+.cs-jump__hint { color: var(--text-neutral-secondary); }
+.cs-jump__current { color: var(--text-neutral-primary); }
+.cs-jump__trigger .icon { color: var(--icon-brand-default); transition: transform var(--motion-medium) var(--motion-ease); }
+.cs-jump.is-open .cs-jump__trigger .icon { transform: rotate(180deg); }
+
+/* The list opens like an accordion: the row grows from 0 to its natural height. */
+.cs-jump__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  background: var(--surface-neutral-base);
+  transition:
+    grid-template-rows var(--motion-medium) var(--motion-ease),
+    visibility 0s linear var(--motion-medium);
+}
+.cs-jump.is-open .cs-jump__panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition-delay: 0s;
+  border-bottom: var(--stroke-2) solid var(--border-neutral-emphasis);
+}
+.cs-jump__list { min-height: 0; margin: 0; padding: 0; overflow: hidden; list-style: none; }
+.cs-jump__link {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  height: var(--space-base-48);
+  align-items: center;
+  padding: 0 var(--page-pad);
+  color: var(--text-neutral-primary);
+  text-decoration: none;
+}
+.cs-jump__link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--border-focus-ring);
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+.cs-jump__link[aria-current] { background: var(--interactive-button-tertiary-fill-active); font-weight: 600; }
+.cs-jump__link[aria-current] .cs-jump__text { position: relative; }
+.cs-jump__link[aria-current] .cs-jump__text::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: var(--stroke-4);
+  background: var(--interactive-button-tertiary-indicator);
+}
+/* Dims the page behind an open list. */
+.cs-jump__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: none;
+  background: var(--surface-overlay-scrim);
+}
+.cs-jump.is-open .cs-jump__scrim { display: block; }
+
+/* Without JavaScript the list is just shown, as a plain list of links. */
+html:not(.js) .cs-jump { position: static; }
+html:not(.js) .cs-jump__trigger { display: none; }
+html:not(.js) .cs-jump__panel { grid-template-rows: 1fr; visibility: visible; }
+
+@media (min-width: 768px) {
+  .cs-jump__trigger { gap: var(--space-fine-16); }
+  .cs-jump__labels { flex-direction: row; align-items: center; gap: var(--space-fine-12); margin-right: auto; }
+  .cs-jump__link { font-size: var(--type-body-semibold-size); }
+}
+@media (min-width: 1024px) {
+  /* The 24px above the links is page space; when pinned, only 4px of it shows. */
+  .cs-jump {
+    top: calc(var(--site-nav-offset, var(--cs-nav-fallback)) - 20px);
+    background: var(--surface-neutral-base);
+    border-bottom: var(--stroke-1) solid var(--border-neutral-default);
+  }
+  .cs-jump__bar { position: static; background: none; }
+  .cs-jump__trigger { display: none; }
+  .cs-jump__scrim { display: none !important; }
+  .cs-jump__panel,
+  .cs-jump.is-open .cs-jump__panel {
+    display: block;
+    visibility: visible;
+    border: 0;
+    transition: none;
+  }
+  .cs-jump__list {
+    display: flex;
+    gap: var(--space-base-16);
+    padding: var(--space-base-24) var(--page-pad) var(--space-fine-4);
+    overflow: visible;
+  }
+  .cs-jump__link {
+    padding: 0 var(--space-fine-16);
+    font-family: var(--type-button-font);
+    font-weight: var(--type-button-weight);
+    font-size: var(--type-button-size);
+    line-height: var(--type-button-line);
+    color: var(--interactive-button-tertiary-label-default);
+    transition: background-color var(--motion-fast) var(--motion-ease), color var(--motion-fast) var(--motion-ease);
+  }
+  @media (hover: hover) {
+    .cs-jump__link:hover {
+      background: var(--interactive-button-tertiary-fill-hover);
+      color: var(--interactive-button-tertiary-label-hover);
+    }
+  }
+  .cs-jump__link:active {
+    background: var(--interactive-button-tertiary-fill-pressed);
+    color: var(--interactive-button-tertiary-label-pressed);
+  }
+  .cs-jump__link[aria-current] { color: var(--interactive-button-tertiary-label-active); }
+  .cs-jump__link[aria-current] .cs-jump__text { position: static; }
+  .cs-jump__link[aria-current] .cs-jump__text::after { right: 0; bottom: 0; left: 0; }
+  .cs-jump__link:focus-visible { outline-offset: var(--focus-ring-offset); }
+}
+
+/* ---------- Section split ----------
+   Label (the h2) and a one-sentence statement on the left, body on the right.
+   Tone "tint" is the light-blue surface (Problem, Outcome); "plain" is the page surface.
+   Padding top and bottom 80 / 64 / 48, gap between parts 64 / 48 / 48 (Figma instances). */
+.cs-split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base-48);
+  padding: var(--space-base-48) var(--page-pad);
+  background: var(--surface-neutral-base);
+  scroll-margin-top: 64px;
+}
+.cs-split--tint { background: var(--surface-brand-primary-subtle); }
+@media (min-width: 768px) { .cs-split { padding-block: var(--space-base-64); } }
+@media (min-width: 1024px) { .cs-split { gap: var(--space-base-64); padding-block: var(--space-base-80); } }
+
+.cs-split__label { display: flex; flex-direction: column; gap: var(--space-base-16); }
+.cs-split__name { margin: 0; color: var(--text-brand-primary); }
+.cs-split__statement { margin: 0; color: var(--text-neutral-primary); text-wrap: balance; }
+
+/* ---------- Image tile (Figma: case study image tile 349:4303) ----------
+   One <figure>: a 16:9 picture inside one button that opens the lightbox, an expand
+   chip (a visual hint, not a second control), and the caption bottom-left, 16px under.
+   Focus is a 2px ring with a 2px offset around the image, drawn 4px outside it. */
+.cs-tile {
+  position: relative; /* keeps the tile's hidden alt text inside the swipe strip, so the page cannot scroll sideways */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-fine-16);
+  min-width: 0;
+  margin: 0;
+}
+.cs-tile__frame { position: relative; }
+.cs-tile__open {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.cs-tile__open:focus-visible {
+  outline: var(--stroke-2) solid var(--border-focus-ring);
+  outline-offset: 2px;
+}
+.cs-tile__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--surface-neutral-raised);
+}
+/* A tall image is portrait. It is shown whole, centered on a plain tinted background, so the
+   tile keeps the row's 16:9 shape. */
+.cs-tile--contain .cs-tile__img {
+  object-fit: contain;
+  background: var(--surface-brand-primary-subtle);
+}
+.cs-tile__caption { margin: 0; color: var(--text-neutral-primary); text-wrap: pretty; }
+
+/* Expand chip: 32px square, 1px brand border, 12px in from the image's bottom-right.
+   Always visible, including on touch. The hover look follows the image, not the chip. */
+.cs-chip,
+.cs-motion {
+  display: grid;
+  box-sizing: border-box;
+  width: var(--space-base-32);
+  height: var(--space-base-32);
+  place-items: center;
+  border: var(--stroke-1) solid var(--border-brand-default);
+  background: var(--surface-neutral-raised);
+  color: var(--icon-brand-default);
+  transition: background-color var(--motion-fast) var(--motion-ease), color var(--motion-fast) var(--motion-ease);
+}
+.cs-chip { position: absolute; right: var(--space-fine-12); bottom: var(--space-fine-12); pointer-events: none; }
+.cs-chip .icon { width: 16px; height: 16px; }
+@media (hover: hover) {
+  .cs-tile__open:hover .cs-chip {
+    background: var(--surface-brand-primary);
+    color: var(--icon-on-brand-default);
+  }
+}
+.cs-tile__open:active .cs-chip {
+  background: var(--interactive-button-secondary-on-brand-fill-pressed);
+  color: var(--icon-on-brand-default);
+}
+
+/* Pause and play control for the GIF in the viewer. Same square as the chip, bottom-left of the
+   picture. Only shown when scripts run: without them the poster stays still. */
+.cs-motion {
+  position: absolute;
+  bottom: var(--space-fine-12);
+  left: var(--space-fine-12);
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.cs-motion[hidden] { display: none; }
+.cs-motion .icon { width: 20px; height: 20px; }
+.cs-motion__play { display: none; }
+.cs-motion[data-playing="false"] .cs-motion__play { display: block; }
+.cs-motion[data-playing="false"] .cs-motion__pause { display: none; }
+@media (hover: hover) {
+  .cs-motion:hover { background: var(--surface-brand-primary); color: var(--icon-on-brand-default); }
+}
+.cs-motion:active { background: var(--interactive-button-secondary-on-brand-fill-pressed); color: var(--icon-on-brand-default); }
+.cs-motion:focus-visible {
+  outline: var(--focus-ring-width) solid var(--border-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ---------- Image set: the big image and the small ones ----------
+   The big image fills the content width (8 columns on desktop). The small images are one
+   list. From 1024 up it is a grid of 4-column tiles (a third tile sits in the text column,
+   a fourth wraps under the first). Below 1024 it is a swipe strip that runs to the right
+   screen edge, with the next tile peeking in and a counter above it. One list, restyled,
+   so the pictures are never in the page twice. */
+.cs-gallery { display: flex; flex-direction: column; gap: var(--space-base-48); }
+.cs-gallery:empty { display: none; }
+.cs-split--tint .cs-gallery { --cs-row-gap: var(--space-base-48); }
+.cs-split:not(.cs-split--tint) .cs-gallery { --cs-row-gap: var(--space-base-24); }
+
+.cs-strip { display: flex; flex-direction: column; gap: var(--space-fine-12); }
+.cs-counter {
+  align-self: flex-end;
+  margin: 0;
+  color: var(--text-neutral-secondary);
+}
+.cs-strip__viewport {
+  margin-right: calc(-1 * var(--page-gutter));
+  container-type: inline-size;
+}
+.cs-strip__track {
+  display: flex;
+  gap: var(--space-fine-12);
+  /* 4px of room for focus rings on the top, bottom and left. Nothing on the right, so the
+     page never scrolls sideways. */
+  margin: calc(-1 * var(--space-fine-4)) 0 calc(-1 * var(--space-fine-4)) calc(-1 * var(--space-fine-4));
+  padding: var(--space-fine-4);
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline-start: var(--space-fine-4);
+  scrollbar-width: none;
+}
+.cs-strip__track::-webkit-scrollbar { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .cs-strip__track { scrollbar-width: thin; }
+}
+.cs-strip__track > li { flex: 0 0 264px; min-width: 0; scroll-snap-align: start; }
+@media (min-width: 768px) {
+  /* Tablet: two tiles, two 12px gaps and an 88px peek fill the strip, so the tiles grow
+     with the screen: 312 at 768, 439.5 at 1023. */
+  .cs-strip__track > li { flex-basis: calc((100cqw - 112px) / 2); }
+}
+@media (min-width: 1024px) {
+  .cs-counter { display: none; }
+  .cs-strip__viewport { margin-right: 0; container-type: normal; }
+  .cs-strip__track {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--cs-row-gap) var(--space-base-24);
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .cs-strip__track > li { grid-column: span 4; flex: none; }
+  .cs-gallery__big { width: calc((100% - 11 * var(--space-base-24)) / 12 * 8 + 7 * var(--space-base-24)); }
+  .cs-gallery { gap: var(--space-base-64); }
+}
+
+/* ---------- Lightbox ----------
+   A native <dialog> (showModal): focus stays inside, Esc closes, the page behind is inert.
+   Dark scrim, the picture 16:9 with its caption under it, close top-right, a bottom bar
+   with previous, counter, next. Fades in and out in 200ms (none with reduced motion). */
+.cs-lightbox {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--surface-overlay-scrim-strong);
+  color: var(--text-on-brand-primary);
+  opacity: 0;
+  transition: opacity var(--cs-fade) var(--motion-ease);
+}
+.cs-lightbox[open] { display: flex; }
+.cs-lightbox.is-open { opacity: 1; }
+.cs-lightbox::backdrop { background: transparent; }
+html:has(.cs-lightbox[open]) { overflow: hidden; }
+
+.cs-lightbox__close {
+  position: absolute;
+  top: var(--space-base-16);
+  right: var(--space-base-16);
+  z-index: 1;
+}
+.cs-lightbox__stage {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y;
+}
+.cs-lightbox__figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-fine-16);
+  /* --lb-w is the 16:9 slot's width. Phone: screen minus 16px margins. Never taller than the
+     room above the bar. */
+  --lb-w: min(calc(100vw - 32px), calc((100vh - 80px - 96px) * 16 / 9));
+  width: min(var(--lb-w), var(--lb-max, var(--lb-w)));
+  margin: 0;
+}
+.cs-lightbox__media { position: relative; }
+.cs-lightbox__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+/* A portrait picture keeps the slot's height but is only as wide as the picture
+   (--lb-ratio is its width / height, set by case-study.js). The picture box is centered, so the
+   pause button (inside it) and the caption (indented to match) line up with the picture's own
+   left edge, not the empty slot. The caption may still run on to the slot's right edge. */
+.cs-lightbox__figure--contain { --lb-pic: calc(var(--lb-w) * 9 / 16 * var(--lb-ratio, 0.657)); }
+.cs-lightbox__figure--contain .cs-lightbox__media { width: var(--lb-pic); margin-inline: auto; }
+.cs-lightbox__figure--contain .cs-lightbox__media img { aspect-ratio: var(--lb-ratio, 0.657); object-fit: contain; }
+.cs-lightbox__figure--contain .cs-lightbox__caption { margin-left: calc((var(--lb-w) - var(--lb-pic)) / 2); }
+.cs-lightbox__caption { margin: 0; color: var(--text-on-brand-primary); }
+.cs-lightbox__bar {
+  display: flex;
+  height: var(--space-base-80);
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-base-24);
+  background: var(--surface-overlay-bar);
+}
+.cs-lightbox__counter { margin: 0; color: var(--text-on-brand-secondary); }
+.cs-lightbox__bar button[hidden] { display: none; }
+@media (min-width: 768px) {
+  .cs-lightbox__close { top: var(--space-base-24); right: var(--space-base-24); }
+  .cs-lightbox__figure { --lb-w: min(calc(100vw - 64px), calc((100vh - 80px - 96px) * 16 / 9)); }
+}
+@media (min-width: 1024px) {
+  .cs-lightbox__figure { --lb-w: min(1120px, calc(100vw - 128px), calc((100vh - 80px - 96px) * 16 / 9)); }
+}
+
+/* ---------- Outcome ----------
+   On the tint. Results (label, statement, body), the stats repeated, a quote in the
+   "offset split" style, then an optional "What's next" block. Padding 80 / 64 / 48; gap between
+   parts 64 / 48 / 48. */
+.cs-outcome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base-48);
+  padding: var(--space-base-48) var(--page-pad);
+  background: var(--surface-brand-primary-subtle);
+  scroll-margin-top: 64px;
+}
+@media (min-width: 768px) { .cs-outcome { padding-block: var(--space-base-64); } }
+@media (min-width: 1024px) { .cs-outcome { gap: var(--space-base-64); padding-block: var(--space-base-80); } }
+
+.cs-quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base-24);
+  margin: 0;
+  padding-block: var(--space-base-32);
+  border-top: var(--stroke-2) solid var(--border-neutral-emphasis);
+}
+.cs-quote__who { display: flex; flex-direction: column; gap: var(--space-base-8); }
+.cs-quote__subhead { margin: 0; color: var(--text-neutral-primary); }
+.cs-quote__role { margin: 0; color: var(--text-neutral-secondary); }
+.cs-quote blockquote { margin: 0; }
+.cs-quote blockquote p {
+  margin: 0;
+  color: var(--text-neutral-primary);
+  font-family: var(--type-quote-font);
+  font-weight: var(--type-quote-weight);
+  /* Tablet uses the mobile quote size until the quote has a tablet layout (Figma note). */
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-wrap: pretty;
+}
+/* Phone and tablet: subhead, quote, then attribution. */
+.cs-quote__who { display: contents; }
+.cs-quote__subhead { order: 0; }
+.cs-quote blockquote { order: 1; }
+.cs-quote__role { order: 2; }
+@media (min-width: 1024px) {
+  .cs-quote {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-base-24);
+    row-gap: var(--space-base-8);
+    align-items: start;
+  }
+  .cs-quote__subhead { grid-column: 1 / span 3; grid-row: 1; }
+  .cs-quote__role { grid-column: 1 / span 3; grid-row: 2; }
+  .cs-quote blockquote { grid-column: 5 / span 8; grid-row: 1 / span 2; }
+  .cs-quote blockquote p { font-size: var(--type-quote-size); line-height: var(--type-quote-line); }
+}
+
+.cs-since {
+  padding-top: var(--space-base-32);
+  border-top: var(--stroke-1) solid var(--border-neutral-emphasis);
+}
+.cs-since__heading { margin: 0; color: var(--text-neutral-primary); }
+.cs-since .cs-row { row-gap: var(--space-base-16); }
+
+/* ---------- Credits ----------
+   The yellow band: heading left, one role per line on the
+   right, same two-column row as the section split. Near-black text on yellow, in both modes.
+   Padding 64 / 48 / 40 top and bottom, 64 / 32 / 16 at the sides (the page padding). */
+.cs-credits { padding: var(--space-base-40) var(--page-pad); background: var(--surface-brand-secondary-band); }
+@media (min-width: 768px) { .cs-credits { padding-block: var(--space-base-48); } }
+@media (min-width: 1024px) { .cs-credits { padding-block: var(--space-base-64); } }
+.cs-credits .cs-row { row-gap: var(--space-base-24); }
+@media (min-width: 768px) { .cs-credits .cs-row { row-gap: var(--space-base-32); } }
+.cs-credits__heading { margin: 0; color: var(--text-on-secondary-primary); }
+.cs-credits__list { margin: 0; padding: 0; list-style: none; color: var(--text-on-secondary-body); }
+.cs-credits__list li { margin: 0 0 var(--space-base-16); text-wrap: pretty; }
+.cs-credits__list li:last-child { margin-bottom: 0; }
+
+/* ---------- Disclaimer ----------
+   Plain block, no color. Label left, text right, like the section split. */
+.cs-disclaimer { padding: var(--space-base-48) var(--page-pad); background: var(--surface-neutral-base); }
+.cs-disclaimer .cs-row { row-gap: var(--space-base-40); }
+@media (min-width: 768px) {
+  .cs-disclaimer { padding-block: var(--space-base-48); }
+  .cs-disclaimer .cs-row { row-gap: var(--space-base-16); }
+}
+@media (min-width: 1024px) { .cs-disclaimer { padding-block: var(--space-base-64); } }
+.cs-disclaimer__label { margin: 0; color: var(--text-neutral-primary); }
+.cs-disclaimer__body { margin: 0; color: var(--text-neutral-primary); text-wrap: pretty; }
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet: the label sits beside the text, text in columns 3 to 8. */
+  .cs-disclaimer .cs-row > :first-child { grid-column: 1 / span 2; }
+}
+
+/* ---------- Next case study ----------
+   2px rule, heading, then a 16:9 image (8 columns) beside the text (4 columns). The image
+   link is hidden from keyboards and screen readers so there is one link per teaser. */
+.cs-next { padding: var(--space-base-40) var(--page-pad); background: var(--surface-neutral-base); }
+@media (min-width: 768px) { .cs-next { padding-block: var(--space-base-48); } }
+@media (min-width: 1024px) { .cs-next { padding-block: var(--space-base-64); } }
+.cs-next__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base-16);
+  padding-top: var(--space-base-24);
+  border-top: var(--stroke-2) solid var(--border-neutral-emphasis);
+}
+.cs-next__heading { margin: 0; color: var(--text-neutral-primary); }
+.cs-next__content { display: flex; flex-direction: column; gap: var(--space-base-16); }
+.cs-next__image { display: block; color: inherit; text-decoration: none; }
+.cs-next__image img,
+.cs-next__image .placeholder-image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.cs-next__text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-base-16); }
+.cs-next__category { margin: 0; color: var(--text-neutral-secondary); }
+.cs-next__title { margin: 0; color: var(--text-neutral-primary); }
+.cs-next__title a { color: inherit; text-decoration: none; }
+.cs-next__title a:focus-visible {
+  outline: var(--focus-ring-width) solid var(--border-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+.cs-next__summary { margin: 0; color: var(--text-neutral-body); text-wrap: pretty; }
+.cs-next__action { align-self: stretch; padding-top: var(--space-base-8); }
+.cs-next__action .button { width: 100%; }
+/* Locked state: the helper line sits 12px under the button. */
+.cs-next__helper { margin: var(--space-fine-12) 0 0; color: var(--text-neutral-secondary); }
+@media (min-width: 768px) {
+  .cs-next__inner { gap: var(--space-base-24); padding-top: var(--space-base-40); }
+  .cs-next__content { gap: var(--space-base-24); }
+  .cs-next__text { max-width: 524px; margin-left: auto; width: 100%; }
+  .cs-next__action .button { width: auto; }
+  .cs-next__action { align-self: flex-start; }
+}
+@media (min-width: 1024px) {
+  .cs-next__content {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-base-24);
+    align-items: center;
+  }
+  .cs-next__image { grid-column: 1 / span 8; }
+  .cs-next__text { grid-column: 9 / span 4; max-width: none; margin-left: 0; }
+}
+
+/* ---------- More case studies ----------
+   A list of rows, each one link: title, category, arrow. The 16px side padding lets the
+   hover fill reach past the grid, so the row is pulled back 16px to line the text up. */
+.cs-more {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base-40);
+  padding: var(--space-base-48) var(--page-pad);
+  background: var(--surface-neutral-base);
+}
+@media (min-width: 1024px) { .cs-more { padding-block: var(--space-base-64); } }
+.cs-more__heading { margin: 0; color: var(--text-neutral-primary); }
+.cs-more__list { margin: 0 calc(-1 * var(--space-fine-16)); padding: 0; list-style: none; }
+.cs-row-link {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-base-24);
+  padding: 20px var(--space-fine-16);
+  color: var(--text-neutral-primary);
+  text-decoration: none;
+  transition: background-color var(--motion-fast) var(--motion-ease);
+}
+.cs-more__list li { border-top: var(--stroke-1) solid var(--border-neutral-emphasis); }
+.cs-row-link__text { display: flex; flex-direction: column; gap: var(--space-base-8); min-width: 0; }
+.cs-row-link__title { margin: 0; color: var(--text-neutral-primary); }
+.cs-row-link__category { margin: 0; color: var(--text-neutral-secondary); }
+.cs-row-link__arrow {
+  display: grid;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: var(--interactive-button-tertiary-label-default);
+  transition: transform var(--motion-fast) var(--motion-ease), color var(--motion-fast) var(--motion-ease);
+}
+.cs-row-link:focus-visible {
+  background: var(--interactive-button-tertiary-fill-hover);
+  outline: var(--focus-ring-width) solid var(--border-focus-ring);
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+.cs-row-link:focus-visible .cs-row-link__title { text-decoration: underline; text-decoration-thickness: var(--stroke-2); }
+.cs-row-link:active { background: var(--interactive-button-tertiary-fill-pressed); }
+.cs-row-link:active .cs-row-link__arrow { color: var(--interactive-button-tertiary-label-pressed); }
+@media (hover: hover) {
+  .cs-row-link:hover { background: var(--interactive-button-tertiary-fill-hover); }
+  .cs-row-link:hover .cs-row-link__title { text-decoration: underline; text-decoration-thickness: var(--stroke-2); }
+  .cs-row-link:hover .cs-row-link__arrow { color: var(--interactive-button-tertiary-label-hover); transform: translateX(4px); }
+}
+@media (min-width: 768px) {
+  .cs-row-link { padding-block: 28px; }
+  .cs-row-link__arrow { width: var(--space-base-48); height: var(--space-base-48); }
+}
+@media (min-width: 1024px) {
+  .cs-row-link { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-base-24); }
+  .cs-row-link__text { display: contents; }
+  .cs-row-link__title { grid-column: 1 / span 6; }
+  .cs-row-link__category { grid-column: 7 / span 4; }
+  .cs-row-link__arrow { grid-column: 11 / span 2; justify-self: end; }
+}
+.cs-more .button { align-self: flex-start; }
+
+/* Locked row: a lock where the arrow was, the helper line under it. The row is
+   taller because of that line: 124px on desktop, 120px on mobile. */
+.cs-row-link--locked { flex-wrap: wrap; row-gap: 0; padding-block: 16px; }
+/* The text takes the room left of the lock, so a long title wraps instead of pushing the lock to its own line. */
+.cs-row-link--locked .cs-row-link__text { flex: 1 1 0; }
+.cs-row-link__helper { flex: 0 0 100%; margin: 0; text-align: right; color: var(--text-neutral-secondary); }
+.cs-row-link--locked:hover .cs-row-link__arrow { transform: none; }
+@media (min-width: 768px) { .cs-row-link--locked { padding-block: 24px; } }
+@media (min-width: 1024px) {
+  .cs-row-link--locked { row-gap: 0; align-items: start; }
+  .cs-row-link--locked .cs-row-link__title,
+  .cs-row-link--locked .cs-row-link__category { align-self: center; grid-row: 1; }
+  .cs-row-link--locked .cs-row-link__arrow { grid-row: 1; }
+  .cs-row-link--locked .cs-row-link__helper { grid-column: 7 / span 6; grid-row: 2; }
+}

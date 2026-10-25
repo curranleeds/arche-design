@@ -1,0 +1,48 @@
+---
+title: "List row"
+eyebrow: "Components"
+lead: "A full-width row that is one link, with a title, a category and a trailing arrow."
+permalink: /components/list-row/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">List row</h2>
+  <p>The whole row is the link. On hover the row fills with the blue tint, the title underline goes to 2px, and the arrow moves 4px to the right. Pressed uses a deeper tint. The focus ring wraps the row. Rows have an arrow and no button, so they need that clear hover state.</p>
+  {% demo "Two list rows", "block" %}
+  <section class="cs-more" aria-labelledby="more-demo-h">
+    <h3 class="cs-more__heading type-subhead" id="more-demo-h">More work</h3>
+    <ul class="cs-more__list" role="list">
+      <li>
+        <a class="cs-row-link" href="#">
+          <span class="cs-row-link__text">
+            <span class="cs-row-link__title type-h3">Case study title</span>
+            <span class="cs-row-link__category type-label">Category</span>
+          </span>
+          <span class="cs-row-link__arrow" aria-hidden="true">{% icon "arrow_forward" %}</span>
+        </a>
+      </li>
+      <li>
+        <a class="cs-row-link" href="#">
+          <span class="cs-row-link__text">
+            <span class="cs-row-link__title type-h3">Another case study title</span>
+            <span class="cs-row-link__category type-label">Category</span>
+          </span>
+          <span class="cs-row-link__arrow" aria-hidden="true">{% icon "arrow_forward" %}</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  {% enddemo %}
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the list row</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use it on the page surface, with a rule between rows.</li>
+      <li>Hide the arrow from screen readers (<code>aria-hidden</code>); the title is the link name.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Put a row inside a tinted section. The hover tint would disappear.</li>
+      <li>Add a button to the row. The row is the target.</li>
+    </ul></div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+---
+title: "Type"
+eyebrow: "Foundations"
+lead: "Archivo for headlines, Work Sans for everything else. Fifteen styles, each with one job, stepped at three breakpoints."
+permalink: /foundations/type/
+---
+<section aria-labelledby="fonts-h">
+  <h2 id="fonts-h" class="type-h2">Typefaces</h2>
+  <p><strong>Archivo</strong> sets headlines, quotes and stat numbers (Medium 500, SemiBold 600, Bold 700). <strong>Work Sans</strong> sets body copy, labels and buttons (Regular 400, Medium 500, SemiBold 600). Both are variable fonts, self-hosted as WOFF2, with no italics. Both are licensed under the SIL Open Font License.</p>
+</section>
+
+<section aria-labelledby="scale-h">
+  <h2 id="scale-h" class="type-h2">Type styles</h2>
+  <p>Each style is one CSS class, <code>.type-&lt;name&gt;</code>. The class sets font, weight, size, line height, letter spacing and case together. Sizes are written as size/line-height in pixels, and they step at fixed breakpoints, not fluidly. Resize the window to watch the samples change.</p>
+  {% for s in tokens.typeStyles %}
+  <div class="specimen">
+    <p class="specimen__sample type-{{ s.slug }}">{{ s.sample }}</p>
+    <p class="specimen__meta type-small">
+      <span><b>.type-{{ s.slug }}</b></span>
+      <span>{{ s.family }} {{ s.weightName }}{% if s.upper %}, uppercase{% endif %}</span>
+      <span>Desktop {{ s.desktop }}</span>
+      <span>Tablet {{ s.tablet }}</span>
+      <span>Mobile {{ s.mobile }}</span>
+    </p>
+    <p class="specimen__meta type-small"><span>{{ s.job }}</span></p>
+  </div>
+  {% endfor %}
+</section>
+
+<section aria-labelledby="rules-h">
+  <h2 id="rules-h" class="type-h2">Using type</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use the class that matches the job: <code>.type-subhead</code> for a label, <code>.type-small</code> for a caption.</li>
+      <li>Change weight inside a style for emphasis.</li>
+      <li>Keep paragraphs to about 66 characters wide and use <code>text-wrap: pretty</code>.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Invent a size between two styles.</li>
+      <li>Use Subhead as the first sentence of a running paragraph. It is for short standalone labels.</li>
+      <li>Set headings in Work Sans or body copy in Archivo.</li>
+    </ul></div>
+  </div>
+  <p>Breakpoints for the steps: mobile up to 767px, tablet 768 to 1023px, desktop 1024px and up.</p>
+</section>

@@ -1,0 +1,45 @@
+---
+title: "Motion and focus"
+eyebrow: "Foundations"
+lead: "One easing curve, three durations, and a focus ring that is the same everywhere."
+permalink: /foundations/motion/
+---
+<section aria-labelledby="motion-h">
+  <h2 id="motion-h" class="type-h2">Motion</h2>
+  <p>Everything uses a Quad ease-in-out curve. Duration depends on how much changes: a hover is quick, a full-screen overlay is slower.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Motion tokens, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">CSS name</th><th scope="col">Value</th><th scope="col">Used for</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><code>--motion-ease</code></th><td><code>cubic-bezier(0.455, 0.03, 0.515, 0.955)</code></td><td>Every transition</td></tr>
+        <tr><th scope="row"><code>--motion-fast</code></th><td>150ms</td><td>Hovers and pressed states</td></tr>
+        <tr><th scope="row"><code>--motion-medium</code></th><td>250ms</td><td>Accordion and navigation</td></tr>
+        <tr><th scope="row"><code>--motion-slow</code></th><td>400ms</td><td>Menu overlay and theme switch</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 class="type-h3">Reduced motion</h3>
+  <p>When a visitor's system asks for reduced motion, all three durations become <code>0ms</code>. State changes still show; they just happen at once. Try it by turning on "Reduce motion" in your operating system's accessibility settings.</p>
+</section>
+
+<section aria-labelledby="focus-h">
+  <h2 id="focus-h" class="type-h2">Focus ring</h2>
+  <p>Every interactive element shows a 4px ring with a 2px gap when it takes keyboard focus. The ring is never red, even on error fields. Press Tab on this page to see it on the links and buttons.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Focus tokens, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">CSS name</th><th scope="col">Used on</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><code>--border-focus-ring</code></th><td>The page surface. Black in Light, white in Dark.</td></tr>
+        <tr><th scope="row"><code>--border-focus-ring-on-brand</code></th><td>The blue band. White, because black on Blue 500 fails 3:1.</td></tr>
+        <tr><th scope="row"><code>--border-focus-ring-on-secondary</code></th><td>The yellow band. Near-black.</td></tr>
+        <tr><th scope="row"><code>--focus-ring-width</code></th><td>4px</td></tr>
+        <tr><th scope="row"><code>--focus-ring-offset</code></th><td>2px</td></tr>
+      </tbody>
+    </table>
+  </div>
+<pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--surface-brand-primary-subtle)" tabindex="0"><code>.button:focus-visible {
+  outline: var(--focus-ring-width) solid var(--border-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}</code></pre>
+  <p>Do not put <code>overflow: hidden</code> on a parent of a focusable element unless it leaves 4px of room around it. The ring will be cut off.</p>
+</section>

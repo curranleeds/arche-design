@@ -1,0 +1,38 @@
+---
+title: "Stat strip"
+eyebrow: "Components"
+lead: "Up to four numbers, large, on a light-blue tint. It puts the result before the story."
+permalink: /components/stat-strip/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Stat strip</h2>
+  <p>The numbers use the Stat style in dark brand blue, on the blue tint, with a 2px rule above. On desktop the stats sit in one row, on tablet in a 2 by 2 grid, and on mobile one per row with the number on the left. The values below are placeholders, not real results.</p>
+  {% demo "Stat strip with placeholder values", "block" %}
+  <section class="cs-stats" aria-labelledby="impact-demo-h">
+    <div class="cs-stats__inner">
+      <h3 class="cs-stats__heading type-label" id="impact-demo-h">Impact</h3>
+      <dl class="cs-stats__list">
+        <div class="cs-stat"><dt class="cs-stat__label type-body">Example label for the first stat</dt><dd class="cs-stat__number type-stat">00</dd></div>
+        <div class="cs-stat"><dt class="cs-stat__label type-body">Example label for the second stat</dt><dd class="cs-stat__number type-stat">00%</dd></div>
+        <div class="cs-stat"><dt class="cs-stat__label type-body">Example label for the third stat</dt><dd class="cs-stat__number type-stat">0</dd></div>
+      </dl>
+      <p class="cs-stats__footnote type-fine-print">Source and time window go here.</p>
+    </div>
+  </section>
+  {% enddemo %}
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the stat strip</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Give every number a source and a stated time window in the footnote.</li>
+      <li>Keep numbers short enough to fit: a few digits and a symbol.</li>
+      <li>Use a description list (<code>&lt;dl&gt;</code>) so a screen reader hears each label with its number.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Use red for numbers. Red reads as "negative", even when a number going down is good.</li>
+      <li>Show a number you cannot source.</li>
+      <li>Use more than four stats.</li>
+    </ul></div>
+  </div>
+</section>

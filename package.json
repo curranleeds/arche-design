@@ -1,0 +1,14 @@
+{
+  "name": "arche-design",
+  "version": "0.1.0",
+  "description": "Documentation site for the Arche Design System: tokens, type, color, and core components.",
+  "private": false,
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "sync": "node scripts/sync-from-portfolio.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

@@ -1,0 +1,17 @@
+# arche-design
+
+Public documentation site for the Arche Design System (pronounced AR-kee, from the Greek for "first principle"), the design system behind Curran Leeds' personal brand. 11ty (Eleventy) builds it; Cloudflare Pages serves it.
+
+- Curran is a beginner with code. Explain in small steps and define terms the first time they come up.
+- This repo is PUBLIC. Never add client names, NDA details, job-search material, private decision IDs, or anything from the gated case studies, in code, comments, copy or commit messages.
+- AI-written copy gets Curran's review before it is pushed. Confirm with him before pushing or anything outward-facing.
+- Nothing about Arche goes on his portfolio website (curranleeds.com) until he says so. Do not edit `../my-portfolio` from here.
+- Names: system "Arche Design System", repo and npm package `arche-design`. Modes: Canon (`canon`, default), Klarheit (`klarheit`), Nøktern (`noktern`), Omtanke (`omtanke`), Ethos (`ethos`). Use plain ASCII for code, file names, CSS and token paths; display names may keep the ø.
+- Modes change only semantic color roles. Primitives, type, spacing, grid, radius, motion and component anatomy are identical in every mode. Status colors (Alert/Error, Success, Warning) never change by mode. Components read semantic roles, never primitives.
+- Do NOT invent mode token values. The role of color in each mode is still being defined by Curran. Do not build modes, a mode switcher or mode CSS until he says so.
+- `src/css/tokens.css`, `components.css`, `case-study.css`, `fonts.css`, the fonts, icons, `theme.js` and `tokens/figma-tokens.json` are copied in from the sibling `../my-portfolio` project by `npm run sync` (which also scrubs private comments). Do not hand-edit them here. The token source is moving to the Arche Design System Figma file; ask before changing the direction of the sync.
+- Docs never hold their own copy of a token value. Foundations pages read `tokens/figma-tokens.json` through `src/_data/tokens.js`.
+- Never fabricate metrics, quotes or claims. Demo numbers stay obvious placeholders.
+- Norway Red has no job on any page or component.
+- Archivo and Work Sans have no Greek script. Use Latin letters for Greek words.
+- Preview: `npm start`. Production build: `npm run build`.

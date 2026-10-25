@@ -1,0 +1,33 @@
+---
+title: "Quote"
+eyebrow: "Components"
+lead: "A pull quote with the attribution in the left columns and the quote set large."
+permalink: /components/quote/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Quote</h2>
+  <p>The attribution sits in columns 1 to 3 and the quote in columns 5 to 12 on desktop. Both stack on smaller screens. The quote uses the Quote style. The text below is placeholder copy.</p>
+  {% demo "Quote with placeholder text", "block" %}
+  <figure class="cs-quote">
+    <div class="cs-quote__who">
+      <p class="cs-quote__subhead type-subhead">Role or label</p>
+      <figcaption class="cs-quote__role type-small">Company type, not a name</figcaption>
+    </div>
+    <blockquote><p>Quote text goes here. Use a real quote, and attribute it by role and company type unless the person has agreed to be named.</p></blockquote>
+  </figure>
+  {% enddemo %}
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the quote</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use a real quote with a real source.</li>
+      <li>Attribute by role and company type when the work is under NDA.</li>
+      <li>Use a <code>&lt;figure&gt;</code> with a <code>&lt;blockquote&gt;</code> and a <code>&lt;figcaption&gt;</code>.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Name a person who has not agreed to it.</li>
+      <li>Write or polish a quote for someone.</li>
+    </ul></div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+title: "Link"
+eyebrow: "Components"
+lead: "A text link is bold and underlined, so it never depends on color alone to look like a link."
+permalink: /components/link/
+---
+{% from "components.njk" import textLink %}
+<section aria-labelledby="text-h">
+  <h2 id="text-h" class="type-h2">Text link</h2>
+  <p>Body SemiBold with a 1px underline. Hover and press change the underline to 2px and shift the color. The target is 32px tall.</p>
+  {% demo "Text link and external link" %}
+  {{ textLink("Read the case study", "#") }}
+  {{ textLink("Open the resume", "#", external=true) }}
+  {% enddemo %}
+</section>
+<section aria-labelledby="ext-h">
+  <h2 id="ext-h" class="type-h2">External links</h2>
+  <p>A link that opens a new tab shows the external-link icon and carries hidden "(opens in new tab)" text for screen readers. It uses <code>rel="noopener"</code>.</p>
+</section>
+<section aria-labelledby="brand-h">
+  <h2 id="brand-h" class="type-h2">On a blue surface</h2>
+  {% demo "Link on brand", "brand" %}
+  {{ textLink("Get in touch", "#", onBrand=true) }}
+  {% enddemo %}
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using links</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Say where the link goes: "Read the case study", not "Click here".</li>
+      <li>Keep the underline.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Remove the underline and rely on color.</li>
+      <li>Open a new tab without saying so.</li>
+    </ul></div>
+  </div>
+</section>

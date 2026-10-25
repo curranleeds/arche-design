@@ -1,0 +1,50 @@
+{# Button, text link and form field macros, copied from the portfolio site so the docs render the real markup. #}
+{% macro button(label, type="primary", href="", icon="", iconPosition="leading", onBrand=false, active=false, disabled=false, submit=false, ariaLabel="", extraClass="", attrs="", force="", external=false, afterLabel="") %}
+{%- set tag = "a" if href else "button" -%}
+{%- set iconOnly = icon and iconPosition == "only" -%}
+{%- set cls -%}
+button type-button button--{{ type }}{% if onBrand %} button--on-brand{% endif %}{% if icon %} button--icon-{{ iconPosition }}{% endif %}{% if active %} is-active{% endif %}{% if extraClass %} {{ extraClass }}{% endif %}
+{%- endset -%}
+<{{ tag }} class="{{ cls | trim }}"
+  {%- if href %} href="{{ href }}"{% if external %} target="_blank" rel="noopener noreferrer"{% endif %}{% if active %} aria-current="page"{% endif %}{% if disabled %} aria-disabled="true"{% endif %}
+  {%- else %} type="{{ 'submit' if submit else 'button' }}"{% if disabled %} disabled{% endif %}{% endif %}
+  {%- if ariaLabel %} aria-label="{{ ariaLabel }}"{% endif %}
+  {%- if attrs %} {{ attrs | safe }}{% endif %}
+  {%- if force %} data-force="{{ force }}"{% endif %}>
+  {%- if icon and iconPosition == "leading" %}{% icon icon %}{% endif -%}
+  {%- if not iconOnly %}<span class="button__label">{{ label }}</span>{% endif -%}
+  {%- if href and external %}<span class="visually-hidden"> (opens in new tab)</span>{% endif -%}
+  {%- if icon and iconPosition in ["trailing", "only"] %}{% icon icon %}{% endif -%}
+  {%- if afterLabel %}{{ afterLabel | safe }}{% endif -%}
+</{{ tag }}>
+{% endmacro %}
+{% macro textLink(label, href, external=false, onBrand=false, force="", download=false) %}
+<a class="link{% if onBrand %} link--on-brand{% endif %}" href="{{ href }}"
+  {%- if external %} target="_blank" rel="noopener"{% endif %}{% if download %} download{% endif %}
+  {%- if force %} data-force="{{ force }}"{% endif %}>
+  <span class="link__text">{{ label }}</span>
+  {%- if external %}{% icon "open_in_new" %}<span class="visually-hidden"> (opens in new tab)</span>{% endif -%}
+  {%- if download %}<span class="visually-hidden"> (PDF)</span>{% endif -%}
+</a>
+{% endmacro %}
+{% macro field(id, name, label, type="text", multiline=false, value="", error="", errorMessage="", autocomplete="", disabled=false, readonly=false, force="") %}
+<div class="field{% if multiline %} field--multiline{% endif %}">
+  <div class="field__control"{% if force %} data-force-control="{{ force }}"{% endif %}>
+    {%- if multiline %}
+    <textarea class="field__input" id="{{ id }}" name="{{ name }}" placeholder=" " required
+      {%- if autocomplete %} autocomplete="{{ autocomplete }}"{% endif %}
+      {%- if error %} aria-invalid="true"{% endif %} aria-describedby="{{ id }}-error"
+      {%- if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}
+      {%- if force %} data-force="{{ force }}"{% endif %}>{{ value }}</textarea>
+    {%- else %}
+    <input class="field__input" id="{{ id }}" name="{{ name }}" type="{{ type }}" placeholder=" " required value="{{ value }}"
+      {%- if autocomplete %} autocomplete="{{ autocomplete }}"{% endif %}
+      {%- if error %} aria-invalid="true"{% endif %} aria-describedby="{{ id }}-error"
+      {%- if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}
+      {%- if force %} data-force="{{ force }}"{% endif %}>
+    {%- endif %}
+    <label class="field__label" for="{{ id }}">{{ label }}</label>
+  </div>
+  <p class="field__error" id="{{ id }}-error"{% if not error %} hidden{% endif %}{% if errorMessage %} data-error-message="{{ errorMessage }}"{% endif %}>{% icon "priority_high" %}<span class="field__error-text">{{ error }}</span></p>
+</div>
+{% endmacro %}

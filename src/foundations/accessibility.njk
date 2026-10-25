@@ -1,0 +1,27 @@
+---
+title: "Accessibility"
+eyebrow: "Foundations"
+lead: "WCAG 2.1 AA is the floor. These checks are built into the components, not added afterward."
+permalink: /foundations/accessibility/
+---
+<section aria-labelledby="floor-h">
+  <h2 id="floor-h" class="type-h2">The floor</h2>
+  <ul>
+    <li><strong>Contrast.</strong> 4.5:1 for text, 3:1 for large text and interface parts. Checked in Light and Dark on the <a href="/foundations/color/#contrast-h">color page</a>.</li>
+    <li><strong>Focus.</strong> A visible 4px ring on every interactive element, including on blue and in dark mode.</li>
+    <li><strong>Targets.</strong> 44 by 44 pixels minimum. Buttons and nav links are 48 tall.</li>
+    <li><strong>Labels.</strong> Every field has a real <code>&lt;label&gt;</code>. Icon-only buttons have an <code>aria-label</code>.</li>
+    <li><strong>Color is never the only signal.</strong> Errors add a message and a thicker rule. Current page adds a bar. Links are underlined.</li>
+    <li><strong>Keyboard.</strong> A skip link is the first focusable element on every page. Tab order follows reading order.</li>
+    <li><strong>Motion.</strong> Respects <code>prefers-reduced-motion</code>.</li>
+    <li><strong>Images.</strong> Informative images carry alt text. Decorative icons are hidden from screen readers.</li>
+  </ul>
+</section>
+<section aria-labelledby="regulated-h">
+  <h2 id="regulated-h" class="type-h2">Why this matters for regulated work</h2>
+  <p>In healthcare and pharma, required content such as safety information and boxed warnings has to be readable by everyone, and it has to survive review. A system that builds contrast, focus and labeling into the base components means each new page starts compliant instead of being fixed at the end.</p>
+</section>
+<section aria-labelledby="test-h">
+  <h2 id="test-h" class="type-h2">How I check</h2>
+  <p>Contrast is calculated from the token file on every build. Keyboard and screen-reader behavior is checked by hand on each component before it is documented. Automated accessibility tests are not part of the build yet; that is on the list.</p>
+</section>
