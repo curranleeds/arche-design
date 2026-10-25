@@ -11,10 +11,10 @@ permalink: /foundations/motion/
     <table class="docs-table type-small">
       <thead><tr><th scope="col">CSS name</th><th scope="col">Value</th><th scope="col">Used for</th></tr></thead>
       <tbody>
-        <tr><th scope="row"><code>--motion-ease</code></th><td><code>cubic-bezier(0.455, 0.03, 0.515, 0.955)</code></td><td>Every transition</td></tr>
-        <tr><th scope="row"><code>--motion-fast</code></th><td>150ms</td><td>Hovers and pressed states</td></tr>
-        <tr><th scope="row"><code>--motion-medium</code></th><td>250ms</td><td>Accordion and navigation</td></tr>
-        <tr><th scope="row"><code>--motion-slow</code></th><td>400ms</td><td>Menu overlay and theme switch</td></tr>
+        <tr><th scope="row"><code>--arche-motion-ease</code></th><td><code>cubic-bezier(0.455, 0.03, 0.515, 0.955)</code></td><td>Every transition</td></tr>
+        <tr><th scope="row"><code>--arche-motion-fast</code></th><td>150ms</td><td>Hovers and pressed states</td></tr>
+        <tr><th scope="row"><code>--arche-motion-medium</code></th><td>250ms</td><td>Accordion and navigation</td></tr>
+        <tr><th scope="row"><code>--arche-motion-slow</code></th><td>400ms</td><td>Menu overlay and theme switch</td></tr>
       </tbody>
     </table>
   </div>
@@ -29,17 +29,17 @@ permalink: /foundations/motion/
     <table class="docs-table type-small">
       <thead><tr><th scope="col">CSS name</th><th scope="col">Used on</th></tr></thead>
       <tbody>
-        <tr><th scope="row"><code>--border-focus-ring</code></th><td>The page surface. Black in Light, white in Dark.</td></tr>
-        <tr><th scope="row"><code>--border-focus-ring-on-brand</code></th><td>The blue band. White, because black on Blue 500 fails 3:1.</td></tr>
-        <tr><th scope="row"><code>--border-focus-ring-on-secondary</code></th><td>The yellow band. Near-black.</td></tr>
-        <tr><th scope="row"><code>--focus-ring-width</code></th><td>4px</td></tr>
-        <tr><th scope="row"><code>--focus-ring-offset</code></th><td>2px</td></tr>
+        <tr><th scope="row"><code>--arche-border-focus-ring</code></th><td>The page surface. Black in Light, white in Dark.</td></tr>
+        <tr><th scope="row"><code>--arche-border-focus-ring-on-brand</code></th><td>The blue band. White, because black on Blue 500 fails 3:1.</td></tr>
+        <tr><th scope="row"><code>--arche-border-focus-ring-on-secondary</code></th><td>The yellow band. Near-black.</td></tr>
+        <tr><th scope="row"><code>--arche-focus-ring-width</code></th><td>4px</td></tr>
+        <tr><th scope="row"><code>--arche-focus-ring-offset</code></th><td>2px</td></tr>
       </tbody>
     </table>
   </div>
-<pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--surface-brand-primary-subtle)" tabindex="0"><code>.button:focus-visible {
-  outline: var(--focus-ring-width) solid var(--border-focus-ring);
-  outline-offset: var(--focus-ring-offset);
+<pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>.button:focus-visible {
+  outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring);
+  outline-offset: var(--arche-focus-ring-offset);
 }</code></pre>
   <p>Do not put <code>overflow: hidden</code> on a parent of a focusable element unless it leaves 4px of room around it. The ring will be cut off.</p>
 </section>
