@@ -24,6 +24,7 @@ Added
 - The token generator, `scripts/generate-tokens.mjs`, run with `npm run tokens`.
 - The variable check, `scripts/check-vars.mjs`, run with `npm run check`. It fails if a variable is used but never declared, or if a name does not start with `--arche-`.
 - Runtime hooks: `--arche-site-nav-offset`, `--arche-lb-max` and `--arche-lb-ratio`. A host site sets them with JavaScript. If it does not, the CSS fallbacks apply.
+- A manifest, `arche.manifest.json`, built by `npm run manifest`. It lists the files a site copies from Arche, each with a SHA-256 hash, and the Arche version. `npm run check` fails if it is out of date, and `npm run build` rebuilds it.
 - The Cloudflare Workers config (`wrangler.jsonc` and `.node-version`).
 
 Removed

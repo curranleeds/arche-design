@@ -57,6 +57,10 @@ Dark and light already work with a `data-theme` attribute on the `<html>` tag. A
 
 Version 0.2.0: the foundations (color, type, spacing and grid, motion and focus, accessibility) and seven components (button, link, form field, theme controls, stat strip, quote, list row). Every color, size and contrast ratio on the foundations pages is read from `tokens/figma-tokens.json` when the site builds, so the docs cannot drift from the tokens. The demo numbers and quotes on the component pages are placeholders, not results.
 
+## How a site updates Arche
+
+A site that uses Arche records which Arche version it uses. It copies the files listed in `arche.manifest.json` (the CSS, fonts, icons, `theme.js` and the shared templates), each with a SHA-256 hash (a fingerprint of the file's contents). The site then checks its copies against those hashes, so it knows when a file has changed or drifted. `npm run manifest` rebuilds the manifest here, and `npm run build` does it for you.
+
 ## How it was made
 
 I made the design decisions and set the rules. I used Claude and Claude Code as working tools to build the documentation site and to draft copy, and I review what goes public.
