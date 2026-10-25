@@ -1,8 +1,8 @@
 module.exports = {
   name: "Arche Design System",
   short: "Arche",
-  // Free Cloudflare Pages address. Change when a custom domain is added.
-  url: "https://arche-design.pages.dev",
+  // Free Cloudflare Workers address. Change when a custom domain is added.
+  url: "https://arche-design.curranleeds.workers.dev",
   author: "Curran Leeds",
   portfolio: "https://curranleeds.com",
   version: "0.1.0",
