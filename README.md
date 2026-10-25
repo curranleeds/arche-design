@@ -55,7 +55,7 @@ Dark and light already work with a `data-theme` attribute on the `<html>` tag. A
 
 ## What is in the docs site today
 
-Version 0.1.0: the foundations (color, type, spacing and grid, motion and focus, accessibility) and seven components (button, link, form field, theme controls, stat strip, quote, list row). Every color, size and contrast ratio on the foundations pages is read from `tokens/figma-tokens.json` when the site builds, so the docs cannot drift from the tokens. The demo numbers and quotes on the component pages are placeholders, not results.
+Version 0.2.0: the foundations (color, type, spacing and grid, motion and focus, accessibility) and seven components (button, link, form field, theme controls, stat strip, quote, list row). Every color, size and contrast ratio on the foundations pages is read from `tokens/figma-tokens.json` when the site builds, so the docs cannot drift from the tokens. The demo numbers and quotes on the component pages are placeholders, not results.
 
 ## How it was made
 
