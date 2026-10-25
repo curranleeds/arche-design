@@ -26,7 +26,7 @@ const copies = [
 // gated case study, so remove those pointers on the way in. Code is never changed, only comments.
 function scrub(text) {
   return text
-    .replace(/\s*\([^()]*\bD-\d+[^()]*\)/g, "")              // "(D-031; ...)" decision-log pointers
+    .replace(/\s*\([^()]*\bD-\d+[^()]*\)/g, "")              // "(D-000; ...)" decision-log pointers
     .replace(/ \([A-Z]+-\d+\)/g, "")                          // "(ABC-12)" image ids, e.g. capitals, dash, number
     .replace(/\b[A-Z]{2,}-\d+\b/g, "A tall image")              // the same id written without parentheses
     .replace(/case study\/[\w-]+ \(\d+:\d+\) and its/g, "the desktop case-study layout and its") // layout path plus Figma node id
