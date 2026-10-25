@@ -6,6 +6,7 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
+    "tokens": "node scripts/generate-tokens.mjs",
     "sync": "node scripts/sync-from-portfolio.mjs"
   },
   "devDependencies": {

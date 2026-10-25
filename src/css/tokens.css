@@ -1,9 +1,9 @@
 /* ==========================================================================
-   Curran Leeds — Design Tokens
+   Arche Design System — Design Tokens
    GENERATED FILE. Do not hand-edit.
-   Source:    01-tokens/figma-tokens.json
+   Source:    tokens/figma-tokens.json
               (Figma file (2026 Personal Branding), read 2026-10-19)
-   Generator: 05-build/generate-tokens.mjs
+   Generator: scripts/generate-tokens.mjs
    To change a value, change it in Figma, update the JSON, and run the generator.
    ========================================================================== */
 
@@ -256,11 +256,11 @@
   --surface-overlay-scrim-strong: var(--black-alpha-90);
   --surface-overlay-bar: var(--neutral-800);
 
-  /* ---------- Focus ring (01-tokens/motion.md) ---------- */
+  /* ---------- Focus ring ---------- */
   --focus-ring-width: var(--stroke-4);
   --focus-ring-offset: 2px;
 
-  /* ---------- Motion (01-tokens/motion.md): Quad ease-in-out ---------- */
+  /* ---------- Motion: Quad ease-in-out ---------- */
   --motion-ease: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --motion-fast: 150ms;   /* hovers */
   --motion-medium: 250ms; /* accordion, nav */
@@ -435,7 +435,7 @@
   }
 }
 
-/* ---------- Dark mode, set in two places (01-tokens/README.md) ----------
+/* ---------- Dark mode, set in two places ----------
    Only tokens whose Dark value differs from Light are listed.
    1. Manual choice: <html data-theme="dark">
    2. Browser is set to dark and no manual "light" choice was made. */
