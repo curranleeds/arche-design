@@ -11,12 +11,9 @@ const root = join(here, "..");
 const brand = join(root, "..");               // personal-brand/
 const site = join(brand, "my-portfolio", "src");
 
+// Arche now owns its CSS and the token file. The portfolio's copies use unprefixed variable
+// names, so syncing them would undo the --arche- prefix. Only the files below still come from the portfolio.
 const copies = [
-  [join(brand, "01-tokens", "figma-tokens.json"), join(root, "tokens", "figma-tokens.json")],
-  // tokens.css is not copied: scripts/generate-tokens.mjs generates it here.
-  [join(site, "css", "fonts.css"), join(root, "src", "css", "fonts.css")],
-  [join(site, "css", "components.css"), join(root, "src", "css", "components.css")],
-  [join(site, "css", "case-study.css"), join(root, "src", "css", "case-study.css")],
   [join(site, "assets", "js", "theme.js"), join(root, "src", "assets", "js", "theme.js")],
   [join(site, "assets", "fonts"), join(root, "src", "assets", "fonts")],
   [join(site, "assets", "icons"), join(root, "src", "assets", "icons")],

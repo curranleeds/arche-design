@@ -7,9 +7,11 @@ const prim = t.collections.Primitives.variables;
 const roles = t.collections.Tokens.variables;
 const spacing = t.collections.Spacing.variables;
 
-// "primary/500" -> "--primary-500"; "system/alert/500" -> "--alert-500"; "neutral/black-alpha-50" -> "--black-alpha-50"
-const primVar = (n) => "--" + n.replace(/^system\//, "").replace(/^neutral\/(black-alpha)/, "$1").replace(/\//g, "-");
-const roleVar = (n) => "--" + n.replace(/\//g, "-");
+// Every custom property starts with --arche-. Keep this in step with `npm run tokens`.
+const P = "--arche-";
+// "primary/500" -> "--arche-primary-500"; "system/alert/500" -> "--arche-alert-500"; "neutral/black-alpha-50" -> "--arche-black-alpha-50"
+const primVar = (n) => P + n.replace(/^system\//, "").replace(/^neutral\/(black-alpha)/, "$1").replace(/\//g, "-");
+const roleVar = (n) => P + n.replace(/\//g, "-");
 
 // ----- Color families -----
 const familyMeta = [
@@ -84,7 +86,7 @@ const pairs = [
 const spacingList = Object.entries(spacing).map(([n, px]) => ({
   name: n,
   px,
-  cssVar: n.startsWith("stroke") ? "--" + n.replace("/", "-") : "--space-" + n.replace("/", "-"),
+  cssVar: n.startsWith("stroke") ? P + n.replace("/", "-") : P + "space-" + n.replace("/", "-"),
   group: n.split("/")[0],
 }));
 

@@ -32,12 +32,14 @@ The mode name "Ethos" was chosen over "Arche" for the Greek mode, because "Ethos
 | Code names | Plain ASCII in code, file names, CSS and token paths. Display names can keep the ø. |
 | Hosting | A free Cloudflare Workers address first, with no custom domain yet |
 | Search engines | The site asks not to be indexed (`noindex`) until it is ready |
+| Variable prefix | Every CSS variable starts with `--arche-` (for example `--arche-primary-500`). This protects against name collisions when Arche sits next to other stylesheets. `npm run check` enforces it. |
 | Norway Red | Part of the palette, with no job on any page or component yet |
+
+**Runtime hooks.** Arche exposes a few runtime hooks: `--arche-site-nav-offset`, `--arche-lb-max` and `--arche-lb-ratio`. A host site sets them with JavaScript. If it does not, the CSS fallbacks apply.
 
 ## Still open
 
 - **Mode colors.** The color primitives so far are Greece Blue `#014488`, Sweden Blue `#004B87`, Norway Blue `#003698`, Sweden Yellow `#FFCD00`, Norway Red `#D21034`, Swiss Red `#FF0000` (also the Alert/Error color), black and white. What color does in each mode is not yet defined, and no mode values have been written.
-- **Variable prefix.** Token names are unprefixed today (`--primary-500`). A prefix such as `--arche-` protects against clashes when others install the system. The plan is to decide before the first npm publish, or when modes land.
 - **License.** Not chosen yet. Until one is added, the code is visible but not licensed for reuse. The fonts keep their own license (SIL Open Font License).
 - **Domain.** Not bought yet.
 

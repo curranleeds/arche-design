@@ -65,7 +65,7 @@ permalink: /foundations/color/
     <div class="rule"><h3 class="type-h3">Don't</h3><ul>
       <li>Use Norway Red anywhere on a page. It has no job yet.</li>
       <li>Use alert, success or warning colors decoratively. They mean status only.</li>
-      <li>Reach for a primitive such as <code>--primary-500</code> inside a component.</li>
+      <li>Reach for a primitive such as <code>--arche-primary-500</code> inside a component.</li>
       <li>Use yellow text on white. It fails contrast.</li>
     </ul></div>
   </div>
@@ -89,18 +89,18 @@ permalink: /foundations/color/
       </tbody>
     </table>
   </div>
-  <p>One known limit: a black focus ring on the Blue 500 band is only 2.18:1, which fails. That is why on-blue surfaces use a separate white ring token, <code>--border-focus-ring-on-brand</code>.</p>
+  <p>One known limit: a black focus ring on the Blue 500 band is only 2.18:1, which fails. That is why on-blue surfaces use a separate white ring token, <code>--arche-border-focus-ring-on-brand</code>.</p>
 </section>
 
 <section aria-labelledby="dark-h">
   <h2 id="dark-h" class="type-h2">Dark mode</h2>
   <p>Role tokens have two values, Light and Dark. Light sits on <code>:root</code>. Dark is written in two places: once for visitors who chose it with the theme toggle, and once for visitors whose browser is set to dark and who have not chosen.</p>
-<pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--surface-brand-primary-subtle)" tabindex="0"><code>:root[data-theme="dark"] {
-  --surface-neutral-base: var(--neutral-900);
+<pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>:root[data-theme="dark"] {
+  --arche-surface-neutral-base: var(--arche-neutral-900);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --surface-neutral-base: var(--neutral-900);
+    --arche-surface-neutral-base: var(--arche-neutral-900);
   }
 }</code></pre>
   <p>Use the Dark button in the header to try it on this page.</p>
