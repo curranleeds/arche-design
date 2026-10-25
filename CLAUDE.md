@@ -1,6 +1,6 @@
 # arche-design
 
-Public documentation site for the Arche Design System (pronounced AR-kee, from the Greek for "first principle"), the design system behind Curran Leeds' personal brand. 11ty (Eleventy) builds it; Cloudflare Pages serves it.
+Public documentation site for the Arche Design System (pronounced AR-kee, from the Greek for "first principle"), the design system behind Curran Leeds' personal brand. 11ty (Eleventy) builds it; Cloudflare (Workers static assets) serves it.
 
 - Curran is a beginner with code. Explain in small steps and define terms the first time they come up.
 - This repo is PUBLIC. Never add client names, NDA details, job-search material, private decision IDs, or anything from the gated case studies, in code, comments, copy or commit messages.

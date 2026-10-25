@@ -30,7 +30,7 @@ The mode name "Ethos" was chosen over "Arche" for the Greek mode, because "Ethos
 | What a mode never changes | Status colors: Alert/Error, Success and Warning |
 | How components read color | From semantic roles, never from color primitives |
 | Code names | Plain ASCII in code, file names, CSS and token paths. Display names can keep the ø. |
-| Hosting | A free Cloudflare Pages address first, with no custom domain yet |
+| Hosting | A free Cloudflare Workers address first, with no custom domain yet |
 | Search engines | The site asks not to be indexed (`noindex`) until it is ready |
 | Norway Red | Part of the palette, with no job on any page or component yet |
 
@@ -90,13 +90,12 @@ npm start
 3. Put the live example between `{% demo "Caption" %}` and `{% enddemo %}`. The site shows it and prints its HTML underneath.
 4. Add the page to `src/_data/nav.js`.
 
-## Publish with Cloudflare Pages
+## Publish with Cloudflare
 
-Cloudflare Pages builds the site from this repo each time you push to `main`.
+The site is served by Cloudflare as a Workers project with static assets. It builds from this repo each time you push to `main`. The live address is https://arche-design.curranleeds.workers.dev.
 
-- Framework preset: Eleventy (or None)
 - Build command: `npm run build`
-- Build output directory: `_site`
-- Environment variable: `NODE_VERSION` = `20`
+- Output folder: `_site`, set in `wrangler.jsonc` (`assets.directory`)
+- Node version: 20, set in `.node-version`, so no `NODE_VERSION` variable is needed in the dashboard
 
-After the first deploy, set `url` in `src/_data/site.js` to the real address so canonical links are right. When the site is ready to be found, remove the `noindex` line in `src/_includes/base.njk`.
+`url` in `src/_data/site.js` holds the live address so canonical links are right. Change it if the address changes (for example, with a custom domain). When the site is ready to be found, remove the `noindex` line in `src/_includes/base.njk`.
