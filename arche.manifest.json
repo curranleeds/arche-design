@@ -1,0 +1,31 @@
+{
+  "arche": "0.2.0",
+  "algorithm": "sha256",
+  "files": {
+    "src/_includes/components.njk": "47edb9922a937fc0d6393782501af710e3101df0b63b44ba0fa6bf823db6e25f",
+    "src/_includes/theme-switch.njk": "b1bdc3bed289bae23e32d67ae28287fd3f9203f464b41883a718c592f2ffc113",
+    "src/_includes/theme-toggle.njk": "d929edaf96d7ed57f6640b193702e2cbc225b350d8964f62e2e8bd2809a745d0",
+    "src/assets/fonts/Archivo-OFL.txt": "27b11a18e1bc5aa877d97a61bade828aa92e7fa11ac3e3077e7c7b90b915d0d4",
+    "src/assets/fonts/WorkSans-OFL.txt": "4f8cbaf2a5494148a8064db9b5eb7c23a0f9098683244803b11c0eec857b81a9",
+    "src/assets/fonts/archivo-variable.woff2": "980c39780e3cfa2a609610e851c6d5aacc040631b836a258df5058ce6d71d33b",
+    "src/assets/fonts/work-sans-variable.woff2": "d62eec078dfa9b9918840fdf46bac7873ba77ce428b8fc1cc07deead9b258807",
+    "src/assets/icons/LICENSE.txt": "7d8b6c600e1858585b1eee39c09abd783047b2e3faac7147d5d555e43df623b1",
+    "src/assets/icons/arrow_back.svg": "2224b67c9a1d4c177151ee2a61a37f55b0efb59e9279283e844dc4d19920f977",
+    "src/assets/icons/arrow_forward.svg": "deb50b04ffb8038d626c09cba7fe281405e647742a22219e81478a5026dc020e",
+    "src/assets/icons/close.svg": "8fcc29f1f53338517628459a3eceda9ef3a5299952f2039cadf0e69a2ca81838",
+    "src/assets/icons/dark_mode.svg": "e204e30a52f096e3ebdf010d67348166ec6087b5d135dd1b6c15ee37621dc1ec",
+    "src/assets/icons/expand_more.svg": "c2c453194021b27082311655fd560266043b466c8491af503b4d4cf734abae51",
+    "src/assets/icons/light_mode.svg": "d1a36c7f0dce91af3df693121f589d07d21247a4499b67dc08eeefca0c0f0bbc",
+    "src/assets/icons/lock.svg": "2dbf1c52712c01e11e54379adcb90a23a021498ac5995e0d4b95a0d614df9b7b",
+    "src/assets/icons/open_in_full.svg": "3e401b939c0292c5ba32073d99d6ddcbbffe7509987d1c8985b5573c2f9ce348",
+    "src/assets/icons/open_in_new.svg": "53de0cb47272f242257eafb60301a830b9595fd479c7aff99981c3435712ffd8",
+    "src/assets/icons/pause.svg": "dee20f96fe00fa03d0d0590daaefc00baa3f1431078829525d872f5a5932eead",
+    "src/assets/icons/play_arrow.svg": "6acb7ed5743a2588699146c0949c2e91e0003bf43dd991b528c369508e3a1cda",
+    "src/assets/icons/priority_high.svg": "9a0b7ef6d635c310258ee757d60c8c8e386d1d5519b59a9e97b787125609dbd8",
+    "src/assets/js/theme.js": "a15c9f300621c2e0873edf13040b2637e9702a3a6467acb3ab05ba8e9f789e88",
+    "src/css/case-study.css": "8c07a4cbf78f4e7682c70666e2d889515bf7d9e3b9a6a305d4a06d689f69957a",
+    "src/css/components.css": "eeb05386b17df85a388092b0f8808c9386f74982a6bdb0f5813af93447d580f6",
+    "src/css/fonts.css": "a2ecf9c8acd209a0ef1ee59de9b6f6102b427f4855c25464910e75f28916f724",
+    "src/css/tokens.css": "a5146ddd0903e8c7a9372ddca863f299e2cc439edf757a2f41c752a19ea0c4fb"
+  }
+}

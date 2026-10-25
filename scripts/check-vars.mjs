@@ -1,12 +1,14 @@
-// Checks the CSS custom properties ("CSS variables") in src/.
+// Checks the CSS custom properties ("CSS variables") in src/, and that arche.manifest.json is up to date.
 // Run it with:  npm run check   (npm run build runs it first)
 //
 // It fails if:
 //   a) var(--x) refers to a name that is declared nowhere, or
-//   b) any declared or used custom property does not start with --arche-.
+//   b) any declared or used custom property does not start with --arche-, or
+//   c) arche.manifest.json is missing or its hashes do not match the files.
 
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
+import { manifestPath, manifestText } from "./build-manifest.mjs";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -57,6 +59,10 @@ for (const [name, where] of usedAt) {
   undeclared.add(name + where);
   problems.push(`${where}: var(${name}) is used but never declared`);
 }
+
+const manifestHint = "arche.manifest.json is out of date: run npm run manifest";
+if (!existsSync(manifestPath)) problems.push("arche.manifest.json is missing: run npm run manifest");
+else if (readFileSync(manifestPath, "utf8") !== manifestText()) problems.push(manifestHint);
 
 if (problems.length) {
   console.error(`check-vars: ${problems.length} problem(s)\n`);
