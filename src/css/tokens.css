@@ -2,7 +2,7 @@
    Arche Design System — Design Tokens
    GENERATED FILE. Do not hand-edit.
    Source:    tokens/figma-tokens.json
-              (Figma file (Arche Design System), read 2026-10-26 (re-read after the accent and selection changes))
+              (Figma file (Arche Design System), read 2026-10-26 (after the on-brand button corrections))
    Generator: scripts/generate-tokens.mjs
    To change a value, change it in Figma, update the JSON, and run the generator.
    ========================================================================== */
@@ -245,7 +245,7 @@
   --arche-interactive-button-tertiary-indicator: var(--arche-primary-500);
   --arche-interactive-button-secondary-on-brand-border: var(--arche-neutral-white);
   --arche-interactive-button-secondary-on-brand-label: var(--arche-neutral-white);
-  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-primary-600);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-primary-700);
 
   /* text */
   --arche-text-on-brand-switch-selected: var(--arche-primary-500);
@@ -300,9 +300,9 @@
   --arche-accent-numeral: var(--arche-primary-500);
 
   /* interactive */
-  --arche-interactive-button-primary-on-brand-fill: var(--arche-neutral-900);
-  --arche-interactive-button-primary-on-brand-label: var(--arche-neutral-white);
-  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-neutral-900);
+  --arche-interactive-button-primary-on-brand-fill: var(--arche-neutral-white);
+  --arche-interactive-button-primary-on-brand-label: var(--arche-primary-500);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-primary-600);
 
   /* ---------- Focus ring ---------- */
   --arche-focus-ring-width: var(--arche-stroke-4);
@@ -680,6 +680,8 @@
   --arche-interactive-link-default: var(--arche-neutral-900);
   --arche-accent-rule: var(--arche-swiss-red-web);
   --arche-accent-numeral: var(--arche-swiss-red-web);
+  --arche-interactive-button-primary-on-brand-label: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-neutral-800);
 }
 
 :root[data-mode="ethos"] {
@@ -716,17 +718,19 @@
   --arche-interactive-button-tertiary-label-pressed: var(--arche-norway-700);
   --arche-interactive-button-tertiary-label-active: var(--arche-norway-500);
   --arche-interactive-button-tertiary-indicator: var(--arche-norway-500);
-  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-norway-600);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-norway-700);
   --arche-text-on-brand-switch-selected: var(--arche-norway-500);
   --arche-selection-background: var(--arche-norway-200);
   --arche-interactive-link-default: var(--arche-norway-500);
   --arche-accent-rule: var(--arche-norway-500);
   --arche-accent-numeral: var(--arche-norway-500);
+  --arche-interactive-button-primary-on-brand-label: var(--arche-norway-500);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-norway-600);
 }
 
 :root[data-mode="omtanke"] {
-  --arche-surface-brand-primary: var(--arche-secondary-500);
-  --arche-surface-brand-primary-subtle: var(--arche-secondary-50);
+  --arche-surface-brand-primary: var(--arche-sweden-500);
+  --arche-surface-brand-primary-subtle: var(--arche-sweden-50);
   --arche-border-brand-default: var(--arche-sweden-500);
   --arche-text-brand-primary: var(--arche-sweden-500);
   --arche-icon-brand-default: var(--arche-sweden-500);
@@ -736,10 +740,10 @@
   --arche-interactive-button-secondary-fill-pressed: var(--arche-sweden-50);
   --arche-interactive-button-secondary-border-default: var(--arche-sweden-500);
   --arche-interactive-button-primary-fill-active: var(--arche-sweden-800);
-  --arche-text-on-brand-primary: var(--arche-sweden-800);
-  --arche-text-on-brand-body: var(--arche-sweden-800);
-  --arche-text-on-brand-secondary: var(--arche-sweden-800);
-  --arche-border-focus-ring-on-brand: var(--arche-neutral-black);
+  --arche-text-on-brand-primary: var(--arche-secondary-50);
+  --arche-text-on-brand-body: var(--arche-secondary-50);
+  --arche-text-on-brand-secondary: var(--arche-secondary-50);
+  --arche-text-on-brand-name: var(--arche-secondary-50);
   --arche-border-on-brand-divider: var(--arche-sweden-300);
   --arche-interactive-progress: var(--arche-sweden-500);
   --arche-interactive-link-nav-indicator: var(--arche-sweden-500);
@@ -757,13 +761,15 @@
   --arche-interactive-button-tertiary-indicator: var(--arche-sweden-500);
   --arche-interactive-button-secondary-on-brand-border: var(--arche-secondary-50);
   --arche-interactive-button-secondary-on-brand-label: var(--arche-secondary-50);
-  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-sweden-600);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-sweden-700);
   --arche-text-on-brand-switch-selected: var(--arche-sweden-500);
+  --arche-text-on-brand-title: var(--arche-secondary-50);
   --arche-interactive-link-default: var(--arche-sweden-500);
   --arche-accent-rule: var(--arche-sweden-500);
   --arche-accent-numeral: var(--arche-sweden-500);
-  --arche-interactive-button-primary-on-brand-fill: var(--arche-sweden-500);
-  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-sweden-700);
+  --arche-interactive-button-primary-on-brand-fill: var(--arche-secondary-500);
+  --arche-interactive-button-primary-on-brand-label: var(--arche-sweden-800);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-sweden-600);
 }
 
 :root[data-mode="klarheit"][data-theme="dark"] {
@@ -794,7 +800,9 @@
   --arche-interactive-button-tertiary-label-pressed: var(--arche-neutral-white);
   --arche-interactive-button-tertiary-label-active: var(--arche-neutral-white);
   --arche-interactive-button-tertiary-indicator: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-neutral-600);
   --arche-interactive-link-default: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-neutral-700);
 }
 
 :root[data-mode="ethos"][data-theme="dark"] {
@@ -839,7 +847,7 @@
 :root[data-mode="omtanke"][data-theme="dark"] {
   --arche-surface-neutral-base: var(--arche-sweden-900);
   --arche-surface-neutral-raised: var(--arche-sweden-800);
-  --arche-surface-brand-primary-subtle: var(--arche-secondary-900);
+  --arche-surface-brand-primary-subtle: var(--arche-sweden-700);
   --arche-border-neutral-default: var(--arche-sweden-700);
   --arche-border-brand-default: var(--arche-sweden-400);
   --arche-text-brand-primary: var(--arche-sweden-200);
@@ -900,7 +908,9 @@
     --arche-interactive-button-tertiary-label-pressed: var(--arche-neutral-white);
     --arche-interactive-button-tertiary-label-active: var(--arche-neutral-white);
     --arche-interactive-button-tertiary-indicator: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-neutral-600);
     --arche-interactive-link-default: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-neutral-700);
   }
 
   :root[data-mode="ethos"]:not([data-theme="light"]) {
@@ -945,7 +955,7 @@
   :root[data-mode="omtanke"]:not([data-theme="light"]) {
     --arche-surface-neutral-base: var(--arche-sweden-900);
     --arche-surface-neutral-raised: var(--arche-sweden-800);
-    --arche-surface-brand-primary-subtle: var(--arche-secondary-900);
+    --arche-surface-brand-primary-subtle: var(--arche-sweden-700);
     --arche-border-neutral-default: var(--arche-sweden-700);
     --arche-border-brand-default: var(--arche-sweden-400);
     --arche-text-brand-primary: var(--arche-sweden-200);

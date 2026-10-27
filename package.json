@@ -6,8 +6,9 @@
   "scripts": {
     "start": "eleventy --serve",
     "check": "node scripts/check-vars.mjs",
+    "check:contrast": "node scripts/check-contrast.mjs",
     "manifest": "node scripts/build-manifest.mjs",
-    "build": "npm run tokens && npm run manifest && npm run check && eleventy",
+    "build": "npm run tokens && npm run manifest && npm run check && npm run check:contrast && eleventy",
     "tokens": "node scripts/generate-tokens.mjs --prefix arche",
     "sync": "node scripts/sync-from-portfolio.mjs"
   },
