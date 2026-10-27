@@ -32,7 +32,7 @@ The mode name "Ethos" was chosen over "Arche" for the Greek mode, because "Ethos
 | Code names | Plain ASCII in code, file names, CSS and token paths. Display names can keep the ø. |
 | Hosting | A free Cloudflare Workers address first, with no custom domain yet |
 | Search engines | The site asks not to be indexed (`noindex`) until it is ready |
-| Variable prefix | Every CSS variable starts with `--arche-` (for example `--arche-primary-500`). This protects against name collisions when Arche sits next to other stylesheets. `npm run check` enforces it. |
+| Variable prefix | Every CSS variable starts with `--arche-` (for example `--arche-greece-blue-500`). This protects against name collisions when Arche sits next to other stylesheets. `npm run check` enforces it. |
 | Norway Red | The logo, plus one device per mode that uses it: Canon's end mark and Nøktern's Cross. Never on text, controls, validation or cards. |
 
 **Runtime hooks.** Arche exposes a few runtime hooks: `--arche-site-nav-offset`, `--arche-lb-max` and `--arche-lb-ratio`. A host site sets them with JavaScript. If it does not, the CSS fallbacks apply.
@@ -47,7 +47,7 @@ The mode name "Ethos" was chosen over "Arche" for the Greek mode, because "Ethos
 
 The system has three layers. Modes go in the middle one.
 
-1. **Primitives:** raw colors such as `--arche-primary-500`. The same in every mode.
+1. **Primitives:** raw colors such as `--arche-greece-blue-500`. The same in every mode.
 2. **Semantic roles:** names by job, such as `--arche-text-brand-primary` or `--arche-surface-neutral-base`. This is where a mode changes values. Canon is the default set.
 3. **Components:** read only roles, so they never change between modes.
 

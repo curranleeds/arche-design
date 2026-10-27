@@ -1,7 +1,7 @@
 /* ==========================================================================
    Case-study page: hero, stat strip, jump nav, section split, image tiles,
    strip, lightbox, outcome, credits, disclaimer, next case study, more case studies.
-   HAND-WRITTEN. Role tokens only (never primitives like --arche-primary-500), so Light
+   HAND-WRITTEN. Role tokens only (never primitives like --arche-greece-blue-500), so Light
    and Dark come from tokens.css. Loaded only by case-study pages (base.njk `styles`).
    Specs: Figma file "2026 Personal Branding", page "Design layouts", frame
    the desktop case-study layout and its tablet and mobile frames.

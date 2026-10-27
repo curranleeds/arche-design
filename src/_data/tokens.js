@@ -9,17 +9,17 @@ const spacing = t.collections.Spacing.variables;
 
 // Every custom property starts with --arche-. Keep this in step with `npm run tokens`.
 const P = "--arche-";
-// "primary/500" -> "--arche-primary-500"; "system/alert/500" -> "--arche-alert-500"; "neutral/black-alpha-50" -> "--arche-black-alpha-50"
+// "greece/blue/500" -> "--arche-greece-blue-500"; "system/alert/500" -> "--arche-alert-500"; "neutral/black-alpha-50" -> "--arche-black-alpha-50"
 const primVar = (n) => P + n.replace(/^system\//, "").replace(/^neutral\/(black-alpha)/, "$1").replace(/\//g, "-");
 const roleVar = (n) => P + n.replace(/\//g, "-");
 
 // ----- Color families -----
 const familyMeta = [
-  { key: "primary", name: "Greece Blue", job: "Structure and meaning: bands, links, buttons, stat numbers. Ethos uses it as its only color." },
-  { key: "secondary", name: "Sweden Yellow", job: "Identity: the name on the home page, the Credits band, the selection highlight and, in Omtanke, the yellow band and the primary button on blue." },
-  { key: "tertiary", name: "Norway Red", job: "The logo and, in Canon, the end mark. Nøktern uses it in the Cross. It is never on text, controls, validation or cards." },
-  { key: "norway", name: "Norway Blue", job: "Nøktern's main color. No other mode uses it." },
-  { key: "sweden", name: "Sweden Blue", job: "Omtanke's main color. No other mode uses it." },
+  { key: "greece/blue", name: "Greece Blue", job: "Structure and meaning: bands, links, buttons, stat numbers. Ethos uses it as its only color." },
+  { key: "sweden/yellow", name: "Sweden Yellow", job: "Identity: the name on the home page, the Credits band, the selection highlight and, in Omtanke, the yellow band and the primary button on blue." },
+  { key: "norway/red", name: "Norway Red", job: "The logo and, in Canon, the end mark. Nøktern uses it in the Cross. It is never on text, controls, validation or cards." },
+  { key: "norway/blue", name: "Norway Blue", job: "Nøktern's main color. No other mode uses it." },
+  { key: "sweden/blue", name: "Sweden Blue", job: "Omtanke's main color. No other mode uses it." },
   { key: "neutral", name: "Neutral", job: "Text, surfaces and borders." },
   { key: "system/alert", name: "Alert", job: "Errors and alerts only. The same in every mode." },
   { key: "system/success", name: "Success", job: "Status only. The same in every mode." },

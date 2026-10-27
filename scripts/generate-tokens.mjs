@@ -2,7 +2,7 @@
 //
 // Run it from the project folder:
 //   node scripts/generate-tokens.mjs
-//   node scripts/generate-tokens.mjs --prefix arche      (names become --arche-primary-500)
+//   node scripts/generate-tokens.mjs --prefix arche      (names become --arche-greece-blue-500)
 //   node scripts/generate-tokens.mjs --out some/other.css (write somewhere else, e.g. to compare)
 //
 // Never hand-edit tokens.css. To change a value, change it in Figma, export the
@@ -38,7 +38,7 @@ function exitIfProblems() {
 
 const slug = (text) => text.toLowerCase().replace(/\s+/g, "-");
 
-// Figma "primary/500" -> "--primary-500". "system/alert/500" -> "--alert-500".
+// Figma "greece/blue/500" -> "--greece-blue-500". "system/alert/500" -> "--alert-500".
 // "neutral/black-alpha-50" -> "--black-alpha-50". Everything else: slashes to hyphens.
 function primitiveName(figmaName) {
   const name = figmaName
@@ -423,7 +423,7 @@ h3 { font: inherit; font-family: var(--type-h3-font); font-weight: var(--type-h3
 p { text-wrap: pretty; }
 `;
 
-// Prefix every custom property name in one place. "--primary-500" becomes "--arche-primary-500".
+// Prefix every custom property name in one place. "--greece-blue-500" becomes "--arche-greece-blue-500".
 // Class names (.type-h1) are not variables and are left alone.
 const output = prefix ? css.replace(/--(?=[a-z])/g, `--${prefix}-`) : css;
 

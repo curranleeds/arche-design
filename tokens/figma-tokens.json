@@ -1,5 +1,5 @@
 {
-  "source": "Figma file (Arche Design System), read 2026-10-26 (after the on-brand button corrections)",
+  "source": "Figma file (Arche Design System), read 2026-10-26 (after the button audit and the family rename)",
   "note": "Snapshot. Figma wins if this drifts. Code syntax is not set on any variable. Text styles and grid styles are unchanged from the 2026-10-24 read.",
   "collections": {
     "Primitives": {
@@ -7,36 +7,36 @@
         "Colors"
       ],
       "variables": {
-        "primary/50": "#E6ECF3",
-        "primary/100": "#CCDAE7",
-        "primary/200": "#9EB8D2",
-        "primary/300": "#7196BC",
-        "primary/400": "#396DA2",
-        "primary/500": "#014488",
-        "primary/600": "#013A74",
-        "primary/700": "#012E5C",
-        "primary/800": "#002244",
-        "primary/900": "#001429",
-        "secondary/50": "#FFFAE6",
-        "secondary/100": "#FFF5CC",
-        "secondary/200": "#FFEC9E",
-        "secondary/300": "#FFE370",
-        "secondary/400": "#FFD838",
-        "secondary/500": "#FFCD00",
-        "secondary/600": "#D9AE00",
-        "secondary/700": "#AD8B00",
-        "secondary/800": "#806600",
-        "secondary/900": "#4C3E00",
-        "tertiary/50": "#FAE7EB",
-        "tertiary/100": "#F6CFD6",
-        "tertiary/200": "#EEA4B2",
-        "tertiary/300": "#E6798D",
-        "tertiary/400": "#DC4561",
-        "tertiary/500": "#D21034",
-        "tertiary/600": "#B20E2C",
-        "tertiary/700": "#8F0B23",
-        "tertiary/800": "#69081A",
-        "tertiary/900": "#3F0510",
+        "greece/blue/50": "#E6ECF3",
+        "greece/blue/100": "#CCDAE7",
+        "greece/blue/200": "#9EB8D2",
+        "greece/blue/300": "#7196BC",
+        "greece/blue/400": "#396DA2",
+        "greece/blue/500": "#014488",
+        "greece/blue/600": "#013A74",
+        "greece/blue/700": "#012E5C",
+        "greece/blue/800": "#002244",
+        "greece/blue/900": "#001429",
+        "sweden/yellow/50": "#FFFAE6",
+        "sweden/yellow/100": "#FFF5CC",
+        "sweden/yellow/200": "#FFEC9E",
+        "sweden/yellow/300": "#FFE370",
+        "sweden/yellow/400": "#FFD838",
+        "sweden/yellow/500": "#FFCD00",
+        "sweden/yellow/600": "#D9AE00",
+        "sweden/yellow/700": "#AD8B00",
+        "sweden/yellow/800": "#806600",
+        "sweden/yellow/900": "#4C3E00",
+        "norway/red/50": "#FAE7EB",
+        "norway/red/100": "#F6CFD6",
+        "norway/red/200": "#EEA4B2",
+        "norway/red/300": "#E6798D",
+        "norway/red/400": "#DC4561",
+        "norway/red/500": "#D21034",
+        "norway/red/600": "#B20E2C",
+        "norway/red/700": "#8F0B23",
+        "norway/red/800": "#69081A",
+        "norway/red/900": "#3F0510",
         "neutral/white": "#FFFFFF",
         "neutral/50": "#F5F5F5",
         "neutral/100": "#E5E5E5",
@@ -81,26 +81,26 @@
         "system/warning/900": "#4C2800",
         "neutral/black-alpha-50": "#000000@50%",
         "neutral/black-alpha-90": "#000000@90%",
-        "norway/50": "#E5EBF5",
-        "norway/100": "#CCD7EA",
-        "norway/200": "#9EB3D8",
-        "norway/300": "#708EC5",
-        "norway/400": "#3862AF",
-        "norway/500": "#003698",
-        "norway/600": "#002E82",
-        "norway/700": "#002567",
-        "norway/800": "#001B4C",
-        "norway/900": "#00102D",
-        "sweden/50": "#E5EEF4",
-        "sweden/100": "#CCDCE9",
-        "sweden/200": "#9EBDD6",
-        "sweden/300": "#709EC2",
-        "sweden/400": "#3878AB",
-        "sweden/500": "#005293",
-        "sweden/600": "#00467D",
-        "sweden/700": "#003763",
-        "sweden/800": "#00294A",
-        "sweden/900": "#00182C",
+        "norway/blue/50": "#E5EBF5",
+        "norway/blue/100": "#CCD7EA",
+        "norway/blue/200": "#9EB3D8",
+        "norway/blue/300": "#708EC5",
+        "norway/blue/400": "#3862AF",
+        "norway/blue/500": "#003698",
+        "norway/blue/600": "#002E82",
+        "norway/blue/700": "#002567",
+        "norway/blue/800": "#001B4C",
+        "norway/blue/900": "#00102D",
+        "sweden/blue/50": "#E5EEF4",
+        "sweden/blue/100": "#CCDCE9",
+        "sweden/blue/200": "#9EBDD6",
+        "sweden/blue/300": "#709EC2",
+        "sweden/blue/400": "#3878AB",
+        "sweden/blue/500": "#005293",
+        "sweden/blue/600": "#00467D",
+        "sweden/blue/700": "#003763",
+        "sweden/blue/800": "#00294A",
+        "sweden/blue/900": "#00182C",
         "swiss/red/web": "#FF0000",
         "swiss/red/print": "#DA291C"
       }
@@ -173,7 +173,7 @@
             "hex": "#FFFFFF"
           },
           "Noktern Dark": {
-            "primitive": "norway/900",
+            "primitive": "norway/blue/900",
             "hex": "#00102D"
           },
           "Omtanke Light": {
@@ -181,7 +181,7 @@
             "hex": "#FFFFFF"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/900",
+            "primitive": "sweden/blue/900",
             "hex": "#00182C"
           }
         },
@@ -215,7 +215,7 @@
             "hex": "#FFFFFF"
           },
           "Noktern Dark": {
-            "primitive": "norway/800",
+            "primitive": "norway/blue/800",
             "hex": "#001B4C"
           },
           "Omtanke Light": {
@@ -223,7 +223,7 @@
             "hex": "#FFFFFF"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/800",
+            "primitive": "sweden/blue/800",
             "hex": "#00294A"
           }
         },
@@ -271,11 +271,11 @@
         },
         "surface/brand/primary": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Light": {
@@ -287,37 +287,37 @@
             "hex": "#333333"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           }
         },
         "surface/brand/primary-subtle": {
           "Canon Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Canon Dark": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Klarheit Light": {
@@ -329,111 +329,111 @@
             "hex": "#4D4D4D"
           },
           "Ethos Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Ethos Dark": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Noktern Light": {
-            "primitive": "norway/50",
+            "primitive": "norway/blue/50",
             "hex": "#E5EBF5"
           },
           "Noktern Dark": {
-            "primitive": "norway/700",
+            "primitive": "norway/blue/700",
             "hex": "#002567"
           },
           "Omtanke Light": {
-            "primitive": "sweden/50",
+            "primitive": "sweden/blue/50",
             "hex": "#E5EEF4"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/700",
+            "primitive": "sweden/blue/700",
             "hex": "#003763"
           }
         },
         "surface/brand/secondary": {
           "Canon Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Canon Dark": {
-            "primitive": "secondary/800",
+            "primitive": "sweden/yellow/800",
             "hex": "#806600"
           },
           "Klarheit Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Dark": {
-            "primitive": "secondary/800",
+            "primitive": "sweden/yellow/800",
             "hex": "#806600"
           },
           "Ethos Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Ethos Dark": {
-            "primitive": "secondary/800",
+            "primitive": "sweden/yellow/800",
             "hex": "#806600"
           },
           "Noktern Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Noktern Dark": {
-            "primitive": "secondary/800",
+            "primitive": "sweden/yellow/800",
             "hex": "#806600"
           },
           "Omtanke Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/800",
+            "primitive": "sweden/yellow/800",
             "hex": "#806600"
           }
         },
         "surface/brand/secondary-subtle": {
           "Canon Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Canon Dark": {
-            "primitive": "secondary/900",
+            "primitive": "sweden/yellow/900",
             "hex": "#4C3E00"
           },
           "Klarheit Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Klarheit Dark": {
-            "primitive": "secondary/900",
+            "primitive": "sweden/yellow/900",
             "hex": "#4C3E00"
           },
           "Ethos Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Ethos Dark": {
-            "primitive": "secondary/900",
+            "primitive": "sweden/yellow/900",
             "hex": "#4C3E00"
           },
           "Noktern Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Noktern Dark": {
-            "primitive": "secondary/900",
+            "primitive": "sweden/yellow/900",
             "hex": "#4C3E00"
           },
           "Omtanke Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/900",
+            "primitive": "sweden/yellow/900",
             "hex": "#4C3E00"
           }
         },
@@ -593,7 +593,7 @@
             "hex": "#CCCCCC"
           },
           "Noktern Dark": {
-            "primitive": "norway/700",
+            "primitive": "norway/blue/700",
             "hex": "#002567"
           },
           "Omtanke Light": {
@@ -601,7 +601,7 @@
             "hex": "#CCCCCC"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/700",
+            "primitive": "sweden/blue/700",
             "hex": "#003763"
           }
         },
@@ -691,11 +691,11 @@
         },
         "border/brand/default": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/400",
+            "primitive": "greece/blue/400",
             "hex": "#396DA2"
           },
           "Klarheit Light": {
@@ -707,27 +707,27 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/400",
+            "primitive": "greece/blue/400",
             "hex": "#396DA2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/400",
+            "primitive": "norway/blue/400",
             "hex": "#3862AF"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/400",
+            "primitive": "sweden/blue/400",
             "hex": "#3878AB"
           }
         },
@@ -1027,11 +1027,11 @@
         },
         "text/brand/primary": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -1043,111 +1043,111 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
         "text/brand/secondary": {
           "Canon Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Canon Dark": {
-            "primitive": "secondary/300",
+            "primitive": "sweden/yellow/300",
             "hex": "#FFE370"
           },
           "Klarheit Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Dark": {
-            "primitive": "secondary/300",
+            "primitive": "sweden/yellow/300",
             "hex": "#FFE370"
           },
           "Ethos Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Ethos Dark": {
-            "primitive": "secondary/300",
+            "primitive": "sweden/yellow/300",
             "hex": "#FFE370"
           },
           "Noktern Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Noktern Dark": {
-            "primitive": "secondary/300",
+            "primitive": "sweden/yellow/300",
             "hex": "#FFE370"
           },
           "Omtanke Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/300",
+            "primitive": "sweden/yellow/300",
             "hex": "#FFE370"
           }
         },
         "text/brand/tertiary-accent": {
           "Canon Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Canon Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           },
           "Klarheit Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Klarheit Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           },
           "Ethos Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Ethos Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           },
           "Noktern Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Noktern Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           },
           "Omtanke Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Omtanke Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           }
         },
@@ -1405,11 +1405,11 @@
         },
         "icon/brand/default": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Klarheit Light": {
@@ -1421,27 +1421,27 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/300",
+            "primitive": "norway/blue/300",
             "hex": "#708EC5"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/300",
+            "primitive": "sweden/blue/300",
             "hex": "#709EC2"
           }
         },
@@ -1573,11 +1573,11 @@
         },
         "interactive/button/primary/fill/default": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -1589,37 +1589,37 @@
             "hex": "#E5E5E5"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
         "interactive/button/primary/fill/hover": {
           "Canon Light": {
-            "primitive": "primary/600",
-            "hex": "#013A74"
+            "primitive": "greece/blue/400",
+            "hex": "#396DA2"
           },
           "Canon Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Klarheit Light": {
@@ -1631,69 +1631,69 @@
             "hex": "#F5F5F5"
           },
           "Ethos Light": {
-            "primitive": "primary/600",
-            "hex": "#013A74"
+            "primitive": "greece/blue/400",
+            "hex": "#396DA2"
           },
           "Ethos Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Noktern Light": {
-            "primitive": "norway/600",
-            "hex": "#002E82"
+            "primitive": "norway/blue/400",
+            "hex": "#3862AF"
           },
           "Noktern Dark": {
-            "primitive": "norway/100",
+            "primitive": "norway/blue/100",
             "hex": "#CCD7EA"
           },
           "Omtanke Light": {
-            "primitive": "sweden/600",
-            "hex": "#00467D"
+            "primitive": "sweden/blue/400",
+            "hex": "#3878AB"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/100",
+            "primitive": "sweden/blue/100",
             "hex": "#CCDCE9"
           }
         },
         "interactive/button/primary/fill/pressed": {
           "Canon Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Canon Dark": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Klarheit Light": {
-            "primitive": "neutral/700",
-            "hex": "#4D4D4D"
+            "primitive": "neutral/black",
+            "hex": "#000000"
           },
           "Klarheit Dark": {
             "primitive": "neutral/200",
             "hex": "#CCCCCC"
           },
           "Ethos Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Ethos Dark": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Noktern Light": {
-            "primitive": "norway/700",
+            "primitive": "norway/blue/700",
             "hex": "#002567"
           },
           "Noktern Dark": {
-            "primitive": "norway/300",
+            "primitive": "norway/blue/300",
             "hex": "#708EC5"
           },
           "Omtanke Light": {
-            "primitive": "sweden/700",
+            "primitive": "sweden/blue/700",
             "hex": "#003763"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/300",
+            "primitive": "sweden/blue/300",
             "hex": "#709EC2"
           }
         },
@@ -1769,67 +1769,25 @@
             "hex": "#FFFFFF"
           },
           "Noktern Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "norway/blue/900",
+            "hex": "#00102D"
           },
           "Omtanke Light": {
             "primitive": "neutral/white",
             "hex": "#FFFFFF"
           },
           "Omtanke Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "sweden/blue/900",
+            "hex": "#00182C"
           }
         },
         "interactive/button/secondary/fill/hover": {
           "Canon Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
-          },
-          "Canon Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
-          },
-          "Klarheit Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
-          },
-          "Klarheit Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
-          },
-          "Ethos Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
-          },
-          "Ethos Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
-          },
-          "Noktern Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
-          },
-          "Noktern Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
-          },
-          "Omtanke Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
-          },
-          "Omtanke Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
-          }
-        },
-        "interactive/button/secondary/fill/pressed": {
-          "Canon Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Canon Dark": {
-            "primitive": "primary/800",
+            "primitive": "greece/blue/800",
             "hex": "#002244"
           },
           "Klarheit Light": {
@@ -1841,28 +1799,70 @@
             "hex": "#333333"
           },
           "Ethos Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Ethos Dark": {
-            "primitive": "primary/800",
+            "primitive": "greece/blue/800",
             "hex": "#002244"
           },
           "Noktern Light": {
-            "primitive": "norway/50",
+            "primitive": "norway/blue/50",
             "hex": "#E5EBF5"
           },
           "Noktern Dark": {
-            "primitive": "norway/800",
+            "primitive": "norway/blue/800",
             "hex": "#001B4C"
           },
           "Omtanke Light": {
-            "primitive": "sweden/50",
+            "primitive": "sweden/blue/50",
             "hex": "#E5EEF4"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/800",
+            "primitive": "sweden/blue/800",
             "hex": "#00294A"
+          }
+        },
+        "interactive/button/secondary/fill/pressed": {
+          "Canon Light": {
+            "primitive": "greece/blue/100",
+            "hex": "#CCDAE7"
+          },
+          "Canon Dark": {
+            "primitive": "greece/blue/700",
+            "hex": "#012E5C"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/700",
+            "hex": "#4D4D4D"
+          },
+          "Ethos Light": {
+            "primitive": "greece/blue/100",
+            "hex": "#CCDAE7"
+          },
+          "Ethos Dark": {
+            "primitive": "greece/blue/700",
+            "hex": "#012E5C"
+          },
+          "Noktern Light": {
+            "primitive": "norway/blue/100",
+            "hex": "#CCD7EA"
+          },
+          "Noktern Dark": {
+            "primitive": "norway/blue/700",
+            "hex": "#002567"
+          },
+          "Omtanke Light": {
+            "primitive": "sweden/blue/100",
+            "hex": "#CCDCE9"
+          },
+          "Omtanke Dark": {
+            "primitive": "sweden/blue/700",
+            "hex": "#003763"
           }
         },
         "interactive/button/secondary/fill/disabled": {
@@ -1895,25 +1895,25 @@
             "hex": "#FFFFFF"
           },
           "Noktern Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "norway/blue/900",
+            "hex": "#00102D"
           },
           "Omtanke Light": {
             "primitive": "neutral/white",
             "hex": "#FFFFFF"
           },
           "Omtanke Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "sweden/blue/900",
+            "hex": "#00182C"
           }
         },
         "interactive/button/secondary/border/default": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -1925,27 +1925,27 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
@@ -2021,16 +2021,16 @@
             "hex": "#FFFFFF"
           },
           "Noktern Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "norway/blue/900",
+            "hex": "#00102D"
           },
           "Omtanke Light": {
             "primitive": "neutral/white",
             "hex": "#FFFFFF"
           },
           "Omtanke Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "sweden/blue/900",
+            "hex": "#00182C"
           }
         },
         "interactive/link/text-nav/default": {
@@ -2245,86 +2245,86 @@
         },
         "interactive/button/primary/fill/active": {
           "Canon Light": {
-            "primitive": "primary/800",
-            "hex": "#002244"
+            "primitive": "greece/blue/700",
+            "hex": "#012E5C"
           },
           "Canon Dark": {
-            "primitive": "primary/100",
-            "hex": "#CCDAE7"
+            "primitive": "greece/blue/300",
+            "hex": "#7196BC"
           },
           "Klarheit Light": {
-            "primitive": "neutral/800",
-            "hex": "#333333"
+            "primitive": "neutral/black",
+            "hex": "#000000"
           },
           "Klarheit Dark": {
-            "primitive": "neutral/50",
-            "hex": "#F5F5F5"
+            "primitive": "neutral/200",
+            "hex": "#CCCCCC"
           },
           "Ethos Light": {
-            "primitive": "primary/800",
-            "hex": "#002244"
+            "primitive": "greece/blue/700",
+            "hex": "#012E5C"
           },
           "Ethos Dark": {
-            "primitive": "primary/100",
-            "hex": "#CCDAE7"
+            "primitive": "greece/blue/300",
+            "hex": "#7196BC"
           },
           "Noktern Light": {
-            "primitive": "norway/800",
-            "hex": "#001B4C"
+            "primitive": "norway/blue/700",
+            "hex": "#002567"
           },
           "Noktern Dark": {
-            "primitive": "norway/100",
-            "hex": "#CCD7EA"
+            "primitive": "norway/blue/300",
+            "hex": "#708EC5"
           },
           "Omtanke Light": {
-            "primitive": "sweden/800",
-            "hex": "#00294A"
+            "primitive": "sweden/blue/700",
+            "hex": "#003763"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/100",
-            "hex": "#CCDCE9"
+            "primitive": "sweden/blue/300",
+            "hex": "#709EC2"
           }
         },
         "interactive/button/secondary/fill/active": {
           "Canon Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
+            "primitive": "greece/blue/50",
+            "hex": "#E6ECF3"
           },
           "Canon Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "greece/blue/800",
+            "hex": "#002244"
           },
           "Klarheit Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
+            "primitive": "neutral/50",
+            "hex": "#F5F5F5"
           },
           "Klarheit Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "neutral/800",
+            "hex": "#333333"
           },
           "Ethos Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
+            "primitive": "greece/blue/50",
+            "hex": "#E6ECF3"
           },
           "Ethos Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "greece/blue/800",
+            "hex": "#002244"
           },
           "Noktern Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
+            "primitive": "norway/blue/50",
+            "hex": "#E5EBF5"
           },
           "Noktern Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "norway/blue/800",
+            "hex": "#001B4C"
           },
           "Omtanke Light": {
-            "primitive": "neutral/white",
-            "hex": "#FFFFFF"
+            "primitive": "sweden/blue/50",
+            "hex": "#E5EEF4"
           },
           "Omtanke Dark": {
-            "primitive": "neutral/900",
-            "hex": "#1A1A1A"
+            "primitive": "sweden/blue/800",
+            "hex": "#00294A"
           }
         },
         "surface/overlay/scrim": {
@@ -2445,21 +2445,21 @@
             "hex": "#FFFFFF"
           },
           "Omtanke Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           }
         },
         "text/on-brand/body": {
           "Canon Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Canon Dark": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Klarheit Light": {
@@ -2471,37 +2471,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Ethos Dark": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Noktern Light": {
-            "primitive": "norway/50",
+            "primitive": "norway/blue/50",
             "hex": "#E5EBF5"
           },
           "Noktern Dark": {
-            "primitive": "norway/50",
+            "primitive": "norway/blue/50",
             "hex": "#E5EBF5"
           },
           "Omtanke Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           }
         },
         "text/on-brand/secondary": {
           "Canon Light": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Canon Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Klarheit Light": {
@@ -2513,69 +2513,69 @@
             "hex": "#E5E5E5"
           },
           "Ethos Light": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Ethos Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Noktern Light": {
-            "primitive": "norway/100",
+            "primitive": "norway/blue/100",
             "hex": "#CCD7EA"
           },
           "Noktern Dark": {
-            "primitive": "norway/100",
+            "primitive": "norway/blue/100",
             "hex": "#CCD7EA"
           },
           "Omtanke Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           }
         },
         "text/on-brand/name": {
           "Canon Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Canon Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Ethos Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Ethos Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Noktern Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Noktern Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Omtanke Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           }
         },
@@ -2665,11 +2665,11 @@
         },
         "border/on-brand/divider": {
           "Canon Light": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Canon Dark": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Klarheit Light": {
@@ -2681,37 +2681,37 @@
             "hex": "#666666"
           },
           "Ethos Light": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Ethos Dark": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Noktern Light": {
-            "primitive": "norway/300",
+            "primitive": "norway/blue/300",
             "hex": "#708EC5"
           },
           "Noktern Dark": {
-            "primitive": "norway/300",
+            "primitive": "norway/blue/300",
             "hex": "#708EC5"
           },
           "Omtanke Light": {
-            "primitive": "sweden/300",
+            "primitive": "sweden/blue/300",
             "hex": "#709EC2"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/300",
+            "primitive": "sweden/blue/300",
             "hex": "#709EC2"
           }
         },
         "interactive/progress": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Klarheit Light": {
@@ -2723,37 +2723,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/300",
+            "primitive": "greece/blue/300",
             "hex": "#7196BC"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/300",
+            "primitive": "norway/blue/300",
             "hex": "#708EC5"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/300",
+            "primitive": "sweden/blue/300",
             "hex": "#709EC2"
           }
         },
         "interactive/link/nav/indicator": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -2765,27 +2765,27 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
@@ -2795,7 +2795,7 @@
             "hex": "#FFFFFF"
           },
           "Canon Dark": {
-            "primitive": "primary/900",
+            "primitive": "greece/blue/900",
             "hex": "#001429"
           },
           "Klarheit Light": {
@@ -2811,7 +2811,7 @@
             "hex": "#FFFFFF"
           },
           "Ethos Dark": {
-            "primitive": "primary/900",
+            "primitive": "greece/blue/900",
             "hex": "#001429"
           },
           "Noktern Light": {
@@ -2819,7 +2819,7 @@
             "hex": "#FFFFFF"
           },
           "Noktern Dark": {
-            "primitive": "norway/900",
+            "primitive": "norway/blue/900",
             "hex": "#00102D"
           },
           "Omtanke Light": {
@@ -2827,7 +2827,7 @@
             "hex": "#FFFFFF"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/900",
+            "primitive": "sweden/blue/900",
             "hex": "#00182C"
           }
         },
@@ -2837,7 +2837,7 @@
             "hex": "#FFFFFF"
           },
           "Canon Dark": {
-            "primitive": "primary/900",
+            "primitive": "greece/blue/900",
             "hex": "#001429"
           },
           "Klarheit Light": {
@@ -2853,7 +2853,7 @@
             "hex": "#FFFFFF"
           },
           "Ethos Dark": {
-            "primitive": "primary/900",
+            "primitive": "greece/blue/900",
             "hex": "#001429"
           },
           "Noktern Light": {
@@ -2861,7 +2861,7 @@
             "hex": "#FFFFFF"
           },
           "Noktern Dark": {
-            "primitive": "norway/900",
+            "primitive": "norway/blue/900",
             "hex": "#00102D"
           },
           "Omtanke Light": {
@@ -2869,17 +2869,17 @@
             "hex": "#FFFFFF"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/900",
+            "primitive": "sweden/blue/900",
             "hex": "#00182C"
           }
         },
         "interactive/button/secondary/border/pressed": {
           "Canon Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Canon Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Klarheit Light": {
@@ -2891,37 +2891,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Ethos Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Noktern Light": {
-            "primitive": "norway/700",
+            "primitive": "norway/blue/700",
             "hex": "#002567"
           },
           "Noktern Dark": {
-            "primitive": "norway/100",
+            "primitive": "norway/blue/100",
             "hex": "#CCD7EA"
           },
           "Omtanke Light": {
-            "primitive": "sweden/700",
+            "primitive": "sweden/blue/700",
             "hex": "#003763"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/100",
+            "primitive": "sweden/blue/100",
             "hex": "#CCDCE9"
           }
         },
         "interactive/button/secondary/label/default": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -2933,37 +2933,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
         "interactive/button/secondary/label/pressed": {
           "Canon Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Canon Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Klarheit Light": {
@@ -2975,37 +2975,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Ethos Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Noktern Light": {
-            "primitive": "norway/700",
+            "primitive": "norway/blue/700",
             "hex": "#002567"
           },
           "Noktern Dark": {
-            "primitive": "norway/100",
+            "primitive": "norway/blue/100",
             "hex": "#CCD7EA"
           },
           "Omtanke Light": {
-            "primitive": "sweden/700",
+            "primitive": "sweden/blue/700",
             "hex": "#003763"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/100",
+            "primitive": "sweden/blue/100",
             "hex": "#CCDCE9"
           }
         },
         "interactive/button/secondary/indicator": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -3017,37 +3017,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
         "interactive/button/tertiary/fill/hover": {
           "Canon Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Canon Dark": {
-            "primitive": "primary/800",
+            "primitive": "greece/blue/800",
             "hex": "#002244"
           },
           "Klarheit Light": {
@@ -3059,37 +3059,37 @@
             "hex": "#333333"
           },
           "Ethos Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Ethos Dark": {
-            "primitive": "primary/800",
+            "primitive": "greece/blue/800",
             "hex": "#002244"
           },
           "Noktern Light": {
-            "primitive": "norway/50",
+            "primitive": "norway/blue/50",
             "hex": "#E5EBF5"
           },
           "Noktern Dark": {
-            "primitive": "norway/800",
+            "primitive": "norway/blue/800",
             "hex": "#001B4C"
           },
           "Omtanke Light": {
-            "primitive": "sweden/50",
+            "primitive": "sweden/blue/50",
             "hex": "#E5EEF4"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/800",
+            "primitive": "sweden/blue/800",
             "hex": "#00294A"
           }
         },
         "interactive/button/tertiary/fill/pressed": {
           "Canon Light": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Canon Dark": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Klarheit Light": {
@@ -3101,37 +3101,37 @@
             "hex": "#4D4D4D"
           },
           "Ethos Light": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Ethos Dark": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Noktern Light": {
-            "primitive": "norway/100",
+            "primitive": "norway/blue/100",
             "hex": "#CCD7EA"
           },
           "Noktern Dark": {
-            "primitive": "norway/700",
+            "primitive": "norway/blue/700",
             "hex": "#002567"
           },
           "Omtanke Light": {
-            "primitive": "sweden/100",
+            "primitive": "sweden/blue/100",
             "hex": "#CCDCE9"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/700",
+            "primitive": "sweden/blue/700",
             "hex": "#003763"
           }
         },
         "interactive/button/tertiary/fill/active": {
           "Canon Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Canon Dark": {
-            "primitive": "primary/800",
+            "primitive": "greece/blue/800",
             "hex": "#002244"
           },
           "Klarheit Light": {
@@ -3143,37 +3143,37 @@
             "hex": "#333333"
           },
           "Ethos Light": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Ethos Dark": {
-            "primitive": "primary/800",
+            "primitive": "greece/blue/800",
             "hex": "#002244"
           },
           "Noktern Light": {
-            "primitive": "norway/50",
+            "primitive": "norway/blue/50",
             "hex": "#E5EBF5"
           },
           "Noktern Dark": {
-            "primitive": "norway/800",
+            "primitive": "norway/blue/800",
             "hex": "#001B4C"
           },
           "Omtanke Light": {
-            "primitive": "sweden/50",
+            "primitive": "sweden/blue/50",
             "hex": "#E5EEF4"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/800",
+            "primitive": "sweden/blue/800",
             "hex": "#00294A"
           }
         },
         "interactive/button/tertiary/label/default": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -3185,37 +3185,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
         "interactive/button/tertiary/label/hover": {
           "Canon Light": {
-            "primitive": "primary/600",
+            "primitive": "greece/blue/600",
             "hex": "#013A74"
           },
           "Canon Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Klarheit Light": {
@@ -3227,37 +3227,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/600",
+            "primitive": "greece/blue/600",
             "hex": "#013A74"
           },
           "Ethos Dark": {
-            "primitive": "primary/100",
+            "primitive": "greece/blue/100",
             "hex": "#CCDAE7"
           },
           "Noktern Light": {
-            "primitive": "norway/600",
+            "primitive": "norway/blue/600",
             "hex": "#002E82"
           },
           "Noktern Dark": {
-            "primitive": "norway/100",
+            "primitive": "norway/blue/100",
             "hex": "#CCD7EA"
           },
           "Omtanke Light": {
-            "primitive": "sweden/600",
+            "primitive": "sweden/blue/600",
             "hex": "#00467D"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/100",
+            "primitive": "sweden/blue/100",
             "hex": "#CCDCE9"
           }
         },
         "interactive/button/tertiary/label/pressed": {
           "Canon Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Canon Dark": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Klarheit Light": {
@@ -3269,37 +3269,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Ethos Dark": {
-            "primitive": "primary/50",
+            "primitive": "greece/blue/50",
             "hex": "#E6ECF3"
           },
           "Noktern Light": {
-            "primitive": "norway/700",
+            "primitive": "norway/blue/700",
             "hex": "#002567"
           },
           "Noktern Dark": {
-            "primitive": "norway/50",
+            "primitive": "norway/blue/50",
             "hex": "#E5EBF5"
           },
           "Omtanke Light": {
-            "primitive": "sweden/700",
+            "primitive": "sweden/blue/700",
             "hex": "#003763"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/50",
+            "primitive": "sweden/blue/50",
             "hex": "#E5EEF4"
           }
         },
         "interactive/button/tertiary/label/active": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -3311,37 +3311,37 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
         "interactive/button/tertiary/indicator": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -3353,27 +3353,27 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
@@ -3411,11 +3411,11 @@
             "hex": "#FFFFFF"
           },
           "Omtanke Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           }
         },
@@ -3453,63 +3453,63 @@
             "hex": "#FFFFFF"
           },
           "Omtanke Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           }
         },
         "interactive/button/secondary/on-brand/fill/pressed": {
           "Canon Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Canon Dark": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Klarheit Light": {
-            "primitive": "neutral/700",
-            "hex": "#4D4D4D"
+            "primitive": "neutral/black",
+            "hex": "#000000"
           },
           "Klarheit Dark": {
-            "primitive": "neutral/600",
-            "hex": "#666666"
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
           },
           "Ethos Light": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Ethos Dark": {
-            "primitive": "primary/700",
+            "primitive": "greece/blue/700",
             "hex": "#012E5C"
           },
           "Noktern Light": {
-            "primitive": "norway/700",
+            "primitive": "norway/blue/700",
             "hex": "#002567"
           },
           "Noktern Dark": {
-            "primitive": "norway/700",
+            "primitive": "norway/blue/700",
             "hex": "#002567"
           },
           "Omtanke Light": {
-            "primitive": "sweden/700",
+            "primitive": "sweden/blue/700",
             "hex": "#003763"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/700",
+            "primitive": "sweden/blue/700",
             "hex": "#003763"
           }
         },
         "text/on-brand/switch-selected": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Light": {
@@ -3521,27 +3521,27 @@
             "hex": "#1A1A1A"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           }
         },
@@ -3589,85 +3589,85 @@
         },
         "text/on-brand/title": {
           "Canon Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Canon Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Ethos Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Ethos Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Noktern Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Noktern Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Omtanke Light": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/50",
+            "primitive": "sweden/yellow/50",
             "hex": "#FFFAE6"
           }
         },
         "surface/brand/secondary-band": {
           "Canon Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Canon Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Ethos Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Ethos Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Noktern Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Noktern Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Omtanke Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           }
         },
@@ -3799,43 +3799,43 @@
         },
         "logo/on-page/primary-box": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Omtanke Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Omtanke Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           }
         },
@@ -3883,43 +3883,43 @@
         },
         "logo/on-page/secondary-line": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Omtanke Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Omtanke Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           }
         },
@@ -3967,43 +3967,43 @@
         },
         "logo/on-brand/primary-letters": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Omtanke Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Omtanke Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           }
         },
@@ -4051,43 +4051,43 @@
         },
         "logo/on-secondary/primary-box": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Omtanke Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Omtanke Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           }
         },
@@ -4135,43 +4135,43 @@
         },
         "logo/on-secondary/secondary-line": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Omtanke Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Omtanke Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           }
         },
@@ -4303,85 +4303,85 @@
         },
         "surface/brand/accent": {
           "Canon Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Canon Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           },
           "Klarheit Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Klarheit Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           },
           "Ethos Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Ethos Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           },
           "Noktern Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Noktern Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           },
           "Omtanke Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Omtanke Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           }
         },
         "selection/background": {
           "Canon Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Canon Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Klarheit Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Ethos Light": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           }
         },
@@ -4429,11 +4429,11 @@
         },
         "interactive/link/default": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -4445,27 +4445,27 @@
             "hex": "#FFFFFF"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
@@ -4513,11 +4513,11 @@
         },
         "accent/rule": {
           "Canon Light": {
-            "primitive": "tertiary/500",
+            "primitive": "norway/red/500",
             "hex": "#D21034"
           },
           "Canon Dark": {
-            "primitive": "tertiary/400",
+            "primitive": "norway/red/400",
             "hex": "#DC4561"
           },
           "Klarheit Light": {
@@ -4529,37 +4529,37 @@
             "hex": "#FF0000"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
         "accent/numeral": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Klarheit Light": {
@@ -4571,27 +4571,27 @@
             "hex": "#FF0000"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/200",
+            "primitive": "greece/blue/200",
             "hex": "#9EB8D2"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/200",
+            "primitive": "norway/blue/200",
             "hex": "#9EB3D8"
           },
           "Omtanke Light": {
-            "primitive": "sweden/500",
+            "primitive": "sweden/blue/500",
             "hex": "#005293"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/200",
+            "primitive": "sweden/blue/200",
             "hex": "#9EBDD6"
           }
         },
@@ -4629,21 +4629,21 @@
             "hex": "#FFFFFF"
           },
           "Omtanke Light": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           },
           "Omtanke Dark": {
-            "primitive": "secondary/500",
+            "primitive": "sweden/yellow/500",
             "hex": "#FFCD00"
           }
         },
         "interactive/button/primary/on-brand/label": {
           "Canon Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Canon Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Klarheit Light": {
@@ -4655,38 +4655,38 @@
             "hex": "#1A1A1A"
           },
           "Ethos Light": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Ethos Dark": {
-            "primitive": "primary/500",
+            "primitive": "greece/blue/500",
             "hex": "#014488"
           },
           "Noktern Light": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Noktern Dark": {
-            "primitive": "norway/500",
+            "primitive": "norway/blue/500",
             "hex": "#003698"
           },
           "Omtanke Light": {
-            "primitive": "sweden/800",
+            "primitive": "sweden/blue/800",
             "hex": "#00294A"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/800",
+            "primitive": "sweden/blue/800",
             "hex": "#00294A"
           }
         },
         "interactive/button/secondary/on-brand/fill/hover": {
           "Canon Light": {
-            "primitive": "primary/600",
-            "hex": "#013A74"
+            "primitive": "greece/blue/400",
+            "hex": "#396DA2"
           },
           "Canon Dark": {
-            "primitive": "primary/600",
-            "hex": "#013A74"
+            "primitive": "greece/blue/400",
+            "hex": "#396DA2"
           },
           "Klarheit Light": {
             "primitive": "neutral/800",
@@ -4697,28 +4697,112 @@
             "hex": "#4D4D4D"
           },
           "Ethos Light": {
-            "primitive": "primary/600",
-            "hex": "#013A74"
+            "primitive": "greece/blue/400",
+            "hex": "#396DA2"
           },
           "Ethos Dark": {
-            "primitive": "primary/600",
-            "hex": "#013A74"
+            "primitive": "greece/blue/400",
+            "hex": "#396DA2"
           },
           "Noktern Light": {
-            "primitive": "norway/600",
-            "hex": "#002E82"
+            "primitive": "norway/blue/400",
+            "hex": "#3862AF"
           },
           "Noktern Dark": {
-            "primitive": "norway/600",
-            "hex": "#002E82"
+            "primitive": "norway/blue/400",
+            "hex": "#3862AF"
           },
           "Omtanke Light": {
-            "primitive": "sweden/600",
-            "hex": "#00467D"
+            "primitive": "sweden/blue/400",
+            "hex": "#3878AB"
           },
           "Omtanke Dark": {
-            "primitive": "sweden/600",
-            "hex": "#00467D"
+            "primitive": "sweden/blue/400",
+            "hex": "#3878AB"
+          }
+        },
+        "interactive/button/primary/on-brand/fill/hover": {
+          "Canon Light": {
+            "primitive": "neutral/50",
+            "hex": "#F5F5F5"
+          },
+          "Canon Dark": {
+            "primitive": "neutral/50",
+            "hex": "#F5F5F5"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/50",
+            "hex": "#F5F5F5"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/50",
+            "hex": "#F5F5F5"
+          },
+          "Ethos Light": {
+            "primitive": "neutral/50",
+            "hex": "#F5F5F5"
+          },
+          "Ethos Dark": {
+            "primitive": "neutral/50",
+            "hex": "#F5F5F5"
+          },
+          "Noktern Light": {
+            "primitive": "neutral/50",
+            "hex": "#F5F5F5"
+          },
+          "Noktern Dark": {
+            "primitive": "neutral/50",
+            "hex": "#F5F5F5"
+          },
+          "Omtanke Light": {
+            "primitive": "sweden/yellow/400",
+            "hex": "#FFD838"
+          },
+          "Omtanke Dark": {
+            "primitive": "sweden/yellow/400",
+            "hex": "#FFD838"
+          }
+        },
+        "interactive/button/primary/on-brand/fill/pressed": {
+          "Canon Light": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Canon Dark": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Ethos Light": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Ethos Dark": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Noktern Light": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Noktern Dark": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Omtanke Light": {
+            "primitive": "sweden/yellow/600",
+            "hex": "#D9AE00"
+          },
+          "Omtanke Dark": {
+            "primitive": "sweden/yellow/600",
+            "hex": "#D9AE00"
           }
         }
       }

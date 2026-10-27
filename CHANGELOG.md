@@ -10,6 +10,28 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.4.0
+
+Breaking: color primitives are renamed, and the button states follow one set of rules in every mode.
+
+Breaking
+- Color primitives are renamed so each name says what the color is. Any CSS that uses a primitive directly (roles are not affected) must change:
+  - `--arche-primary-*` is now `--arche-greece-blue-*`
+  - `--arche-secondary-*` is now `--arche-sweden-yellow-*`
+  - `--arche-tertiary-*` is now `--arche-norway-red-*`
+  - `--arche-norway-*` is now `--arche-norway-blue-*`
+  - `--arche-sweden-*` is now `--arche-sweden-blue-*`
+  - `--arche-swiss-red-web` and `--arche-swiss-red-print` do not change.
+- Role tokens keep their names, so components that use roles keep working.
+
+Added
+- Two roles for the primary button on a brand band: `--arche-interactive-button-primary-on-brand-fill-hover` and `--arche-interactive-button-primary-on-brand-fill-pressed`.
+
+Changed
+- Button states follow five rules in all ten modes. A solid fill is lighter on hover and darker when pressed. Active matches pressed (primary) or the hover tint (secondary). Secondary and tertiary share one pair of tints. A fill that matches the page follows the page color in Dark. On a band, secondary hover is lighter than the band and pressed is darker. 13 button roles changed to follow them. See `Arche Button Token Audit` for the before and after.
+- Klarheit's primary pressed fill in Light is black.
+- Docs: the band limits ("once per page") are removed from the Ethos and Nøktern copy. Bands follow the ground, and a page can carry more than one.
+
 ## 0.3.0
 
 Five color modes. Canon is the default and keeps the look of 0.2.0, with one exception listed under Changed.
