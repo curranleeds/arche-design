@@ -19,6 +19,6 @@ Public documentation site for the Arche Design System (pronounced AR-kee, from t
 - Every CSS custom property starts with `--arche-`. `npm run check` enforces it.
 - Docs never hold their own copy of a token value. Foundations pages read `tokens/figma-tokens.json` through `src/_data/tokens.js`.
 - Never fabricate metrics, quotes or claims. Demo numbers stay obvious placeholders.
-- Norway Red has no job on any page or component.
+- Norway Red has three jobs and no others: the logo, Canon's end mark and Nøktern's Cross. It is never on text, controls, validation or cards.
 - Archivo and Work Sans have no Greek script. Use Latin letters for Greek words.
 - Preview: `npm start`. Production build: `npm run build`.
