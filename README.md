@@ -39,19 +39,19 @@ The mode name "Ethos" was chosen over "Arche" for the Greek mode, because "Ethos
 
 ## Still open
 
-- **Mode colors.** The color primitives so far are Greece Blue `#014488`, Sweden Blue `#004B87`, Norway Blue `#003698`, Sweden Yellow `#FFCD00`, Norway Red `#D21034`, Swiss Red `#FF0000` (also the Alert/Error color), black and white. What color does in each mode is not yet defined, and no mode values have been written.
+- **Mode colors.** The color primitives so far are Greece Blue `#014488`, Sweden Blue `#005293`, Norway Blue `#003698`, Sweden Yellow `#FFCD00`, Norway Red `#D21034`, Swiss Red `#FF0000` on screen and in digital (also the Alert/Error color) and `#DA291C` in print, black and white. The five modes are defined in Figma and are being built into the tokens for release 0.3.0.
 - **License.** Not chosen yet. Until one is added, the code is visible but not licensed for reuse. The fonts keep their own license (SIL Open Font License).
 - **Domain.** Not bought yet.
 
-## Where modes will fit
+## Where modes fit
 
 The system has three layers. Modes go in the middle one.
 
-1. **Primitives:** raw colors such as `--primary-500`. The same in every mode.
-2. **Semantic roles:** names by job, such as `--text-brand-primary` or `--surface-neutral-base`. This is where a mode changes values. Canon is the default set.
+1. **Primitives:** raw colors such as `--arche-primary-500`. The same in every mode.
+2. **Semantic roles:** names by job, such as `--arche-text-brand-primary` or `--arche-surface-neutral-base`. This is where a mode changes values. Canon is the default set.
 3. **Components:** read only roles, so they never change between modes.
 
-Dark and light already work with a `data-theme` attribute on the `<html>` tag. A mode would be a second attribute, `data-mode`, with one block of role values per mode, each with a light and a dark version. Status colors stay out of every mode block. Nothing for modes has been built yet.
+Dark and light already work with a `data-theme` attribute on the `<html>` tag. A mode is a second attribute, `data-mode`, with one block of role values per mode, each with a light and a dark version. No attribute means Canon. Status colors stay out of every mode block.
 
 ## What is in the docs site today
 
