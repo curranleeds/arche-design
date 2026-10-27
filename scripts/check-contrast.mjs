@@ -38,6 +38,7 @@ for (const bg of ["surface/neutral/base", "surface/neutral/raised"]) {
   }
 }
 add("text/neutral/inverse", "surface/neutral/inverse", TEXT, "text on the inverse surface");
+add("text/neutral/secondary", "surface/brand/primary-subtle", TEXT, "captions on the brand tint");
 
 // Status text on its own tint and on the page
 for (const kind of ["alert", "success", "warning"]) {

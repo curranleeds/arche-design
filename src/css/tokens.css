@@ -786,6 +786,7 @@
   --arche-surface-brand-primary: var(--arche-neutral-800);
   --arche-surface-brand-primary-subtle: var(--arche-neutral-700);
   --arche-border-brand-default: var(--arche-neutral-white);
+  --arche-text-neutral-secondary: var(--arche-neutral-200);
   --arche-text-brand-primary: var(--arche-neutral-white);
   --arche-icon-brand-default: var(--arche-neutral-white);
   --arche-interactive-button-primary-fill-default: var(--arche-neutral-100);
@@ -906,6 +907,7 @@
     --arche-surface-brand-primary: var(--arche-neutral-800);
     --arche-surface-brand-primary-subtle: var(--arche-neutral-700);
     --arche-border-brand-default: var(--arche-neutral-white);
+    --arche-text-neutral-secondary: var(--arche-neutral-200);
     --arche-text-brand-primary: var(--arche-neutral-white);
     --arche-icon-brand-default: var(--arche-neutral-white);
     --arche-interactive-button-primary-fill-default: var(--arche-neutral-100);

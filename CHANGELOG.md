@@ -30,6 +30,7 @@ Added
 Changed
 - Button states follow five rules in all ten modes. A solid fill is lighter on hover and darker when pressed. Active matches pressed (primary) or the hover tint (secondary). Secondary and tertiary share one pair of tints. A fill that matches the page follows the page color in Dark. On a band, secondary hover is lighter than the band and pressed is darker. 13 button roles changed to follow them. See `Arche Button Token Audit` for the before and after.
 - Klarheit's primary pressed fill in Light is black.
+- Klarheit Dark: `--arche-text-neutral-secondary` is Neutral 200 instead of Neutral 300, so captions on the brand tint pass AA (5.3:1, was 4.03:1). The contrast check now includes this pair.
 - Docs: the band limits ("once per page") are removed from the Ethos and Nøktern copy. Bands follow the ground, and a page can carry more than one.
 
 ## 0.3.0

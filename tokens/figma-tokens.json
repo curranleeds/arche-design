@@ -913,8 +913,8 @@
             "hex": "#666666"
           },
           "Klarheit Dark": {
-            "primitive": "neutral/300",
-            "hex": "#B3B3B3"
+            "primitive": "neutral/200",
+            "hex": "#CCCCCC"
           },
           "Ethos Light": {
             "primitive": "neutral/600",
