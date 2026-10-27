@@ -32,30 +32,30 @@ The mode name "Ethos" was chosen over "Arche" for the Greek mode, because "Ethos
 | Code names | Plain ASCII in code, file names, CSS and token paths. Display names can keep the ø. |
 | Hosting | A free Cloudflare Workers address first, with no custom domain yet |
 | Search engines | The site asks not to be indexed (`noindex`) until it is ready |
-| Variable prefix | Every CSS variable starts with `--arche-` (for example `--arche-primary-500`). This protects against name collisions when Arche sits next to other stylesheets. `npm run check` enforces it. |
-| Norway Red | Part of the palette, with no job on any page or component yet |
+| Variable prefix | Every CSS variable starts with `--arche-` (for example `--arche-greece-blue-500`). This protects against name collisions when Arche sits next to other stylesheets. `npm run check` enforces it. |
+| Norway Red | The logo, plus one device per mode that uses it: Canon's end mark and Nøktern's Cross. Never on text, controls, validation or cards. |
 
 **Runtime hooks.** Arche exposes a few runtime hooks: `--arche-site-nav-offset`, `--arche-lb-max` and `--arche-lb-ratio`. A host site sets them with JavaScript. If it does not, the CSS fallbacks apply.
 
 ## Still open
 
-- **Mode colors.** The color primitives so far are Greece Blue `#014488`, Sweden Blue `#004B87`, Norway Blue `#003698`, Sweden Yellow `#FFCD00`, Norway Red `#D21034`, Swiss Red `#FF0000` (also the Alert/Error color), black and white. What color does in each mode is not yet defined, and no mode values have been written.
+- **Mode colors.** The color primitives so far are Greece Blue `#014488`, Sweden Blue `#005293`, Norway Blue `#003698`, Sweden Yellow `#FFCD00`, Norway Red `#D21034`, Swiss Red `#FF0000` on screen and in digital (also the Alert/Error color) and `#DA291C` in print, black and white. The five modes are built into the tokens as of release 0.3.0.
 - **License.** Not chosen yet. Until one is added, the code is visible but not licensed for reuse. The fonts keep their own license (SIL Open Font License).
 - **Domain.** Not bought yet.
 
-## Where modes will fit
+## Where modes fit
 
 The system has three layers. Modes go in the middle one.
 
-1. **Primitives:** raw colors such as `--primary-500`. The same in every mode.
-2. **Semantic roles:** names by job, such as `--text-brand-primary` or `--surface-neutral-base`. This is where a mode changes values. Canon is the default set.
+1. **Primitives:** raw colors such as `--arche-greece-blue-500`. The same in every mode.
+2. **Semantic roles:** names by job, such as `--arche-text-brand-primary` or `--arche-surface-neutral-base`. This is where a mode changes values. Canon is the default set.
 3. **Components:** read only roles, so they never change between modes.
 
-Dark and light already work with a `data-theme` attribute on the `<html>` tag. A mode would be a second attribute, `data-mode`, with one block of role values per mode, each with a light and a dark version. Status colors stay out of every mode block. Nothing for modes has been built yet.
+Dark and light work with a `data-theme` attribute on the `<html>` tag. A mode is a second attribute, `data-mode`, with one block of role values per mode, each with a light and a dark version, listing only the roles that differ from Canon. No attribute means Canon. Status colors stay out of every mode block. The docs site has a Mode menu in its header that sets the attribute and remembers the choice in `localStorage`; it is for the docs only, and components never read it.
 
 ## What is in the docs site today
 
-Version 0.2.0: the foundations (color, type, spacing and grid, motion and focus, accessibility) and seven components (button, link, form field, theme controls, stat strip, quote, list row). Every color, size and contrast ratio on the foundations pages is read from `tokens/figma-tokens.json` when the site builds, so the docs cannot drift from the tokens. The demo numbers and quotes on the component pages are placeholders, not results.
+Version 0.3.0: the foundations (color, type, spacing and grid, motion and focus, accessibility), a color page for each of the five modes with its contrast ratios, and seven components (button, link, form field, theme controls, stat strip, quote, list row). Every color, size and contrast ratio on the foundations pages is read from `tokens/figma-tokens.json` when the site builds, so the docs cannot drift from the tokens. The demo numbers and quotes on the component pages are placeholders, not results.
 
 ## How a site updates Arche
 

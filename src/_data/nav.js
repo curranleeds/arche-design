@@ -12,6 +12,17 @@ module.exports = [
     ],
   },
   {
+    title: "Color modes",
+    items: [
+      { title: "About modes", url: "/foundations/modes/" },
+      { title: "Canon", url: "/foundations/color/canon/" },
+      { title: "Klarheit", url: "/foundations/color/klarheit/" },
+      { title: "Nøktern", url: "/foundations/color/noktern/" },
+      { title: "Omtanke", url: "/foundations/color/omtanke/" },
+      { title: "Ethos", url: "/foundations/color/ethos/" },
+    ],
+  },
+  {
     title: "Components",
     items: [
       { title: "Button", url: "/components/button/" },

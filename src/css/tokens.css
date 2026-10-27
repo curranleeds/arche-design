@@ -2,7 +2,7 @@
    Arche Design System — Design Tokens
    GENERATED FILE. Do not hand-edit.
    Source:    tokens/figma-tokens.json
-              (Figma file (Arche Design System), read 2026-10-24)
+              (Figma file (Arche Design System), read 2026-10-26 (after the button audit and the family rename))
    Generator: scripts/generate-tokens.mjs
    To change a value, change it in Figma, update the JSON, and run the generator.
    ========================================================================== */
@@ -11,41 +11,41 @@
   color-scheme: light;
 
   /* ---------- Primitives (raw colors). Components never use these directly. ---------- */
-  /* primary */
-  --arche-primary-50: #E6ECF3;
-  --arche-primary-100: #CCDAE7;
-  --arche-primary-200: #9EB8D2;
-  --arche-primary-300: #7196BC;
-  --arche-primary-400: #396DA2;
-  --arche-primary-500: #014488;
-  --arche-primary-600: #013A74;
-  --arche-primary-700: #012E5C;
-  --arche-primary-800: #002244;
-  --arche-primary-900: #001429;
+  /* greece/blue */
+  --arche-greece-blue-50: #E6ECF3;
+  --arche-greece-blue-100: #CCDAE7;
+  --arche-greece-blue-200: #9EB8D2;
+  --arche-greece-blue-300: #7196BC;
+  --arche-greece-blue-400: #396DA2;
+  --arche-greece-blue-500: #014488;
+  --arche-greece-blue-600: #013A74;
+  --arche-greece-blue-700: #012E5C;
+  --arche-greece-blue-800: #002244;
+  --arche-greece-blue-900: #001429;
 
-  /* secondary */
-  --arche-secondary-50: #FFFAE6;
-  --arche-secondary-100: #FFF5CC;
-  --arche-secondary-200: #FFEC9E;
-  --arche-secondary-300: #FFE370;
-  --arche-secondary-400: #FFD838;
-  --arche-secondary-500: #FFCD00;
-  --arche-secondary-600: #D9AE00;
-  --arche-secondary-700: #AD8B00;
-  --arche-secondary-800: #806600;
-  --arche-secondary-900: #4C3E00;
+  /* sweden/yellow */
+  --arche-sweden-yellow-50: #FFFAE6;
+  --arche-sweden-yellow-100: #FFF5CC;
+  --arche-sweden-yellow-200: #FFEC9E;
+  --arche-sweden-yellow-300: #FFE370;
+  --arche-sweden-yellow-400: #FFD838;
+  --arche-sweden-yellow-500: #FFCD00;
+  --arche-sweden-yellow-600: #D9AE00;
+  --arche-sweden-yellow-700: #AD8B00;
+  --arche-sweden-yellow-800: #806600;
+  --arche-sweden-yellow-900: #4C3E00;
 
-  /* tertiary */
-  --arche-tertiary-50: #FAE7EB;
-  --arche-tertiary-100: #F6CFD6;
-  --arche-tertiary-200: #EEA4B2;
-  --arche-tertiary-300: #E6798D;
-  --arche-tertiary-400: #DC4561;
-  --arche-tertiary-500: #D21034;
-  --arche-tertiary-600: #B20E2C;
-  --arche-tertiary-700: #8F0B23;
-  --arche-tertiary-800: #69081A;
-  --arche-tertiary-900: #3F0510;
+  /* norway/red */
+  --arche-norway-red-50: #FAE7EB;
+  --arche-norway-red-100: #F6CFD6;
+  --arche-norway-red-200: #EEA4B2;
+  --arche-norway-red-300: #E6798D;
+  --arche-norway-red-400: #DC4561;
+  --arche-norway-red-500: #D21034;
+  --arche-norway-red-600: #B20E2C;
+  --arche-norway-red-700: #8F0B23;
+  --arche-norway-red-800: #69081A;
+  --arche-norway-red-900: #3F0510;
 
   /* neutral */
   --arche-neutral-white: #FFFFFF;
@@ -101,6 +101,34 @@
   --arche-black-alpha-50: rgb(0 0 0 / 50%);
   --arche-black-alpha-90: rgb(0 0 0 / 90%);
 
+  /* norway/blue */
+  --arche-norway-blue-50: #E5EBF5;
+  --arche-norway-blue-100: #CCD7EA;
+  --arche-norway-blue-200: #9EB3D8;
+  --arche-norway-blue-300: #708EC5;
+  --arche-norway-blue-400: #3862AF;
+  --arche-norway-blue-500: #003698;
+  --arche-norway-blue-600: #002E82;
+  --arche-norway-blue-700: #002567;
+  --arche-norway-blue-800: #001B4C;
+  --arche-norway-blue-900: #00102D;
+
+  /* sweden/blue */
+  --arche-sweden-blue-50: #E5EEF4;
+  --arche-sweden-blue-100: #CCDCE9;
+  --arche-sweden-blue-200: #9EBDD6;
+  --arche-sweden-blue-300: #709EC2;
+  --arche-sweden-blue-400: #3878AB;
+  --arche-sweden-blue-500: #005293;
+  --arche-sweden-blue-600: #00467D;
+  --arche-sweden-blue-700: #003763;
+  --arche-sweden-blue-800: #00294A;
+  --arche-sweden-blue-900: #00182C;
+
+  /* swiss/red */
+  --arche-swiss-red-web: #FF0000;
+  --arche-swiss-red-print: #DA291C;
+
   /* ---------- Spacing and strokes ---------- */
   --arche-space-fine-4: 4px;
   --arche-space-fine-8: 8px;
@@ -125,10 +153,10 @@
   --arche-surface-neutral-base: var(--arche-neutral-white);
   --arche-surface-neutral-raised: var(--arche-neutral-white);
   --arche-surface-neutral-inverse: var(--arche-neutral-900);
-  --arche-surface-brand-primary: var(--arche-primary-500);
-  --arche-surface-brand-primary-subtle: var(--arche-primary-50);
-  --arche-surface-brand-secondary: var(--arche-secondary-500);
-  --arche-surface-brand-secondary-subtle: var(--arche-secondary-50);
+  --arche-surface-brand-primary: var(--arche-greece-blue-500);
+  --arche-surface-brand-primary-subtle: var(--arche-greece-blue-50);
+  --arche-surface-brand-secondary: var(--arche-sweden-yellow-500);
+  --arche-surface-brand-secondary-subtle: var(--arche-sweden-yellow-50);
   --arche-surface-system-alert: var(--arche-alert-50);
   --arche-surface-system-success: var(--arche-success-50);
   --arche-surface-system-warning: var(--arche-warning-50);
@@ -137,7 +165,7 @@
   --arche-border-neutral-default: var(--arche-neutral-200);
   --arche-border-neutral-strong: var(--arche-neutral-500);
   --arche-border-neutral-emphasis: var(--arche-neutral-800);
-  --arche-border-brand-default: var(--arche-primary-500);
+  --arche-border-brand-default: var(--arche-greece-blue-500);
   --arche-border-system-alert: var(--arche-alert-500);
   --arche-border-system-success: var(--arche-success-500);
   --arche-border-system-warning: var(--arche-warning-500);
@@ -147,9 +175,9 @@
   --arche-text-neutral-secondary: var(--arche-neutral-600);
   --arche-text-neutral-disabled: var(--arche-neutral-400);
   --arche-text-neutral-inverse: var(--arche-neutral-white);
-  --arche-text-brand-primary: var(--arche-primary-500);
-  --arche-text-brand-secondary: var(--arche-secondary-500);
-  --arche-text-brand-tertiary-accent: var(--arche-tertiary-500);
+  --arche-text-brand-primary: var(--arche-greece-blue-500);
+  --arche-text-brand-secondary: var(--arche-sweden-yellow-500);
+  --arche-text-brand-tertiary-accent: var(--arche-norway-red-500);
   --arche-text-system-alert: var(--arche-alert-700);
   --arche-text-system-success: var(--arche-success-700);
   --arche-text-system-warning: var(--arche-warning-700);
@@ -158,21 +186,21 @@
   --arche-icon-neutral-default: var(--arche-neutral-900);
   --arche-icon-neutral-muted: var(--arche-neutral-400);
   --arche-icon-neutral-inverse: var(--arche-neutral-white);
-  --arche-icon-brand-default: var(--arche-primary-500);
+  --arche-icon-brand-default: var(--arche-greece-blue-500);
   --arche-icon-system-alert: var(--arche-alert-500);
   --arche-icon-system-success: var(--arche-success-500);
   --arche-icon-system-warning: var(--arche-warning-500);
 
   /* interactive */
-  --arche-interactive-button-primary-fill-default: var(--arche-primary-500);
-  --arche-interactive-button-primary-fill-hover: var(--arche-primary-600);
-  --arche-interactive-button-primary-fill-pressed: var(--arche-primary-700);
+  --arche-interactive-button-primary-fill-default: var(--arche-greece-blue-500);
+  --arche-interactive-button-primary-fill-hover: var(--arche-greece-blue-400);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-greece-blue-700);
   --arche-interactive-button-primary-fill-disabled: var(--arche-neutral-200);
   --arche-interactive-button-secondary-fill-default: var(--arche-neutral-white);
-  --arche-interactive-button-secondary-fill-hover: var(--arche-neutral-white);
-  --arche-interactive-button-secondary-fill-pressed: var(--arche-primary-50);
+  --arche-interactive-button-secondary-fill-hover: var(--arche-greece-blue-50);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-greece-blue-100);
   --arche-interactive-button-secondary-fill-disabled: var(--arche-neutral-white);
-  --arche-interactive-button-secondary-border-default: var(--arche-primary-500);
+  --arche-interactive-button-secondary-border-default: var(--arche-greece-blue-500);
   --arche-interactive-button-secondary-border-disabled: var(--arche-neutral-400);
   --arche-interactive-button-secondary-border-inverse: var(--arche-neutral-white);
   --arche-interactive-link-text-nav-default: var(--arche-neutral-900);
@@ -180,8 +208,8 @@
   --arche-interactive-link-text-nav-pressed: var(--arche-neutral-black);
   --arche-interactive-link-text-nav-active: var(--arche-neutral-900);
   --arche-interactive-link-text-nav-disabled: var(--arche-neutral-300);
-  --arche-interactive-button-primary-fill-active: var(--arche-primary-800);
-  --arche-interactive-button-secondary-fill-active: var(--arche-neutral-white);
+  --arche-interactive-button-primary-fill-active: var(--arche-greece-blue-700);
+  --arche-interactive-button-secondary-fill-active: var(--arche-greece-blue-50);
 
   /* surface */
   --arche-surface-overlay-scrim: var(--arche-black-alpha-50);
@@ -189,47 +217,47 @@
   /* text */
   --arche-text-neutral-body: var(--arche-neutral-900);
   --arche-text-on-brand-primary: var(--arche-neutral-white);
-  --arche-text-on-brand-body: var(--arche-primary-50);
-  --arche-text-on-brand-secondary: var(--arche-primary-100);
-  --arche-text-on-brand-name: var(--arche-secondary-500);
+  --arche-text-on-brand-body: var(--arche-greece-blue-50);
+  --arche-text-on-brand-secondary: var(--arche-greece-blue-100);
+  --arche-text-on-brand-name: var(--arche-sweden-yellow-500);
 
   /* border */
   --arche-border-focus-ring: var(--arche-neutral-black);
   --arche-border-focus-ring-on-brand: var(--arche-neutral-white);
-  --arche-border-on-brand-divider: var(--arche-primary-300);
+  --arche-border-on-brand-divider: var(--arche-greece-blue-300);
 
   /* interactive */
-  --arche-interactive-progress: var(--arche-primary-500);
-  --arche-interactive-link-nav-indicator: var(--arche-primary-500);
+  --arche-interactive-progress: var(--arche-greece-blue-500);
+  --arche-interactive-link-nav-indicator: var(--arche-greece-blue-500);
   --arche-interactive-button-primary-label-default: var(--arche-neutral-white);
   --arche-interactive-button-primary-indicator: var(--arche-neutral-white);
-  --arche-interactive-button-secondary-border-pressed: var(--arche-primary-700);
-  --arche-interactive-button-secondary-label-default: var(--arche-primary-500);
-  --arche-interactive-button-secondary-label-pressed: var(--arche-primary-700);
-  --arche-interactive-button-secondary-indicator: var(--arche-primary-500);
-  --arche-interactive-button-tertiary-fill-hover: var(--arche-primary-50);
-  --arche-interactive-button-tertiary-fill-pressed: var(--arche-primary-100);
-  --arche-interactive-button-tertiary-fill-active: var(--arche-primary-50);
-  --arche-interactive-button-tertiary-label-default: var(--arche-primary-500);
-  --arche-interactive-button-tertiary-label-hover: var(--arche-primary-600);
-  --arche-interactive-button-tertiary-label-pressed: var(--arche-primary-700);
-  --arche-interactive-button-tertiary-label-active: var(--arche-primary-500);
-  --arche-interactive-button-tertiary-indicator: var(--arche-primary-500);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-greece-blue-700);
+  --arche-interactive-button-secondary-label-default: var(--arche-greece-blue-500);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-greece-blue-700);
+  --arche-interactive-button-secondary-indicator: var(--arche-greece-blue-500);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-greece-blue-50);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-greece-blue-100);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-greece-blue-50);
+  --arche-interactive-button-tertiary-label-default: var(--arche-greece-blue-500);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-greece-blue-600);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-greece-blue-700);
+  --arche-interactive-button-tertiary-label-active: var(--arche-greece-blue-500);
+  --arche-interactive-button-tertiary-indicator: var(--arche-greece-blue-500);
   --arche-interactive-button-secondary-on-brand-border: var(--arche-neutral-white);
   --arche-interactive-button-secondary-on-brand-label: var(--arche-neutral-white);
-  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-primary-600);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-greece-blue-700);
 
   /* text */
-  --arche-text-on-brand-switch-selected: var(--arche-primary-500);
+  --arche-text-on-brand-switch-selected: var(--arche-greece-blue-500);
 
   /* surface */
   --arche-surface-on-brand-switch-selected: var(--arche-neutral-white);
 
   /* text */
-  --arche-text-on-brand-title: var(--arche-secondary-500);
+  --arche-text-on-brand-title: var(--arche-sweden-yellow-500);
 
   /* surface */
-  --arche-surface-brand-secondary-band: var(--arche-secondary-500);
+  --arche-surface-brand-secondary-band: var(--arche-sweden-yellow-500);
 
   /* text */
   --arche-text-on-secondary-primary: var(--arche-neutral-900);
@@ -239,15 +267,15 @@
   --arche-border-focus-ring-on-secondary: var(--arche-neutral-900);
 
   /* logo */
-  --arche-logo-on-page-primary-box: var(--arche-primary-500);
+  --arche-logo-on-page-primary-box: var(--arche-greece-blue-500);
   --arche-logo-on-page-primary-letters: var(--arche-neutral-white);
-  --arche-logo-on-page-secondary-line: var(--arche-primary-500);
+  --arche-logo-on-page-secondary-line: var(--arche-greece-blue-500);
   --arche-logo-on-brand-primary-box: var(--arche-neutral-white);
-  --arche-logo-on-brand-primary-letters: var(--arche-primary-500);
+  --arche-logo-on-brand-primary-letters: var(--arche-greece-blue-500);
   --arche-logo-on-brand-secondary-line: var(--arche-neutral-white);
-  --arche-logo-on-secondary-primary-box: var(--arche-primary-500);
+  --arche-logo-on-secondary-primary-box: var(--arche-greece-blue-500);
   --arche-logo-on-secondary-primary-letters: var(--arche-neutral-white);
-  --arche-logo-on-secondary-secondary-line: var(--arche-primary-500);
+  --arche-logo-on-secondary-secondary-line: var(--arche-greece-blue-500);
 
   /* icon */
   --arche-icon-on-brand-default: var(--arche-neutral-white);
@@ -255,6 +283,28 @@
   /* surface */
   --arche-surface-overlay-scrim-strong: var(--arche-black-alpha-90);
   --arche-surface-overlay-bar: var(--arche-neutral-800);
+  --arche-surface-brand-accent: var(--arche-norway-red-500);
+
+  /* selection */
+  --arche-selection-background: var(--arche-sweden-yellow-500);
+  --arche-selection-text: var(--arche-neutral-900);
+
+  /* interactive */
+  --arche-interactive-link-default: var(--arche-greece-blue-500);
+
+  /* border */
+  --arche-border-on-brand-cross-line: var(--arche-neutral-white);
+
+  /* accent */
+  --arche-accent-rule: var(--arche-norway-red-500);
+  --arche-accent-numeral: var(--arche-greece-blue-500);
+
+  /* interactive */
+  --arche-interactive-button-primary-on-brand-fill: var(--arche-neutral-white);
+  --arche-interactive-button-primary-on-brand-label: var(--arche-greece-blue-500);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-greece-blue-400);
+  --arche-interactive-button-primary-on-brand-fill-hover: var(--arche-neutral-50);
+  --arche-interactive-button-primary-on-brand-fill-pressed: var(--arche-neutral-100);
 
   /* ---------- Focus ring ---------- */
   --arche-focus-ring-width: var(--arche-stroke-4);
@@ -444,43 +494,43 @@
   --arche-surface-neutral-base: var(--arche-neutral-900);
   --arche-surface-neutral-raised: var(--arche-neutral-800);
   --arche-surface-neutral-inverse: var(--arche-neutral-50);
-  --arche-surface-brand-primary-subtle: var(--arche-primary-700);
-  --arche-surface-brand-secondary: var(--arche-secondary-800);
-  --arche-surface-brand-secondary-subtle: var(--arche-secondary-900);
+  --arche-surface-brand-primary-subtle: var(--arche-greece-blue-700);
+  --arche-surface-brand-secondary: var(--arche-sweden-yellow-800);
+  --arche-surface-brand-secondary-subtle: var(--arche-sweden-yellow-900);
   --arche-surface-system-alert: var(--arche-alert-900);
   --arche-surface-system-success: var(--arche-success-900);
   --arche-surface-system-warning: var(--arche-warning-900);
   --arche-border-neutral-default: var(--arche-neutral-700);
   --arche-border-neutral-emphasis: var(--arche-neutral-100);
-  --arche-border-brand-default: var(--arche-primary-400);
+  --arche-border-brand-default: var(--arche-greece-blue-400);
   --arche-border-system-alert: var(--arche-alert-400);
   --arche-border-system-success: var(--arche-success-400);
   --arche-border-system-warning: var(--arche-warning-400);
   --arche-text-neutral-primary: var(--arche-neutral-white);
   --arche-text-neutral-secondary: var(--arche-neutral-300);
   --arche-text-neutral-inverse: var(--arche-neutral-900);
-  --arche-text-brand-primary: var(--arche-primary-200);
-  --arche-text-brand-secondary: var(--arche-secondary-300);
-  --arche-text-brand-tertiary-accent: var(--arche-tertiary-400);
+  --arche-text-brand-primary: var(--arche-greece-blue-200);
+  --arche-text-brand-secondary: var(--arche-sweden-yellow-300);
+  --arche-text-brand-tertiary-accent: var(--arche-norway-red-400);
   --arche-text-system-alert: var(--arche-alert-300);
   --arche-text-system-success: var(--arche-success-300);
   --arche-text-system-warning: var(--arche-warning-300);
   --arche-icon-neutral-default: var(--arche-neutral-white);
   --arche-icon-neutral-muted: var(--arche-neutral-600);
   --arche-icon-neutral-inverse: var(--arche-neutral-900);
-  --arche-icon-brand-default: var(--arche-primary-300);
+  --arche-icon-brand-default: var(--arche-greece-blue-300);
   --arche-icon-system-alert: var(--arche-alert-400);
   --arche-icon-system-success: var(--arche-success-400);
   --arche-icon-system-warning: var(--arche-warning-400);
-  --arche-interactive-button-primary-fill-default: var(--arche-primary-200);
-  --arche-interactive-button-primary-fill-hover: var(--arche-primary-100);
-  --arche-interactive-button-primary-fill-pressed: var(--arche-primary-300);
+  --arche-interactive-button-primary-fill-default: var(--arche-greece-blue-200);
+  --arche-interactive-button-primary-fill-hover: var(--arche-greece-blue-100);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-greece-blue-300);
   --arche-interactive-button-primary-fill-disabled: var(--arche-neutral-700);
   --arche-interactive-button-secondary-fill-default: var(--arche-neutral-900);
-  --arche-interactive-button-secondary-fill-hover: var(--arche-neutral-900);
-  --arche-interactive-button-secondary-fill-pressed: var(--arche-primary-800);
+  --arche-interactive-button-secondary-fill-hover: var(--arche-greece-blue-800);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-greece-blue-700);
   --arche-interactive-button-secondary-fill-disabled: var(--arche-neutral-900);
-  --arche-interactive-button-secondary-border-default: var(--arche-primary-200);
+  --arche-interactive-button-secondary-border-default: var(--arche-greece-blue-200);
   --arche-interactive-button-secondary-border-disabled: var(--arche-neutral-600);
   --arche-interactive-button-secondary-border-inverse: var(--arche-neutral-900);
   --arche-interactive-link-text-nav-default: var(--arche-neutral-white);
@@ -488,27 +538,31 @@
   --arche-interactive-link-text-nav-pressed: var(--arche-neutral-100);
   --arche-interactive-link-text-nav-active: var(--arche-neutral-white);
   --arche-interactive-link-text-nav-disabled: var(--arche-neutral-700);
-  --arche-interactive-button-primary-fill-active: var(--arche-primary-100);
-  --arche-interactive-button-secondary-fill-active: var(--arche-neutral-900);
+  --arche-interactive-button-primary-fill-active: var(--arche-greece-blue-300);
+  --arche-interactive-button-secondary-fill-active: var(--arche-greece-blue-800);
   --arche-text-neutral-body: var(--arche-neutral-100);
   --arche-border-focus-ring: var(--arche-neutral-white);
-  --arche-interactive-progress: var(--arche-primary-300);
-  --arche-interactive-link-nav-indicator: var(--arche-primary-200);
-  --arche-interactive-button-primary-label-default: var(--arche-primary-900);
-  --arche-interactive-button-primary-indicator: var(--arche-primary-900);
-  --arche-interactive-button-secondary-border-pressed: var(--arche-primary-100);
-  --arche-interactive-button-secondary-label-default: var(--arche-primary-200);
-  --arche-interactive-button-secondary-label-pressed: var(--arche-primary-100);
-  --arche-interactive-button-secondary-indicator: var(--arche-primary-200);
-  --arche-interactive-button-tertiary-fill-hover: var(--arche-primary-800);
-  --arche-interactive-button-tertiary-fill-pressed: var(--arche-primary-700);
-  --arche-interactive-button-tertiary-fill-active: var(--arche-primary-800);
-  --arche-interactive-button-tertiary-label-default: var(--arche-primary-200);
-  --arche-interactive-button-tertiary-label-hover: var(--arche-primary-100);
-  --arche-interactive-button-tertiary-label-pressed: var(--arche-primary-50);
-  --arche-interactive-button-tertiary-label-active: var(--arche-primary-200);
-  --arche-interactive-button-tertiary-indicator: var(--arche-primary-200);
-  --arche-logo-on-page-secondary-line: var(--arche-primary-200);
+  --arche-interactive-progress: var(--arche-greece-blue-300);
+  --arche-interactive-link-nav-indicator: var(--arche-greece-blue-200);
+  --arche-interactive-button-primary-label-default: var(--arche-greece-blue-900);
+  --arche-interactive-button-primary-indicator: var(--arche-greece-blue-900);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-greece-blue-100);
+  --arche-interactive-button-secondary-label-default: var(--arche-greece-blue-200);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-greece-blue-100);
+  --arche-interactive-button-secondary-indicator: var(--arche-greece-blue-200);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-greece-blue-800);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-greece-blue-700);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-greece-blue-800);
+  --arche-interactive-button-tertiary-label-default: var(--arche-greece-blue-200);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-greece-blue-100);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-greece-blue-50);
+  --arche-interactive-button-tertiary-label-active: var(--arche-greece-blue-200);
+  --arche-interactive-button-tertiary-indicator: var(--arche-greece-blue-200);
+  --arche-logo-on-page-secondary-line: var(--arche-greece-blue-200);
+  --arche-surface-brand-accent: var(--arche-norway-red-400);
+  --arche-interactive-link-default: var(--arche-greece-blue-200);
+  --arche-accent-rule: var(--arche-norway-red-400);
+  --arche-accent-numeral: var(--arche-greece-blue-200);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -517,43 +571,43 @@
     --arche-surface-neutral-base: var(--arche-neutral-900);
     --arche-surface-neutral-raised: var(--arche-neutral-800);
     --arche-surface-neutral-inverse: var(--arche-neutral-50);
-    --arche-surface-brand-primary-subtle: var(--arche-primary-700);
-    --arche-surface-brand-secondary: var(--arche-secondary-800);
-    --arche-surface-brand-secondary-subtle: var(--arche-secondary-900);
+    --arche-surface-brand-primary-subtle: var(--arche-greece-blue-700);
+    --arche-surface-brand-secondary: var(--arche-sweden-yellow-800);
+    --arche-surface-brand-secondary-subtle: var(--arche-sweden-yellow-900);
     --arche-surface-system-alert: var(--arche-alert-900);
     --arche-surface-system-success: var(--arche-success-900);
     --arche-surface-system-warning: var(--arche-warning-900);
     --arche-border-neutral-default: var(--arche-neutral-700);
     --arche-border-neutral-emphasis: var(--arche-neutral-100);
-    --arche-border-brand-default: var(--arche-primary-400);
+    --arche-border-brand-default: var(--arche-greece-blue-400);
     --arche-border-system-alert: var(--arche-alert-400);
     --arche-border-system-success: var(--arche-success-400);
     --arche-border-system-warning: var(--arche-warning-400);
     --arche-text-neutral-primary: var(--arche-neutral-white);
     --arche-text-neutral-secondary: var(--arche-neutral-300);
     --arche-text-neutral-inverse: var(--arche-neutral-900);
-    --arche-text-brand-primary: var(--arche-primary-200);
-    --arche-text-brand-secondary: var(--arche-secondary-300);
-    --arche-text-brand-tertiary-accent: var(--arche-tertiary-400);
+    --arche-text-brand-primary: var(--arche-greece-blue-200);
+    --arche-text-brand-secondary: var(--arche-sweden-yellow-300);
+    --arche-text-brand-tertiary-accent: var(--arche-norway-red-400);
     --arche-text-system-alert: var(--arche-alert-300);
     --arche-text-system-success: var(--arche-success-300);
     --arche-text-system-warning: var(--arche-warning-300);
     --arche-icon-neutral-default: var(--arche-neutral-white);
     --arche-icon-neutral-muted: var(--arche-neutral-600);
     --arche-icon-neutral-inverse: var(--arche-neutral-900);
-    --arche-icon-brand-default: var(--arche-primary-300);
+    --arche-icon-brand-default: var(--arche-greece-blue-300);
     --arche-icon-system-alert: var(--arche-alert-400);
     --arche-icon-system-success: var(--arche-success-400);
     --arche-icon-system-warning: var(--arche-warning-400);
-    --arche-interactive-button-primary-fill-default: var(--arche-primary-200);
-    --arche-interactive-button-primary-fill-hover: var(--arche-primary-100);
-    --arche-interactive-button-primary-fill-pressed: var(--arche-primary-300);
+    --arche-interactive-button-primary-fill-default: var(--arche-greece-blue-200);
+    --arche-interactive-button-primary-fill-hover: var(--arche-greece-blue-100);
+    --arche-interactive-button-primary-fill-pressed: var(--arche-greece-blue-300);
     --arche-interactive-button-primary-fill-disabled: var(--arche-neutral-700);
     --arche-interactive-button-secondary-fill-default: var(--arche-neutral-900);
-    --arche-interactive-button-secondary-fill-hover: var(--arche-neutral-900);
-    --arche-interactive-button-secondary-fill-pressed: var(--arche-primary-800);
+    --arche-interactive-button-secondary-fill-hover: var(--arche-greece-blue-800);
+    --arche-interactive-button-secondary-fill-pressed: var(--arche-greece-blue-700);
     --arche-interactive-button-secondary-fill-disabled: var(--arche-neutral-900);
-    --arche-interactive-button-secondary-border-default: var(--arche-primary-200);
+    --arche-interactive-button-secondary-border-default: var(--arche-greece-blue-200);
     --arche-interactive-button-secondary-border-disabled: var(--arche-neutral-600);
     --arche-interactive-button-secondary-border-inverse: var(--arche-neutral-900);
     --arche-interactive-link-text-nav-default: var(--arche-neutral-white);
@@ -561,27 +615,412 @@
     --arche-interactive-link-text-nav-pressed: var(--arche-neutral-100);
     --arche-interactive-link-text-nav-active: var(--arche-neutral-white);
     --arche-interactive-link-text-nav-disabled: var(--arche-neutral-700);
-    --arche-interactive-button-primary-fill-active: var(--arche-primary-100);
-    --arche-interactive-button-secondary-fill-active: var(--arche-neutral-900);
+    --arche-interactive-button-primary-fill-active: var(--arche-greece-blue-300);
+    --arche-interactive-button-secondary-fill-active: var(--arche-greece-blue-800);
     --arche-text-neutral-body: var(--arche-neutral-100);
     --arche-border-focus-ring: var(--arche-neutral-white);
-    --arche-interactive-progress: var(--arche-primary-300);
-    --arche-interactive-link-nav-indicator: var(--arche-primary-200);
-    --arche-interactive-button-primary-label-default: var(--arche-primary-900);
-    --arche-interactive-button-primary-indicator: var(--arche-primary-900);
-    --arche-interactive-button-secondary-border-pressed: var(--arche-primary-100);
-    --arche-interactive-button-secondary-label-default: var(--arche-primary-200);
-    --arche-interactive-button-secondary-label-pressed: var(--arche-primary-100);
-    --arche-interactive-button-secondary-indicator: var(--arche-primary-200);
-    --arche-interactive-button-tertiary-fill-hover: var(--arche-primary-800);
-    --arche-interactive-button-tertiary-fill-pressed: var(--arche-primary-700);
-    --arche-interactive-button-tertiary-fill-active: var(--arche-primary-800);
-    --arche-interactive-button-tertiary-label-default: var(--arche-primary-200);
-    --arche-interactive-button-tertiary-label-hover: var(--arche-primary-100);
-    --arche-interactive-button-tertiary-label-pressed: var(--arche-primary-50);
-    --arche-interactive-button-tertiary-label-active: var(--arche-primary-200);
-    --arche-interactive-button-tertiary-indicator: var(--arche-primary-200);
-    --arche-logo-on-page-secondary-line: var(--arche-primary-200);
+    --arche-interactive-progress: var(--arche-greece-blue-300);
+    --arche-interactive-link-nav-indicator: var(--arche-greece-blue-200);
+    --arche-interactive-button-primary-label-default: var(--arche-greece-blue-900);
+    --arche-interactive-button-primary-indicator: var(--arche-greece-blue-900);
+    --arche-interactive-button-secondary-border-pressed: var(--arche-greece-blue-100);
+    --arche-interactive-button-secondary-label-default: var(--arche-greece-blue-200);
+    --arche-interactive-button-secondary-label-pressed: var(--arche-greece-blue-100);
+    --arche-interactive-button-secondary-indicator: var(--arche-greece-blue-200);
+    --arche-interactive-button-tertiary-fill-hover: var(--arche-greece-blue-800);
+    --arche-interactive-button-tertiary-fill-pressed: var(--arche-greece-blue-700);
+    --arche-interactive-button-tertiary-fill-active: var(--arche-greece-blue-800);
+    --arche-interactive-button-tertiary-label-default: var(--arche-greece-blue-200);
+    --arche-interactive-button-tertiary-label-hover: var(--arche-greece-blue-100);
+    --arche-interactive-button-tertiary-label-pressed: var(--arche-greece-blue-50);
+    --arche-interactive-button-tertiary-label-active: var(--arche-greece-blue-200);
+    --arche-interactive-button-tertiary-indicator: var(--arche-greece-blue-200);
+    --arche-logo-on-page-secondary-line: var(--arche-greece-blue-200);
+    --arche-surface-brand-accent: var(--arche-norway-red-400);
+    --arche-interactive-link-default: var(--arche-greece-blue-200);
+    --arche-accent-rule: var(--arche-norway-red-400);
+    --arche-accent-numeral: var(--arche-greece-blue-200);
+  }
+}
+
+/* ---------- Color modes ----------
+   <html data-mode="..."> picks a color mode. No data-mode means Canon.
+   Light or Dark still follows data-theme or the browser setting.
+   Each block lists only the roles that differ from Canon. These blocks must stay
+   after Canon's Dark blocks above: same strength, so the later one wins. */
+:root[data-mode="klarheit"] {
+  --arche-surface-brand-primary: var(--arche-neutral-900);
+  --arche-surface-brand-primary-subtle: var(--arche-neutral-50);
+  --arche-border-brand-default: var(--arche-neutral-900);
+  --arche-text-brand-primary: var(--arche-neutral-900);
+  --arche-icon-brand-default: var(--arche-neutral-900);
+  --arche-interactive-button-primary-fill-default: var(--arche-neutral-900);
+  --arche-interactive-button-primary-fill-hover: var(--arche-neutral-800);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-neutral-black);
+  --arche-interactive-button-secondary-fill-hover: var(--arche-neutral-50);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-neutral-100);
+  --arche-interactive-button-secondary-border-default: var(--arche-neutral-900);
+  --arche-interactive-button-primary-fill-active: var(--arche-neutral-black);
+  --arche-interactive-button-secondary-fill-active: var(--arche-neutral-50);
+  --arche-text-on-brand-body: var(--arche-neutral-white);
+  --arche-text-on-brand-secondary: var(--arche-neutral-100);
+  --arche-border-on-brand-divider: var(--arche-neutral-600);
+  --arche-interactive-progress: var(--arche-neutral-900);
+  --arche-interactive-link-nav-indicator: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-label-default: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-indicator: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-neutral-50);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-neutral-100);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-neutral-50);
+  --arche-interactive-button-tertiary-label-default: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-label-active: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-indicator: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-neutral-black);
+  --arche-text-on-brand-switch-selected: var(--arche-neutral-900);
+  --arche-interactive-link-default: var(--arche-neutral-900);
+  --arche-accent-rule: var(--arche-swiss-red-web);
+  --arche-accent-numeral: var(--arche-swiss-red-web);
+  --arche-interactive-button-primary-on-brand-label: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-neutral-800);
+}
+
+:root[data-mode="ethos"] {
+  --arche-selection-background: var(--arche-greece-blue-200);
+  --arche-accent-rule: var(--arche-greece-blue-500);
+}
+
+:root[data-mode="noktern"] {
+  --arche-surface-brand-primary: var(--arche-norway-blue-500);
+  --arche-surface-brand-primary-subtle: var(--arche-norway-blue-50);
+  --arche-border-brand-default: var(--arche-norway-blue-500);
+  --arche-text-brand-primary: var(--arche-norway-blue-500);
+  --arche-icon-brand-default: var(--arche-norway-blue-500);
+  --arche-interactive-button-primary-fill-default: var(--arche-norway-blue-500);
+  --arche-interactive-button-primary-fill-hover: var(--arche-norway-blue-400);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-norway-blue-700);
+  --arche-interactive-button-secondary-fill-hover: var(--arche-norway-blue-50);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-norway-blue-100);
+  --arche-interactive-button-secondary-border-default: var(--arche-norway-blue-500);
+  --arche-interactive-button-primary-fill-active: var(--arche-norway-blue-700);
+  --arche-interactive-button-secondary-fill-active: var(--arche-norway-blue-50);
+  --arche-text-on-brand-body: var(--arche-norway-blue-50);
+  --arche-text-on-brand-secondary: var(--arche-norway-blue-100);
+  --arche-border-on-brand-divider: var(--arche-norway-blue-300);
+  --arche-interactive-progress: var(--arche-norway-blue-500);
+  --arche-interactive-link-nav-indicator: var(--arche-norway-blue-500);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-norway-blue-700);
+  --arche-interactive-button-secondary-label-default: var(--arche-norway-blue-500);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-norway-blue-700);
+  --arche-interactive-button-secondary-indicator: var(--arche-norway-blue-500);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-norway-blue-50);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-norway-blue-100);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-norway-blue-50);
+  --arche-interactive-button-tertiary-label-default: var(--arche-norway-blue-500);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-norway-blue-600);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-norway-blue-700);
+  --arche-interactive-button-tertiary-label-active: var(--arche-norway-blue-500);
+  --arche-interactive-button-tertiary-indicator: var(--arche-norway-blue-500);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-norway-blue-700);
+  --arche-text-on-brand-switch-selected: var(--arche-norway-blue-500);
+  --arche-selection-background: var(--arche-norway-blue-200);
+  --arche-interactive-link-default: var(--arche-norway-blue-500);
+  --arche-accent-rule: var(--arche-norway-blue-500);
+  --arche-accent-numeral: var(--arche-norway-blue-500);
+  --arche-interactive-button-primary-on-brand-label: var(--arche-norway-blue-500);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-norway-blue-400);
+}
+
+:root[data-mode="omtanke"] {
+  --arche-surface-brand-primary: var(--arche-sweden-blue-500);
+  --arche-surface-brand-primary-subtle: var(--arche-sweden-blue-50);
+  --arche-border-brand-default: var(--arche-sweden-blue-500);
+  --arche-text-brand-primary: var(--arche-sweden-blue-500);
+  --arche-icon-brand-default: var(--arche-sweden-blue-500);
+  --arche-interactive-button-primary-fill-default: var(--arche-sweden-blue-500);
+  --arche-interactive-button-primary-fill-hover: var(--arche-sweden-blue-400);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-sweden-blue-700);
+  --arche-interactive-button-secondary-fill-hover: var(--arche-sweden-blue-50);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-sweden-blue-100);
+  --arche-interactive-button-secondary-border-default: var(--arche-sweden-blue-500);
+  --arche-interactive-button-primary-fill-active: var(--arche-sweden-blue-700);
+  --arche-interactive-button-secondary-fill-active: var(--arche-sweden-blue-50);
+  --arche-text-on-brand-primary: var(--arche-sweden-yellow-50);
+  --arche-text-on-brand-body: var(--arche-sweden-yellow-50);
+  --arche-text-on-brand-secondary: var(--arche-sweden-yellow-50);
+  --arche-text-on-brand-name: var(--arche-sweden-yellow-50);
+  --arche-border-on-brand-divider: var(--arche-sweden-blue-300);
+  --arche-interactive-progress: var(--arche-sweden-blue-500);
+  --arche-interactive-link-nav-indicator: var(--arche-sweden-blue-500);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-sweden-blue-700);
+  --arche-interactive-button-secondary-label-default: var(--arche-sweden-blue-500);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-sweden-blue-700);
+  --arche-interactive-button-secondary-indicator: var(--arche-sweden-blue-500);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-sweden-blue-50);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-sweden-blue-100);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-sweden-blue-50);
+  --arche-interactive-button-tertiary-label-default: var(--arche-sweden-blue-500);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-sweden-blue-600);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-sweden-blue-700);
+  --arche-interactive-button-tertiary-label-active: var(--arche-sweden-blue-500);
+  --arche-interactive-button-tertiary-indicator: var(--arche-sweden-blue-500);
+  --arche-interactive-button-secondary-on-brand-border: var(--arche-sweden-yellow-50);
+  --arche-interactive-button-secondary-on-brand-label: var(--arche-sweden-yellow-50);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-sweden-blue-700);
+  --arche-text-on-brand-switch-selected: var(--arche-sweden-blue-500);
+  --arche-text-on-brand-title: var(--arche-sweden-yellow-50);
+  --arche-interactive-link-default: var(--arche-sweden-blue-500);
+  --arche-accent-rule: var(--arche-sweden-blue-500);
+  --arche-accent-numeral: var(--arche-sweden-blue-500);
+  --arche-interactive-button-primary-on-brand-fill: var(--arche-sweden-yellow-500);
+  --arche-interactive-button-primary-on-brand-label: var(--arche-sweden-blue-800);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-sweden-blue-400);
+  --arche-interactive-button-primary-on-brand-fill-hover: var(--arche-sweden-yellow-400);
+  --arche-interactive-button-primary-on-brand-fill-pressed: var(--arche-sweden-yellow-600);
+}
+
+:root[data-mode="klarheit"][data-theme="dark"] {
+  --arche-surface-brand-primary: var(--arche-neutral-800);
+  --arche-surface-brand-primary-subtle: var(--arche-neutral-700);
+  --arche-border-brand-default: var(--arche-neutral-white);
+  --arche-text-neutral-secondary: var(--arche-neutral-200);
+  --arche-text-brand-primary: var(--arche-neutral-white);
+  --arche-icon-brand-default: var(--arche-neutral-white);
+  --arche-interactive-button-primary-fill-default: var(--arche-neutral-100);
+  --arche-interactive-button-primary-fill-hover: var(--arche-neutral-50);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-neutral-200);
+  --arche-interactive-button-secondary-fill-hover: var(--arche-neutral-800);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-neutral-700);
+  --arche-interactive-button-secondary-border-default: var(--arche-neutral-white);
+  --arche-interactive-button-primary-fill-active: var(--arche-neutral-200);
+  --arche-interactive-button-secondary-fill-active: var(--arche-neutral-800);
+  --arche-interactive-progress: var(--arche-neutral-white);
+  --arche-interactive-link-nav-indicator: var(--arche-neutral-white);
+  --arche-interactive-button-primary-label-default: var(--arche-neutral-900);
+  --arche-interactive-button-primary-indicator: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-label-default: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-indicator: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-neutral-800);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-neutral-700);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-neutral-800);
+  --arche-interactive-button-tertiary-label-default: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-label-active: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-indicator: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-neutral-900);
+  --arche-interactive-link-default: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-neutral-700);
+}
+
+:root[data-mode="ethos"][data-theme="dark"] {
+  --arche-accent-rule: var(--arche-greece-blue-200);
+}
+
+:root[data-mode="noktern"][data-theme="dark"] {
+  --arche-surface-neutral-base: var(--arche-norway-blue-900);
+  --arche-surface-neutral-raised: var(--arche-norway-blue-800);
+  --arche-surface-brand-primary-subtle: var(--arche-norway-blue-700);
+  --arche-border-neutral-default: var(--arche-norway-blue-700);
+  --arche-border-brand-default: var(--arche-norway-blue-400);
+  --arche-text-brand-primary: var(--arche-norway-blue-200);
+  --arche-icon-brand-default: var(--arche-norway-blue-300);
+  --arche-interactive-button-primary-fill-default: var(--arche-norway-blue-200);
+  --arche-interactive-button-primary-fill-hover: var(--arche-norway-blue-100);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-norway-blue-300);
+  --arche-interactive-button-secondary-fill-default: var(--arche-norway-blue-900);
+  --arche-interactive-button-secondary-fill-hover: var(--arche-norway-blue-800);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-norway-blue-700);
+  --arche-interactive-button-secondary-fill-disabled: var(--arche-norway-blue-900);
+  --arche-interactive-button-secondary-border-default: var(--arche-norway-blue-200);
+  --arche-interactive-button-secondary-border-inverse: var(--arche-norway-blue-900);
+  --arche-interactive-button-primary-fill-active: var(--arche-norway-blue-300);
+  --arche-interactive-button-secondary-fill-active: var(--arche-norway-blue-800);
+  --arche-interactive-progress: var(--arche-norway-blue-300);
+  --arche-interactive-link-nav-indicator: var(--arche-norway-blue-200);
+  --arche-interactive-button-primary-label-default: var(--arche-norway-blue-900);
+  --arche-interactive-button-primary-indicator: var(--arche-norway-blue-900);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-norway-blue-100);
+  --arche-interactive-button-secondary-label-default: var(--arche-norway-blue-200);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-norway-blue-100);
+  --arche-interactive-button-secondary-indicator: var(--arche-norway-blue-200);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-norway-blue-800);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-norway-blue-700);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-norway-blue-800);
+  --arche-interactive-button-tertiary-label-default: var(--arche-norway-blue-200);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-norway-blue-100);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-norway-blue-50);
+  --arche-interactive-button-tertiary-label-active: var(--arche-norway-blue-200);
+  --arche-interactive-button-tertiary-indicator: var(--arche-norway-blue-200);
+  --arche-interactive-link-default: var(--arche-norway-blue-200);
+  --arche-accent-rule: var(--arche-norway-blue-200);
+  --arche-accent-numeral: var(--arche-norway-blue-200);
+}
+
+:root[data-mode="omtanke"][data-theme="dark"] {
+  --arche-surface-neutral-base: var(--arche-sweden-blue-900);
+  --arche-surface-neutral-raised: var(--arche-sweden-blue-800);
+  --arche-surface-brand-primary-subtle: var(--arche-sweden-blue-700);
+  --arche-border-neutral-default: var(--arche-sweden-blue-700);
+  --arche-border-brand-default: var(--arche-sweden-blue-400);
+  --arche-text-brand-primary: var(--arche-sweden-blue-200);
+  --arche-icon-brand-default: var(--arche-sweden-blue-300);
+  --arche-interactive-button-primary-fill-default: var(--arche-sweden-blue-200);
+  --arche-interactive-button-primary-fill-hover: var(--arche-sweden-blue-100);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-sweden-blue-300);
+  --arche-interactive-button-secondary-fill-default: var(--arche-sweden-blue-900);
+  --arche-interactive-button-secondary-fill-hover: var(--arche-sweden-blue-800);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-sweden-blue-700);
+  --arche-interactive-button-secondary-fill-disabled: var(--arche-sweden-blue-900);
+  --arche-interactive-button-secondary-border-default: var(--arche-sweden-blue-200);
+  --arche-interactive-button-secondary-border-inverse: var(--arche-sweden-blue-900);
+  --arche-interactive-button-primary-fill-active: var(--arche-sweden-blue-300);
+  --arche-interactive-button-secondary-fill-active: var(--arche-sweden-blue-800);
+  --arche-interactive-progress: var(--arche-sweden-blue-300);
+  --arche-interactive-link-nav-indicator: var(--arche-sweden-blue-200);
+  --arche-interactive-button-primary-label-default: var(--arche-sweden-blue-900);
+  --arche-interactive-button-primary-indicator: var(--arche-sweden-blue-900);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-sweden-blue-100);
+  --arche-interactive-button-secondary-label-default: var(--arche-sweden-blue-200);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-sweden-blue-100);
+  --arche-interactive-button-secondary-indicator: var(--arche-sweden-blue-200);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-sweden-blue-800);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-sweden-blue-700);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-sweden-blue-800);
+  --arche-interactive-button-tertiary-label-default: var(--arche-sweden-blue-200);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-sweden-blue-100);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-sweden-blue-50);
+  --arche-interactive-button-tertiary-label-active: var(--arche-sweden-blue-200);
+  --arche-interactive-button-tertiary-indicator: var(--arche-sweden-blue-200);
+  --arche-interactive-link-default: var(--arche-sweden-blue-200);
+  --arche-accent-rule: var(--arche-sweden-blue-200);
+  --arche-accent-numeral: var(--arche-sweden-blue-200);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-mode="klarheit"]:not([data-theme="light"]) {
+    --arche-surface-brand-primary: var(--arche-neutral-800);
+    --arche-surface-brand-primary-subtle: var(--arche-neutral-700);
+    --arche-border-brand-default: var(--arche-neutral-white);
+    --arche-text-neutral-secondary: var(--arche-neutral-200);
+    --arche-text-brand-primary: var(--arche-neutral-white);
+    --arche-icon-brand-default: var(--arche-neutral-white);
+    --arche-interactive-button-primary-fill-default: var(--arche-neutral-100);
+    --arche-interactive-button-primary-fill-hover: var(--arche-neutral-50);
+    --arche-interactive-button-primary-fill-pressed: var(--arche-neutral-200);
+    --arche-interactive-button-secondary-fill-hover: var(--arche-neutral-800);
+    --arche-interactive-button-secondary-fill-pressed: var(--arche-neutral-700);
+    --arche-interactive-button-secondary-border-default: var(--arche-neutral-white);
+    --arche-interactive-button-primary-fill-active: var(--arche-neutral-200);
+    --arche-interactive-button-secondary-fill-active: var(--arche-neutral-800);
+    --arche-interactive-progress: var(--arche-neutral-white);
+    --arche-interactive-link-nav-indicator: var(--arche-neutral-white);
+    --arche-interactive-button-primary-label-default: var(--arche-neutral-900);
+    --arche-interactive-button-primary-indicator: var(--arche-neutral-900);
+    --arche-interactive-button-secondary-border-pressed: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-label-default: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-label-pressed: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-indicator: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-fill-hover: var(--arche-neutral-800);
+    --arche-interactive-button-tertiary-fill-pressed: var(--arche-neutral-700);
+    --arche-interactive-button-tertiary-fill-active: var(--arche-neutral-800);
+    --arche-interactive-button-tertiary-label-default: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-label-hover: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-label-pressed: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-label-active: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-indicator: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-neutral-900);
+    --arche-interactive-link-default: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-neutral-700);
+  }
+
+  :root[data-mode="ethos"]:not([data-theme="light"]) {
+    --arche-accent-rule: var(--arche-greece-blue-200);
+  }
+
+  :root[data-mode="noktern"]:not([data-theme="light"]) {
+    --arche-surface-neutral-base: var(--arche-norway-blue-900);
+    --arche-surface-neutral-raised: var(--arche-norway-blue-800);
+    --arche-surface-brand-primary-subtle: var(--arche-norway-blue-700);
+    --arche-border-neutral-default: var(--arche-norway-blue-700);
+    --arche-border-brand-default: var(--arche-norway-blue-400);
+    --arche-text-brand-primary: var(--arche-norway-blue-200);
+    --arche-icon-brand-default: var(--arche-norway-blue-300);
+    --arche-interactive-button-primary-fill-default: var(--arche-norway-blue-200);
+    --arche-interactive-button-primary-fill-hover: var(--arche-norway-blue-100);
+    --arche-interactive-button-primary-fill-pressed: var(--arche-norway-blue-300);
+    --arche-interactive-button-secondary-fill-default: var(--arche-norway-blue-900);
+    --arche-interactive-button-secondary-fill-hover: var(--arche-norway-blue-800);
+    --arche-interactive-button-secondary-fill-pressed: var(--arche-norway-blue-700);
+    --arche-interactive-button-secondary-fill-disabled: var(--arche-norway-blue-900);
+    --arche-interactive-button-secondary-border-default: var(--arche-norway-blue-200);
+    --arche-interactive-button-secondary-border-inverse: var(--arche-norway-blue-900);
+    --arche-interactive-button-primary-fill-active: var(--arche-norway-blue-300);
+    --arche-interactive-button-secondary-fill-active: var(--arche-norway-blue-800);
+    --arche-interactive-progress: var(--arche-norway-blue-300);
+    --arche-interactive-link-nav-indicator: var(--arche-norway-blue-200);
+    --arche-interactive-button-primary-label-default: var(--arche-norway-blue-900);
+    --arche-interactive-button-primary-indicator: var(--arche-norway-blue-900);
+    --arche-interactive-button-secondary-border-pressed: var(--arche-norway-blue-100);
+    --arche-interactive-button-secondary-label-default: var(--arche-norway-blue-200);
+    --arche-interactive-button-secondary-label-pressed: var(--arche-norway-blue-100);
+    --arche-interactive-button-secondary-indicator: var(--arche-norway-blue-200);
+    --arche-interactive-button-tertiary-fill-hover: var(--arche-norway-blue-800);
+    --arche-interactive-button-tertiary-fill-pressed: var(--arche-norway-blue-700);
+    --arche-interactive-button-tertiary-fill-active: var(--arche-norway-blue-800);
+    --arche-interactive-button-tertiary-label-default: var(--arche-norway-blue-200);
+    --arche-interactive-button-tertiary-label-hover: var(--arche-norway-blue-100);
+    --arche-interactive-button-tertiary-label-pressed: var(--arche-norway-blue-50);
+    --arche-interactive-button-tertiary-label-active: var(--arche-norway-blue-200);
+    --arche-interactive-button-tertiary-indicator: var(--arche-norway-blue-200);
+    --arche-interactive-link-default: var(--arche-norway-blue-200);
+    --arche-accent-rule: var(--arche-norway-blue-200);
+    --arche-accent-numeral: var(--arche-norway-blue-200);
+  }
+
+  :root[data-mode="omtanke"]:not([data-theme="light"]) {
+    --arche-surface-neutral-base: var(--arche-sweden-blue-900);
+    --arche-surface-neutral-raised: var(--arche-sweden-blue-800);
+    --arche-surface-brand-primary-subtle: var(--arche-sweden-blue-700);
+    --arche-border-neutral-default: var(--arche-sweden-blue-700);
+    --arche-border-brand-default: var(--arche-sweden-blue-400);
+    --arche-text-brand-primary: var(--arche-sweden-blue-200);
+    --arche-icon-brand-default: var(--arche-sweden-blue-300);
+    --arche-interactive-button-primary-fill-default: var(--arche-sweden-blue-200);
+    --arche-interactive-button-primary-fill-hover: var(--arche-sweden-blue-100);
+    --arche-interactive-button-primary-fill-pressed: var(--arche-sweden-blue-300);
+    --arche-interactive-button-secondary-fill-default: var(--arche-sweden-blue-900);
+    --arche-interactive-button-secondary-fill-hover: var(--arche-sweden-blue-800);
+    --arche-interactive-button-secondary-fill-pressed: var(--arche-sweden-blue-700);
+    --arche-interactive-button-secondary-fill-disabled: var(--arche-sweden-blue-900);
+    --arche-interactive-button-secondary-border-default: var(--arche-sweden-blue-200);
+    --arche-interactive-button-secondary-border-inverse: var(--arche-sweden-blue-900);
+    --arche-interactive-button-primary-fill-active: var(--arche-sweden-blue-300);
+    --arche-interactive-button-secondary-fill-active: var(--arche-sweden-blue-800);
+    --arche-interactive-progress: var(--arche-sweden-blue-300);
+    --arche-interactive-link-nav-indicator: var(--arche-sweden-blue-200);
+    --arche-interactive-button-primary-label-default: var(--arche-sweden-blue-900);
+    --arche-interactive-button-primary-indicator: var(--arche-sweden-blue-900);
+    --arche-interactive-button-secondary-border-pressed: var(--arche-sweden-blue-100);
+    --arche-interactive-button-secondary-label-default: var(--arche-sweden-blue-200);
+    --arche-interactive-button-secondary-label-pressed: var(--arche-sweden-blue-100);
+    --arche-interactive-button-secondary-indicator: var(--arche-sweden-blue-200);
+    --arche-interactive-button-tertiary-fill-hover: var(--arche-sweden-blue-800);
+    --arche-interactive-button-tertiary-fill-pressed: var(--arche-sweden-blue-700);
+    --arche-interactive-button-tertiary-fill-active: var(--arche-sweden-blue-800);
+    --arche-interactive-button-tertiary-label-default: var(--arche-sweden-blue-200);
+    --arche-interactive-button-tertiary-label-hover: var(--arche-sweden-blue-100);
+    --arche-interactive-button-tertiary-label-pressed: var(--arche-sweden-blue-50);
+    --arche-interactive-button-tertiary-label-active: var(--arche-sweden-blue-200);
+    --arche-interactive-button-tertiary-indicator: var(--arche-sweden-blue-200);
+    --arche-interactive-link-default: var(--arche-sweden-blue-200);
+    --arche-accent-rule: var(--arche-sweden-blue-200);
+    --arche-accent-numeral: var(--arche-sweden-blue-200);
   }
 }
 
