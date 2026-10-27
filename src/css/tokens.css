@@ -2,7 +2,7 @@
    Arche Design System — Design Tokens
    GENERATED FILE. Do not hand-edit.
    Source:    tokens/figma-tokens.json
-              (Figma file (Arche Design System), read 2026-10-24)
+              (Figma file (Arche Design System), read 2026-10-26 (re-read after the accent and selection changes))
    Generator: scripts/generate-tokens.mjs
    To change a value, change it in Figma, update the JSON, and run the generator.
    ========================================================================== */
@@ -100,6 +100,34 @@
   /* neutral */
   --arche-black-alpha-50: rgb(0 0 0 / 50%);
   --arche-black-alpha-90: rgb(0 0 0 / 90%);
+
+  /* norway */
+  --arche-norway-50: #E5EBF5;
+  --arche-norway-100: #CCD7EA;
+  --arche-norway-200: #9EB3D8;
+  --arche-norway-300: #708EC5;
+  --arche-norway-400: #3862AF;
+  --arche-norway-500: #003698;
+  --arche-norway-600: #002E82;
+  --arche-norway-700: #002567;
+  --arche-norway-800: #001B4C;
+  --arche-norway-900: #00102D;
+
+  /* sweden */
+  --arche-sweden-50: #E5EEF4;
+  --arche-sweden-100: #CCDCE9;
+  --arche-sweden-200: #9EBDD6;
+  --arche-sweden-300: #709EC2;
+  --arche-sweden-400: #3878AB;
+  --arche-sweden-500: #005293;
+  --arche-sweden-600: #00467D;
+  --arche-sweden-700: #003763;
+  --arche-sweden-800: #00294A;
+  --arche-sweden-900: #00182C;
+
+  /* swiss/red */
+  --arche-swiss-red-web: #FF0000;
+  --arche-swiss-red-print: #DA291C;
 
   /* ---------- Spacing and strokes ---------- */
   --arche-space-fine-4: 4px;
@@ -255,6 +283,26 @@
   /* surface */
   --arche-surface-overlay-scrim-strong: var(--arche-black-alpha-90);
   --arche-surface-overlay-bar: var(--arche-neutral-800);
+  --arche-surface-brand-accent: var(--arche-tertiary-500);
+
+  /* selection */
+  --arche-selection-background: var(--arche-secondary-500);
+  --arche-selection-text: var(--arche-neutral-900);
+
+  /* interactive */
+  --arche-interactive-link-default: var(--arche-primary-500);
+
+  /* border */
+  --arche-border-on-brand-cross-line: var(--arche-neutral-white);
+
+  /* accent */
+  --arche-accent-rule: var(--arche-tertiary-500);
+  --arche-accent-numeral: var(--arche-primary-500);
+
+  /* interactive */
+  --arche-interactive-button-primary-on-brand-fill: var(--arche-neutral-900);
+  --arche-interactive-button-primary-on-brand-label: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-neutral-900);
 
   /* ---------- Focus ring ---------- */
   --arche-focus-ring-width: var(--arche-stroke-4);
@@ -509,6 +557,10 @@
   --arche-interactive-button-tertiary-label-active: var(--arche-primary-200);
   --arche-interactive-button-tertiary-indicator: var(--arche-primary-200);
   --arche-logo-on-page-secondary-line: var(--arche-primary-200);
+  --arche-surface-brand-accent: var(--arche-tertiary-400);
+  --arche-interactive-link-default: var(--arche-primary-200);
+  --arche-accent-rule: var(--arche-tertiary-400);
+  --arche-accent-numeral: var(--arche-primary-200);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -582,6 +634,347 @@
     --arche-interactive-button-tertiary-label-active: var(--arche-primary-200);
     --arche-interactive-button-tertiary-indicator: var(--arche-primary-200);
     --arche-logo-on-page-secondary-line: var(--arche-primary-200);
+    --arche-surface-brand-accent: var(--arche-tertiary-400);
+    --arche-interactive-link-default: var(--arche-primary-200);
+    --arche-accent-rule: var(--arche-tertiary-400);
+    --arche-accent-numeral: var(--arche-primary-200);
+  }
+}
+
+/* ---------- Color modes ----------
+   <html data-mode="..."> picks a color mode. No data-mode means Canon.
+   Light or Dark still follows data-theme or the browser setting.
+   Each block lists only the roles that differ from Canon. These blocks must stay
+   after Canon's Dark blocks above: same strength, so the later one wins. */
+:root[data-mode="klarheit"] {
+  --arche-surface-brand-primary: var(--arche-neutral-900);
+  --arche-surface-brand-primary-subtle: var(--arche-neutral-50);
+  --arche-border-brand-default: var(--arche-neutral-900);
+  --arche-text-brand-primary: var(--arche-neutral-900);
+  --arche-icon-brand-default: var(--arche-neutral-900);
+  --arche-interactive-button-primary-fill-default: var(--arche-neutral-900);
+  --arche-interactive-button-primary-fill-hover: var(--arche-neutral-800);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-neutral-700);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-neutral-50);
+  --arche-interactive-button-secondary-border-default: var(--arche-neutral-900);
+  --arche-interactive-button-primary-fill-active: var(--arche-neutral-800);
+  --arche-text-on-brand-body: var(--arche-neutral-white);
+  --arche-text-on-brand-secondary: var(--arche-neutral-100);
+  --arche-border-on-brand-divider: var(--arche-neutral-600);
+  --arche-interactive-progress: var(--arche-neutral-900);
+  --arche-interactive-link-nav-indicator: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-label-default: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-indicator: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-neutral-50);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-neutral-100);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-neutral-50);
+  --arche-interactive-button-tertiary-label-default: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-label-active: var(--arche-neutral-900);
+  --arche-interactive-button-tertiary-indicator: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-neutral-700);
+  --arche-text-on-brand-switch-selected: var(--arche-neutral-900);
+  --arche-interactive-link-default: var(--arche-neutral-900);
+  --arche-accent-rule: var(--arche-swiss-red-web);
+  --arche-accent-numeral: var(--arche-swiss-red-web);
+}
+
+:root[data-mode="ethos"] {
+  --arche-selection-background: var(--arche-primary-200);
+  --arche-accent-rule: var(--arche-primary-500);
+}
+
+:root[data-mode="noktern"] {
+  --arche-surface-brand-primary: var(--arche-norway-500);
+  --arche-surface-brand-primary-subtle: var(--arche-norway-50);
+  --arche-border-brand-default: var(--arche-norway-500);
+  --arche-text-brand-primary: var(--arche-norway-500);
+  --arche-icon-brand-default: var(--arche-norway-500);
+  --arche-interactive-button-primary-fill-default: var(--arche-norway-500);
+  --arche-interactive-button-primary-fill-hover: var(--arche-norway-600);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-norway-700);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-norway-50);
+  --arche-interactive-button-secondary-border-default: var(--arche-norway-500);
+  --arche-interactive-button-primary-fill-active: var(--arche-norway-800);
+  --arche-text-on-brand-body: var(--arche-norway-50);
+  --arche-text-on-brand-secondary: var(--arche-norway-100);
+  --arche-border-on-brand-divider: var(--arche-norway-300);
+  --arche-interactive-progress: var(--arche-norway-500);
+  --arche-interactive-link-nav-indicator: var(--arche-norway-500);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-norway-700);
+  --arche-interactive-button-secondary-label-default: var(--arche-norway-500);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-norway-700);
+  --arche-interactive-button-secondary-indicator: var(--arche-norway-500);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-norway-50);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-norway-100);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-norway-50);
+  --arche-interactive-button-tertiary-label-default: var(--arche-norway-500);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-norway-600);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-norway-700);
+  --arche-interactive-button-tertiary-label-active: var(--arche-norway-500);
+  --arche-interactive-button-tertiary-indicator: var(--arche-norway-500);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-norway-600);
+  --arche-text-on-brand-switch-selected: var(--arche-norway-500);
+  --arche-selection-background: var(--arche-norway-200);
+  --arche-interactive-link-default: var(--arche-norway-500);
+  --arche-accent-rule: var(--arche-norway-500);
+  --arche-accent-numeral: var(--arche-norway-500);
+}
+
+:root[data-mode="omtanke"] {
+  --arche-surface-brand-primary: var(--arche-secondary-500);
+  --arche-surface-brand-primary-subtle: var(--arche-secondary-50);
+  --arche-border-brand-default: var(--arche-sweden-500);
+  --arche-text-brand-primary: var(--arche-sweden-500);
+  --arche-icon-brand-default: var(--arche-sweden-500);
+  --arche-interactive-button-primary-fill-default: var(--arche-sweden-500);
+  --arche-interactive-button-primary-fill-hover: var(--arche-sweden-600);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-sweden-700);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-sweden-50);
+  --arche-interactive-button-secondary-border-default: var(--arche-sweden-500);
+  --arche-interactive-button-primary-fill-active: var(--arche-sweden-800);
+  --arche-text-on-brand-primary: var(--arche-sweden-800);
+  --arche-text-on-brand-body: var(--arche-sweden-800);
+  --arche-text-on-brand-secondary: var(--arche-sweden-800);
+  --arche-border-focus-ring-on-brand: var(--arche-neutral-black);
+  --arche-border-on-brand-divider: var(--arche-sweden-300);
+  --arche-interactive-progress: var(--arche-sweden-500);
+  --arche-interactive-link-nav-indicator: var(--arche-sweden-500);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-sweden-700);
+  --arche-interactive-button-secondary-label-default: var(--arche-sweden-500);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-sweden-700);
+  --arche-interactive-button-secondary-indicator: var(--arche-sweden-500);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-sweden-50);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-sweden-100);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-sweden-50);
+  --arche-interactive-button-tertiary-label-default: var(--arche-sweden-500);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-sweden-600);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-sweden-700);
+  --arche-interactive-button-tertiary-label-active: var(--arche-sweden-500);
+  --arche-interactive-button-tertiary-indicator: var(--arche-sweden-500);
+  --arche-interactive-button-secondary-on-brand-border: var(--arche-secondary-50);
+  --arche-interactive-button-secondary-on-brand-label: var(--arche-secondary-50);
+  --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-sweden-600);
+  --arche-text-on-brand-switch-selected: var(--arche-sweden-500);
+  --arche-interactive-link-default: var(--arche-sweden-500);
+  --arche-accent-rule: var(--arche-sweden-500);
+  --arche-accent-numeral: var(--arche-sweden-500);
+  --arche-interactive-button-primary-on-brand-fill: var(--arche-sweden-500);
+  --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-sweden-700);
+}
+
+:root[data-mode="klarheit"][data-theme="dark"] {
+  --arche-surface-brand-primary: var(--arche-neutral-800);
+  --arche-surface-brand-primary-subtle: var(--arche-neutral-700);
+  --arche-border-brand-default: var(--arche-neutral-white);
+  --arche-text-brand-primary: var(--arche-neutral-white);
+  --arche-icon-brand-default: var(--arche-neutral-white);
+  --arche-interactive-button-primary-fill-default: var(--arche-neutral-100);
+  --arche-interactive-button-primary-fill-hover: var(--arche-neutral-50);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-neutral-200);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-neutral-800);
+  --arche-interactive-button-secondary-border-default: var(--arche-neutral-white);
+  --arche-interactive-button-primary-fill-active: var(--arche-neutral-50);
+  --arche-interactive-progress: var(--arche-neutral-white);
+  --arche-interactive-link-nav-indicator: var(--arche-neutral-white);
+  --arche-interactive-button-primary-label-default: var(--arche-neutral-900);
+  --arche-interactive-button-primary-indicator: var(--arche-neutral-900);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-label-default: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-neutral-white);
+  --arche-interactive-button-secondary-indicator: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-neutral-800);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-neutral-700);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-neutral-800);
+  --arche-interactive-button-tertiary-label-default: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-label-active: var(--arche-neutral-white);
+  --arche-interactive-button-tertiary-indicator: var(--arche-neutral-white);
+  --arche-interactive-link-default: var(--arche-neutral-white);
+}
+
+:root[data-mode="ethos"][data-theme="dark"] {
+  --arche-accent-rule: var(--arche-primary-200);
+}
+
+:root[data-mode="noktern"][data-theme="dark"] {
+  --arche-surface-neutral-base: var(--arche-norway-900);
+  --arche-surface-neutral-raised: var(--arche-norway-800);
+  --arche-surface-brand-primary-subtle: var(--arche-norway-700);
+  --arche-border-neutral-default: var(--arche-norway-700);
+  --arche-border-brand-default: var(--arche-norway-400);
+  --arche-text-brand-primary: var(--arche-norway-200);
+  --arche-icon-brand-default: var(--arche-norway-300);
+  --arche-interactive-button-primary-fill-default: var(--arche-norway-200);
+  --arche-interactive-button-primary-fill-hover: var(--arche-norway-100);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-norway-300);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-norway-800);
+  --arche-interactive-button-secondary-border-default: var(--arche-norway-200);
+  --arche-interactive-button-primary-fill-active: var(--arche-norway-100);
+  --arche-interactive-progress: var(--arche-norway-300);
+  --arche-interactive-link-nav-indicator: var(--arche-norway-200);
+  --arche-interactive-button-primary-label-default: var(--arche-norway-900);
+  --arche-interactive-button-primary-indicator: var(--arche-norway-900);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-norway-100);
+  --arche-interactive-button-secondary-label-default: var(--arche-norway-200);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-norway-100);
+  --arche-interactive-button-secondary-indicator: var(--arche-norway-200);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-norway-800);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-norway-700);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-norway-800);
+  --arche-interactive-button-tertiary-label-default: var(--arche-norway-200);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-norway-100);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-norway-50);
+  --arche-interactive-button-tertiary-label-active: var(--arche-norway-200);
+  --arche-interactive-button-tertiary-indicator: var(--arche-norway-200);
+  --arche-interactive-link-default: var(--arche-norway-200);
+  --arche-accent-rule: var(--arche-norway-200);
+  --arche-accent-numeral: var(--arche-norway-200);
+}
+
+:root[data-mode="omtanke"][data-theme="dark"] {
+  --arche-surface-neutral-base: var(--arche-sweden-900);
+  --arche-surface-neutral-raised: var(--arche-sweden-800);
+  --arche-surface-brand-primary-subtle: var(--arche-secondary-900);
+  --arche-border-neutral-default: var(--arche-sweden-700);
+  --arche-border-brand-default: var(--arche-sweden-400);
+  --arche-text-brand-primary: var(--arche-sweden-200);
+  --arche-icon-brand-default: var(--arche-sweden-300);
+  --arche-interactive-button-primary-fill-default: var(--arche-sweden-200);
+  --arche-interactive-button-primary-fill-hover: var(--arche-sweden-100);
+  --arche-interactive-button-primary-fill-pressed: var(--arche-sweden-300);
+  --arche-interactive-button-secondary-fill-pressed: var(--arche-sweden-800);
+  --arche-interactive-button-secondary-border-default: var(--arche-sweden-200);
+  --arche-interactive-button-primary-fill-active: var(--arche-sweden-100);
+  --arche-interactive-progress: var(--arche-sweden-300);
+  --arche-interactive-link-nav-indicator: var(--arche-sweden-200);
+  --arche-interactive-button-primary-label-default: var(--arche-sweden-900);
+  --arche-interactive-button-primary-indicator: var(--arche-sweden-900);
+  --arche-interactive-button-secondary-border-pressed: var(--arche-sweden-100);
+  --arche-interactive-button-secondary-label-default: var(--arche-sweden-200);
+  --arche-interactive-button-secondary-label-pressed: var(--arche-sweden-100);
+  --arche-interactive-button-secondary-indicator: var(--arche-sweden-200);
+  --arche-interactive-button-tertiary-fill-hover: var(--arche-sweden-800);
+  --arche-interactive-button-tertiary-fill-pressed: var(--arche-sweden-700);
+  --arche-interactive-button-tertiary-fill-active: var(--arche-sweden-800);
+  --arche-interactive-button-tertiary-label-default: var(--arche-sweden-200);
+  --arche-interactive-button-tertiary-label-hover: var(--arche-sweden-100);
+  --arche-interactive-button-tertiary-label-pressed: var(--arche-sweden-50);
+  --arche-interactive-button-tertiary-label-active: var(--arche-sweden-200);
+  --arche-interactive-button-tertiary-indicator: var(--arche-sweden-200);
+  --arche-interactive-link-default: var(--arche-sweden-200);
+  --arche-accent-rule: var(--arche-sweden-200);
+  --arche-accent-numeral: var(--arche-sweden-200);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-mode="klarheit"]:not([data-theme="light"]) {
+    --arche-surface-brand-primary: var(--arche-neutral-800);
+    --arche-surface-brand-primary-subtle: var(--arche-neutral-700);
+    --arche-border-brand-default: var(--arche-neutral-white);
+    --arche-text-brand-primary: var(--arche-neutral-white);
+    --arche-icon-brand-default: var(--arche-neutral-white);
+    --arche-interactive-button-primary-fill-default: var(--arche-neutral-100);
+    --arche-interactive-button-primary-fill-hover: var(--arche-neutral-50);
+    --arche-interactive-button-primary-fill-pressed: var(--arche-neutral-200);
+    --arche-interactive-button-secondary-fill-pressed: var(--arche-neutral-800);
+    --arche-interactive-button-secondary-border-default: var(--arche-neutral-white);
+    --arche-interactive-button-primary-fill-active: var(--arche-neutral-50);
+    --arche-interactive-progress: var(--arche-neutral-white);
+    --arche-interactive-link-nav-indicator: var(--arche-neutral-white);
+    --arche-interactive-button-primary-label-default: var(--arche-neutral-900);
+    --arche-interactive-button-primary-indicator: var(--arche-neutral-900);
+    --arche-interactive-button-secondary-border-pressed: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-label-default: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-label-pressed: var(--arche-neutral-white);
+    --arche-interactive-button-secondary-indicator: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-fill-hover: var(--arche-neutral-800);
+    --arche-interactive-button-tertiary-fill-pressed: var(--arche-neutral-700);
+    --arche-interactive-button-tertiary-fill-active: var(--arche-neutral-800);
+    --arche-interactive-button-tertiary-label-default: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-label-hover: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-label-pressed: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-label-active: var(--arche-neutral-white);
+    --arche-interactive-button-tertiary-indicator: var(--arche-neutral-white);
+    --arche-interactive-link-default: var(--arche-neutral-white);
+  }
+
+  :root[data-mode="ethos"]:not([data-theme="light"]) {
+    --arche-accent-rule: var(--arche-primary-200);
+  }
+
+  :root[data-mode="noktern"]:not([data-theme="light"]) {
+    --arche-surface-neutral-base: var(--arche-norway-900);
+    --arche-surface-neutral-raised: var(--arche-norway-800);
+    --arche-surface-brand-primary-subtle: var(--arche-norway-700);
+    --arche-border-neutral-default: var(--arche-norway-700);
+    --arche-border-brand-default: var(--arche-norway-400);
+    --arche-text-brand-primary: var(--arche-norway-200);
+    --arche-icon-brand-default: var(--arche-norway-300);
+    --arche-interactive-button-primary-fill-default: var(--arche-norway-200);
+    --arche-interactive-button-primary-fill-hover: var(--arche-norway-100);
+    --arche-interactive-button-primary-fill-pressed: var(--arche-norway-300);
+    --arche-interactive-button-secondary-fill-pressed: var(--arche-norway-800);
+    --arche-interactive-button-secondary-border-default: var(--arche-norway-200);
+    --arche-interactive-button-primary-fill-active: var(--arche-norway-100);
+    --arche-interactive-progress: var(--arche-norway-300);
+    --arche-interactive-link-nav-indicator: var(--arche-norway-200);
+    --arche-interactive-button-primary-label-default: var(--arche-norway-900);
+    --arche-interactive-button-primary-indicator: var(--arche-norway-900);
+    --arche-interactive-button-secondary-border-pressed: var(--arche-norway-100);
+    --arche-interactive-button-secondary-label-default: var(--arche-norway-200);
+    --arche-interactive-button-secondary-label-pressed: var(--arche-norway-100);
+    --arche-interactive-button-secondary-indicator: var(--arche-norway-200);
+    --arche-interactive-button-tertiary-fill-hover: var(--arche-norway-800);
+    --arche-interactive-button-tertiary-fill-pressed: var(--arche-norway-700);
+    --arche-interactive-button-tertiary-fill-active: var(--arche-norway-800);
+    --arche-interactive-button-tertiary-label-default: var(--arche-norway-200);
+    --arche-interactive-button-tertiary-label-hover: var(--arche-norway-100);
+    --arche-interactive-button-tertiary-label-pressed: var(--arche-norway-50);
+    --arche-interactive-button-tertiary-label-active: var(--arche-norway-200);
+    --arche-interactive-button-tertiary-indicator: var(--arche-norway-200);
+    --arche-interactive-link-default: var(--arche-norway-200);
+    --arche-accent-rule: var(--arche-norway-200);
+    --arche-accent-numeral: var(--arche-norway-200);
+  }
+
+  :root[data-mode="omtanke"]:not([data-theme="light"]) {
+    --arche-surface-neutral-base: var(--arche-sweden-900);
+    --arche-surface-neutral-raised: var(--arche-sweden-800);
+    --arche-surface-brand-primary-subtle: var(--arche-secondary-900);
+    --arche-border-neutral-default: var(--arche-sweden-700);
+    --arche-border-brand-default: var(--arche-sweden-400);
+    --arche-text-brand-primary: var(--arche-sweden-200);
+    --arche-icon-brand-default: var(--arche-sweden-300);
+    --arche-interactive-button-primary-fill-default: var(--arche-sweden-200);
+    --arche-interactive-button-primary-fill-hover: var(--arche-sweden-100);
+    --arche-interactive-button-primary-fill-pressed: var(--arche-sweden-300);
+    --arche-interactive-button-secondary-fill-pressed: var(--arche-sweden-800);
+    --arche-interactive-button-secondary-border-default: var(--arche-sweden-200);
+    --arche-interactive-button-primary-fill-active: var(--arche-sweden-100);
+    --arche-interactive-progress: var(--arche-sweden-300);
+    --arche-interactive-link-nav-indicator: var(--arche-sweden-200);
+    --arche-interactive-button-primary-label-default: var(--arche-sweden-900);
+    --arche-interactive-button-primary-indicator: var(--arche-sweden-900);
+    --arche-interactive-button-secondary-border-pressed: var(--arche-sweden-100);
+    --arche-interactive-button-secondary-label-default: var(--arche-sweden-200);
+    --arche-interactive-button-secondary-label-pressed: var(--arche-sweden-100);
+    --arche-interactive-button-secondary-indicator: var(--arche-sweden-200);
+    --arche-interactive-button-tertiary-fill-hover: var(--arche-sweden-800);
+    --arche-interactive-button-tertiary-fill-pressed: var(--arche-sweden-700);
+    --arche-interactive-button-tertiary-fill-active: var(--arche-sweden-800);
+    --arche-interactive-button-tertiary-label-default: var(--arche-sweden-200);
+    --arche-interactive-button-tertiary-label-hover: var(--arche-sweden-100);
+    --arche-interactive-button-tertiary-label-pressed: var(--arche-sweden-50);
+    --arche-interactive-button-tertiary-label-active: var(--arche-sweden-200);
+    --arche-interactive-button-tertiary-indicator: var(--arche-sweden-200);
+    --arche-interactive-link-default: var(--arche-sweden-200);
+    --arche-accent-rule: var(--arche-sweden-200);
+    --arche-accent-numeral: var(--arche-sweden-200);
   }
 }
 
