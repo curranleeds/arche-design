@@ -1,12 +1,12 @@
 ---
 title: "Color"
 eyebrow: "Foundations"
-lead: "Three brand families do three different jobs, and neutrals carry the rest. Components never use these raw colors directly. They use role tokens that point at them."
+lead: "Brand families do different jobs, and neutrals carry the rest. Components never use these raw colors directly. They use role tokens that point at them. This page shows Canon, the default mode."
 permalink: /foundations/color/
 ---
 <section aria-labelledby="families-h">
   <h2 id="families-h" class="type-h2">Color families</h2>
-  <p>Each family runs from 50 (lightest) to 900 (darkest). The 500 step is the base color. The CSS name is under each swatch.</p>
+  <p>Each family runs from 50 (lightest) to 900 (darkest). The 500 step is the base color. The CSS name is under each swatch. Norway Blue and Sweden Blue are used by one mode each. Swiss red (<code>--arche-swiss-red-web</code> <span class="tok">#FF0000</span>, and <code>--arche-swiss-red-print</code> <span class="tok">#DA291C</span> for print) is used only in Klarheit and is also the Alert color.</p>
   {% for f in tokens.families %}
   <h3 class="type-h3">{{ f.name }}</h3>
   <p>{{ f.job }}</p>
@@ -23,7 +23,7 @@ permalink: /foundations/color/
 
 <section aria-labelledby="jobs-h">
   <h2 id="jobs-h" class="type-h2">Which color does which job</h2>
-  <p>Proportions are about 60 percent neutral, 30 percent blue and 10 percent accent. Blue is the structural color. Yellow and red stay sparing and single-purpose.</p>
+  <p>These are Canon's jobs. Proportions are about 60 percent neutral, 30 percent blue and 10 percent accent. Blue is the structural color. Yellow and red stay sparing and single-purpose. Other modes give the same roles different colors: see <a href="/foundations/modes/">Color modes</a>.</p>
   <div class="table-wrap" tabindex="0" role="region" aria-label="Color jobs, scrollable">
     <table class="docs-table type-small">
       <thead><tr><th scope="col">Job</th><th scope="col">Role token</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
@@ -58,12 +58,12 @@ permalink: /foundations/color/
   <div class="rules">
     <div class="rule"><h3 class="type-h3">Do</h3><ul>
       <li>Use blue for structure, links, buttons and stat numbers.</li>
-      <li>Use yellow only for identity: a name or the Credits band.</li>
+      <li>Use yellow for identity: a name, the Credits band or the selection highlight.</li>
       <li>Pair color with a second signal: weight, a label, an icon or a stroke.</li>
       <li>Use Greece Blue plus neutrals in charts and diagrams.</li>
     </ul></div>
     <div class="rule"><h3 class="type-h3">Don't</h3><ul>
-      <li>Use Norway Red anywhere on a page. It has no job yet.</li>
+      <li>Use Norway Red anywhere except the logo and Canon's end mark, one rule per page.</li>
       <li>Use alert, success or warning colors decoratively. They mean status only.</li>
       <li>Reach for a primitive such as <code>--arche-primary-500</code> inside a component.</li>
       <li>Use yellow text on white. It fails contrast.</li>
@@ -94,7 +94,7 @@ permalink: /foundations/color/
 
 <section aria-labelledby="dark-h">
   <h2 id="dark-h" class="type-h2">Dark mode</h2>
-  <p>Role tokens have two values, Light and Dark. Light sits on <code>:root</code>. Dark is written in two places: once for visitors who chose it with the theme toggle, and once for visitors whose browser is set to dark and who have not chosen.</p>
+  <p>Role tokens have two values, Light and Dark, in each mode. Canon's Light sits on <code>:root</code>. Dark is written in two places: once for visitors who chose it with the theme toggle, and once for visitors whose browser is set to dark and who have not chosen. Every other mode adds the same pair of blocks, selected with <code>data-mode</code>.</p>
 <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>:root[data-theme="dark"] {
   --arche-surface-neutral-base: var(--arche-neutral-900);
 }
@@ -108,7 +108,7 @@ permalink: /foundations/color/
 
 <section aria-labelledby="roles-h">
   <h2 id="roles-h" class="type-h2">All role tokens</h2>
-  <p>{{ tokens.counts.roles }} tokens in total. Each group opens to show its Light and Dark values and the primitive it points at.</p>
+  <p>{{ tokens.counts.roles }} tokens in total. Each group opens to show its Canon Light and Dark values and the primitive it points at. A role that another mode changes says so on that mode's page.</p>
   {% for g in tokens.roleList %}
   <details class="demo__code" style="margin-bottom:8px">
     <summary>{{ g.label }} ({{ g.items | length }})</summary>

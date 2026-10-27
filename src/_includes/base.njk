@@ -13,12 +13,17 @@
     <meta property="og:title" content="{{ title or site.name }}" />
     <meta property="og:description" content="{{ description or 'Tokens, type, color and components, documented from the source files.' }}" />
     <script>
-      // Runs before first paint: apply a saved Light or Dark choice so the page never flashes.
+      // Runs before first paint: apply a saved Light or Dark choice and color mode so the page never flashes.
       (function () {
         document.documentElement.classList.add('js');
         try {
           var saved = localStorage.getItem('theme');
           if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+        // Same for the color mode. Anything unknown, or blocked storage, leaves Canon (no attribute).
+        try {
+          var mode = localStorage.getItem('arche-mode');
+          if (mode === 'klarheit' || mode === 'noktern' || mode === 'omtanke' || mode === 'ethos') document.documentElement.setAttribute('data-mode', mode);
         } catch (e) {}
       })();
     </script>
@@ -29,6 +34,7 @@
     <link rel="stylesheet" href="/css/docs.css" />
     <script src="/assets/js/theme.js" defer></script>
     <script src="/assets/js/docs.js" defer></script>
+    <script src="/assets/js/mode.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -36,6 +42,7 @@
       <a class="docs-header__name type-h3" href="/">{{ site.name }}</a>
       <div class="docs-header__tools">
         <a class="link docs-header__portfolio" href="{{ site.portfolio }}"><span class="link__text">curranleeds.com</span></a>
+        {% include "mode-select.njk" %}
         {% include "theme-toggle.njk" %}
       </div>
     </header>

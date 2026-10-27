@@ -204,3 +204,26 @@ body {
 .docs-content .cards li,
 .docs-content .swatch-row li { margin-bottom: 0; }
 .docs-content .cs-more__list { margin-bottom: 0; }
+
+/* ----- Color mode switcher (docs only) ----- */
+.mode-select { display: none; align-items: center; gap: var(--arche-space-fine-8); }
+.js .mode-select { display: inline-flex; }
+.mode-select__label { display: none; color: var(--arche-text-neutral-secondary); }
+@media (min-width: 768px) { .mode-select__label { display: inline; } }
+.mode-select__control {
+  height: var(--arche-space-base-48);
+  padding: 0 var(--arche-space-fine-8);
+  border: var(--arche-stroke-1) solid var(--arche-border-neutral-strong);
+  border-radius: 0;
+  background: var(--arche-surface-neutral-raised);
+  color: var(--arche-text-neutral-primary);
+  cursor: pointer;
+}
+.mode-select__control:focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: var(--arche-focus-ring-offset); }
+
+/* ----- Color mode pages ----- */
+.mode-try { margin: 0 0 var(--arche-space-base-24); }
+.docs-content .mode-try { display: none; }
+.js .docs-content .mode-try { display: block; }
+.mode-pairs td, .mode-pairs th { white-space: normal; }
+.tok-line { display: block; color: var(--arche-text-neutral-secondary); }

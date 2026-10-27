@@ -1,0 +1,92 @@
+---
+pagination:
+  data: tokens.modes
+  size: 1
+  alias: mode
+permalink: /foundations/color/{{ mode.id }}/
+eleventyComputed:
+  title: "{{ mode.name }}"
+  lead: "{{ mode.summary }}"
+eyebrow: "Color mode"
+description: "The {{ mode.name }} color mode of the Arche Design System: its rules, main colors and contrast ratios, Light and Dark."
+---
+<p class="mode-try">
+  <button type="button" class="button type-button button--secondary" data-mode-set="{{ mode.id }}" aria-pressed="false"><span class="button__label">View this site in {{ mode.name }}</span></button>
+</p>
+<p>{{ mode.name }} is the <strong>{{ mode.tradition | lower }}</strong> mode. Its trait is <strong>{{ mode.trait | lower }}</strong>. Its code id is <code>{{ mode.id }}</code>: set <code>data-mode="{{ mode.id }}"</code> on the <code>&lt;html&gt;</code> element{% if mode.id == "canon" %}, or set nothing, because Canon is the default{% endif %}.</p>
+
+<section aria-labelledby="rules-h">
+  <h2 id="rules-h" class="type-h2">Rules</h2>
+  <ul>
+    {% for r in mode.rules %}<li>{{ r }}</li>
+    {% endfor %}
+  </ul>
+  <p>These rules hold in every mode: primitives, type, spacing, grid, corner radius, motion and component structure stay the same, and Alert, Success and Warning never change.</p>
+</section>
+
+<section aria-labelledby="colors-h">
+  <h2 id="colors-h" class="type-h2">Main colors</h2>
+  <p>The roles that show the character of {{ mode.name }}. Each role points at a primitive, and the hex value is read from the token file when the site builds.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="{{ mode.name }} main colors, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Job</th><th scope="col">Role token</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
+      <tbody>
+      {% for s in mode.swatches %}
+        <tr>
+          <th scope="row">{{ s.label }}</th>
+          <td><code>{{ s.cssVar }}</code></td>
+          <td><span class="dot" style="background: {{ s.light.hex }}"></span>{{ s.light.primitive }} <span class="tok">{{ s.light.hex }}</span></td>
+          <td><span class="dot" style="background: {{ s.dark.hex }}"></span>{{ s.dark.primitive }} <span class="tok">{{ s.dark.hex }}</span></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p>Three accent roles sound alike but do different jobs. See <a href="/foundations/modes/#accent-h">the note on accent roles</a>.</p>
+</section>
+
+<section aria-labelledby="contrast-h">
+  <h2 id="contrast-h" class="type-h2">Contrast</h2>
+  <p>WCAG AA needs 4.5:1 for text and 3:1 for large text and interface parts. These are the main pairs for {{ mode.name }}, calculated from the token values when the site builds. The build also checks a longer list of pairs for every mode.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="{{ mode.name }} contrast table, scrollable">
+    <table class="docs-table type-small mode-pairs">
+      <thead><tr><th scope="col">Pair</th><th scope="col">Needs</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
+      <tbody>
+      {% for p in mode.pairs %}
+        <tr>
+          <th scope="row">{{ p.label }}</th>
+          <td>{{ p.min }}:1</td>
+          <td>{{ p.light.ratio }}:1 <span class="{{ 'pass' if p.light.pass else 'fail' }}">{{ 'Pass' if p.light.pass else 'Fail' }}</span></td>
+          <td>{{ p.dark.ratio }}:1 <span class="{{ 'pass' if p.dark.pass else 'fail' }}">{{ 'Pass' if p.dark.pass else 'Fail' }}</span></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="diff-h">
+  <h2 id="diff-h" class="type-h2">{% if mode.id == "canon" %}All roles{% else %}What differs from Canon{% endif %}</h2>
+  {% if mode.id == "canon" %}
+  <p>Canon is the base. Every other mode lists only the roles whose value differs from it. All {{ tokens.counts.roles }} roles, with their Canon values, are on <a href="/foundations/color/#roles-h">the Color page</a>.</p>
+  {% else %}
+  <p>{{ mode.changed | length }} of {{ tokens.counts.roles }} roles have a different Light or Dark value in {{ mode.name }}. The rest match Canon.</p>
+  <details class="demo__code" style="margin-bottom:8px">
+    <summary>Show the {{ mode.changed | length }} roles</summary>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Roles that differ from Canon, scrollable" style="margin:0;padding:0 16px 16px">
+      <table class="docs-table type-small">
+        <thead><tr><th scope="col">Role</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
+        <tbody>
+        {% for g in tokens.roleList %}{% for r in g.items %}{% if r.name in mode.changed %}
+          <tr>
+            <th scope="row"><code>{{ r.cssVar }}</code></th>
+            <td><span class="dot" style="background: {{ r.values[mode.id].light.hex }}"></span>{{ r.values[mode.id].light.primitive }}</td>
+            <td><span class="dot" style="background: {{ r.values[mode.id].dark.hex }}"></span>{{ r.values[mode.id].dark.primitive }}</td>
+          </tr>
+        {% endif %}{% endfor %}{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </details>
+  {% endif %}
+</section>

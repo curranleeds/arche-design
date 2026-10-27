@@ -1,0 +1,8 @@
+{#- Docs-only. Needs JavaScript, so it stays hidden until the head script adds the "js" class. -#}
+<label class="mode-select">
+  <span class="mode-select__label type-small">Mode</span>
+  <select class="mode-select__control type-button" data-mode-select aria-label="Color mode">
+    {% for m in tokens.modes %}<option value="{{ m.id }}">{{ m.name }}</option>
+    {% endfor %}
+  </select>
+</label>

@@ -10,7 +10,7 @@ description: "Documentation for the Arche Design System: the tokens, type, color
   <p>It started as the design system for my portfolio site, and it is written so other designers and teams could use it. This site is its documentation. Every color, size and contrast ratio on these pages is read from the same token file the system is built from, so the docs cannot drift from the product.</p>
   <dl class="facts">
     <div><dt class="type-body">Primitive colors</dt><dd class="type-stat">{{ tokens.counts.primitives }}</dd></div>
-    <div><dt class="type-body">Role tokens, Light and Dark</dt><dd class="type-stat">{{ tokens.counts.roles }}</dd></div>
+    <div><dt class="type-body">Role tokens, in every mode</dt><dd class="type-stat">{{ tokens.counts.roles }}</dd></div>
     <div><dt class="type-body">Type styles, three sizes each</dt><dd class="type-stat">{{ tokens.counts.typeStyles }}</dd></div>
     <div><dt class="type-body">Spacing and stroke values</dt><dd class="type-stat">{{ tokens.counts.spacing }}</dd></div>
   </dl>
@@ -19,7 +19,7 @@ description: "Documentation for the Arche Design System: the tokens, type, color
 <section aria-labelledby="start-h">
   <h2 id="start-h" class="type-h2">Where to start</h2>
   <ul class="cards" role="list">
-    <li><a class="card" href="/foundations/color/"><h3 class="type-h3">Color</h3><p class="type-body">Three brand families, neutrals and status colors, plus the role tokens that make dark mode work.</p></a></li>
+    <li><a class="card" href="/foundations/color/"><h3 class="type-h3">Color</h3><p class="type-body">Brand families, neutrals and status colors, plus the role tokens that make dark mode and the five modes work.</p></a></li>
     <li><a class="card" href="/foundations/type/"><h3 class="type-h3">Type</h3><p class="type-body">Archivo and Work Sans. Fifteen styles, each with one job.</p></a></li>
     <li><a class="card" href="/components/button/"><h3 class="type-h3">Components</h3><p class="type-body">Buttons, links, form fields and case-study blocks, with live states and the HTML behind them.</p></a></li>
   </ul>
@@ -35,35 +35,33 @@ description: "Documentation for the Arche Design System: the tokens, type, color
   <p>My brand has five personality traits: systematic, grounded, generous, clean and principled. Here is how I read each one in the system.</p>
   <ul>
     <li><strong>Systematic.</strong> Colors are chosen by job, not by value. A component asks for “text on the blue band”, never for a hex code.</li>
-    <li><strong>Grounded.</strong> Blue does the structural work. Yellow and red stay sparing, and each has one purpose.</li>
+    <li><strong>Grounded.</strong> In the default mode, blue does the structural work. Yellow and red stay sparing, and each has one purpose.</li>
     <li><strong>Generous.</strong> Every component page shows its states, its HTML and its do and don’t rules, so someone else can use it without asking me.</li>
     <li><strong>Clean.</strong> A grid, square corners, two typefaces, and one job per type style.</li>
-    <li><strong>Principled.</strong> Accessibility is the floor. Norway Red stays unused until it has a real job.</li>
+    <li><strong>Principled.</strong> Accessibility is the floor. Norway Red has one narrow job and is never on text, controls or validation.</li>
   </ul>
 </section>
 
 <section aria-labelledby="modes-h">
-  <h2 id="modes-h" class="type-h2">Five color modes (planned)</h2>
-  <p>Arche will be one system with five color modes. Each mode takes its character from one of the four national traditions in my heritage, Swiss, Norwegian, Swedish and Greek, plus a default. A mode changes only the semantic color roles. Typography, spacing, grid, corner radius, motion and component structure are the same in every mode, and status colors such as Alert never change.</p>
+  <h2 id="modes-h" class="type-h2">Five color modes</h2>
+  <p>Arche is one system with five color modes. Each mode takes its character from one of the four national traditions in my heritage, Swiss, Norwegian, Swedish and Greek, plus a default. A mode changes only the semantic color roles. Typography, spacing, grid, corner radius, motion and component structure are the same in every mode, and status colors such as Alert never change.</p>
   <div class="table-wrap" tabindex="0" role="region" aria-label="The five modes, scrollable">
     <table class="docs-table type-small">
       <thead><tr><th scope="col">Mode</th><th scope="col">Code id</th><th scope="col">Tradition</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Canon</th><td><code>canon</code></td><td>Default</td></tr>
-        <tr><th scope="row">Klarheit</th><td><code>klarheit</code></td><td>Swiss</td></tr>
-        <tr><th scope="row">Nøktern</th><td><code>noktern</code></td><td>Norwegian</td></tr>
-        <tr><th scope="row">Omtanke</th><td><code>omtanke</code></td><td>Swedish</td></tr>
-        <tr><th scope="row">Ethos</th><td><code>ethos</code></td><td>Greek</td></tr>
+      {% for m in tokens.modes %}
+        <tr><th scope="row"><a href="/foundations/color/{{ m.id }}/">{{ m.name }}</a></th><td><code>{{ m.id }}</code></td><td>{{ m.tradition }}</td></tr>
+      {% endfor %}
       </tbody>
     </table>
   </div>
-  <p>The modes are not built yet, and the color roles for each one are still being defined. What you see on these pages is the system as it stands today.</p>
+  <p>Use the Mode menu in the header to see this site in any of them. <a href="/foundations/modes/">Read how modes work</a>.</p>
 </section>
 
 <section aria-labelledby="rules-h">
   <h2 id="rules-h" class="type-h2">Four rules the system rests on</h2>
   <ol>
-    <li><strong>Components use role tokens, never raw colors.</strong> A button asks for <code>--arche-interactive-button-primary-fill-default</code>, not for a blue. That is how dark mode works without touching a component, and how modes will work too.</li>
+    <li><strong>Components use role tokens, never raw colors.</strong> A button asks for <code>--arche-interactive-button-primary-fill-default</code>, not for a blue. That is how dark mode works without touching a component, and how the color modes work too.</li>
     <li><strong>One style, one job.</strong> Each type style does a single thing. When something needs emphasis, I change the weight inside the style instead of inventing a size between two others.</li>
     <li><strong>Color is never the only signal.</strong> Every state also changes weight, stroke, shape or text.</li>
     <li><strong>Accessibility is the floor.</strong> WCAG AA contrast, a visible 4px focus ring, 44px touch targets and real labels, on every component.</li>
@@ -72,11 +70,11 @@ description: "Documentation for the Arche Design System: the tokens, type, color
 
 <section aria-labelledby="built-h">
   <h2 id="built-h" class="type-h2">How it is built</h2>
-  <p>The source of truth is a Figma file with three variable collections: Primitives (raw colors), Spacing, and Tokens (role names that point at a primitive, with a Light and a Dark mode). A script turns an export of those variables into <code>tokens.css</code>. Components are plain HTML and CSS that read only from that file.</p>
+  <p>The source of truth is a Figma file with three variable collections: Primitives (raw colors), Spacing, and Tokens (role names that point at a primitive, with five color modes, each in Light and Dark). A script turns an export of those variables into <code>tokens.css</code>. Components are plain HTML and CSS that read only from that file.</p>
   <p>Nothing here needs a framework to use. Copy the HTML from any component page, include the three stylesheets, and it works.</p>
 </section>
 
 <section aria-labelledby="status-h">
   <h2 id="status-h" class="type-h2">Status</h2>
-  <p>Version {{ site.version }}. Foundations are documented. Seven components are documented so far: button, link, form field, theme controls, stat strip, quote and list row. The rest of the system (navigation, menu overlay, case-study hero and image set) exists in the product and will be documented next, along with the five modes. Components are not packaged for install yet.</p>
+  <p>Version {{ site.version }}. Foundations and the five color modes are documented. Seven components are documented so far: button, link, form field, theme controls, stat strip, quote and list row. The rest of the system (navigation, menu overlay, case-study hero and image set) exists in the product and will be documented next. Components are not packaged for install yet.</p>
 </section>

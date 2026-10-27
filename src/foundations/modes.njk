@@ -1,0 +1,66 @@
+---
+title: "Color modes"
+eyebrow: "Foundations"
+lead: "Arche is one system with five color modes. A mode changes the semantic color roles and nothing else."
+permalink: /foundations/modes/
+description: "The five color modes of the Arche Design System: Canon, Klarheit, Nøktern, Omtanke and Ethos. What a mode changes, how to switch, and how to use one."
+---
+<section aria-labelledby="five-h">
+  <h2 id="five-h" class="type-h2">The five modes</h2>
+  <p>Each mode takes its character from one of the four national traditions in my heritage, Swiss, Norwegian, Swedish and Greek, plus a default. Each has a Light and a Dark version.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="The five modes, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Mode</th><th scope="col">Code id</th><th scope="col">Tradition</th><th scope="col">Trait</th><th scope="col">In one line</th></tr></thead>
+      <tbody>
+      {% for m in tokens.modes %}
+        <tr>
+          <th scope="row"><a href="/foundations/color/{{ m.id }}/">{{ m.name }}</a></th>
+          <td><code>{{ m.id }}</code></td>
+          <td>{{ m.tradition }}</td>
+          <td>{{ m.trait }}</td>
+          <td>{{ m.summary }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="changes-h">
+  <h2 id="changes-h" class="type-h2">What a mode changes</h2>
+  <p>A mode changes only the semantic color roles, such as <code>--arche-surface-brand-primary</code> or <code>--arche-text-brand-primary</code>. Primitives, type, spacing, grid, corner radius, motion and component structure are identical in every mode. Components read roles, never primitives, so they follow the mode without changes.</p>
+  <p>Status colors do not change by mode. Alert, Success and Warning mean the same thing everywhere. Every mode passes WCAG AA in Light and Dark.</p>
+</section>
+
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">How to use a mode</h2>
+  <p>Two attributes on the <code>&lt;html&gt;</code> element pick the colors. <code>data-mode</code> picks the mode and <code>data-theme</code> picks Light or Dark. With no <code>data-mode</code>, the page uses Canon. With no <code>data-theme</code>, it follows the browser's Light or Dark setting.</p>
+<pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;html data-mode="omtanke" data-theme="dark"&gt;</code></pre>
+  <p>In <code>tokens.css</code>, Canon's values sit on <code>:root</code>. Each other mode has a block that lists only the roles that differ from Canon, with a Dark version after it. Pick the mode with an attribute and the right values apply.</p>
+</section>
+
+<section aria-labelledby="switch-h">
+  <h2 id="switch-h" class="type-h2">The switcher in this site's header</h2>
+  <p>The Mode menu in the header changes the whole site, so you can see any page in any mode. It remembers your choice in this browser with <code>localStorage</code>. If the browser blocks storage, or the saved value is not one of the five, the site shows Canon. The switcher is for these docs only. Components never read it.</p>
+</section>
+
+<section aria-labelledby="accent-h">
+  <h2 id="accent-h" class="type-h2">Three accent roles, in plain words</h2>
+  <p>Three role names sound alike. They do different jobs.</p>
+  <ul>
+    <li><code>--arche-accent-rule</code> is the thin line. It is Canon's end mark, the red rule under the last column of text. Each mode sets its own color for it: Norway Red in Canon, Swiss red in Klarheit, and the mode's blue in the others.</li>
+    <li><code>--arche-accent-numeral</code> colors the big numbers in a stat strip. Greece Blue in Canon and Ethos, Swiss red in Klarheit, and each mode's own blue in Nøktern and Omtanke.</li>
+    <li><code>--arche-surface-brand-accent</code> is a filled area of accent color, not a line. Only Nøktern's Cross reads it, as the red stripe along the top of the blue band. It holds Norway Red in every mode, but the other modes do not use it.</li>
+  </ul>
+  <p>Canon's end mark reads <code>accent-rule</code>, not <code>surface-brand-accent</code>, even though both hold Norway Red there today. They are separate roles so that each can change without moving the other.</p>
+</section>
+
+<section aria-labelledby="pages-h">
+  <h2 id="pages-h" class="type-h2">One page per mode</h2>
+  <p>Each mode has a color page with its rules, its main colors, the contrast ratios for the pairs that matter, and the roles that differ from Canon.</p>
+  <ul class="cards" role="list">
+    {% for m in tokens.modes %}
+    <li><a class="card" href="/foundations/color/{{ m.id }}/"><h3 class="type-h3">{{ m.name }}</h3><p class="type-body">{{ m.tradition }}. {{ m.trait }}.</p></a></li>
+    {% endfor %}
+  </ul>
+</section>
