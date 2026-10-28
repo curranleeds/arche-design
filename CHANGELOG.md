@@ -18,14 +18,16 @@ Added
 - A Page hero component (`.docs-hero`): the blue band at the top of every docs page, with an eyebrow, a title and a lead. It steps its padding and type at the three breakpoints.
 - New color roles: `interactive/link/on-brand/default`, `/hover`, `/pressed` and `/disabled`, and `interactive/button/primary/on-brand/indicator`.
 - Three docs pages, after List row: Link card, CTA band and Page hero.
+- A build check that every page listed in the nav was built (`npm run check:nav`).
 - Contrast checks for the on-brand link in all modes and for the Canon active bar on the on-brand primary button.
 
 Changed
 - Visible: the home page cards use the Link card. The button is primary instead of secondary, the cards have a pressed state, and the surface is white with a 1px border instead of the blue tint.
-- Visible: on the on-brand primary button in Canon, hover is Greece Blue 50 and pressed is Greece Blue 100. Active keeps the white fill and shows a 4px bar in the new indicator role.
+- Visible: on the on-brand primary button in Canon, hover is Greece Blue 50 and pressed is Greece Blue 100. Active uses the white default fill, not the pressed fill, with a 4px bar in the new indicator role.
 - Visible: every docs page now opens with the Page hero instead of a title on the white page.
 - The "Back to" link in the next-page band uses the on-brand link roles. It looks the same.
-- The Components card button on the home page reads "View Components".
+- The Components card button on the home page reads "View Components" (it was "View components").
+- Docs: the "Continue to" band at the end of each page now uses the Figma padding: 48px above and below and 16px at the sides on mobile, 64 and 32 on tablet, 80 and 64 from 1024px.
 - Docs: the side nav is capped to the window height with its padding inside the cap, so its last links can be reached with the keyboard on a short window.
 
 Note

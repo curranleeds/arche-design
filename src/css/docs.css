@@ -158,8 +158,8 @@ body {
   overflow-wrap: anywhere;
 }
 /* ----- Next-page band ----- */
-.docs-next { margin-top: var(--arche-space-base-96); padding: var(--arche-space-base-48) var(--arche-space-base-24); background: var(--arche-surface-brand-primary); color: var(--arche-text-on-brand-body); }
-@media (min-width: 768px) { .docs-next { padding: var(--arche-space-base-64) var(--arche-space-base-48); } }
+.docs-next { margin-top: var(--arche-space-base-96); padding: var(--arche-space-base-48) var(--arche-space-base-16); background: var(--arche-surface-brand-primary); color: var(--arche-text-on-brand-body); }
+@media (min-width: 768px) { .docs-next { padding: var(--arche-space-base-64) var(--arche-space-base-32); } }
 .docs-next__kicker { margin: 0 0 var(--arche-space-fine-8); color: var(--arche-text-on-brand-secondary); }
 .docs-next__title { margin: 0; color: var(--arche-text-on-brand-primary); }
 .docs-next__desc { margin: var(--arche-space-fine-12) 0 var(--arche-space-base-24); max-width: 52ch; color: var(--arche-text-on-brand-body); }
@@ -167,7 +167,7 @@ body {
 .docs-next__back { margin: var(--arche-space-base-24) 0 0; }
 /* From 1024px the text sits left and the actions right, with the back link under the button. Below that everything stacks. */
 @media (min-width: 1024px) {
-  .docs-next { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--arche-space-base-48); align-items: end; }
+  .docs-next { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--arche-space-base-48); align-items: end; padding: var(--arche-space-base-80) var(--arche-space-base-64); }
   .docs-next__desc { margin-bottom: 0; }
 }
 .docs-footer { margin-top: var(--arche-space-base-48); padding-top: var(--arche-space-base-16); border-top: var(--arche-stroke-1) solid var(--arche-border-neutral-default); color: var(--arche-text-neutral-secondary); }
