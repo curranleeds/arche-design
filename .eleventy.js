@@ -19,6 +19,23 @@ module.exports = function (eleventyConfig) {
       .replace("<svg ", `<svg class="icon" data-icon="${name}" aria-hidden="true" focusable="false" `);
   });
 
+  // {{ page.url | pageInfo }} finds a page in the nav order (all groups, in order).
+  // Returns { section, item, index, total, prev, next }, or null for pages outside the sequence (color modes).
+  const nav = require("./src/_data/nav.js");
+  const sequence = nav.flatMap((group) => group.items.map((item) => ({ section: group.title, item })));
+  eleventyConfig.addFilter("pageInfo", function (url) {
+    const i = sequence.findIndex((entry) => entry.item.url === url);
+    if (i === -1) return null;
+    return {
+      section: sequence[i].section,
+      item: sequence[i].item,
+      index: i + 1,
+      total: sequence.length,
+      prev: i > 0 ? sequence[i - 1].item : null,
+      next: i < sequence.length - 1 ? sequence[i + 1].item : null,
+    };
+  });
+
   // {% demo "Caption", "brand" %} ...html... {% enddemo %}
   // Shows the HTML live inside a stage, and the same HTML as readable code under it.
   // The second argument is optional: "brand" puts the stage on the blue brand surface.
