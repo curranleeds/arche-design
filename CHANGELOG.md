@@ -10,16 +10,27 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
-## 0.6.0 (in progress)
-
-Part 1. Not released: the version number is still 0.5.0.
+## 0.6.0
 
 Added
-- A Link card component (`.link-card` in `components.css`): one card that is one link, with a title, one line of text and a primary button at the bottom. It has default, hover, pressed and focus states, uses existing roles only, and never changes size between states.
+- A Link card component (`.link-card`): one card that is one link, with a title, one line of text and a primary button at the bottom. It has default, hover, pressed and focus states.
+- An on-brand text link (`.link--on-brand`): underlined and 32px tall, with default, hover, pressed, focus and disabled states.
+- A Page hero component (`.page-hero`): the blue band at the top of every docs page, with an eyebrow, a title and a lead. It steps its padding and type at the three breakpoints.
+- New color roles: `interactive/link/on-brand/default`, `/hover`, `/pressed` and `/disabled`, and `interactive/button/primary/on-brand/indicator`.
+- Three docs pages, after List row: Link card, CTA band and Page hero.
+- Contrast checks for the on-brand link in all modes and for the Canon active bar on the on-brand primary button.
 
 Changed
-- Visible: the home page card button changed from secondary to primary, and the cards now have a pressed state.
-- Visible: the home page card surface changed from the blue tint to a white raised surface with a 1px border.
+- Visible: the home page cards use the Link card. The button is primary instead of secondary, the cards have a pressed state, and the surface is white with a 1px border instead of the blue tint.
+- Visible: on the on-brand primary button in Canon, hover is Greece Blue 50 and pressed is Greece Blue 100. Active keeps the white fill and shows a 4px bar in the new indicator role.
+- Visible: every docs page now opens with the Page hero instead of a title on the white page.
+- The "Back to" link in the next-page band uses the on-brand link roles. It looks the same.
+- The Components card button on the home page reads "View Components".
+- Docs: the older `.page-hero` rules (a different, unused hero) were removed from `components.css`.
+
+Note
+- The new roles in the four frozen modes (Klarheit, Ethos, Nøktern, Omtanke) come from the design file and pass the contrast checks, but nobody has reviewed them by eye. Treat them as unverified.
+- The frozen modes keep their previous on-brand primary hover and pressed values.
 
 ## 0.5.0
 
