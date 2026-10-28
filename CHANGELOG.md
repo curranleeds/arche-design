@@ -26,6 +26,7 @@ Changed
 - Visible: every docs page now opens with the Page hero instead of a title on the white page.
 - The "Back to" link in the next-page band uses the on-brand link roles. It looks the same.
 - The Components card button on the home page reads "View Components".
+- Docs: the side nav is capped to the window height with its padding inside the cap, so its last links can be reached with the keyboard on a short window.
 
 Note
 - The class name `.page-hero` is reserved for the portfolio's About and Contact hero. Its rules stay in `components.css` unchanged; the docs Page hero is `.docs-hero`.
