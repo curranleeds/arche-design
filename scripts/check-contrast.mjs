@@ -27,9 +27,10 @@ const showAll = process.argv.includes("--all");
 const TEXT = 4.5; // body text
 const LARGE = 3; // large text, rules and other marks
 
-// [foreground role, background role, minimum ratio, what it is]
+// [foreground role, background role, minimum ratio, what it is, modes (optional)]
+// A pair with a list of modes is checked in those modes only; without one it is checked in all ten.
 const pairs = [];
-const add = (fg, bg, min, note) => pairs.push([fg, bg, min, note]);
+const add = (fg, bg, min, note, onlyModes) => pairs.push([fg, bg, min, note, onlyModes]);
 
 // Text on the page and on raised surfaces
 for (const bg of ["surface/neutral/base", "surface/neutral/raised"]) {
@@ -72,6 +73,16 @@ add("interactive/button/primary/on-brand/label", "interactive/button/primary/on-
 add("interactive/button/secondary/on-brand/label", "surface/brand/primary", TEXT, "secondary button label on the band");
 add("interactive/button/secondary/on-brand/label", "interactive/button/secondary/on-brand/fill/hover", TEXT, "secondary button label on the band, hover");
 add("interactive/button/secondary/on-brand/label", "interactive/button/secondary/on-brand/fill/pressed", TEXT, "secondary button label on the band, pressed");
+
+// The active bar on the primary on-brand button, against the white fill and against the band.
+// Canon only: the other modes carry placeholder values for this role.
+const CANON = ["Canon Light", "Canon Dark"];
+add("interactive/button/primary/on-brand/indicator", "interactive/button/primary/on-brand/fill", LARGE, "active bar against the button fill", CANON);
+add("interactive/button/primary/on-brand/indicator", "surface/brand/primary", LARGE, "active bar against the band", CANON);
+
+// Text links on the brand band, default and pressed (hover has the same value as default)
+add("interactive/link/on-brand/default", "surface/brand/primary", TEXT, "on-brand text link");
+add("interactive/link/on-brand/pressed", "surface/brand/primary", TEXT, "on-brand text link, pressed");
 
 // Button shapes, borders and focus rings against the surface they sit on (non-text, 3:1)
 add("interactive/button/primary/fill/default", "surface/neutral/base", LARGE, "primary button fill against the page");
@@ -122,7 +133,8 @@ const failures = [];
 let checked = 0;
 let skipped = 0;
 for (const mode of modes) {
-  for (const [fg, bg, min, note] of pairs) {
+  for (const [fg, bg, min, note, onlyModes] of pairs) {
+    if (onlyModes && !onlyModes.includes(mode)) continue;
     const a = Tokens.variables[fg]?.[mode];
     const b = Tokens.variables[bg]?.[mode];
     if (!a || !b) continue;

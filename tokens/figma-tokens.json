@@ -1,6 +1,6 @@
 {
-  "source": "Figma file (Arche Design System), read 2026-10-26 (after the button audit and the family rename)",
-  "note": "Snapshot. Figma wins if this drifts. Code syntax is not set on any variable. Text styles and grid styles are unchanged from the 2026-10-24 read.",
+  "source": "Figma file (Arche Design System), read 2026-10-27 (after the link card, CTA band and page hero work)",
+  "note": "Snapshot. Figma wins if this drifts. Code syntax is not set on any variable. Text styles and grid styles are unchanged from the 2026-10-24 read. 0.6.0 changes: Canon on-brand primary button hover and pressed, and five new roles (on-brand link default, hover, pressed, disabled, and the on-brand primary button indicator).",
   "collections": {
     "Primitives": {
       "modes": [
@@ -4723,12 +4723,12 @@
         },
         "interactive/button/primary/on-brand/fill/hover": {
           "Canon Light": {
-            "primitive": "neutral/50",
-            "hex": "#F5F5F5"
+            "primitive": "greece/blue/50",
+            "hex": "#E6ECF3"
           },
           "Canon Dark": {
-            "primitive": "neutral/50",
-            "hex": "#F5F5F5"
+            "primitive": "greece/blue/50",
+            "hex": "#E6ECF3"
           },
           "Klarheit Light": {
             "primitive": "neutral/50",
@@ -4765,12 +4765,12 @@
         },
         "interactive/button/primary/on-brand/fill/pressed": {
           "Canon Light": {
-            "primitive": "neutral/100",
-            "hex": "#E5E5E5"
+            "primitive": "greece/blue/100",
+            "hex": "#CCDAE7"
           },
           "Canon Dark": {
-            "primitive": "neutral/100",
-            "hex": "#E5E5E5"
+            "primitive": "greece/blue/100",
+            "hex": "#CCDAE7"
           },
           "Klarheit Light": {
             "primitive": "neutral/100",
@@ -4803,6 +4803,216 @@
           "Omtanke Dark": {
             "primitive": "sweden/yellow/600",
             "hex": "#D9AE00"
+          }
+        },
+        "interactive/link/on-brand/default": {
+          "Canon Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Canon Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Ethos Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Ethos Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Noktern Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Noktern Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Omtanke Light": {
+            "primitive": "sweden/yellow/50",
+            "hex": "#FFFAE6"
+          },
+          "Omtanke Dark": {
+            "primitive": "sweden/yellow/50",
+            "hex": "#FFFAE6"
+          }
+        },
+        "interactive/link/on-brand/hover": {
+          "Canon Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Canon Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Ethos Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Ethos Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Noktern Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Noktern Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Omtanke Light": {
+            "primitive": "sweden/yellow/50",
+            "hex": "#FFFAE6"
+          },
+          "Omtanke Dark": {
+            "primitive": "sweden/yellow/50",
+            "hex": "#FFFAE6"
+          }
+        },
+        "interactive/link/on-brand/pressed": {
+          "Canon Light": {
+            "primitive": "greece/blue/50",
+            "hex": "#E6ECF3"
+          },
+          "Canon Dark": {
+            "primitive": "greece/blue/50",
+            "hex": "#E6ECF3"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Ethos Light": {
+            "primitive": "greece/blue/50",
+            "hex": "#E6ECF3"
+          },
+          "Ethos Dark": {
+            "primitive": "greece/blue/50",
+            "hex": "#E6ECF3"
+          },
+          "Noktern Light": {
+            "primitive": "norway/blue/50",
+            "hex": "#E5EBF5"
+          },
+          "Noktern Dark": {
+            "primitive": "norway/blue/50",
+            "hex": "#E5EBF5"
+          },
+          "Omtanke Light": {
+            "primitive": "sweden/yellow/50",
+            "hex": "#FFFAE6"
+          },
+          "Omtanke Dark": {
+            "primitive": "sweden/yellow/50",
+            "hex": "#FFFAE6"
+          }
+        },
+        "interactive/link/on-brand/disabled": {
+          "Canon Light": {
+            "primitive": "greece/blue/100",
+            "hex": "#CCDAE7"
+          },
+          "Canon Dark": {
+            "primitive": "greece/blue/100",
+            "hex": "#CCDAE7"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/100",
+            "hex": "#E5E5E5"
+          },
+          "Ethos Light": {
+            "primitive": "greece/blue/100",
+            "hex": "#CCDAE7"
+          },
+          "Ethos Dark": {
+            "primitive": "greece/blue/100",
+            "hex": "#CCDAE7"
+          },
+          "Noktern Light": {
+            "primitive": "norway/blue/100",
+            "hex": "#CCD7EA"
+          },
+          "Noktern Dark": {
+            "primitive": "norway/blue/100",
+            "hex": "#CCD7EA"
+          },
+          "Omtanke Light": {
+            "primitive": "sweden/yellow/50",
+            "hex": "#FFFAE6"
+          },
+          "Omtanke Dark": {
+            "primitive": "sweden/yellow/50",
+            "hex": "#FFFAE6"
+          }
+        },
+        "interactive/button/primary/on-brand/indicator": {
+          "Canon Light": {
+            "primitive": "greece/blue/300",
+            "hex": "#7196BC"
+          },
+          "Canon Dark": {
+            "primitive": "greece/blue/300",
+            "hex": "#7196BC"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Ethos Light": {
+            "primitive": "greece/blue/500",
+            "hex": "#014488"
+          },
+          "Ethos Dark": {
+            "primitive": "greece/blue/500",
+            "hex": "#014488"
+          },
+          "Noktern Light": {
+            "primitive": "norway/blue/500",
+            "hex": "#003698"
+          },
+          "Noktern Dark": {
+            "primitive": "norway/blue/500",
+            "hex": "#003698"
+          },
+          "Omtanke Light": {
+            "primitive": "sweden/blue/800",
+            "hex": "#00294A"
+          },
+          "Omtanke Dark": {
+            "primitive": "sweden/blue/800",
+            "hex": "#00294A"
           }
         }
       }
