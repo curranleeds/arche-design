@@ -27,6 +27,7 @@ Changed
 - Visible: the button on each mode page now reads "View this page in {mode}" and applies to that page only. Every other page opens in Canon.
 - Visible: below 1024px the menu is a dropdown under a sticky bar instead of a collapsible block in the page.
 - Docs: the Color modes page says the four non-Canon modes are explorations, and that a mode ships only when there is named content that needs it.
+- Visible: the home page cards now show a button.
 - No token value changed. Canon is the same as in 0.4.0, and the tokens of the other four modes are unchanged.
 
 ## 0.4.0
