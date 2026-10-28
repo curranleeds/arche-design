@@ -15,7 +15,7 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 Added
 - A Link card component (`.link-card`): one card that is one link, with a title, one line of text and a primary button at the bottom. It has default, hover, pressed and focus states.
 - An on-brand text link (`.link--on-brand`): underlined and 32px tall, with default, hover, pressed, focus and disabled states.
-- A Page hero component (`.page-hero`): the blue band at the top of every docs page, with an eyebrow, a title and a lead. It steps its padding and type at the three breakpoints.
+- A Page hero component (`.docs-hero`): the blue band at the top of every docs page, with an eyebrow, a title and a lead. It steps its padding and type at the three breakpoints.
 - New color roles: `interactive/link/on-brand/default`, `/hover`, `/pressed` and `/disabled`, and `interactive/button/primary/on-brand/indicator`.
 - Three docs pages, after List row: Link card, CTA band and Page hero.
 - Contrast checks for the on-brand link in all modes and for the Canon active bar on the on-brand primary button.
@@ -26,9 +26,9 @@ Changed
 - Visible: every docs page now opens with the Page hero instead of a title on the white page.
 - The "Back to" link in the next-page band uses the on-brand link roles. It looks the same.
 - The Components card button on the home page reads "View Components".
-- Docs: the older `.page-hero` rules (a different, unused hero) were removed from `components.css`.
 
 Note
+- The class name `.page-hero` is reserved for the portfolio's About and Contact hero. Its rules stay in `components.css` unchanged; the docs Page hero is `.docs-hero`.
 - The new roles in the four frozen modes (Klarheit, Ethos, Nøktern, Omtanke) come from the design file and pass the contrast checks, but nobody has reviewed them by eye. Treat them as unverified.
 - The frozen modes keep their previous on-brand primary hover and pressed values.
 
