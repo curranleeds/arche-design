@@ -601,12 +601,20 @@ textarea.field__input { resize: none; }
 .logo--on-brand .logo__letters { fill: var(--arche-logo-on-brand-primary-letters); }
 
 /* ---------- Text link on a blue surface ----------
-   White in every state; only the underline thickens (the on-page hover colors would
-   not read on blue). Figma has no on-blue hover or pressed frames. */
-.link--on-brand,
-.link--on-brand:hover,
-.link--on-brand:active { color: var(--arche-text-on-brand-primary); }
+   Same shape as the text link (underlined, 32px tall); only the colors come from the
+   on-brand link roles. Hover keeps the color and thickens the underline to 2px. */
+.link--on-brand { color: var(--arche-interactive-link-on-brand-default); }
+@media (hover: hover) {
+  .link--on-brand:not([aria-disabled="true"]):hover { color: var(--arche-interactive-link-on-brand-hover); }
+}
+.link--on-brand:not([aria-disabled="true"]):active { color: var(--arche-interactive-link-on-brand-pressed); }
 .link--on-brand:focus-visible { outline-color: var(--arche-border-focus-ring-on-brand); }
+.link--on-brand[aria-disabled="true"] {
+  color: var(--arche-interactive-link-on-brand-disabled);
+  cursor: default;
+}
+.link--on-brand[aria-disabled="true"]:hover .link__text,
+.link--on-brand[aria-disabled="true"]:active .link__text { text-decoration-thickness: var(--arche-stroke-1); }
 
 /* ---------- Site header ----------
    Mobile first: 72px tall, 16px sides, logo and Menu button. */

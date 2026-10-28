@@ -18,8 +18,8 @@ button type-button button--{{ type }}{% if onBrand %} button--on-brand{% endif %
   {%- if afterLabel %}{{ afterLabel | safe }}{% endif -%}
 </{{ tag }}>
 {% endmacro %}
-{% macro textLink(label, href, external=false, onBrand=false, force="", download=false) %}
-<a class="link{% if onBrand %} link--on-brand{% endif %}" href="{{ href }}"
+{% macro textLink(label, href, external=false, onBrand=false, force="", download=false, disabled=false) %}
+<a class="link{% if onBrand %} link--on-brand{% endif %}"{% if disabled %} aria-disabled="true"{% else %} href="{{ href }}"{% endif %}
   {%- if external %} target="_blank" rel="noopener"{% endif %}{% if download %} download{% endif %}
   {%- if force %} data-force="{{ force }}"{% endif %}>
   <span class="link__text">{{ label }}</span>

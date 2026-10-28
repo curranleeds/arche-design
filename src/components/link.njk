@@ -19,9 +19,12 @@ permalink: /components/link/
 </section>
 <section aria-labelledby="brand-h">
   <h2 id="brand-h" class="type-h2">On a blue surface</h2>
-  {% demo "Link on brand", "brand" %}
+  <p>On the brand band, add <code>link--on-brand</code>. It keeps the same shape: underlined, 32px tall. The colors come from the <code>interactive/link/on-brand</code> roles. Hover thickens the underline to 2px, press changes the color, and the focus ring is the on-brand ring. Hover, press and tab to the first link to see each state; the second is a static disabled example.</p>
+  {% demo "Link on brand: default, and disabled", "brand" %}
   {{ textLink("Get in touch", "#", onBrand=true) }}
+  {{ textLink("Not available yet", "#", onBrand=true, disabled=true) }}
   {% enddemo %}
+  <p>A disabled link has <code>aria-disabled="true"</code> and no <code>href</code>, so it is not a link to activate and it does not take focus.</p>
 </section>
 <section aria-labelledby="use-h">
   <h2 id="use-h" class="type-h2">Using links</h2>
