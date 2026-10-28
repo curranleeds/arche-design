@@ -228,6 +228,13 @@ body {
 .demo__stage--brand { background: var(--arche-surface-brand-primary); box-shadow: none; }
 .demo__stage--tint { background: var(--arche-surface-brand-primary-subtle); box-shadow: none; }
 .demo__stage--block { display: block; padding: 0; }
+.demo__stage--block .docs-next { margin-top: 0; }
+/* Inside a page the prose h2 and p rules would otherwise win over the band. */
+.docs-content .docs-next .docs-next__title { margin: 0; padding: 0; border-top: 0; color: var(--arche-text-on-brand-primary); }
+.docs-content .docs-next .docs-next__desc { margin: var(--arche-space-fine-12) 0 var(--arche-space-base-24); max-width: 52ch; }
+.docs-content .docs-next .docs-next__back { margin: var(--arche-space-base-24) 0 0; }
+@media (min-width: 1024px) { .docs-content .docs-next .docs-next__desc { margin-bottom: 0; } }
+.demo__stage .link-card { width: 100%; max-width: 416px; }
 .demo__stage--form { display: grid; gap: var(--arche-space-base-24); max-width: 420px; }
 .demo__code { box-shadow: inset 0 0 0 var(--arche-stroke-1) var(--arche-border-neutral-default); border-top: 0; }
 .demo__code summary { display: flex; align-items: center; min-height: 44px; padding: 0 var(--arche-space-fine-16); cursor: pointer; font-weight: 600; color: var(--arche-text-brand-primary); }

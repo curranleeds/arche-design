@@ -1,0 +1,71 @@
+---
+title: "CTA band"
+eyebrow: "Components"
+lead: "A full-width band on the brand blue that closes a page and offers the next step."
+permalink: /components/cta-band/
+---
+{% from "components.njk" import button, textLink %}
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">CTA band</h2>
+  <p>The band at the bottom of every page in these docs is a CTA band. It has a small label, a title, one line of text, one button and a text link back. Everything sits on the brand surface. The text uses the on-brand roles, the button is the on-brand primary button, and the link is the on-brand text link.</p>
+  {% demo "The next-page band, with placeholder text", "block" %}
+  <section class="docs-next" aria-labelledby="demo-next-h">
+    <div class="docs-next__text">
+      <p class="docs-next__kicker type-label">Up next</p>
+      <h2 class="docs-next__title type-h2" id="demo-next-h">Page title</h2>
+      <p class="docs-next__desc type-lead">One short line about the page.</p>
+    </div>
+    <div class="docs-next__actions">
+      {{ button("Continue to Page title", type="primary", href="#", icon="arrow_forward", iconPosition="trailing", onBrand=true) }}
+      <p class="docs-next__back"><a class="link link--on-brand" href="#"><span class="link__text">Back to Previous page</span></a></p>
+    </div>
+  </section>
+  {% enddemo %}
+</section>
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout</h2>
+  <p>From 1024px up, the text is on the left and the button and link are on the right, with the link under the button. Below 1024px everything stacks. The title uses the H2 style and the text uses the Lead style.</p>
+</section>
+<section aria-labelledby="spec-h">
+  <h2 id="spec-h" class="type-h2">What the design file adds</h2>
+  <p>The design file describes the same band for the close of a case study. It also has a plain tone, a second button, and a show-or-hide choice for the label and the body text. These are in the design file only. The code on this site builds the next-page band shown above, and not the plain tone or the second button.</p>
+  <ul>
+    <li><strong>Brand tone:</strong> a full-width band on the brand surface. The heading is white, not yellow.</li>
+    <li><strong>Plain tone:</strong> the page surface, with a 2px rule across the top.</li>
+  </ul>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the CTA band</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use one CTA per case study.</li>
+      <li>Use the plain tone if the page already has a blue-band quote, so the page does not stack blue bands.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Use more than one primary button in the band.</li>
+      <li>Color the heading yellow. Yellow is for the name and titles.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The band is a <code>&lt;section&gt;</code> named by its heading (<code>aria-labelledby</code>).</li>
+    <li>The buttons and the link are real links, so they take the keyboard and show the on-brand focus ring.</li>
+    <li>The on-brand text colors are checked against the brand surface at 4.5:1 in every mode when the site is built.</li>
+  </ul>
+</section>
+<section aria-labelledby="html-h">
+  <h2 id="html-h" class="type-h2">The HTML</h2>
+  <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;section class="docs-next" aria-labelledby="next-h"&gt;
+  &lt;div class="docs-next__text"&gt;
+    &lt;p class="docs-next__kicker type-label"&gt;Up next&lt;/p&gt;
+    &lt;h2 class="docs-next__title type-h2" id="next-h"&gt;Page title&lt;/h2&gt;
+    &lt;p class="docs-next__desc type-lead"&gt;One short line about the page.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="docs-next__actions"&gt;
+    &lt;a class="button type-button button--primary button--on-brand button--icon-trailing" href="/next/"&gt;…&lt;/a&gt;
+    &lt;p class="docs-next__back"&gt;&lt;a class="link link--on-brand" href="/previous/"&gt;&lt;span class="link__text"&gt;Back to Previous page&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</section>
