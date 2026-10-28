@@ -3,7 +3,7 @@ title: "Color modes"
 eyebrow: "Foundations"
 lead: "Arche is one system with five color modes. A mode changes the semantic color roles and nothing else."
 permalink: /foundations/modes/
-description: "The five color modes of the Arche Design System: Canon, Klarheit, Nøktern, Omtanke and Ethos. What a mode changes, how to switch, and how to use one."
+description: "The five color modes of the Arche Design System: Canon, Klarheit, Nøktern, Omtanke and Ethos. What a mode changes and how to use one."
 ---
 <section aria-labelledby="five-h">
   <h2 id="five-h" class="type-h2">The five modes</h2>
@@ -26,6 +26,11 @@ description: "The five color modes of the Arche Design System: Canon, Klarheit, 
   </div>
 </section>
 
+<section aria-labelledby="status-h">
+  <h2 id="status-h" class="type-h2">Canon first</h2>
+  <p>Canon is the mode in active use. The other four are explorations: they are kept and checked, but not developed. A mode ships only when there is a named piece of content that needs it.</p>
+</section>
+
 <section aria-labelledby="changes-h">
   <h2 id="changes-h" class="type-h2">What a mode changes</h2>
   <p>A mode changes only the semantic color roles, such as <code>--arche-surface-brand-primary</code> or <code>--arche-text-brand-primary</code>. Primitives, type, spacing, grid, corner radius, motion and component structure are identical in every mode. Components read roles, never primitives, so they follow the mode without changes.</p>
@@ -40,8 +45,8 @@ description: "The five color modes of the Arche Design System: Canon, Klarheit, 
 </section>
 
 <section aria-labelledby="switch-h">
-  <h2 id="switch-h" class="type-h2">The switcher in this site's header</h2>
-  <p>The Mode menu in the header changes the whole site, so you can see any page in any mode. It remembers your choice in this browser with <code>localStorage</code>. If the browser blocks storage, or the saved value is not one of the five, the site shows Canon. The switcher is for these docs only. Components never read it.</p>
+  <h2 id="switch-h" class="type-h2">Trying a mode on this site</h2>
+  <p>Each mode page has a button, "View this page in" followed by the mode name. It sets <code>data-mode</code> on that page only. Nothing is saved, so the next page you open is Canon again. The button is for these docs only. Components never read it.</p>
 </section>
 
 <section aria-labelledby="accent-h">
