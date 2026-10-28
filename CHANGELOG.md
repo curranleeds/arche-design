@@ -18,7 +18,8 @@ Added
 - A Link card component (`.link-card` in `components.css`): one card that is one link, with a title, one line of text and a primary button at the bottom. It has default, hover, pressed and focus states, uses existing roles only, and never changes size between states.
 
 Changed
-- Visible: the home page cards now use the primary button and have a pressed state. The card is a raised surface with a 1px border, as in the Figma spec.
+- Visible: the home page card button changed from secondary to primary, and the cards now have a pressed state.
+- Visible: the home page card surface changed from the blue tint to a white raised surface with a 1px border.
 
 ## 0.5.0
 
