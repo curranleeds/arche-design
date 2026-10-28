@@ -2,7 +2,7 @@
 // Add a page here (with a short description) and it shows up in both.
 // Color mode pages are not listed: they are reached by direct link and sit outside the sequence.
 module.exports = [
-  { title: "Start", items: [{ title: "Overview", url: "/", description: "What Arche is, and where each part of the system lives." }] },
+  { title: "Start", items: [{ title: "Overview", url: "/", description: "What Arche is, how it's built, and the rules it rests on." }] },
   {
     title: "Foundations",
     items: [

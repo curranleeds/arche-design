@@ -28,6 +28,7 @@ Changed
 - Visible: below 1024px the menu is a dropdown under a sticky bar instead of a collapsible block in the page.
 - Docs: the Color modes page says the four non-Canon modes are explorations, and that a mode ships only when there is named content that needs it.
 - Visible: the home page cards now show a button.
+- Docs: the home page and modes page now lead with Canon, and the touch-target and contrast wording is corrected.
 - No token value changed. Canon is the same as in 0.4.0, and the tokens of the other four modes are unchanged.
 
 ## 0.4.0
