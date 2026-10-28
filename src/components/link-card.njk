@@ -1,0 +1,56 @@
+---
+title: "Link card"
+eyebrow: "Components"
+lead: "One card that is one link: a title, a short line of text and a button look at the bottom."
+permalink: /components/link-card/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Link card</h2>
+  <p>A card that links to one page. The whole card is the link. The button at the bottom is a visual cue: it is not a second control, so the card has one tab stop. The button is filled like the primary button.</p>
+  {% demo "A link card with placeholder text" %}
+  <a class="link-card" href="#" aria-labelledby="demo-card-title"><h3 class="link-card__title type-h3" id="demo-card-title">Card title</h3><p class="link-card__text type-body">One short line about the page.</p><span class="button type-button button--primary link-card__button" aria-hidden="true"><span class="button__label">View the page</span></span></a>
+  {% enddemo %}
+</section>
+<section aria-labelledby="states-h">
+  <h2 id="states-h" class="type-h2">States</h2>
+  <p>Hover, press and tab to the card above to see each state.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Link card states, scrollable">
+    <table>
+      <thead><tr><th scope="col">State</th><th scope="col">Border</th><th scope="col">Button</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Default</th><td>1px, neutral default</td><td>Primary default fill</td></tr>
+        <tr><th scope="row">Hover</th><td>1px, neutral strong</td><td>Primary hover fill</td></tr>
+        <tr><th scope="row">Pressed</th><td>1px, neutral emphasis</td><td>Primary pressed fill</td></tr>
+        <tr><th scope="row">Focus</th><td>Neutral default, with a 4px focus ring and a 2px gap</td><td>Primary default fill</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section aria-labelledby="size-h">
+  <h2 id="size-h" class="type-h2">Size</h2>
+  <p>The card sits on the raised surface with a 1px border. The padding is 16px on mobile and 24px from 768px up. The title uses the H3 style and the text uses the Body style, so both step down on mobile. In a row of cards, every card is the same height and the buttons line up at the bottom.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the link card</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Make the card the link, and name the link with the card title (<code>aria-labelledby</code> pointing at the title).</li>
+      <li>Hide the button from screen readers (<code>aria-hidden="true"</code>). It is a look, not a control.</li>
+      <li>Keep the text to one short line about the page.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Put a real button or another link inside the card. A link cannot hold another control.</li>
+      <li>Point one card at more than one page.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="html-h">
+  <h2 id="html-h" class="type-h2">The HTML</h2>
+  <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;a class="link-card" href="/page/" aria-labelledby="card-title"&gt;
+  &lt;h3 class="link-card__title type-h3" id="card-title"&gt;Card title&lt;/h3&gt;
+  &lt;p class="link-card__text type-body"&gt;One short line about the page.&lt;/p&gt;
+  &lt;span class="button type-button button--primary link-card__button" aria-hidden="true"&gt;
+    &lt;span class="button__label"&gt;View the page&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre>
+</section>

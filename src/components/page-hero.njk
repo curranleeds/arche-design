@@ -1,0 +1,72 @@
+---
+title: "Page hero"
+eyebrow: "Components"
+lead: "The blue band at the top of every docs page: an eyebrow, a title and a lead."
+permalink: /components/page-hero/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Page hero</h2>
+  <p>The page hero is a full-width band on the brand surface. It has an eyebrow with the section name, a title and a lead. It has no image and no buttons. The page title above is one.</p>
+  {% demo "A page hero with placeholder text", "block" %}
+  <div class="docs-hero">
+    <div class="docs-hero__text">
+      <div class="docs-hero__heading">
+        <p class="docs-hero__eyebrow type-label">Section name</p>
+        <p class="docs-hero__title type-h1">Page title</p>
+      </div>
+      <p class="docs-hero__lead type-lead">One or two sentences about the page.</p>
+    </div>
+  </div>
+  {% enddemo %}
+</section>
+<section aria-labelledby="size-h">
+  <h2 id="size-h" class="type-h2">Size</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Page hero sizes, scrollable">
+    <table>
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Padding</th><th scope="col">Eyebrow</th><th scope="col">Title</th><th scope="col">Lead</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>32px above and below, 16px at the sides</td><td>12/16</td><td>36/44</td><td>16/24</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>48px above and below, 32px at the sides</td><td>13/16</td><td>44/52</td><td>18/28</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>64px all round</td><td>13/16</td><td>56/64</td><td>18/28</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The text column holds to 880px. There is 16px between the eyebrow and the title, and 24px between the title and the lead. The type sizes come from the Label, H1 and Lead styles, which already step at the same breakpoints.</p>
+</section>
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The band is <code>surface/brand/primary</code>. The eyebrow is <code>text/on-brand/secondary</code>, the title is <code>text/on-brand/primary</code> (white) and the lead is <code>text/on-brand/body</code>. The hero adds no colors of its own.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the page hero</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use one at the top of a page, with the page's one <code>h1</code> as the title.</li>
+      <li>Keep the lead to one or two sentences.</li>
+      <li>Leave the eyebrow out if the page has no section name.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Add an image or a button. The band is text only.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The hero is a <code>&lt;section&gt;</code> named by the <code>h1</code> (<code>aria-labelledby</code>).</li>
+    <li>The <code>h1</code> has <code>tabindex="-1"</code> so a script can move focus to it. These docs do that after a click in the menu or in the next-page band.</li>
+    <li>The three text colors are checked against the brand surface at 4.5:1 in every mode when the site is built.</li>
+  </ul>
+</section>
+<section aria-labelledby="html-h">
+  <h2 id="html-h" class="type-h2">The HTML</h2>
+  <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;section class="docs-hero" aria-labelledby="page-title"&gt;
+  &lt;div class="docs-hero__text"&gt;
+    &lt;div class="docs-hero__heading"&gt;
+      &lt;p class="docs-hero__eyebrow type-label"&gt;Section name&lt;/p&gt;
+      &lt;h1 class="docs-hero__title type-h1" id="page-title" tabindex="-1"&gt;Page title&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;p class="docs-hero__lead type-lead"&gt;One or two sentences about the page.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</section>

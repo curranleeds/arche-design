@@ -23,6 +23,9 @@ module.exports = [
       { title: "Stat strip", url: "/components/stat-strip/", description: "Up to four large numbers on a light-blue tint." },
       { title: "Quote", url: "/components/quote/", description: "A pull quote with the attribution in the left columns." },
       { title: "List row", url: "/components/list-row/", description: "A full-width row that is one link, with a trailing arrow." },
+      { title: "Link card", url: "/components/link-card/", description: "One card that is one link, with a title, a line of text and a button look." },
+      { title: "CTA band", url: "/components/cta-band/", description: "The full-width blue band that closes a page and offers the next step." },
+      { title: "Page hero", url: "/components/page-hero/", description: "The blue band at the top of a page: an eyebrow, a title and a lead." },
     ],
   },
 ];

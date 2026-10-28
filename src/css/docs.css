@@ -44,6 +44,9 @@ body {
 @media (max-width: 1023.98px) { .docs-header__name { display: none; } }
 @media (min-width: 1024px) { .docs-header__page { display: none; } .docs-header__name { flex: 1 1 auto; } }
 @media (min-width: 768px) { .docs-header__portfolio { display: inline-flex; } }
+/* The theme toggle is in the bar from 1024px up and in the footer below that, so the bar keeps room for the section and page. */
+@media (max-width: 1023.98px) { .docs-header__theme { display: none; } }
+@media (min-width: 1024px) { .docs-footer__theme { display: none; } }
 
 /* ----- Shell: side nav + content ----- */
 .docs-shell { display: block; padding: 0 var(--arche-page-pad); }
@@ -56,6 +59,7 @@ body {
     position: sticky;
     top: 80px;
     align-self: start;
+    box-sizing: border-box;
     max-height: calc(100vh - 80px);
     overflow-y: auto;
     padding: var(--arche-space-base-48) 0;
@@ -139,11 +143,7 @@ body {
 /* ----- Main column ----- */
 .docs-main { min-width: 0; padding: var(--arche-space-base-40) 0 var(--arche-space-base-96); max-width: 960px; }
 @media (min-width: 1024px) { .docs-main { padding-top: var(--arche-space-base-64); } }
-.docs-eyebrow { margin: 0 0 var(--arche-space-fine-12); color: var(--arche-text-neutral-secondary); }
-.docs-title:focus { outline: none; }
-.docs-title { margin: 0; color: var(--arche-text-brand-primary); text-wrap: balance; }
-.docs-lead { margin: var(--arche-space-base-24) 0 0; max-width: 62ch; color: var(--arche-text-neutral-body); text-wrap: pretty; }
-.docs-content { margin-top: var(--arche-space-base-48); }
+.docs-content { margin-top: 0; }
 .docs-content > section + section { margin-top: var(--arche-space-base-64); }
 .docs-content h2 { margin: 0 0 var(--arche-space-base-16); padding-top: var(--arche-space-base-16); border-top: var(--arche-stroke-2) solid var(--arche-border-neutral-emphasis); color: var(--arche-text-neutral-primary); }
 .docs-content h3 { margin: var(--arche-space-base-32) 0 var(--arche-space-fine-12); color: var(--arche-text-neutral-primary); }
@@ -161,8 +161,8 @@ body {
   overflow-wrap: anywhere;
 }
 /* ----- Next-page band ----- */
-.docs-next { margin-top: var(--arche-space-base-96); padding: var(--arche-space-base-48) var(--arche-space-base-24); background: var(--arche-surface-brand-primary); color: var(--arche-text-on-brand-body); }
-@media (min-width: 768px) { .docs-next { padding: var(--arche-space-base-64) var(--arche-space-base-48); } }
+.docs-next { margin-top: var(--arche-space-base-96); padding: var(--arche-space-base-48) var(--arche-space-base-16); background: var(--arche-surface-brand-primary); color: var(--arche-text-on-brand-body); }
+@media (min-width: 768px) { .docs-next { padding: var(--arche-space-base-64) var(--arche-space-base-32); } }
 .docs-next__kicker { margin: 0 0 var(--arche-space-fine-8); color: var(--arche-text-on-brand-secondary); }
 .docs-next__title { margin: 0; color: var(--arche-text-on-brand-primary); }
 .docs-next__desc { margin: var(--arche-space-fine-12) 0 var(--arche-space-base-24); max-width: 52ch; color: var(--arche-text-on-brand-body); }
@@ -170,11 +170,12 @@ body {
 .docs-next__back { margin: var(--arche-space-base-24) 0 0; }
 /* From 1024px the text sits left and the actions right, with the back link under the button. Below that everything stacks. */
 @media (min-width: 1024px) {
-  .docs-next { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--arche-space-base-48); align-items: end; }
+  .docs-next { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--arche-space-base-48); align-items: end; padding: var(--arche-space-base-80) var(--arche-space-base-64); }
   .docs-next__desc { margin-bottom: 0; }
 }
 .docs-footer { margin-top: var(--arche-space-base-48); padding-top: var(--arche-space-base-16); border-top: var(--arche-stroke-1) solid var(--arche-border-neutral-default); color: var(--arche-text-neutral-secondary); }
 .docs-footer p { margin: 0; }
+.docs-footer__theme { margin: 0 0 var(--arche-space-base-16) calc(-1 * var(--arche-space-fine-12)); }
 
 /* ----- Overview stat row ----- */
 .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--arche-space-base-24) var(--arche-space-base-16); margin: var(--arche-space-base-32) 0 0; padding: var(--arche-space-base-24) 0 0; border-top: var(--arche-stroke-2) solid var(--arche-border-neutral-emphasis); }
@@ -194,22 +195,6 @@ body {
 .card:focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: var(--arche-focus-ring-offset); }
 .card h3 { margin: 0 0 var(--arche-space-fine-8); }
 .card p { margin: 0; max-width: none; color: var(--arche-text-neutral-body); }
-/* A look-alike secondary button. The whole card is the one link, so the button is a span, hidden from assistive tech, and follows the card's state. */
-.card--action { display: flex; flex-direction: column; align-items: flex-start; }
-.card--action p { flex: 1 0 auto; margin-bottom: var(--arche-space-base-24); }
-.card__button { flex: none; }
-@media (hover: hover) {
-  .card:hover .card__button {
-    background: var(--arche-interactive-button-secondary-fill-hover);
-    box-shadow: inset 0 0 0 var(--arche-stroke-2) var(--arche-interactive-button-secondary-border-default);
-  }
-}
-.card:focus-visible .card__button { box-shadow: inset 0 0 0 var(--arche-stroke-2) var(--arche-interactive-button-secondary-border-default); }
-.card:active .card__button {
-  background: var(--arche-interactive-button-secondary-fill-pressed);
-  color: var(--arche-interactive-button-secondary-label-pressed);
-  box-shadow: inset 0 0 0 var(--arche-stroke-2) var(--arche-interactive-button-secondary-border-pressed);
-}
 
 /* ----- Tables ----- */
 .table-wrap { overflow-x: auto; margin: var(--arche-space-base-16) 0 var(--arche-space-base-24); }
@@ -248,6 +233,13 @@ body {
 .demo__stage--brand { background: var(--arche-surface-brand-primary); box-shadow: none; }
 .demo__stage--tint { background: var(--arche-surface-brand-primary-subtle); box-shadow: none; }
 .demo__stage--block { display: block; padding: 0; }
+.demo__stage--block .docs-next { margin-top: 0; }
+/* Inside a page the prose h2 and p rules would otherwise win over the band. */
+.docs-content .docs-next .docs-next__title { margin: 0; padding: 0; border-top: 0; color: var(--arche-text-on-brand-primary); }
+.docs-content .docs-next .docs-next__desc { margin: var(--arche-space-fine-12) 0 var(--arche-space-base-24); max-width: 52ch; }
+.docs-content .docs-next .docs-next__back { margin: var(--arche-space-base-24) 0 0; }
+@media (min-width: 1024px) { .docs-content .docs-next .docs-next__desc { margin-bottom: 0; } }
+.demo__stage .link-card { width: 100%; max-width: 416px; }
 .demo__stage--form { display: grid; gap: var(--arche-space-base-24); max-width: 420px; }
 .demo__code { box-shadow: inset 0 0 0 var(--arche-stroke-1) var(--arche-border-neutral-default); border-top: 0; }
 .demo__code summary { display: flex; align-items: center; min-height: 44px; padding: 0 var(--arche-space-fine-16); cursor: pointer; font-weight: 600; color: var(--arche-text-brand-primary); }

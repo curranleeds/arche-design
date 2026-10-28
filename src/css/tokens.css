@@ -2,7 +2,7 @@
    Arche Design System — Design Tokens
    GENERATED FILE. Do not hand-edit.
    Source:    tokens/figma-tokens.json
-              (Figma file (Arche Design System), read 2026-10-26 (after the button audit and the family rename))
+              (Figma file (Arche Design System), read 2026-10-27 (after the link card, CTA band and page hero work))
    Generator: scripts/generate-tokens.mjs
    To change a value, change it in Figma, update the JSON, and run the generator.
    ========================================================================== */
@@ -303,8 +303,13 @@
   --arche-interactive-button-primary-on-brand-fill: var(--arche-neutral-white);
   --arche-interactive-button-primary-on-brand-label: var(--arche-greece-blue-500);
   --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-greece-blue-400);
-  --arche-interactive-button-primary-on-brand-fill-hover: var(--arche-neutral-50);
-  --arche-interactive-button-primary-on-brand-fill-pressed: var(--arche-neutral-100);
+  --arche-interactive-button-primary-on-brand-fill-hover: var(--arche-greece-blue-50);
+  --arche-interactive-button-primary-on-brand-fill-pressed: var(--arche-greece-blue-100);
+  --arche-interactive-link-on-brand-default: var(--arche-neutral-white);
+  --arche-interactive-link-on-brand-hover: var(--arche-neutral-white);
+  --arche-interactive-link-on-brand-pressed: var(--arche-greece-blue-50);
+  --arche-interactive-link-on-brand-disabled: var(--arche-greece-blue-100);
+  --arche-interactive-button-primary-on-brand-indicator: var(--arche-greece-blue-300);
 
   /* ---------- Focus ring ---------- */
   --arche-focus-ring-width: var(--arche-stroke-4);
@@ -686,11 +691,19 @@
   --arche-accent-numeral: var(--arche-swiss-red-web);
   --arche-interactive-button-primary-on-brand-label: var(--arche-neutral-900);
   --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-neutral-800);
+  --arche-interactive-button-primary-on-brand-fill-hover: var(--arche-neutral-50);
+  --arche-interactive-button-primary-on-brand-fill-pressed: var(--arche-neutral-100);
+  --arche-interactive-link-on-brand-pressed: var(--arche-neutral-white);
+  --arche-interactive-link-on-brand-disabled: var(--arche-neutral-100);
+  --arche-interactive-button-primary-on-brand-indicator: var(--arche-neutral-900);
 }
 
 :root[data-mode="ethos"] {
   --arche-selection-background: var(--arche-greece-blue-200);
   --arche-accent-rule: var(--arche-greece-blue-500);
+  --arche-interactive-button-primary-on-brand-fill-hover: var(--arche-neutral-50);
+  --arche-interactive-button-primary-on-brand-fill-pressed: var(--arche-neutral-100);
+  --arche-interactive-button-primary-on-brand-indicator: var(--arche-greece-blue-500);
 }
 
 :root[data-mode="noktern"] {
@@ -732,6 +745,11 @@
   --arche-accent-numeral: var(--arche-norway-blue-500);
   --arche-interactive-button-primary-on-brand-label: var(--arche-norway-blue-500);
   --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-norway-blue-400);
+  --arche-interactive-button-primary-on-brand-fill-hover: var(--arche-neutral-50);
+  --arche-interactive-button-primary-on-brand-fill-pressed: var(--arche-neutral-100);
+  --arche-interactive-link-on-brand-pressed: var(--arche-norway-blue-50);
+  --arche-interactive-link-on-brand-disabled: var(--arche-norway-blue-100);
+  --arche-interactive-button-primary-on-brand-indicator: var(--arche-norway-blue-500);
 }
 
 :root[data-mode="omtanke"] {
@@ -780,6 +798,11 @@
   --arche-interactive-button-secondary-on-brand-fill-hover: var(--arche-sweden-blue-400);
   --arche-interactive-button-primary-on-brand-fill-hover: var(--arche-sweden-yellow-400);
   --arche-interactive-button-primary-on-brand-fill-pressed: var(--arche-sweden-yellow-600);
+  --arche-interactive-link-on-brand-default: var(--arche-sweden-yellow-50);
+  --arche-interactive-link-on-brand-hover: var(--arche-sweden-yellow-50);
+  --arche-interactive-link-on-brand-pressed: var(--arche-sweden-yellow-50);
+  --arche-interactive-link-on-brand-disabled: var(--arche-sweden-yellow-50);
+  --arche-interactive-button-primary-on-brand-indicator: var(--arche-sweden-blue-800);
 }
 
 :root[data-mode="klarheit"][data-theme="dark"] {
