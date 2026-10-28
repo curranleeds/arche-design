@@ -194,22 +194,6 @@ body {
 .card:focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: var(--arche-focus-ring-offset); }
 .card h3 { margin: 0 0 var(--arche-space-fine-8); }
 .card p { margin: 0; max-width: none; color: var(--arche-text-neutral-body); }
-/* A look-alike secondary button. The whole card is the one link, so the button is a span, hidden from assistive tech, and follows the card's state. */
-.card--action { display: flex; flex-direction: column; align-items: flex-start; }
-.card--action p { flex: 1 0 auto; margin-bottom: var(--arche-space-base-24); }
-.card__button { flex: none; }
-@media (hover: hover) {
-  .card:hover .card__button {
-    background: var(--arche-interactive-button-secondary-fill-hover);
-    box-shadow: inset 0 0 0 var(--arche-stroke-2) var(--arche-interactive-button-secondary-border-default);
-  }
-}
-.card:focus-visible .card__button { box-shadow: inset 0 0 0 var(--arche-stroke-2) var(--arche-interactive-button-secondary-border-default); }
-.card:active .card__button {
-  background: var(--arche-interactive-button-secondary-fill-pressed);
-  color: var(--arche-interactive-button-secondary-label-pressed);
-  box-shadow: inset 0 0 0 var(--arche-stroke-2) var(--arche-interactive-button-secondary-border-pressed);
-}
 
 /* ----- Tables ----- */
 .table-wrap { overflow-x: auto; margin: var(--arche-space-base-16) 0 var(--arche-space-base-24); }

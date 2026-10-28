@@ -385,6 +385,43 @@
   outline-offset: var(--arche-focus-ring-offset);
 }
 
+/* ---------- Link card ----------
+   One card that is one link. A raised surface with a 1px border, a title, one line of
+   text and a primary button at the bottom. The button is a look-alike span (aria-hidden):
+   the card is the only link and the only tab stop, and its name is the title.
+   Hover: stronger border, button hover fill. Pressed: emphasis border, button pressed fill.
+   Focus: the 4px ring around the card, button in its default fill. The border is always 1px,
+   so the card never changes size or shifts its content. */
+.link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  height: 100%;
+  padding: var(--arche-space-base-16);
+  background: var(--arche-surface-neutral-raised);
+  border: var(--arche-stroke-1) solid var(--arche-border-neutral-default);
+  color: var(--arche-text-neutral-primary);
+  text-decoration: none;
+}
+@media (min-width: 768px) { .link-card { padding: var(--arche-space-base-24); } }
+/* Doubled class so these margins win over any prose rules (such as the docs' h3 and p spacing). */
+.link-card .link-card__title { margin: 0 0 var(--arche-space-fine-8); color: var(--arche-text-neutral-primary); }
+.link-card .link-card__text { flex: 1 0 auto; margin: 0 0 var(--arche-space-base-24); max-width: none; color: var(--arche-text-neutral-body); }
+.link-card__button { flex: none; }
+@media (hover: hover) {
+  .link-card:hover { border-color: var(--arche-border-neutral-strong); }
+  .link-card:hover .link-card__button { background: var(--arche-interactive-button-primary-fill-hover); }
+}
+.link-card:focus-visible {
+  border-color: var(--arche-border-neutral-default);
+  outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring);
+  outline-offset: var(--arche-focus-ring-offset);
+}
+.link-card:focus-visible .link-card__button { background: var(--arche-interactive-button-primary-fill-default); }
+.link-card:active { border-color: var(--arche-border-neutral-emphasis); }
+.link-card:active .link-card__button { background: var(--arche-interactive-button-primary-fill-pressed); }
+
 /* ---------- Nav link (used by the top nav) ----------
    48px tall, 12px / 16px padding, SemiBold 16/24. Hover: 4px neutral rule along
    the bottom. Pressed: 4px brand rule. Current page: a 4px bar as wide as the text. */
