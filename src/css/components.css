@@ -587,6 +587,30 @@ textarea.field__input { resize: none; }
   color: var(--arche-icon-system-alert);
 }
 
+/* ---------- Page hero ----------
+   The blue band at the top of every docs page: an eyebrow, a title and a lead. No image,
+   no buttons. Full width, in the brand surface. The text column holds to 880px.
+   Padding steps down with the breakpoints: 16/32 mobile, 32/48 tablet, 64 desktop.
+   The sizes come from the label, H1 and lead styles, which already step the same way. */
+.page-hero {
+  padding: var(--arche-space-base-32) var(--arche-space-base-16);
+  background: var(--arche-surface-brand-primary);
+}
+@media (min-width: 768px) { .page-hero { padding: var(--arche-space-base-48) var(--arche-space-base-32); } }
+@media (min-width: 1024px) { .page-hero { padding: var(--arche-space-base-64); } }
+.page-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--arche-space-base-24);
+  max-width: 880px;
+  word-break: break-word;
+}
+.page-hero__heading { display: flex; flex-direction: column; gap: var(--arche-space-fine-16); }
+.page-hero .page-hero__eyebrow { margin: 0; color: var(--arche-text-on-brand-secondary); }
+.page-hero .page-hero__title { margin: 0; color: var(--arche-text-on-brand-primary); text-wrap: balance; }
+.page-hero .page-hero__title:focus { outline: none; }
+.page-hero .page-hero__lead { margin: 0; max-width: none; color: var(--arche-text-on-brand-body); text-wrap: pretty; }
+
 /* ==========================================================================
    Logo, text link on blue, site header (top nav) and menu overlay
    Specs: Figma top nav 209:7007, menu overlay 184:2138, logo.
@@ -898,21 +922,6 @@ html:not(.js) .site-footer__theme { display: none; }
   transform: none;
   outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring-on-brand);
   outline-offset: calc(-1 * var(--arche-focus-ring-width));
-}
-
-/* ---------- Page hero band ----------
-   Blue 500 band with the page's H1. "About" is white; the name is yellow
-   (text/on-brand/name, the one place yellow is for). 48px above and below on
-   mobile and tablet, 64 on desktop. */
-.page-hero {
-  padding: var(--arche-space-base-48) var(--arche-page-pad);
-  background: var(--arche-surface-brand-primary);
-  color: var(--arche-text-on-brand-primary);
-}
-.page-hero h1 { margin: 0; color: var(--arche-text-on-brand-primary); }
-.page-hero__name { color: var(--arche-text-on-brand-name); }
-@media (min-width: 1024px) {
-  .page-hero { padding-block: var(--arche-space-base-64); }
 }
 
 /* ---------- About ----------
