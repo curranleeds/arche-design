@@ -71,18 +71,25 @@
         </div>
         {% if info %}
         <section class="docs-next" aria-labelledby="next-h">
-          {% if info.next %}
-          <p class="docs-next__kicker type-label">Up next</p>
-          <h2 class="docs-next__title type-h2" id="next-h">{{ info.next.title }}</h2>
-          <p class="docs-next__desc type-body">{{ info.next.description }}</p>
-          {{ button("Continue to " + info.next.title, type="primary", href=info.next.url, icon="arrow_forward", iconPosition="trailing", onBrand=true, attrs="data-focus-h1") }}
-          {% else %}
-          <p class="docs-next__kicker type-label">The end</p>
-          <h2 class="docs-next__title type-h2" id="next-h">You've reached the end</h2>
-          <p class="docs-next__desc type-body">That is every page in the system.</p>
-          {{ button("Back to Overview", type="primary", href="/", icon="arrow_back", iconPosition="leading", onBrand=true, attrs="data-focus-h1") }}
-          {% endif %}
-          {% if info.prev %}<p class="docs-next__back"><a class="link link--on-brand" href="{{ info.prev.url }}" data-focus-h1><span class="link__text">Back to {{ info.prev.title }}</span></a></p>{% endif %}
+          <div class="docs-next__text">
+            {% if info.next %}
+            <p class="docs-next__kicker type-label">Up next</p>
+            <h2 class="docs-next__title type-h2" id="next-h">{{ info.next.title }}</h2>
+            <p class="docs-next__desc type-lead">{{ info.next.description }}</p>
+            {% else %}
+            <p class="docs-next__kicker type-label">The end</p>
+            <h2 class="docs-next__title type-h2" id="next-h">You've reached the end</h2>
+            <p class="docs-next__desc type-lead">That is every page in the system.</p>
+            {% endif %}
+          </div>
+          <div class="docs-next__actions">
+            {% if info.next %}
+            {{ button("Continue to " + info.next.title, type="primary", href=info.next.url, icon="arrow_forward", iconPosition="trailing", onBrand=true, attrs="data-focus-h1") }}
+            {% else %}
+            {{ button("Back to Overview", type="primary", href="/", icon="arrow_back", iconPosition="leading", onBrand=true, attrs="data-focus-h1") }}
+            {% endif %}
+            {% if info.prev %}<p class="docs-next__back"><a class="link link--on-brand" href="{{ info.prev.url }}" data-focus-h1><span class="link__text">Back to {{ info.prev.title }}</span></a></p>{% endif %}
+          </div>
         </section>
         {% endif %}
         <footer class="docs-footer type-small">

@@ -78,9 +78,11 @@ body {
     top: var(--arche-docs-header-h);
     left: 0;
     right: 0;
-    max-height: calc(100vh - var(--arche-docs-header-h));
-    max-height: calc(100dvh - var(--arche-docs-header-h));
+    /* About 70% of the screen, so a strip of dimmed page stays visible below it. Tapping the strip closes the menu. */
+    max-height: 70vh;
+    max-height: 70dvh;
     overflow-y: auto;
+    box-sizing: border-box;
     padding: var(--arche-space-base-16) var(--arche-page-pad) var(--arche-space-base-24);
     background: var(--arche-surface-neutral-base);
     border-bottom: var(--arche-stroke-1) solid var(--arche-border-neutral-default);
@@ -93,6 +95,17 @@ body {
     inset: var(--arche-docs-header-h) 0 0 0;
     background: var(--arche-surface-overlay-scrim);
     opacity: 0.5;
+  }
+}
+/* Tablet: a narrower dropdown, right-aligned under the Menu button. */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .js .docs-nav {
+    left: auto;
+    right: var(--arche-page-pad);
+    width: min(400px, calc(100vw - 2 * var(--arche-page-pad)));
+    min-width: 360px;
+    border: var(--arche-stroke-1) solid var(--arche-border-neutral-default);
+    border-top: 0;
   }
 }
 .docs-nav__count { margin: 0; color: var(--arche-text-neutral-secondary); }
@@ -153,7 +166,13 @@ body {
 .docs-next__kicker { margin: 0 0 var(--arche-space-fine-8); color: var(--arche-text-on-brand-secondary); }
 .docs-next__title { margin: 0; color: var(--arche-text-on-brand-primary); }
 .docs-next__desc { margin: var(--arche-space-fine-12) 0 var(--arche-space-base-24); max-width: 52ch; color: var(--arche-text-on-brand-body); }
+.docs-next__actions { display: flex; flex-direction: column; align-items: flex-start; }
 .docs-next__back { margin: var(--arche-space-base-24) 0 0; }
+/* From 1024px the text sits left and the actions right, with the back link under the button. Below that everything stacks. */
+@media (min-width: 1024px) {
+  .docs-next { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--arche-space-base-48); align-items: end; }
+  .docs-next__desc { margin-bottom: 0; }
+}
 .docs-footer { margin-top: var(--arche-space-base-48); padding-top: var(--arche-space-base-16); border-top: var(--arche-stroke-1) solid var(--arche-border-neutral-default); color: var(--arche-text-neutral-secondary); }
 .docs-footer p { margin: 0; }
 
