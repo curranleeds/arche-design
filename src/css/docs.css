@@ -44,6 +44,9 @@ body {
 @media (max-width: 1023.98px) { .docs-header__name { display: none; } }
 @media (min-width: 1024px) { .docs-header__page { display: none; } .docs-header__name { flex: 1 1 auto; } }
 @media (min-width: 768px) { .docs-header__portfolio { display: inline-flex; } }
+/* The theme toggle is in the bar from 1024px up and in the footer below that, so the bar keeps room for the section and page. */
+@media (max-width: 1023.98px) { .docs-header__theme { display: none; } }
+@media (min-width: 1024px) { .docs-footer__theme { display: none; } }
 
 /* ----- Shell: side nav + content ----- */
 .docs-shell { display: block; padding: 0 var(--arche-page-pad); }
@@ -172,6 +175,7 @@ body {
 }
 .docs-footer { margin-top: var(--arche-space-base-48); padding-top: var(--arche-space-base-16); border-top: var(--arche-stroke-1) solid var(--arche-border-neutral-default); color: var(--arche-text-neutral-secondary); }
 .docs-footer p { margin: 0; }
+.docs-footer__theme { margin: 0 0 var(--arche-space-base-16) calc(-1 * var(--arche-space-fine-12)); }
 
 /* ----- Overview stat row ----- */
 .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--arche-space-base-24) var(--arche-space-base-16); margin: var(--arche-space-base-32) 0 0; padding: var(--arche-space-base-24) 0 0; border-top: var(--arche-stroke-2) solid var(--arche-border-neutral-emphasis); }

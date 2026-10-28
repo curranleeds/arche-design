@@ -22,6 +22,7 @@ Added
 - Contrast checks for the on-brand link in all modes and for the Canon active bar on the on-brand primary button.
 
 Changed
+- Visible: below 1024px the theme toggle moved from the top bar to the footer, so the bar can show the full section and page title.
 - Visible: the home page cards use the Link card. The button is primary instead of secondary, the cards have a pressed state, and the surface is white with a 1px border instead of the blue tint.
 - Visible: on the on-brand primary button in Canon, hover is Greece Blue 50 and pressed is Greece Blue 100. Active uses the white default fill, not the pressed fill, with a 4px bar in the new indicator role.
 - Visible: every docs page now opens with the Page hero instead of a title on the white page.

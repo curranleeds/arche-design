@@ -43,7 +43,7 @@
       </p>
       <div class="docs-header__tools">
         <a class="link docs-header__portfolio" href="{{ site.portfolio }}"><span class="link__text">curranleeds.com</span></a>
-        {% include "theme-toggle.njk" %}
+        <div class="docs-header__theme">{% include "theme-toggle.njk" %}</div>
         {{ button("Menu", type="secondary", icon="expand_more", iconPosition="trailing", extraClass="docs-menu-button", attrs='aria-expanded="false" aria-controls="docs-menu" data-menu-button') }}
       </div>
     </header>
@@ -99,6 +99,7 @@
         </section>
         {% endif %}
         <footer class="docs-footer type-small">
+          <div class="docs-footer__theme">{% include "theme-toggle.njk" %}</div>
           <p>{{ site.name }} v{{ site.version }}, {{ site.updated }}. Tokens are read from the source file at build time. Built by <a class="link" href="{{ site.portfolio }}"><span class="link__text">{{ site.author }}</span></a>.</p>
         </footer>
       </main>
