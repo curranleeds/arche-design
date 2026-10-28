@@ -10,6 +10,16 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.6.0 (in progress)
+
+Part 1. Not released: the version number is still 0.5.0.
+
+Added
+- A Link card component (`.link-card` in `components.css`): one card that is one link, with a title, one line of text and a primary button at the bottom. It has default, hover, pressed and focus states, uses existing roles only, and never changes size between states.
+
+Changed
+- Visible: the home page cards now use the primary button and have a pressed state. The card is a raised surface with a 1px border, as in the Figma spec.
+
 ## 0.5.0
 
 A Canon-focused release. Canon is the mode in active use; the other four modes are kept but frozen until a named piece of content needs one.
