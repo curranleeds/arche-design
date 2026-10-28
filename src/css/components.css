@@ -255,8 +255,8 @@
 }
 .button--primary.button--on-brand:focus-visible { outline-color: var(--arche-border-focus-ring-on-brand); }
 /* Active: the pressed fill, with the 4px bar in the label color. Disabled keeps the plain primary disabled roles. */
-.button--primary.button--on-brand.is-active:not(:disabled, [aria-disabled="true"]) { background: var(--arche-interactive-button-primary-on-brand-fill-pressed); }
-.button--primary.button--on-brand.is-active::after { background: var(--arche-interactive-button-primary-on-brand-label); }
+.button--primary.button--on-brand.is-active:not(:disabled, [aria-disabled="true"]) { background: var(--arche-interactive-button-primary-on-brand-fill); }
+.button--primary.button--on-brand.is-active::after { background: var(--arche-interactive-button-primary-on-brand-indicator); }
 
 /* Secondary: 1px border, 2px on hover, pressed, active and focus. */
 .button--secondary {
