@@ -51,7 +51,7 @@ The system has three layers. Modes go in the middle one.
 2. **Semantic roles:** names by job, such as `--arche-text-brand-primary` or `--arche-surface-neutral-base`. This is where a mode changes values. Canon is the default set.
 3. **Components:** read only roles, so they never change between modes.
 
-Dark and light work with a `data-theme` attribute on the `<html>` tag. A mode is a second attribute, `data-mode`, with one block of role values per mode, each with a light and a dark version, listing only the roles that differ from Canon. No attribute means Canon. Status colors stay out of every mode block. The docs site has a Mode menu in its header that sets the attribute and remembers the choice in `localStorage`; it is for the docs only, and components never read it.
+Dark and light work with a `data-theme` attribute on the `<html>` tag. A mode is a second attribute, `data-mode`, with one block of role values per mode, each with a light and a dark version, listing only the roles that differ from Canon. No attribute means Canon. Status colors stay out of every mode block. Each mode page in the docs has a "View this page in {mode}" button that sets the attribute for that page only; it is for the docs only, nothing is saved, and components never read it.
 
 ## What is in the docs site today
 

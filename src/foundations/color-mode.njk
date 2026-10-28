@@ -11,7 +11,7 @@ eyebrow: "Color mode"
 description: "The {{ mode.name }} color mode of the Arche Design System: its rules, main colors and contrast ratios, Light and Dark."
 ---
 <p class="mode-try">
-  <button type="button" class="button type-button button--secondary" data-mode-set="{{ mode.id }}" aria-pressed="false"><span class="button__label">View this site in {{ mode.name }}</span></button>
+  <button type="button" class="button type-button button--secondary" data-mode-set="{{ mode.id }}" aria-pressed="false"><span class="button__label">View this page in {{ mode.name }}</span></button>
 </p>
 <p>{{ mode.name }} is the <strong>{{ mode.tradition | lower }}</strong> mode. Its trait is <strong>{{ mode.trait | lower }}</strong>. Its code id is <code>{{ mode.id }}</code>: set <code>data-mode="{{ mode.id }}"</code> on the <code>&lt;html&gt;</code> element{% if mode.id == "canon" %}, or set nothing, because Canon is the default{% endif %}.</p>
 

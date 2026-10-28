@@ -10,6 +10,27 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.5.0
+
+A Canon-focused release. Canon is the mode in active use; the other four modes are kept but frozen until a named piece of content needs one.
+
+Added
+- Docs: a sticky bar below 1024px that names the section and page and holds a Menu button. The menu opens as a dropdown panel with "Page N of 13", marks the current page, closes on Escape, on a page pick or on a tap on the dim behind it, and moves focus to the page title after you pick a page.
+- Docs: a band at the end of every page in the nav order with a "Continue to" button, a one-line description of the next page and a link back to the previous page. The order is built from `src/_data/nav.js`, so a new page joins the sequence when it is added there.
+- Component styles for the primary button on a brand surface (`.button--primary.button--on-brand`), using the existing on-brand primary button roles. No new tokens.
+
+Removed
+- Docs: the Mode dropdown in the header, and the Color modes group in the side nav and menu. The mode pages are still reachable by direct link, for example `/foundations/color/klarheit/`.
+- Docs: the saved color mode. The site no longer stores a choice in `localStorage`.
+
+Changed
+- Visible: the button on each mode page now reads "View this page in {mode}" and applies to that page only. Every other page opens in Canon.
+- Visible: below 1024px the menu is a dropdown under a sticky bar instead of a collapsible block in the page.
+- Docs: the Color modes page says the four non-Canon modes are explorations, and that a mode ships only when there is named content that needs it.
+- Visible: the home page cards now show a button.
+- Docs: the home page and modes page now lead with Canon, and the touch-target and contrast wording is corrected.
+- No token value changed. Canon is the same as in 0.4.0, and the tokens of the other four modes are unchanged.
+
 ## 0.4.0
 
 Breaking: color primitives are renamed, and the button states follow one set of rules in every mode.

@@ -48,8 +48,9 @@ permalink: /components/button/
 
 <section aria-labelledby="brand-h">
   <h2 id="brand-h" class="type-h2">On a blue surface</h2>
-  <p>On the Blue 500 band, use the secondary button with the <code>on-brand</code> context: white border and label, and a white focus ring.</p>
-  {% demo "Secondary, on brand", "brand" %}
+  <p>On the Blue 500 band, use the <code>on-brand</code> context. The primary button is white with a Blue 500 label, for the one action the band exists for. The secondary button has a white border and label. Both take a white focus ring.</p>
+  {% demo "Primary and secondary, on brand", "brand" %}
+  {{ button("Continue", type="primary", href="#", onBrand=true, icon="arrow_forward", iconPosition="trailing") }}
   {{ button("View the work", type="secondary", href="#", onBrand=true) }}
   {{ button("Disabled", type="secondary", disabled=true, onBrand=true) }}
   {% enddemo %}

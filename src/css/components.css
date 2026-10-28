@@ -240,6 +240,24 @@
   cursor: not-allowed;
 }
 
+/* Primary on a blue (brand) surface: white fill, blue label, white ring. */
+.button--primary.button--on-brand:not(:disabled, [aria-disabled="true"]) {
+  background: var(--arche-interactive-button-primary-on-brand-fill);
+  color: var(--arche-interactive-button-primary-on-brand-label);
+}
+@media (hover: hover) {
+  .button--primary.button--on-brand:not(:disabled, [aria-disabled="true"]):hover {
+    background: var(--arche-interactive-button-primary-on-brand-fill-hover);
+  }
+}
+.button--primary.button--on-brand:not(:disabled, [aria-disabled="true"]):active {
+  background: var(--arche-interactive-button-primary-on-brand-fill-pressed);
+}
+.button--primary.button--on-brand:focus-visible { outline-color: var(--arche-border-focus-ring-on-brand); }
+/* Active: the pressed fill, with the 4px bar in the label color. Disabled keeps the plain primary disabled roles. */
+.button--primary.button--on-brand.is-active:not(:disabled, [aria-disabled="true"]) { background: var(--arche-interactive-button-primary-on-brand-fill-pressed); }
+.button--primary.button--on-brand.is-active::after { background: var(--arche-interactive-button-primary-on-brand-label); }
+
 /* Secondary: 1px border, 2px on hover, pressed, active and focus. */
 .button--secondary {
   background: var(--arche-interactive-button-secondary-fill-default);

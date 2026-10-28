@@ -13,17 +13,12 @@
     <meta property="og:title" content="{{ title or site.name }}" />
     <meta property="og:description" content="{{ description or 'Tokens, type, color and components, documented from the source files.' }}" />
     <script>
-      // Runs before first paint: apply a saved Light or Dark choice and color mode so the page never flashes.
+      // Runs before first paint: apply a saved Light or Dark choice so the page never flashes. A color mode is never saved: every page starts in Canon.
       (function () {
         document.documentElement.classList.add('js');
         try {
           var saved = localStorage.getItem('theme');
           if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
-        } catch (e) {}
-        // Same for the color mode. Anything unknown, or blocked storage, leaves Canon (no attribute).
-        try {
-          var mode = localStorage.getItem('arche-mode');
-          if (mode === 'klarheit' || mode === 'noktern' || mode === 'omtanke' || mode === 'ethos') document.documentElement.setAttribute('data-mode', mode);
         } catch (e) {}
       })();
     </script>
@@ -38,37 +33,65 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
+    {% from "components.njk" import button, textLink %}
+    {% set info = page.url | pageInfo %}
     <header class="docs-header">
       <a class="docs-header__name type-h3" href="/">{{ site.name }}</a>
+      <p class="docs-header__page">
+        <span class="docs-header__section type-small">{% if info %}{{ info.section }}{% else %}{{ eyebrow or site.short }}{% endif %}</span>
+        <span class="docs-header__title type-h3">{% if info %}{{ info.item.title }}{% else %}{{ title }}{% endif %}</span>
+      </p>
       <div class="docs-header__tools">
         <a class="link docs-header__portfolio" href="{{ site.portfolio }}"><span class="link__text">curranleeds.com</span></a>
-        {% include "mode-select.njk" %}
         {% include "theme-toggle.njk" %}
+        {{ button("Menu", type="secondary", icon="expand_more", iconPosition="trailing", extraClass="docs-menu-button", attrs='aria-expanded="false" aria-controls="docs-menu" data-menu-button') }}
       </div>
     </header>
+    <div class="docs-dim" data-menu-dim></div>
     <div class="docs-shell">
-      <nav class="docs-nav" aria-label="Design system">
-        <details class="docs-nav__details" open>
-          <summary class="docs-nav__summary type-button"><span>Menu</span>{% icon "expand_more" %}</summary>
-          {% for group in nav %}
-          <div class="docs-nav__group">
-            <p class="docs-nav__heading type-label">{{ group.title }}</p>
-            <ul class="docs-nav__list" role="list">
-              {% for item in group.items %}
-              <li><a class="docs-nav__link type-body" href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endfor %}
-        </details>
+      <nav class="docs-nav" id="docs-menu" aria-label="Design system" data-menu>
+        {% if info %}<p class="docs-nav__count type-label">Page {{ info.index }} of {{ info.total }}</p>{% endif %}
+        {% for group in nav %}
+        <div class="docs-nav__group">
+          <p class="docs-nav__heading type-label">{{ group.title }}</p>
+          <ul class="docs-nav__list" role="list">
+            {% for item in group.items %}
+            <li><a class="docs-nav__link type-body" href="{{ item.url }}" data-focus-h1{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
       </nav>
       <main class="docs-main" id="main">
         {% if eyebrow %}<p class="docs-eyebrow type-label">{{ eyebrow }}</p>{% endif %}
-        <h1 class="docs-title type-h1">{{ title }}</h1>
+        <h1 class="docs-title type-h1" id="page-title" tabindex="-1">{{ title }}</h1>
         {% if lead %}<p class="docs-lead type-lead">{{ lead }}</p>{% endif %}
         <div class="docs-content">
           {{ content | safe }}
         </div>
+        {% if info %}
+        <section class="docs-next" aria-labelledby="next-h">
+          <div class="docs-next__text">
+            {% if info.next %}
+            <p class="docs-next__kicker type-label">Up next</p>
+            <h2 class="docs-next__title type-h2" id="next-h">{{ info.next.title }}</h2>
+            <p class="docs-next__desc type-lead">{{ info.next.description }}</p>
+            {% else %}
+            <p class="docs-next__kicker type-label">The end</p>
+            <h2 class="docs-next__title type-h2" id="next-h">You've reached the end</h2>
+            <p class="docs-next__desc type-lead">That is every page in the system.</p>
+            {% endif %}
+          </div>
+          <div class="docs-next__actions">
+            {% if info.next %}
+            {{ button("Continue to " + info.next.title, type="primary", href=info.next.url, icon="arrow_forward", iconPosition="trailing", onBrand=true, attrs="data-focus-h1") }}
+            {% else %}
+            {{ button("Back to Overview", type="primary", href="/", icon="arrow_back", iconPosition="leading", onBrand=true, attrs="data-focus-h1") }}
+            {% endif %}
+            {% if info.prev %}<p class="docs-next__back"><a class="link link--on-brand" href="{{ info.prev.url }}" data-focus-h1><span class="link__text">Back to {{ info.prev.title }}</span></a></p>{% endif %}
+          </div>
+        </section>
+        {% endif %}
         <footer class="docs-footer type-small">
           <p>{{ site.name }} v{{ site.version }}, {{ site.updated }}. Tokens are read from the source file at build time. Built by <a class="link" href="{{ site.portfolio }}"><span class="link__text">{{ site.author }}</span></a>.</p>
         </footer>

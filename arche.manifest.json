@@ -1,5 +1,5 @@
 {
-  "arche": "0.4.0",
+  "arche": "0.5.0",
   "algorithm": "sha256",
   "files": {
     "src/_includes/components.njk": "47edb9922a937fc0d6393782501af710e3101df0b63b44ba0fa6bf823db6e25f",
@@ -24,7 +24,7 @@
     "src/assets/icons/priority_high.svg": "9a0b7ef6d635c310258ee757d60c8c8e386d1d5519b59a9e97b787125609dbd8",
     "src/assets/js/theme.js": "a15c9f300621c2e0873edf13040b2637e9702a3a6467acb3ab05ba8e9f789e88",
     "src/css/case-study.css": "96631657bd08b740e5ff7c768cb50095f8b7205c9fab5d18add51944b4b9cbaa",
-    "src/css/components.css": "216f1276ebad0f6cf1a20a8e641db66e67f97e9fd17d94322f7b05abecdee34a",
+    "src/css/components.css": "b833319fcf4c51e0524d5a1a3db2765814d47a7b58273cd7db0226acab3dd048",
     "src/css/fonts.css": "a2ecf9c8acd209a0ef1ee59de9b6f6102b427f4855c25464910e75f28916f724",
     "src/css/tokens.css": "f1290f0a1b4a4356c5ef2aadf09e87e6e39fc2fd1b64b4c1508d87b6401ea6b1"
   }
