@@ -1,0 +1,63 @@
+---
+layout: false
+title: "List row preview"
+permalink: /previews/list-row/
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>List row preview · Arche Design System</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // Same saved Light or Dark choice as the docs pages, applied before first paint.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+  </head>
+  <body class="preview-body">
+    <section class="cs-more" aria-label="List row preview">
+      <ul class="cs-more__list" role="list">
+        <li>
+          <a class="cs-row-link" href="#">
+            <span class="cs-row-link__text">
+              <span class="cs-row-link__title type-h3">Case study title</span>
+              <span class="cs-row-link__category type-label">Category</span>
+            </span>
+            <span class="cs-row-link__arrow" aria-hidden="true">{% icon "arrow_forward" %}</span>
+          </a>
+        </li>
+        <li>
+          <a class="cs-row-link" href="#">
+            <span class="cs-row-link__text">
+              <span class="cs-row-link__title type-h3">A longer case study title that wraps</span>
+              <span class="cs-row-link__category type-label">Category</span>
+            </span>
+            <span class="cs-row-link__arrow" aria-hidden="true">{% icon "arrow_forward" %}</span>
+          </a>
+        </li>
+        <li>
+          <a class="cs-row-link cs-row-link--locked" href="#">
+            <span class="cs-row-link__text">
+              <span class="cs-row-link__title type-h3">Case study title</span>
+              <span class="cs-row-link__category type-label">Category</span>
+            </span>
+            <span class="cs-row-link__arrow" aria-hidden="true">{% icon "lock" %}</span>
+            <span class="cs-row-link__helper type-small">Password needed</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

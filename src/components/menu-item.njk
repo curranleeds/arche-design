@@ -1,0 +1,46 @@
+---
+title: "Menu item"
+eyebrow: "Components"
+lead: "One link in the docs menu dropdown: 44px tall, with its type size set by the breakpoint."
+permalink: /components/menu-item/
+---
+<section aria-labelledby="item-h">
+  <h2 id="item-h" class="type-h2">Menu item</h2>
+  <p>A menu item is a plain text link in the dropdown that opens from the Menu button below 1024px. It is 44px tall with 12px of side padding. It uses the Body style, so the type steps with the breakpoint: 15/22 on mobile and 16/24 on tablet. On desktop the same links sit in the side nav.</p>
+  <h3 class="type-h3">States</h3>
+  <ul>
+    <li><strong>Default:</strong> text on the page surface.</li>
+    <li><strong>Hover:</strong> the tertiary hover fill.</li>
+    <li><strong>Focus:</strong> the 4px focus ring with a 2px gap.</li>
+    <li><strong>Current:</strong> Body SemiBold, a 4px bar on the left edge (<code>interactive/link/nav/indicator</code>), and <code>aria-current="page"</code>.</li>
+  </ul>
+</section>
+<section aria-labelledby="bp-h">
+  <h2 id="bp-h" class="type-h2">Breakpoints</h2>
+  <p>The frames below are fixed widths, so each shows its own breakpoint on any screen. Hover and focus work in the frames.</p>
+  <figure class="preview-frame">
+    <div class="preview-frame__scroller" tabindex="0" role="region" aria-label="Menu item at mobile width, scrollable">
+      <iframe src="/previews/menu-item/" width="375" height="200" title="Menu item at mobile width" loading="lazy"></iframe>
+    </div>
+    <figcaption class="preview-frame__caption type-small">Mobile, 375px wide: 15/22.</figcaption>
+  </figure>
+  <figure class="preview-frame">
+    <div class="preview-frame__scroller" tabindex="0" role="region" aria-label="Menu item at tablet width, scrollable">
+      <iframe src="/previews/menu-item/" width="768" height="200" title="Menu item at tablet width" loading="lazy"></iframe>
+    </div>
+    <figcaption class="preview-frame__caption type-small">Tablet, 768px wide: 16/24. The dropdown panel is at most 400px wide.</figcaption>
+  </figure>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the menu item</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use the page title as the label.</li>
+      <li>Mark the current page with <code>aria-current="page"</code> as well as the bar.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Set a font size on the link. The Body style steps by itself.</li>
+      <li>Make the item shorter than 44px.</li>
+    </ul></div>
+  </div>
+</section>

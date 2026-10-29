@@ -1,0 +1,40 @@
+---
+layout: false
+title: "Quote preview"
+permalink: /previews/quote/
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quote preview · Arche Design System</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // Same saved Light or Dark choice as the docs pages, applied before first paint.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+  </head>
+  <body class="preview-body">
+    <div class="preview-pad">
+      <figure class="cs-quote">
+        <div class="cs-quote__who">
+          <p class="cs-quote__subhead type-subhead">Role or label</p>
+          <figcaption class="cs-quote__role type-small">Company type, not a name</figcaption>
+        </div>
+        <blockquote><p>Quote text goes here. Use a real quote, and attribute it by role and company type unless the person has agreed to be named.</p></blockquote>
+      </figure>
+    </div>
+  </body>
+</html>

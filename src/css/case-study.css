@@ -366,8 +366,10 @@ html:not(.js) .cs-jump__panel { grid-template-rows: 1fr; visibility: visible; }
 }
 .cs-tile__caption { margin: 0; color: var(--arche-text-neutral-primary); text-wrap: pretty; }
 
-/* Expand chip: 32px square, 1px brand border, 12px in from the image's bottom-right.
-   Always visible, including on touch. The hover look follows the image, not the chip. */
+/* Expand chip: 32px square, 12px in from the image's bottom-right. The default border is
+   neutral/strong (3:1 or better against the chip fill and the tint in Light and Dark); hover and
+   pressed switch to the brand border because their fills are brand colors. Always visible,
+   including on touch. The hover look follows the image, not the chip. */
 .cs-chip,
 .cs-motion {
   display: grid;
@@ -378,17 +380,25 @@ html:not(.js) .cs-jump__panel { grid-template-rows: 1fr; visibility: visible; }
   border: var(--arche-stroke-1) solid var(--arche-border-brand-default);
   background: var(--arche-surface-neutral-raised);
   color: var(--arche-icon-brand-default);
-  transition: background-color var(--arche-motion-fast) var(--arche-motion-ease), color var(--arche-motion-fast) var(--arche-motion-ease);
+  transition: background-color var(--arche-motion-fast) var(--arche-motion-ease), border-color var(--arche-motion-fast) var(--arche-motion-ease), color var(--arche-motion-fast) var(--arche-motion-ease);
 }
-.cs-chip { position: absolute; right: var(--arche-space-fine-12); bottom: var(--arche-space-fine-12); pointer-events: none; }
+.cs-chip {
+  position: absolute;
+  right: var(--arche-space-fine-12);
+  bottom: var(--arche-space-fine-12);
+  border-color: var(--arche-border-neutral-strong);
+  pointer-events: none;
+}
 .cs-chip .icon { width: 16px; height: 16px; }
 @media (hover: hover) {
   .cs-tile__open:hover .cs-chip {
+    border-color: var(--arche-border-brand-default);
     background: var(--arche-surface-brand-primary);
     color: var(--arche-icon-on-brand-default);
   }
 }
 .cs-tile__open:active .cs-chip {
+  border-color: var(--arche-border-brand-default);
   background: var(--arche-interactive-button-secondary-on-brand-fill-pressed);
   color: var(--arche-icon-on-brand-default);
 }
@@ -598,16 +608,29 @@ html:has(.cs-lightbox[open]) { overflow: hidden; }
   color: var(--arche-text-neutral-primary);
   font-family: var(--arche-type-quote-font);
   font-weight: var(--arche-type-quote-weight);
-  /* Tablet uses the mobile quote size until the quote has a tablet layout (Figma note). */
-  font-size: 1.5rem;
-  line-height: 2rem;
+  /* The size and line height step with the breakpoint through the type tokens (24/32, 28/36, 32/40). */
+  font-size: var(--arche-type-quote-size);
+  line-height: var(--arche-type-quote-line);
   text-wrap: pretty;
 }
-/* Phone and tablet: subhead, quote, then attribution. */
+/* Phone: subhead, quote, then attribution. */
 .cs-quote__who { display: contents; }
 .cs-quote__subhead { order: 0; }
 .cs-quote blockquote { order: 1; }
 .cs-quote__role { order: 2; }
+/* Tablet (768 to 1023): offset split on the 8-column grid. Attribution in columns 1 and 2, quote in columns 3 to 8. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cs-quote {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: var(--arche-space-fine-16);
+    row-gap: var(--arche-space-base-8);
+    align-items: start;
+  }
+  .cs-quote__subhead { grid-column: 1 / span 2; grid-row: 1; }
+  .cs-quote__role { grid-column: 1 / span 2; grid-row: 2; }
+  .cs-quote blockquote { grid-column: 3 / span 6; grid-row: 1 / span 2; }
+}
 @media (min-width: 1024px) {
   .cs-quote {
     display: grid;
@@ -619,7 +642,6 @@ html:has(.cs-lightbox[open]) { overflow: hidden; }
   .cs-quote__subhead { grid-column: 1 / span 3; grid-row: 1; }
   .cs-quote__role { grid-column: 1 / span 3; grid-row: 2; }
   .cs-quote blockquote { grid-column: 5 / span 8; grid-row: 1 / span 2; }
-  .cs-quote blockquote p { font-size: var(--arche-type-quote-size); line-height: var(--arche-type-quote-line); }
 }
 
 .cs-since {
@@ -763,6 +785,14 @@ html:has(.cs-lightbox[open]) { overflow: hidden; }
   .cs-row-link { padding-block: 28px; }
   .cs-row-link__arrow { width: var(--arche-space-base-48); height: var(--arche-space-base-48); }
 }
+/* Tablet (768 to 1023): 8-column grid. Title in columns 1 to 4, category in 5 and 6, arrow cell in 7 and 8. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cs-row-link { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--arche-space-fine-16); }
+  .cs-row-link__text { display: contents; }
+  .cs-row-link__title { grid-column: 1 / span 4; }
+  .cs-row-link__category { grid-column: 5 / span 2; }
+  .cs-row-link__arrow { grid-column: 7 / span 2; justify-self: end; }
+}
 @media (min-width: 1024px) {
   .cs-row-link { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--arche-space-base-24); }
   .cs-row-link__text { display: contents; }
@@ -780,6 +810,15 @@ html:has(.cs-lightbox[open]) { overflow: hidden; }
 .cs-row-link__helper { flex: 0 0 100%; margin: 0; text-align: right; color: var(--arche-text-neutral-secondary); }
 .cs-row-link--locked:hover .cs-row-link__arrow { transform: none; }
 @media (min-width: 768px) { .cs-row-link--locked { padding-block: 24px; } }
+/* Tablet locked row: 144px tall. The title and category are centered against the lock and its helper line,
+   and the helper sits under the lock in columns 7 and 8. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cs-row-link--locked { padding-block: 28px; row-gap: 0; }
+  .cs-row-link--locked .cs-row-link__title,
+  .cs-row-link--locked .cs-row-link__category { align-self: center; grid-row: 1 / span 2; }
+  .cs-row-link--locked .cs-row-link__arrow { grid-row: 1; }
+  .cs-row-link--locked .cs-row-link__helper { grid-column: 7 / span 2; grid-row: 2; }
+}
 @media (min-width: 1024px) {
   .cs-row-link--locked { row-gap: 0; align-items: start; }
   .cs-row-link--locked .cs-row-link__title,

@@ -1026,7 +1026,6 @@ html:not(.js) .site-footer__theme { display: none; }
 .contact-sent h2 { margin: 0; color: var(--arche-text-neutral-primary); }
 .contact-form__helper { margin: 0; color: var(--arche-text-neutral-primary); }
 .contact-form__fields { display: flex; flex-direction: column; gap: var(--arche-space-base-40); }
-.contact-form__noscript { margin: 0; color: var(--arche-text-neutral-primary); }
 
 /* Failed send: red text below the fields, no icon (the rule is icon OR the "Error:" label).
    Empty until the script fills it. The email link is underlined in the same red. */

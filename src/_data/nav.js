@@ -18,6 +18,7 @@ module.exports = [
     items: [
       { title: "Button", url: "/components/button/", description: "Primary, secondary and tertiary buttons, with their states." },
       { title: "Link", url: "/components/link/", description: "The bold, underlined text link and when to use it." },
+      { title: "Menu item", url: "/components/menu-item/", description: "One link in the menu dropdown, with its type size set by the breakpoint." },
       { title: "Form field", url: "/components/form-field/", description: "A 56px field with the label inside it and a rule along the bottom." },
       { title: "Theme controls", url: "/components/theme-controls/", description: "The Light and Dark controls, and how the system follows the browser." },
       { title: "Stat strip", url: "/components/stat-strip/", description: "Up to four large numbers on a light-blue tint." },

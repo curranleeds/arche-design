@@ -1,0 +1,40 @@
+---
+layout: false
+title: "Menu item preview"
+permalink: /previews/menu-item/
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu item preview · Arche Design System</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // Same saved Light or Dark choice as the docs pages, applied before first paint.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+  </head>
+  <body class="preview-body">
+    <div class="preview-pad">
+      <div class="preview-menu">
+        <ul class="docs-nav__list" role="list">
+          <li><a class="docs-nav__link type-body" href="#">Page title</a></li>
+          <li><a class="docs-nav__link type-body" href="#" aria-current="page">Current page</a></li>
+          <li><a class="docs-nav__link type-body" href="#">Page title</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

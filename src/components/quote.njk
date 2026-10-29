@@ -6,7 +6,7 @@ permalink: /components/quote/
 ---
 <section aria-labelledby="demo-h">
   <h2 id="demo-h" class="type-h2">Quote</h2>
-  <p>The attribution sits in columns 1 to 3 and the quote in columns 5 to 12 on desktop. Both stack on smaller screens. The quote uses the Quote style. The text below is placeholder copy.</p>
+  <p>On desktop the attribution sits in columns 1 to 3 and the quote in columns 5 to 12. On tablet the attribution sits in columns 1 and 2 and the quote in columns 3 to 8. On mobile they stack. The quote uses the Quote style, which steps from 24/32 on mobile to 28/36 on tablet and 32/40 on desktop. The text below is placeholder copy.</p>
   {% demo "Quote with placeholder text", "block" %}
   <figure class="cs-quote">
     <div class="cs-quote__who">
@@ -16,6 +16,16 @@ permalink: /components/quote/
     <blockquote><p>Quote text goes here. Use a real quote, and attribute it by role and company type unless the person has agreed to be named.</p></blockquote>
   </figure>
   {% enddemo %}
+</section>
+<section aria-labelledby="tablet-h">
+  <h2 id="tablet-h" class="type-h2">Tablet</h2>
+  <p>From 768 to 1023px the offset split uses the 8-column grid with 16px gutters. The content is 704px wide, with 32px page padding. The same layout applies to the quote in a case study's Outcome block. The frame below is 768px wide, so it shows the tablet layout on any screen.</p>
+  <figure class="preview-frame">
+    <div class="preview-frame__scroller" tabindex="0" role="region" aria-label="Quote at tablet width, scrollable">
+      <iframe src="/previews/quote/" width="768" height="240" title="Quote at tablet width" loading="lazy"></iframe>
+    </div>
+    <figcaption class="preview-frame__caption type-small">The offset split at 768px.</figcaption>
+  </figure>
 </section>
 <section aria-labelledby="use-h">
   <h2 id="use-h" class="type-h2">Using the quote</h2>
