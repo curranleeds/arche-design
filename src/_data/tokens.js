@@ -39,7 +39,7 @@ const modeDefs = [
     rules: [
       "Greece Blue is the structural color: bands, links, buttons and stat numbers.",
       "Sweden Yellow is a fill with near-black text, plus the selection highlight.",
-      "Norway Red is the logo and one end mark per page: a flat 4px rule under the last column of running text, never on text, controls, validation, cards or interactive states.",
+      "Norway Red is the logo and one end mark per page: a flat 4px rule under the last column of running text (under the last content block when the page has no text column), 24px above it, never on text, controls, validation, cards or interactive states.",
       "Stat numbers sit in the Greece Blue tint panel. Dark uses neutral surfaces.",
       "No Sweden Blue." ] },
   { id: "klarheit", name: "Klarheit", tradition: "Swiss", trait: "Clean", summary: "Neutral surfaces and type, with Swiss red as the one decorative color.",

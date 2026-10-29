@@ -1,6 +1,6 @@
 {
   "name": "arche-design",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Documentation site for the Arche Design System: tokens, type, color, and core components.",
   "private": false,
   "scripts": {

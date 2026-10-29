@@ -10,6 +10,22 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.7.0
+
+Added
+- Tablet layouts (768 to 1023px) for the List row and the Quote. The List row sits on the 8-column grid: title in columns 1 to 4, category in 5 and 6, arrow cell in 7 and 8. The locked row is 144px tall, with its helper line under the lock. The Quote's offset split puts the attribution in columns 1 and 2 and the quote in columns 3 to 8.
+- A Menu item docs page for the menu dropdown link: 44px tall, 15/22 on mobile and 16/24 on tablet, with default, hover, focus and current states.
+- Docs: fixed-width preview frames on the List row, Quote and Menu item pages, so each breakpoint shows on any screen.
+- Docs: the end mark spacing on the Spacing and grid page.
+
+Changed
+- Visible: the expand chip's default border uses `border/neutral/strong` instead of `border/brand/default`, so it keeps 3:1 against its fill and the tint in Light and Dark. Hover and pressed still use the brand border.
+- Visible: at tablet width the Quote text is 28/36 (it was 24/32). It now follows the Quote type tokens at every width.
+- Docs: Canon's end mark sits under the last content block when a page has no text column, and 24px (`base/24`) above the 4px rule.
+
+Removed
+- The unused `.contact-form__noscript` rule. The portfolio's Contact page no longer has a no-JavaScript line.
+
 ## 0.6.0
 
 Added
