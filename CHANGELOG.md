@@ -20,6 +20,7 @@ Added
 
 Changed
 - Visible: the expand chip's default border uses `border/neutral/strong` instead of `border/brand/default`, so it keeps 3:1 against its fill and the tint in Light and Dark. Hover and pressed still use the brand border.
+- Visible: the pause and play control for animated GIFs follows the same border rule as the expand chip: `border/neutral/strong` at rest, `border/brand/default` on hover and pressed.
 - Visible: at tablet width the Quote text is 28/36 (it was 24/32). It now follows the Quote type tokens at every width.
 - Docs: Canon's end mark sits under the last content block when a page has no text column, and 24px (`base/24`) above the 4px rule.
 

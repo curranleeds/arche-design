@@ -412,6 +412,7 @@ html:not(.js) .cs-jump__panel { grid-template-rows: 1fr; visibility: visible; }
   padding: 0;
   font: inherit;
   cursor: pointer;
+  border-color: var(--arche-border-neutral-strong);
 }
 .cs-motion[hidden] { display: none; }
 .cs-motion .icon { width: 20px; height: 20px; }
@@ -419,9 +420,9 @@ html:not(.js) .cs-jump__panel { grid-template-rows: 1fr; visibility: visible; }
 .cs-motion[data-playing="false"] .cs-motion__play { display: block; }
 .cs-motion[data-playing="false"] .cs-motion__pause { display: none; }
 @media (hover: hover) {
-  .cs-motion:hover { background: var(--arche-surface-brand-primary); color: var(--arche-icon-on-brand-default); }
+  .cs-motion:hover { border-color: var(--arche-border-brand-default); background: var(--arche-surface-brand-primary); color: var(--arche-icon-on-brand-default); }
 }
-.cs-motion:active { background: var(--arche-interactive-button-secondary-on-brand-fill-pressed); color: var(--arche-icon-on-brand-default); }
+.cs-motion:active { border-color: var(--arche-border-brand-default); background: var(--arche-interactive-button-secondary-on-brand-fill-pressed); color: var(--arche-icon-on-brand-default); }
 .cs-motion:focus-visible {
   outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring);
   outline-offset: var(--arche-focus-ring-offset);
