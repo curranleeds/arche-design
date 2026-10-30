@@ -282,7 +282,7 @@ body {
 .preview-pad { padding: var(--arche-space-base-24) var(--arche-page-pad); }
 .preview-menu { max-width: 400px; background: var(--arche-surface-neutral-base); box-shadow: inset 0 0 0 var(--arche-stroke-1) var(--arche-border-neutral-default); }
 .preview-frame { margin: var(--arche-space-base-24) 0 var(--arche-space-base-32); }
-.preview-frame__scroller { overflow-x: auto; box-shadow: inset 0 0 0 var(--arche-stroke-1) var(--arche-border-neutral-default); }
+.preview-frame__scroller { overflow-x: auto; border: var(--arche-stroke-1) solid var(--arche-border-neutral-default); }
 .preview-frame__scroller:focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: var(--arche-focus-ring-offset); }
 .preview-frame iframe { display: block; max-width: none; border: 0; background: var(--arche-surface-neutral-base); }
 .preview-frame__caption { margin-top: var(--arche-space-fine-8); color: var(--arche-text-neutral-secondary); }

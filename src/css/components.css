@@ -590,14 +590,14 @@ textarea.field__input { resize: none; }
 /* ---------- Page hero ----------
    The blue band at the top of every docs page: an eyebrow, a title and a lead. No image,
    no buttons. Full width, in the brand surface. The text column holds to 880px.
-   Padding steps down with the breakpoints: 16/32 mobile, 32/48 tablet, 64 desktop.
+   Top and bottom padding steps down with the breakpoints: 32 mobile, 48 tablet, 64 desktop. The sides use --arche-page-pad, the same as the header and the page, so the text lines up with the site name and the side nav.
    The sizes come from the label, H1 and lead styles, which already step the same way. */
 .docs-hero {
-  padding: var(--arche-space-base-32) var(--arche-space-base-16);
+  padding: var(--arche-space-base-32) var(--arche-page-pad);
   background: var(--arche-surface-brand-primary);
 }
-@media (min-width: 768px) { .docs-hero { padding: var(--arche-space-base-48) var(--arche-space-base-32); } }
-@media (min-width: 1024px) { .docs-hero { padding: var(--arche-space-base-64); } }
+@media (min-width: 768px) { .docs-hero { padding-block: var(--arche-space-base-48); } }
+@media (min-width: 1024px) { .docs-hero { padding-block: var(--arche-space-base-64); } }
 .docs-hero__text {
   display: flex;
   flex-direction: column;

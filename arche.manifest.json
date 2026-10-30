@@ -1,5 +1,5 @@
 {
-  "arche": "0.7.0",
+  "arche": "0.7.1",
   "algorithm": "sha256",
   "files": {
     "src/_includes/components.njk": "4d31da70bbe48a4c787e0b5443b617f9c87b25b4969815a68b1c370302f61f03",
@@ -24,7 +24,7 @@
     "src/assets/icons/priority_high.svg": "9a0b7ef6d635c310258ee757d60c8c8e386d1d5519b59a9e97b787125609dbd8",
     "src/assets/js/theme.js": "a15c9f300621c2e0873edf13040b2637e9702a3a6467acb3ab05ba8e9f789e88",
     "src/css/case-study.css": "8590cf9cf58f4318b6666730b12d20151039f21a9438bf06194675977a7f124f",
-    "src/css/components.css": "63937a0f94c76dc93bcd22c7b087ff35246f810bad7766088d73fc0cb17f0415",
+    "src/css/components.css": "7ac4277cdb7d92ec8c5828ca0135978605360ab497cc918899e0300ed7cbf2b5",
     "src/css/fonts.css": "a2ecf9c8acd209a0ef1ee59de9b6f6102b427f4855c25464910e75f28916f724",
     "src/css/tokens.css": "a456ff45dc5adc53f0bb803db3f213448cdbaed0ba17a90f1fa31c4a8552d08b"
   }

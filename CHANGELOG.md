@@ -10,6 +10,12 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.7.1
+
+Fixed
+- Visible: on screens wider than 1440px the page hero text sat at the far left of the screen, away from the site name and the side nav. The hero's side padding now uses the same page padding as the header and the page, so the text lines up with them at every width. Up to 1440px nothing moves.
+- Docs: the preview frames on the List row, Quote and Menu item pages showed their outline as two broken brackets, because the frame covered it. The outline is now a border on the frame.
+
 ## 0.7.0
 
 Added

@@ -5,6 +5,6 @@ module.exports = {
   url: "https://arche-design.curranleeds.workers.dev",
   author: "Curran Leeds",
   portfolio: "https://curranleeds.com",
-  version: "0.7.0",
+  version: "0.7.1",
   updated: "October 2026",
 };
