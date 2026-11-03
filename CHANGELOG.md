@@ -23,6 +23,7 @@ Added
 
 Fixed
 - Docs fix: links inside a live demo no longer take the docs site's text-link color, which sat on top of the component's own color. The footer's name was blue on the blue footer and so could not be seen. The Next case study title was blue instead of near-black. Link card and List row text were blue too. Normal docs text links are unchanged. This changes the docs site only, not the components or the manifest.
+- Docs fix: from 1024px up the side nav cropped the left and right of the focus ring on the current item, so only a bar above and below showed. The nav now has room for the whole ring, and the links have not moved. Twenty pages (17 of the new ones, and Page hero, Link card and CTA band) showed their tables with a centered header, a centered first column and no row lines. They now use the same docs table as the other pages. The List row page has a locked row in the demo and a 1280px desktop frame, and its tablet frame is 8px taller so it no longer scrolls inside. The Quote page's tablet frame was 18px too short for its content and is now tall enough (a check of all 11 preview frames found no others). This changes the docs site only, not the components or the manifest.
 
 
 ## 0.7.1

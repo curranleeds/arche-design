@@ -62,7 +62,10 @@ body {
     box-sizing: border-box;
     max-height: calc(100vh - 80px);
     overflow-y: auto;
-    padding: var(--arche-space-base-48) 0;
+    /* The nav scrolls, so it also crops sideways. The side padding gives the focus ring (width plus offset) room inside the crop. The matching negative margin keeps the links where they were. */
+    --arche-docs-nav-ring: calc(var(--arche-focus-ring-width) + var(--arche-focus-ring-offset));
+    padding: var(--arche-space-base-48) var(--arche-docs-nav-ring);
+    margin-inline: calc(-1 * var(--arche-docs-nav-ring));
   }
 }
 /* The Menu button lives in the header bar. It needs JavaScript, so it stays hidden until the "js" class is on <html>, and it is not needed from 1024px up. */
