@@ -1,0 +1,71 @@
+---
+title: "Skip link"
+eyebrow: "Components"
+lead: "A link that waits off screen until a keyboard user tabs to it, then jumps past the header to the main content."
+permalink: /components/skip-link/
+---
+<section aria-labelledby="skip-h">
+  <h2 id="skip-h" class="type-h2">Skip link</h2>
+  <p>The skip link is the first thing in the page. Keyboard and screen reader users meet it before the header, so they can pass the logo and the links without tabbing through them on every page. It is invisible until it has focus. Then it appears at the top left of the page, on <code>surface/brand/primary</code>, and reads "Skip to main content".</p>
+  <figure class="preview-frame">
+    <div class="preview-frame__scroller" tabindex="0" role="region" aria-label="Skip link example, scrollable">
+      <iframe src="/previews/skip-link/" width="375" height="160" title="Skip link example" loading="lazy"></iframe>
+    </div>
+    <figcaption class="preview-frame__caption type-small">Click an empty spot in the frame, then press Tab. The link shows. Activating it jumps to the main content.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="spec-h">
+  <h2 id="spec-h" class="type-h2">How it is built</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Skip link properties, scrollable">
+    <table>
+      <thead><tr><th scope="col">Property</th><th scope="col">Value</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Position</th><td>Absolute, at the top left of the page. Moved up by its own height (<code>translateY(-100%)</code>) so it sits off screen.</td></tr>
+        <tr><th scope="row">On focus</th><td>The move is removed and the link shows. There is no transition.</td></tr>
+        <tr><th scope="row">Padding</th><td>12px above and below, 16px at the sides.</td></tr>
+        <tr><th scope="row">Colors</th><td>Surface <code>surface/brand/primary</code>, text <code>text/on-brand/primary</code>.</td></tr>
+        <tr><th scope="row">Focus ring</th><td>The 4px focus width in <code>border/focus/ring-on-brand</code>, drawn inside the edge of the box so the ring is not cut off at the top of the screen.</td></tr>
+        <tr><th scope="row">Layer</th><td>Above the <a href="/components/top-nav/">top nav</a>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="markup-h">
+  <h2 id="markup-h" class="type-h2">The HTML</h2>
+  <p>The link points at the id of the main landmark. It is a plain anchor, so it works without JavaScript.</p>
+  <details class="demo__code">
+    <summary>View HTML</summary>
+    <pre tabindex="0"><code>&lt;body&gt;
+  &lt;a class="skip-link" href="#main"&gt;Skip to main content&lt;/a&gt;
+  &lt;header class="site-nav"&gt;…&lt;/header&gt;
+  &lt;main id="main"&gt;…&lt;/main&gt;
+&lt;/body&gt;</code></pre>
+  </details>
+</section>
+
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the skip link</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Put it first in the page source, before the header.</li>
+      <li>Point it at the id of the <code>&lt;main&gt;</code> element.</li>
+      <li>Use one per page.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Hide it with <code>display: none</code> or <code>visibility: hidden</code>. Then it cannot take focus.</li>
+      <li>Move it after the header.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>It is a real link, so it is in the tab order and works with Enter.</li>
+    <li>It is first in the page, so it is the first stop for a keyboard user.</li>
+    <li>Its text says where it goes.</li>
+    <li>The skip link on this site is the first element on every page. Press Tab once from the top of this page to see it.</li>
+  </ul>
+</section>

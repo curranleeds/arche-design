@@ -1,0 +1,94 @@
+---
+title: "Jump nav"
+eyebrow: "Components"
+lead: "A list of links to the sections of a long page. A bar that opens a list on mobile and tablet, a row of links on desktop."
+permalink: /components/jump-nav/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Jump nav</h2>
+  <p>The jump nav lets a reader move around a long page. Below 1024px it is a 56px bar that says "On this page" and names the current section. The bar opens a list of links. From 1024px up it is a row of links. It pins under the main header while the page scrolls. The demo below shows the list open so you can see it. It follows the width of your screen, so resize the window to see the other layout.</p>
+  {% demo "Jump nav with placeholder section names, list open", "block" %}
+  <nav class="cs-jump is-open" aria-label="On this page (example)">
+    <div class="cs-jump__bar">
+      <button type="button" class="cs-jump__trigger" aria-expanded="true" aria-controls="jump-demo-panel">
+        <span class="cs-jump__labels">
+          <span class="cs-jump__hint type-small">On this page</span>
+          <span class="cs-jump__current type-body-semibold">Section one</span>
+        </span>
+        {% icon "expand_more" %}
+      </button>
+    </div>
+    <div class="cs-jump__panel" id="jump-demo-panel">
+      <ul class="cs-jump__list">
+        <li><a class="cs-jump__link type-body-semibold" href="#" aria-current="true"><span class="cs-jump__text">Section one</span></a></li>
+        <li><a class="cs-jump__link type-body-semibold" href="#"><span class="cs-jump__text">Section two</span></a></li>
+        <li><a class="cs-jump__link type-body-semibold" href="#"><span class="cs-jump__text">Section three</span></a></li>
+      </ul>
+    </div>
+  </nav>
+  {% enddemo %}
+</section>
+<section aria-labelledby="size-h">
+  <h2 id="size-h" class="type-h2">Size and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Jump nav sizes by breakpoint, scrollable">
+    <table>
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Form</th><th scope="col">Sizes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>Bar that opens a list</td><td>Bar 56px tall. "On this page" sits above the current section, 4px apart. Each link in the list is 48px tall.</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>Bar that opens a list</td><td>Same bar. "On this page" and the current section sit side by side, 12px apart.</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>Row of links</td><td>24px above the row and 4px below. Links are 16px apart with 16px of padding at the sides. The text uses the button type style.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The list opens like an accordion: it grows from nothing to its full height. The page behind an open list is dimmed with <code>surface/overlay/scrim</code>. The nav pins under the main header and follows it as the header hides and returns. Its z-index is 10, under the header's 20. On desktop the 24px above the links counts as page space, so only 4px of it shows while the nav is pinned.</p>
+</section>
+<section aria-labelledby="state-h">
+  <h2 id="state-h" class="type-h2">States</h2>
+  <p>On desktop the links follow the tertiary button roles: default, hover and pressed each have a fill and a label color. The link for the section you are reading is marked with <code>aria-current</code>. It gets the tertiary active fill, semibold text and a 4px indicator in <code>interactive/button/tertiary/indicator</code>. On mobile and tablet the current link uses the same fill. Focus is a ring drawn inside the link or the bar, so it is never clipped.</p>
+</section>
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The bar sits on <code>surface/neutral/base</code> with a 1px <code>border/neutral/default</code> rule along the bottom. "On this page" is <code>text/neutral/secondary</code> and the current section is <code>text/neutral/primary</code>. The chevron is <code>icon/brand/default</code> and turns over when the list is open. The open list ends with a 2px <code>border/neutral/emphasis</code> rule.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the jump nav</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Name each link after its section heading, so the reader sees the same word twice.</li>
+      <li>Give every target section an <code>id</code> that the link points to.</li>
+      <li>Use it on long pages with several named sections.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Add a progress line. The nav marks the current section and nothing else.</li>
+      <li>Use it as the main site navigation. It only moves within one page.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The nav is a <code>&lt;nav&gt;</code> with the label "On this page". The bar is a real <code>&lt;button&gt;</code> with <code>aria-expanded</code> and <code>aria-controls</code>.</li>
+    <li>Without JavaScript the bar is hidden and the list shows as a plain list of links, and the nav does not pin.</li>
+    <li>The script that opens the list and updates the current section lives in the portfolio. It is not part of Arche yet.</li>
+  </ul>
+</section>
+<section aria-labelledby="html-h">
+  <h2 id="html-h" class="type-h2">The HTML</h2>
+  <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;nav class="cs-jump" aria-label="On this page"&gt;
+  &lt;div class="cs-jump__bar"&gt;
+    &lt;button type="button" class="cs-jump__trigger" aria-expanded="false" aria-controls="jump-panel"&gt;
+      &lt;span class="cs-jump__labels"&gt;
+        &lt;span class="cs-jump__hint type-small"&gt;On this page&lt;/span&gt;
+        &lt;span class="cs-jump__current type-body-semibold"&gt;Section one&lt;/span&gt;
+      &lt;/span&gt;
+      &lt;!-- expand_more icon --&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="cs-jump__panel" id="jump-panel"&gt;
+    &lt;ul class="cs-jump__list"&gt;
+      &lt;li&gt;&lt;a class="cs-jump__link type-body-semibold" href="#section-one"&gt;&lt;span class="cs-jump__text"&gt;Section one&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="cs-jump__scrim"&gt;&lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+</section>

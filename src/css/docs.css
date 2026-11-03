@@ -150,8 +150,8 @@ body {
 .docs-content p { margin: 0 0 var(--arche-space-base-16); max-width: 66ch; text-wrap: pretty; }
 .docs-content ul, .docs-content ol { margin: 0 0 var(--arche-space-base-16); padding-left: var(--arche-space-base-24); max-width: 66ch; }
 .docs-content li { margin-bottom: var(--arche-space-fine-8); }
-.docs-content a:not(.link):not(.button) { color: var(--arche-text-brand-primary); font-weight: 600; text-underline-offset: 0.2em; }
-.docs-content a:not(.link):not(.button):focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: var(--arche-focus-ring-offset); }
+.docs-content a:not(.link):not(.button):not(.demo a) { color: var(--arche-text-brand-primary); font-weight: 600; text-underline-offset: 0.2em; }
+.docs-content a:not(.link):not(.button):not(.demo a):focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: var(--arche-focus-ring-offset); }
 .docs-content code, .tok {
   padding: 1px 6px;
   background: var(--arche-surface-brand-primary-subtle);

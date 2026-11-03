@@ -1,0 +1,88 @@
+---
+title: "Image gallery"
+eyebrow: "Components"
+lead: "The images in a case study section: one big image, then the small ones in a grid or a swipe strip."
+permalink: /components/image-gallery/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Image gallery</h2>
+  <p>A gallery sits under the text of a <a href="/components/section-split/">section split</a>. It holds up to five <a href="/components/image-tile/">image tiles</a>: one big tile and up to four small ones. The big tile and the small ones are one set, counted together. From 1024px up the small tiles are a grid. Below 1024px they are a swipe strip with a counter. The tiles below are placeholders. The strip scrolls when your screen is narrow.</p>
+  {% demo "Image gallery with one big tile and three small tiles", "block" %}
+  <div class="cs-split" style="padding-block:0">
+    <div class="cs-gallery">
+      <div class="cs-gallery__big">
+        <figure class="cs-tile">
+          <div class="cs-tile__frame"><button type="button" class="cs-tile__open" aria-label="Enlarge image: Big image caption">
+            <div class="placeholder-image"><p class="type-small">Big image</p></div>
+            <span class="cs-chip" aria-hidden="true">{% icon "open_in_full" %}</span>
+          </button></div>
+          <figcaption class="cs-tile__caption type-small">Big image caption.</figcaption>
+        </figure>
+      </div>
+      <div class="cs-strip">
+        <p class="cs-counter type-label" aria-hidden="true">2 / 4</p>
+        <div class="cs-strip__viewport">
+          <ul class="cs-strip__track" role="list">
+            <li><figure class="cs-tile">
+              <div class="cs-tile__frame"><button type="button" class="cs-tile__open" aria-label="Enlarge image: Small image one">
+                <div class="placeholder-image"><p class="type-small">Small image</p></div>
+                <span class="cs-chip" aria-hidden="true">{% icon "open_in_full" %}</span>
+              </button></div>
+              <figcaption class="cs-tile__caption type-small">Small image one.</figcaption>
+            </figure></li>
+            <li><figure class="cs-tile">
+              <div class="cs-tile__frame"><button type="button" class="cs-tile__open" aria-label="Enlarge image: Small image two">
+                <div class="placeholder-image"><p class="type-small">Small image</p></div>
+                <span class="cs-chip" aria-hidden="true">{% icon "open_in_full" %}</span>
+              </button></div>
+              <figcaption class="cs-tile__caption type-small">Small image two.</figcaption>
+            </figure></li>
+            <li><figure class="cs-tile">
+              <div class="cs-tile__frame"><button type="button" class="cs-tile__open" aria-label="Enlarge image: Small image three">
+                <div class="placeholder-image"><p class="type-small">Small image</p></div>
+                <span class="cs-chip" aria-hidden="true">{% icon "open_in_full" %}</span>
+              </button></div>
+              <figcaption class="cs-tile__caption type-small">Small image three.</figcaption>
+            </figure></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% enddemo %}
+</section>
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Image gallery layout by breakpoint, scrollable">
+    <table>
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Big image</th><th scope="col">Small images</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>Fills the content width</td><td>Swipe strip. Tiles 264px wide, 12px apart. The next tile peeks in. The strip runs to the right screen edge on purpose.</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>Fills the content width</td><td>Swipe strip. Two tiles and an 88px peek fill the strip, so the tiles grow with the screen: 312px at 768 and about 440px at 1023.</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>8 columns</td><td>Grid on 12 columns. Each tile spans 4 columns, with 24px between. A third tile sits in the text column and a fourth wraps under the first.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The big image and the small ones are 48px apart on mobile and tablet and 64px apart on desktop. On desktop the gap between wrapped rows is 48px in a tint section and 24px in a plain one. The strip has 4px of room on the top, bottom and left for focus rings and none on the right, so the page never scrolls sideways. The counter sits above the strip at the right, 12px away, in <code>text/neutral/secondary</code>. It counts the big image too, so a gallery with one big and three small images starts the strip at "2 / 4". The counter is hidden from 1024px up.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the image gallery</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use one big image and no more than four small ones in a section.</li>
+      <li>Use the same pictures in the gallery and in the lightbox. They are one list, so a picture is never in the page twice.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Clip the strip to the content width. It is meant to run to the screen edge.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The small tiles are a real list (<code>&lt;ul&gt;</code> with <code>role="list"</code>).</li>
+    <li>The strip scrolls by touch or trackpad, and each tile snaps into place.</li>
+    <li>A hidden status line announces the position in the set. The visible counter is hidden from screen readers so it is not read twice.</li>
+    <li>The script that updates the counter and the status line lives in the portfolio. It is not part of Arche yet.</li>
+  </ul>
+</section>

@@ -1,0 +1,115 @@
+---
+title: "Menu overlay"
+eyebrow: "Components"
+lead: "The full-screen blue menu that the Menu button opens below 1024px: the main links, the elsewhere links and the theme switch."
+permalink: /components/menu-overlay/
+---
+<section aria-labelledby="overlay-h">
+  <h2 id="overlay-h" class="type-h2">Menu overlay</h2>
+  <p>The overlay covers the whole screen in <code>surface/brand/primary</code>. From the top it has a bar with the logo and a Close button, the main links set large, and a bottom area with a group of links to other sites and the theme switch. The frames below show it open at two widths. Past 1024px the Menu button is hidden, so the overlay is not used.</p>
+  <figure class="preview-frame">
+    <div class="preview-frame__scroller" tabindex="0" role="region" aria-label="Menu overlay at mobile width, scrollable">
+      <iframe src="/previews/menu-overlay/" width="375" height="700" title="Menu overlay at mobile width" loading="lazy"></iframe>
+    </div>
+    <figcaption class="preview-frame__caption type-small">Mobile, 375px wide: 16px gutter, top bar at least 72px tall.</figcaption>
+  </figure>
+  <figure class="preview-frame">
+    <div class="preview-frame__scroller" tabindex="0" role="region" aria-label="Menu overlay at tablet width, scrollable">
+      <iframe src="/previews/menu-overlay/" width="768" height="720" title="Menu overlay at tablet width" loading="lazy"></iframe>
+    </div>
+    <figcaption class="preview-frame__caption type-small">Tablet, 768px wide: 32px gutter, top bar at least 80px tall. The frames show the overlay already open, with no script, so Close does nothing here.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="parts-h">
+  <h2 id="parts-h" class="type-h2">Parts</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Menu overlay parts, scrollable">
+    <table>
+      <thead><tr><th scope="col">Part</th><th scope="col">What it is</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Top bar</th><td>The logo on the left (the on-brand version) and a secondary Close button on the right, on-brand, with a close icon after the label. At least 72px tall on mobile and 80px from 768px up. Padding is 12px above and below on mobile and 16px from 768px up, with the gutter at the sides.</td></tr>
+        <tr><th scope="row">Main links</th><td>A list in the Headline H1 style. Each link has 12px above and below and 16px at the sides, pulled back by 16px so the text lines up with the gutter. Links are 8px apart. The area has 24px above and 48px below.</td></tr>
+        <tr><th scope="row">Elsewhere</th><td>A label ("Elsewhere", in the Label style) over a row of on-brand text links to other sites. Each is marked as external. Links are 24px apart in a row at least 44px tall, in Body SemiBold.</td></tr>
+        <tr><th scope="row">Theme</th><td>A label over the <a href="/components/theme-controls/">theme switch</a>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The Elsewhere and Theme groups are pushed to the bottom of the screen. They sit under a 1px rule in <code>border/on-brand/divider</code>, with 24px between the groups. From 768px up there is 32px of padding below them. If the screen is short, the overlay scrolls.</p>
+</section>
+
+<section aria-labelledby="motion-h">
+  <h2 id="motion-h" class="type-h2">Opening and closing</h2>
+  <p>The overlay is a <code>&lt;dialog&gt;</code>. Closed, it is clipped to nothing from the bottom. Opened, it wipes down over the slow motion duration (400ms). With reduced motion on, that duration is 0, so it appears at once. While it is open the page behind it cannot scroll.</p>
+  <p>The CSS does the wipe when a script adds <code>.is-open</code>. The script belongs to the site, not to Arche. The portfolio's script behaves like this:</p>
+  <ul>
+    <li>It opens the dialog with <code>showModal()</code>, which makes the rest of the page inert and keeps Tab inside the overlay.</li>
+    <li>It moves focus to Close when the overlay opens and back to the Menu button when it closes.</li>
+    <li>Escape closes it, with the same wipe.</li>
+    <li>Choosing a link to the page you are already on closes the overlay instead of reloading.</li>
+    <li>If the window grows to 1024px, the overlay closes.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The surface is <code>surface/brand/primary</code> and the text is <code>text/on-brand/primary</code>, in every mode. Focus rings use <code>border/focus/ring-on-brand</code>. The current page gets a 4px bar under its link, in <code>surface/on-brand/switch/selected</code>, 16px in from each side and 4px above the bottom edge. Set <code>aria-current="page"</code> as well.</p>
+</section>
+
+<section aria-labelledby="markup-h">
+  <h2 id="markup-h" class="type-h2">The HTML</h2>
+  <details class="demo__code">
+    <summary>View HTML</summary>
+    <pre tabindex="0"><code>&lt;dialog class="menu-overlay" id="menu-overlay" aria-label="Menu"&gt;
+  &lt;div class="menu-overlay__topbar"&gt;
+    &lt;a class="site-nav__home" href="/" aria-label="Site name, home"&gt;&lt;!-- logo, on brand --&gt;&lt;/a&gt;
+    &lt;!-- secondary on-brand button "Close", close icon after the label --&gt;
+  &lt;/div&gt;
+  &lt;nav class="menu-overlay__links" aria-label="Main"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a class="menu-overlay__link" href="/" aria-current="page"&gt;Page one&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="menu-overlay__link" href="/two/"&gt;Page two&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;div class="menu-overlay__bottom"&gt;
+    &lt;div class="menu-overlay__group"&gt;
+      &lt;h2 class="menu-overlay__label type-label" id="menu-elsewhere"&gt;Elsewhere&lt;/h2&gt;
+      &lt;nav aria-labelledby="menu-elsewhere"&gt;
+        &lt;ul class="menu-overlay__elsewhere"&gt;
+          &lt;li&gt;&lt;!-- on-brand external text link --&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+    &lt;div class="menu-overlay__group"&gt;
+      &lt;p class="menu-overlay__label type-label" aria-hidden="true"&gt;Theme&lt;/p&gt;
+      &lt;!-- theme switch --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/dialog&gt;</code></pre>
+  </details>
+</section>
+
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the menu overlay</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Keep the same main links as the <a href="/components/top-nav/">top nav</a>.</li>
+      <li>Give the Menu button <code>aria-controls</code> pointing at the dialog's id.</li>
+      <li>Mark links to other sites as external.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Open it with anything other than <code>showModal()</code>. Without it the page behind stays reachable.</li>
+      <li>Remove the Close button.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The dialog has an <code>aria-label</code> of "Menu". The main links are a <code>&lt;nav&gt;</code> labelled "Main". The Elsewhere links are a <code>&lt;nav&gt;</code> labelled by the visible "Elsewhere" heading.</li>
+    <li>The Theme label is hidden from screen readers. The theme switch has its own hidden legend, "Theme".</li>
+    <li>The page behind an open overlay is locked from scrolling, and a modal dialog makes it inert.</li>
+    <li>Links take the on-brand focus ring.</li>
+    <li>External links open in a new tab and say so in hidden text.</li>
+  </ul>
+</section>

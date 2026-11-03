@@ -1,0 +1,61 @@
+---
+title: "Credits"
+eyebrow: "Components"
+lead: "The yellow band near the end of a case study: a heading on the left and one role per line on the right."
+permalink: /components/credits/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Credits</h2>
+  <p>Credits is the only full-width band on a case study that uses the secondary yellow. It is optional. When it is used it sits under the <a href="/components/outcome/">Outcome</a> and above the <a href="/components/disclaimer/">Disclaimer</a>. It lists roles, one per line. It uses the same two-column row as the <a href="/components/section-split/">Section split</a>. The text below is placeholder text.</p>
+  {% demo "Credits with placeholder roles", "block" %}
+  <section class="cs-credits" aria-labelledby="credits-demo-h">
+    <div class="cs-row">
+      <h3 class="cs-credits__heading type-h2" id="credits-demo-h">Credits</h3>
+      <ul class="cs-credits__list type-body" role="list">
+        <li>Role name, organization type: what they did.</li>
+        <li>Role name, organization type: what they did.</li>
+        <li>Role name, organization type: what they did.</li>
+      </ul>
+    </div>
+  </section>
+  {% enddemo %}
+</section>
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Credits spacing by breakpoint, scrollable">
+    <table>
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Padding above and below</th><th scope="col">Gap between heading and list</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>40px</td><td>24px</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>48px</td><td>32px</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>64px</td><td>The heading takes columns 1 to 8, the list columns 9 to 12</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The side padding is the page padding. Lines in the list are 16px apart.</p>
+</section>
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The band is <code>surface/brand/secondary/band</code>. The heading is <code>text/on-secondary/primary</code> and the list is <code>text/on-secondary/body</code>. The text is near-black on yellow in both Light and Dark.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the credits</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>List roles, not names, and say what each role did.</li>
+      <li>Add a person's name only if they have agreed to be named.</li>
+      <li>Leave the band out when it does not apply.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Use the yellow band for anything other than credits.</li>
+      <li>Name a client contact without their agreement.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The band is a <code>&lt;section&gt;</code> named by its <code>h2</code>. The list is a real list.</li>
+    <li>The text is near-black on yellow in both Light and Dark.</li>
+  </ul>
+</section>

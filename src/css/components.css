@@ -199,8 +199,8 @@
     color var(--arche-motion-fast) var(--arche-motion-ease);
 }
 /* With an icon, 4px less padding on the icon's side. */
-.button--icon-leading { padding-left: calc(var(--arche-space-base-24) - 4px); }
-.button--icon-trailing { padding-right: calc(var(--arche-space-base-24) - 4px); }
+.button--icon-leading { padding-left: calc(var(--arche-space-base-24) - var(--arche-space-fine-4)); }
+.button--icon-trailing { padding-right: calc(var(--arche-space-base-24) - var(--arche-space-fine-4)); }
 .button--icon-only { width: var(--arche-space-base-48); padding: 0; }
 
 /* The 4px bar on an "active" button. */
@@ -496,7 +496,7 @@
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 26px var(--arche-space-fine-16) var(--arche-space-fine-4);
+  padding: var(--arche-space-base-24) var(--arche-space-fine-16) var(--arche-space-fine-4);
   border: 0;
   border-radius: 0;
   outline: none;

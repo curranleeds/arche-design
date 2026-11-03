@@ -55,7 +55,7 @@ Dark and light work with a `data-theme` attribute on the `<html>` tag. A mode is
 
 ## What is in the docs site today
 
-Version 0.3.0: the foundations (color, type, spacing and grid, motion and focus, accessibility), a color page for each of the five modes with its contrast ratios, and seven components (button, link, form field, theme controls, stat strip, quote, list row). Every color, size and contrast ratio on the foundations pages is read from `tokens/figma-tokens.json` when the site builds, so the docs cannot drift from the tokens. The demo numbers and quotes on the component pages are placeholders, not results.
+Documentation for the Arche Design System: foundations, color for each mode, and component pages. See the changelog for the current version. Every color, size and contrast ratio on the foundations pages is read from `tokens/figma-tokens.json` when the site builds, so the docs cannot drift from the tokens. The demo numbers and quotes on the component pages are placeholders, not results.
 
 ## How a site updates Arche
 

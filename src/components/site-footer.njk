@@ -1,0 +1,82 @@
+---
+title: "Site footer"
+eyebrow: "Components"
+lead: "The brand-blue footer on every page: the logo, two groups of links, the theme switch and the copyright."
+permalink: /components/site-footer/
+---
+{% from "components.njk" import textLink %}
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Site footer</h2>
+  <p>The footer runs the full width of the screen on <code>surface/brand/primary</code>, in every mode. It has the logo, two groups of links, the theme switch and a copyright line. The demo leaves out the logo, which is a placeholder mark. Resize the window to see the three layouts.</p>
+  {% demo "Site footer with placeholder links and text", "block" %}
+  <footer class="site-footer">
+    <div class="site-footer__main">
+      <a class="site-nav__home site-footer__home" href="#" aria-label="Home">
+        <span class="site-footer__wordmark" aria-hidden="true">Site name</span>
+      </a>
+      <div class="site-footer__links">
+        <nav aria-label="Footer (example)">
+          <ul>
+            <li>{{ textLink("Page one", "#", onBrand=true) }}</li>
+            <li>{{ textLink("Page two", "#", onBrand=true) }}</li>
+          </ul>
+        </nav>
+        <nav aria-label="Elsewhere (example)">
+          <ul>
+            <li>{{ textLink("Profile one", "#", external=true, onBrand=true) }}</li>
+            <li>{{ textLink("Profile two", "#", external=true, onBrand=true) }}</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="site-footer__theme">
+        <p class="site-footer__label type-label" aria-hidden="true">Theme</p>
+        {% set themeSwitchName = "theme-demo-footer" %}{% include "theme-switch.njk" %}
+      </div>
+      <p class="site-footer__copyright type-fine-print">© Year Name. A line about who owns the work.</p>
+    </div>
+  </footer>
+  {% enddemo %}
+</section>
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Site footer layout by breakpoint, scrollable">
+    <table>
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Layout</th><th scope="col">Padding above and below</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>Logo, then two columns of links (16px apart, 40px between links), then the theme switch at full width, then the copyright. Parts are 40px apart.</td><td>48px</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>Logo at the left, centered on two right-aligned rows of links, 32px apart. A bottom row has the copyright at the left and the 300px theme switch at the right.</td><td>48px</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>Same as tablet. The site name shows beside the logo, and the links are 40px apart.</td><td>64px</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The side padding is the page padding. In the page source the theme switch comes before the copyright, so the mobile order reads top to bottom. CSS swaps them from 768px up. If the page is short, the footer stays at the bottom of the window.</p>
+</section>
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The surface is <code>surface/brand/primary</code> and all text is <code>text/on-brand/primary</code>. Links are the on-brand text link, which reads the <code>interactive/link/on-brand/*</code> roles. The focus ring on the home link is <code>border/focus-ring/on-brand</code>. The footer never uses yellow or red.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the site footer</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use one footer, the same on every page.</li>
+      <li>Keep the two link groups as separate <code>nav</code> landmarks, each with its own label.</li>
+      <li>Mark links to other sites as external, with the icon and the hidden text.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Use yellow or red in it.</li>
+      <li>Link to another site without marking it as external.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The footer is a <code>&lt;footer&gt;</code>. Its two link groups are <code>&lt;nav&gt;</code> landmarks labelled "Footer" and "Elsewhere".</li>
+    <li>The logo link has an <code>aria-label</code>. The visible site name is hidden from screen readers so it is not read twice.</li>
+    <li>External links open in a new tab and say so in hidden text.</li>
+    <li>The theme switch is two radio buttons, so the arrow keys work without a script. Without JavaScript the switch is hidden, and the page follows the browser's setting. See <a href="/components/theme-controls/">Theme controls</a>.</li>
+  </ul>
+</section>

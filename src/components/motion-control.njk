@@ -1,0 +1,58 @@
+---
+title: "Motion control"
+eyebrow: "Components"
+lead: "A 32px pause and play button for the animated GIF in the image viewer."
+permalink: /components/motion-control/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Motion control</h2>
+  <p>The motion control pauses and plays the GIF in the <a href="/components/lightbox/">lightbox</a>. It is the same 32px square as the <a href="/components/image-tile/">expand chip</a>, with a 20px icon, and it sits at the bottom-left of the picture, 12px in. It only appears when scripts run. Without them the poster stays still. The picture below is a placeholder.</p>
+  {% demo "Motion control playing and paused, on a placeholder picture", "block" %}
+  <div style="display:grid;gap:16px;max-width:480px">
+    <div class="placeholder-image" style="position:relative">
+      <p class="type-small">Playing: shows the pause icon</p>
+      <button type="button" class="cs-motion" data-playing="true" aria-label="Pause animation: example"><span class="cs-motion__pause">{% icon "pause" %}</span><span class="cs-motion__play">{% icon "play_arrow" %}</span></button>
+    </div>
+    <div class="placeholder-image" style="position:relative">
+      <p class="type-small">Paused: shows the play icon</p>
+      <button type="button" class="cs-motion" data-playing="false" aria-label="Play animation: example"><span class="cs-motion__pause">{% icon "pause" %}</span><span class="cs-motion__play">{% icon "play_arrow" %}</span></button>
+    </div>
+  </div>
+  {% enddemo %}
+</section>
+<section aria-labelledby="state-h">
+  <h2 id="state-h" class="type-h2">States</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Motion control states, scrollable">
+    <table>
+      <thead><tr><th scope="col">State</th><th scope="col">Fill</th><th scope="col">Border</th><th scope="col">Icon</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Default</th><td><code>surface/neutral/raised</code></td><td><code>border/neutral/strong</code></td><td><code>icon/brand/default</code></td></tr>
+        <tr><th scope="row">Hover</th><td><code>surface/brand/primary</code></td><td><code>border/brand/default</code></td><td><code>icon/on-brand/default</code></td></tr>
+        <tr><th scope="row">Pressed</th><td><code>interactive/button/secondary/on-brand/fill/pressed</code></td><td><code>border/brand/default</code></td><td><code>icon/on-brand/default</code></td></tr>
+        <tr><th scope="row">Focus</th><td colspan="3">A ring in <code>border/focus/ring</code>, at the standard width and offset</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The control follows the same border rule as the expand chip: strong neutral at rest, brand on hover and pressed. It has two playback states, playing and paused. The icon is the pause icon while playing and the play icon while paused.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the motion control</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Keep a GIF to 10 seconds or less, with no sound.</li>
+      <li>Show a still first frame, and show the still when the reduced-motion setting is on.</li>
+      <li>Put the control on every GIF.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Autoplay a GIF for someone who has asked for less motion.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>It is a real <code>&lt;button&gt;</code>. Its label names the action and the picture, such as "Pause animation: caption" or "Play animation: caption". A script updates the label when the state changes.</li>
+    <li>With the reduced-motion setting on, the viewer shows the poster and no GIF until someone presses play.</li>
+    <li>The control is a 32px target. The icon is 20px.</li>
+  </ul>
+</section>

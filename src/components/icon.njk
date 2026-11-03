@@ -1,0 +1,58 @@
+---
+title: "Icon"
+eyebrow: "Components"
+lead: "Twelve outlined icons, 20px square, that take the color of the text around them."
+permalink: /components/icon/
+---
+<section aria-labelledby="icon-h">
+  <h2 id="icon-h" class="type-h2">Icon</h2>
+  <p>Arche uses Material Icons in the Outlined style, drawn on a 24px grid and shown at 20 by 20. Each one is an SVG file, and a template puts the file straight into the page with <code>{% raw %}{% icon "name" %}{% endraw %}</code>. The fill is <code>currentColor</code>, so an icon is the same color as the text beside it. It follows the text color in every state, with no icon-specific rules.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="All twelve icons, scrollable">
+    <table>
+      <thead><tr><th scope="col">Icon</th><th scope="col">Name</th><th scope="col">Where it is used</th></tr></thead>
+      <tbody>
+        <tr><td>{% icon "arrow_back" %}</td><th scope="row"><code>arrow_back</code></th><td>Leading icon on a back button, such as "All work" on a case study hero.</td></tr>
+        <tr><td>{% icon "arrow_forward" %}</td><th scope="row"><code>arrow_forward</code></th><td>The arrow on a list row, and the trailing icon on a "next" button.</td></tr>
+        <tr><td>{% icon "close" %}</td><th scope="row"><code>close</code></th><td>Close buttons, in the menu overlay and the image viewer.</td></tr>
+        <tr><td>{% icon "dark_mode" %}</td><th scope="row"><code>dark_mode</code></th><td>The theme toggle in light mode, naming the mode it switches to.</td></tr>
+        <tr><td>{% icon "light_mode" %}</td><th scope="row"><code>light_mode</code></th><td>The theme toggle in dark mode.</td></tr>
+        <tr><td>{% icon "expand_more" %}</td><th scope="row"><code>expand_more</code></th><td>The jump nav button that opens the list of sections.</td></tr>
+        <tr><td>{% icon "lock" %}</td><th scope="row"><code>lock</code></th><td>A locked row or teaser, in place of the arrow.</td></tr>
+        <tr><td>{% icon "open_in_full" %}</td><th scope="row"><code>open_in_full</code></th><td>The expand chip on an image tile.</td></tr>
+        <tr><td>{% icon "open_in_new" %}</td><th scope="row"><code>open_in_new</code></th><td>The mark on a link that opens in a new tab.</td></tr>
+        <tr><td>{% icon "pause" %}</td><th scope="row"><code>pause</code></th><td>The motion control while an animation plays.</td></tr>
+        <tr><td>{% icon "play_arrow" %}</td><th scope="row"><code>play_arrow</code></th><td>The motion control while an animation is paused.</td></tr>
+        <tr><td>{% icon "priority_high" %}</td><th scope="row"><code>priority_high</code></th><td>The mark beside a form field's error message.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="size-h">
+  <h2 id="size-h" class="type-h2">Size and color</h2>
+  <p>The <code>icon</code> class sets the size to 20px by 20px, as a block that does not shrink. Inside a <a href="/components/button/">button</a> the icon is 8px from the label. Inside an icon-only button it sits in a 48px square. For color, set <code>color</code> on the parent, not on the icon.</p>
+</section>
+
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The <code>icon</code> shortcode adds <code>aria-hidden="true"</code> and <code>focusable="false"</code>, so an icon is skipped by screen readers.</li>
+    <li>An icon alone never carries the meaning. An icon-only button needs an <code>aria-label</code>. An external link adds hidden text, "(opens in new tab)".</li>
+  </ul>
+</section>
+
+<section aria-labelledby="add-h">
+  <h2 id="add-h" class="type-h2">Adding an icon</h2>
+  <ol>
+    <li>Take the SVG from the Outlined set of <code>@material-design-icons/svg</code>.</li>
+    <li>Remove its <code>width</code> and <code>height</code> and set <code>fill="currentColor"</code>.</li>
+    <li>Save it in <code>src/assets/icons/</code> with a lowercase name that uses underscores, such as <code>arrow_forward.svg</code>.</li>
+    <li>Add its name to the list in <code>LICENSE.txt</code> in the same folder.</li>
+    <li>Use it with <code>{% raw %}{% icon "arrow_forward" %}{% endraw %}</code>. The build stops with an error if the name does not match a file.</li>
+  </ol>
+</section>
+
+<section aria-labelledby="license-h">
+  <h2 id="license-h" class="type-h2">License</h2>
+  <p>The icons are Material Icons by Google, Outlined, from <code>@material-design-icons/svg</code> version 0.14.15, under the Apache License 2.0. The license text is in <code>LICENSE.txt</code> next to the files.</p>
+</section>
