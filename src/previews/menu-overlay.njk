@@ -1,0 +1,66 @@
+---
+layout: false
+title: "Menu overlay preview"
+permalink: /previews/menu-overlay/
+eleventyExcludeFromCollections: true
+---
+{% from "components.njk" import button, textLink %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu overlay preview · Arche Design System</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // Same saved Light or Dark choice as the docs pages, applied before first paint.
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+    <script src="/assets/js/theme.js" defer></script>
+  </head>
+  <body class="preview-body">
+    {# Open and fully wiped in, with no script. In a real page a script calls showModal() and adds is-open. #}
+    <dialog class="menu-overlay is-open" open aria-label="Menu (example)">
+      <div class="menu-overlay__topbar">
+        <a class="site-nav__home" href="#" aria-label="Site name, home">
+          {% set logoOnBrand = true %}{% include "logo.njk" %}
+        </a>
+        {{ button("Close", type="secondary", onBrand=true, icon="close", iconPosition="trailing") }}
+      </div>
+      <nav class="menu-overlay__links" aria-label="Main (example)">
+        <ul>
+          <li><a class="menu-overlay__link" href="#" aria-current="page">Page one</a></li>
+          <li><a class="menu-overlay__link" href="#">Page two</a></li>
+          <li><a class="menu-overlay__link" href="#">Page three</a></li>
+          <li><a class="menu-overlay__link" href="#">Page four</a></li>
+        </ul>
+      </nav>
+      <div class="menu-overlay__bottom">
+        <div class="menu-overlay__group">
+          <h2 class="menu-overlay__label type-label" id="menu-elsewhere">Elsewhere</h2>
+          <nav aria-labelledby="menu-elsewhere">
+            <ul class="menu-overlay__elsewhere">
+              <li>{{ textLink("Profile one", "#", external=true, onBrand=true) }}</li>
+              <li>{{ textLink("Profile two", "#", external=true, onBrand=true) }}</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="menu-overlay__group">
+          <p class="menu-overlay__label type-label" aria-hidden="true">Theme</p>
+          {% set themeSwitchName = "theme-preview-overlay" %}{% include "theme-switch.njk" %}
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

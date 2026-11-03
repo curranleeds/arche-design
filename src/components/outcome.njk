@@ -1,0 +1,76 @@
+---
+title: "Outcome"
+eyebrow: "Components"
+lead: "The closing block of a case study, on the blue tint: the result, the stats again, a quote and an optional \"what's next\"."
+permalink: /components/outcome/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Outcome</h2>
+  <p>The outcome has the same label, statement and body as the <a href="/components/section-split/">Section split</a>. After it come the <a href="/components/stat-strip/">stats</a> again, a <a href="/components/quote/">quote</a> and an optional "what's next" block. The stats and the quote have their own pages. The demo shows the first, the quote and the last part with placeholder text.</p>
+  {% demo "Outcome with placeholder text, a placeholder quote and a what's-next block", "block" %}
+  <section class="cs-outcome" aria-labelledby="outcome-demo-h">
+    <div class="cs-row">
+      <div class="cs-split__label">
+        <h3 class="cs-split__name type-subhead" id="outcome-demo-h">Outcome</h3>
+        <p class="cs-split__statement type-h2">One sentence that states the result.</p>
+      </div>
+      <div class="cs-copy type-body">
+        <p>Body text goes here. Say what changed, with numbers that you can source.</p>
+      </div>
+    </div>
+    <figure class="cs-quote">
+      <div class="cs-quote__who">
+        <p class="cs-quote__subhead type-subhead">Role or label</p>
+        <figcaption class="cs-quote__role type-small">Company type, not a name</figcaption>
+      </div>
+      <blockquote><p>Quote text goes here.</p></blockquote>
+    </figure>
+    <div class="cs-since">
+      <div class="cs-row">
+        <h4 class="cs-since__heading type-h3">What's next</h4>
+        <div class="cs-copy type-body"><p>One or two sentences about what comes after the launch.</p></div>
+      </div>
+    </div>
+  </section>
+  {% enddemo %}
+</section>
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Outcome spacing by breakpoint, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Padding above and below</th><th scope="col">Gap between the parts</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>48px</td><td>48px</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>64px</td><td>48px</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>80px</td><td>64px</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The parts, in order, are the label and body (the same two-column row as the section split), the stats, the quote and the what's-next block. The side padding is the page padding. In the what's-next block the heading and text sit 16px apart when stacked.</p>
+</section>
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The block is always on <code>surface/brand/primary/subtle</code>. It has no plain tone. The label, statement and body use the same roles as the section split. The what's-next heading is <code>text/neutral/primary</code>.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the outcome</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Put results first and keep every number sourced, with a time window in the stat footnote.</li>
+      <li>Leave the quote out if you have no real one. Do not write one.</li>
+      <li>Use the what's-next block for plans, and say they are plans.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Claim an outcome the work did not reach.</li>
+      <li>Name a person in the quote's attribution unless they agreed to it.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The block is a <code>&lt;section&gt;</code> named by its heading. On a case study page the name is an <code>h2</code>, the stats heading and the what's-next heading are <code>h3</code>. The demo here is one level lower.</li>
+    <li>The quote is a <code>&lt;figure&gt;</code> with a <code>&lt;blockquote&gt;</code> and a <code>&lt;figcaption&gt;</code>, so the attribution stays tied to the quote.</li>
+    <li>The stats are a description list, so a screen reader hears each label with its number.</li>
+  </ul>
+</section>

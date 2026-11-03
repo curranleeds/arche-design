@@ -10,6 +10,22 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.8.0
+
+Changed
+- Visible: the case-study list row (More case studies) uses spacing tokens for its padding. On mobile the top and bottom padding is 24px (it was 20px). From 768px up it is 32px (it was 28px). An unlocked row on tablet and desktop is 112px tall (it was 104px), and the tablet locked row is 152px tall when its helper line wraps to two lines (it was 144px).
+- Visible: in the jump nav bar, the gap between "On this page" and the current section is 4px on mobile (it was 2px). The bar's side padding uses `space/fine/8` (it was 6px) with no change you can see, because the bar has a fixed height.
+- Visible: the text field's top padding is `space/base/24` (it was 26px). Measured in the browser: single-line text sits 1px higher in the box, and multiline text sits 2px higher. A floated label's line (8px from the top, 18px tall) now meets the single-line text, where it used to leave a 1px gap, and overlaps the start of the first multiline text line by 2px, where it used to meet it.
+- No visible change: the icon buttons' side padding subtracts `space/fine/4` instead of a literal 4px.
+
+Added
+- Docs pages for eighteen components: Case study hero, Jump nav, Section split, Outcome, Site footer, Image tile, Image gallery, Lightbox, Motion control, Credits, Disclaimer, Next case study, More case studies, Top nav, Menu overlay, Skip link, Icon and Logo.
+
+Fixed
+- Docs fix: links inside a live demo no longer take the docs site's text-link color, which sat on top of the component's own color. The footer's name was blue on the blue footer and so could not be seen. The Next case study title was blue instead of near-black. Link card and List row text were blue too. Normal docs text links are unchanged. This changes the docs site only, not the components or the manifest.
+- Docs fix: from 1024px up the side nav cropped the left and right of the focus ring on the current item, so only a bar above and below showed. The nav now has room for the whole ring, and the links have not moved. Twenty pages (17 of the new ones, and Page hero, Link card and CTA band) showed their tables with a centered header, a centered first column and no row lines. They now use the same docs table as the other pages. The List row page has a locked row in the demo and a 1280px desktop frame, and its tablet frame is 8px taller so it no longer scrolls inside. The Quote page's tablet frame was 18px too short for its content and is now tall enough (a check of all 11 preview frames found no others). This changes the docs site only, not the components or the manifest.
+
+
 ## 0.7.1
 
 Fixed

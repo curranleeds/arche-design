@@ -1,0 +1,95 @@
+---
+title: "Section split"
+eyebrow: "Components"
+lead: "One section of a case study: the label and a one-sentence statement on the left, the body text on the right."
+permalink: /components/section-split/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Section split</h2>
+  <p>The section split is the basic block of a case study page. The left side has the section name, which is the <code>h2</code>, and a one-sentence statement. The right side has the body text. The split is never an even 50/50. The text below is placeholder text.</p>
+  {% demo "Section split on the plain surface, with placeholder text", "block" %}
+  <section class="cs-split" aria-labelledby="split-demo-h">
+    <div class="cs-row">
+      <div class="cs-split__label">
+        <h3 class="cs-split__name type-subhead" id="split-demo-h">Section name</h3>
+        <p class="cs-split__statement type-h2">One sentence that states the point of this section.</p>
+      </div>
+      <div class="cs-copy type-body">
+        <p>Body text goes here. Each paragraph sits 16px below the one before it.</p>
+        <p>A second paragraph, to show the spacing.</p>
+      </div>
+    </div>
+  </section>
+  {% enddemo %}
+  {% demo "Section split on the blue tint", "block" %}
+  <section class="cs-split cs-split--tint" aria-labelledby="split-tint-h">
+    <div class="cs-row">
+      <div class="cs-split__label">
+        <h3 class="cs-split__name type-subhead" id="split-tint-h">Section name</h3>
+        <p class="cs-split__statement type-h2">One sentence that states the point of this section.</p>
+      </div>
+      <div class="cs-copy type-body">
+        <p>Body text goes here.</p>
+      </div>
+    </div>
+  </section>
+  {% enddemo %}
+</section>
+<section aria-labelledby="tone-h">
+  <h2 id="tone-h" class="type-h2">Tones</h2>
+  <p>The plain tone sits on <code>surface/neutral/base</code>. The tint tone sits on <code>surface/brand/primary/subtle</code>. The tint marks the sections that carry the argument of the page, such as the problem and the outcome.</p>
+</section>
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Section split layout by breakpoint, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Layout</th><th scope="col">Padding above and below</th><th scope="col">Gap between parts</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>Label, statement and body stacked, 4 columns</td><td>48px</td><td>48px</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>8 columns. The label takes the full width. The body starts at column 3.</td><td>64px</td><td>48px</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>12 columns. The label takes columns 1 to 8 and the body columns 9 to 12.</td><td>80px</td><td>64px</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The label and the statement are 16px apart. The side padding is the page padding. The section keeps 64px of scroll margin so a jump link does not park it under the header. Images follow the text in a gallery inside the same section.</p>
+</section>
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The section name is <code>text/brand/primary</code>. The statement is <code>text/neutral/primary</code>. The body is <code>text/neutral/body</code>.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the section split</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Make the statement one sentence that someone could read alone and get the point.</li>
+      <li>Give the section an <code>id</code> so the jump nav can point to it.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Use red or yellow for the section name. Brand blue is the only name color.</li>
+      <li>Make the two sides an even 50/50.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The section is a <code>&lt;section&gt;</code> named by its heading (<code>aria-labelledby</code>).</li>
+    <li>The section name is a real <code>h2</code> on a case study page, so the sections show in a screen reader's heading list. The demos here use <code>h3</code> because the docs page already has an <code>h2</code>.</li>
+    <li>The text is body copy with <code>text-wrap: pretty</code>, so a paragraph does not end on a single word.</li>
+  </ul>
+</section>
+<section aria-labelledby="html-h">
+  <h2 id="html-h" class="type-h2">The HTML</h2>
+  <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;section class="cs-split" id="problem" aria-labelledby="problem-h"&gt;
+  &lt;div class="cs-row"&gt;
+    &lt;div class="cs-split__label"&gt;
+      &lt;h2 class="cs-split__name type-subhead" id="problem-h"&gt;Section name&lt;/h2&gt;
+      &lt;p class="cs-split__statement type-h2"&gt;One sentence.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="cs-copy type-body"&gt;
+      &lt;p&gt;Body text.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Blue tint: add the cs-split--tint class --&gt;</code></pre>
+</section>

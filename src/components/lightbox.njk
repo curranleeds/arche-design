@@ -1,0 +1,69 @@
+---
+title: "Lightbox"
+eyebrow: "Components"
+lead: "A full-screen viewer for the images on a case study: the picture, its caption, previous and next, and a counter."
+permalink: /components/lightbox/
+---
+<section aria-labelledby="what-h">
+  <h2 id="what-h" class="type-h2">Lightbox</h2>
+  <p>The lightbox opens when someone presses an <a href="/components/image-tile/">image tile</a>. It covers the screen with a dark scrim. The picture sits in the middle at 16:9 with its caption under it. A close button is at the top right. A bar along the bottom has the previous button, a counter and the next button. It moves through the whole gallery, big image first. It has no live demo on this page, because it is a modal that would cover the docs. Open any case study on the portfolio to see it.</p>
+</section>
+<section aria-labelledby="size-h">
+  <h2 id="size-h" class="type-h2">Size and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Lightbox sizes by breakpoint, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Part</th><th scope="col">Mobile</th><th scope="col">Tablet (768px up)</th><th scope="col">Desktop (1024px up)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Picture width</th><td>Screen minus 16px at each side</td><td>Screen minus 32px at each side</td><td>Up to 1120px</td></tr>
+        <tr><th scope="row">Close button position</th><td>16px from the top and right</td><td>24px from the top and right</td><td>24px from the top and right</td></tr>
+        <tr><th scope="row">Bottom bar</th><td colspan="3">80px tall, buttons and counter 24px apart</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The picture is always 16:9 and never taller than the room above the bar. The picture and its caption are 16px apart. A portrait picture keeps the same height and is shown whole, centered, and the caption lines up with the picture's left edge. The viewer fades in and out in 200ms, and with no fade when the reduced-motion setting is on. The page behind it cannot scroll.</p>
+</section>
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The scrim is <code>surface/overlay/scrim-strong</code>, black at 90%. The regular scrim is 50% black, and white text on it over a white page is 3.95:1, which fails 4.5:1. The 90% version passes. The bottom bar is <code>surface/overlay/bar</code>. The caption is <code>text/on-brand/primary</code> and the counter is <code>text/on-brand/secondary</code>. The three buttons are the secondary on-brand icon button, with the focus ring <code>border/focus/ring-on-brand</code>.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the lightbox</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Fill the viewer from the same list of images as the gallery.</li>
+      <li>Show a caption for every picture.</li>
+      <li>For a GIF, show a still first frame and a <a href="/components/motion-control/">motion control</a>.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Play a GIF on its own when the person has asked for less motion.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>It is a native <code>&lt;dialog&gt;</code> opened as a modal. Focus stays inside, Escape closes it, and the page behind is inert.</li>
+    <li>The dialog is named "Image viewer". The close, previous and next buttons are icon-only and have labels.</li>
+    <li>The counter is a polite live region, so a screen reader hears the new position when the picture changes.</li>
+    <li>The long description of a picture is in a visually hidden paragraph in the viewer.</li>
+    <li>The script that opens, closes and moves through the viewer lives in the portfolio. It is not part of Arche yet.</li>
+  </ul>
+</section>
+<section aria-labelledby="html-h">
+  <h2 id="html-h" class="type-h2">The HTML</h2>
+  <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;dialog class="cs-lightbox" aria-label="Image viewer"&gt;
+  &lt;!-- secondary on-brand icon button, close, class cs-lightbox__close --&gt;
+  &lt;div class="cs-lightbox__stage"&gt;
+    &lt;figure class="cs-lightbox__figure"&gt;
+      &lt;div class="cs-lightbox__media"&gt;&lt;/div&gt;
+      &lt;figcaption class="cs-lightbox__caption type-small"&gt;&lt;/figcaption&gt;
+      &lt;p class="visually-hidden"&gt;&lt;/p&gt;
+    &lt;/figure&gt;
+  &lt;/div&gt;
+  &lt;div class="cs-lightbox__bar"&gt;
+    &lt;!-- previous button --&gt;
+    &lt;p class="cs-lightbox__counter type-label" role="status" aria-live="polite"&gt;&lt;/p&gt;
+    &lt;!-- next button --&gt;
+  &lt;/div&gt;
+&lt;/dialog&gt;</code></pre>
+</section>

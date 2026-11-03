@@ -1,0 +1,75 @@
+---
+title: "Next case study"
+eyebrow: "Components"
+lead: "A teaser at the end of a case study: a 2px rule, a heading, a 16:9 image and the next case study's title, summary and button."
+permalink: /components/next-case-study/
+---
+{% from "components.njk" import button %}
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Next case study</h2>
+  <p>The next case study teaser leads the reader on. It starts with a 2px rule and a heading. Below that, a 16:9 image sits beside the text: a category, the title, an optional summary and a secondary button. The image and the title go to the same place, so the image link is hidden from keyboards and screen readers and the title is the one link. The text and image below are placeholders.</p>
+  {% demo "Next case study teaser with placeholder text", "block" %}
+  <section class="cs-next" aria-labelledby="next-demo-h">
+    <div class="cs-next__inner">
+      <h3 class="cs-next__heading type-subhead" id="next-demo-h">Next case study</h3>
+      <div class="cs-next__content">
+        <a class="cs-next__image" href="#" aria-hidden="true" tabindex="-1">
+          <div class="placeholder-image"><p class="type-small">Placeholder image, 16:9</p></div>
+        </a>
+        <div class="cs-next__text">
+          <p class="cs-next__category type-label">Category</p>
+          <h4 class="cs-next__title type-h2"><a href="#">Case study title</a></h4>
+          <p class="cs-next__summary type-lead">One sentence about the next case study.</p>
+          <div class="cs-next__action">
+            {{ button("Read case study", type="secondary", href="#", icon="arrow_forward", iconPosition="trailing", extraClass="cs-next__button") }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% enddemo %}
+</section>
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Next case study layout by breakpoint, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Layout</th><th scope="col">Padding above and below</th><th scope="col">Gaps</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>Image, then text. The button is full width.</td><td>40px</td><td>24px from the rule to the heading, then 16px between parts</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>Image, then text in a column up to 524px, pushed to the right. The button is as wide as its label.</td><td>48px</td><td>40px from the rule to the heading, then 24px between parts</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>12 columns: image in columns 1 to 8, text in columns 9 to 12, centered against the image</td><td>64px</td><td>24px column gap</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The rule is 2px in <code>border/neutral/emphasis</code>. The text parts are 16px apart. The button has 8px of room above it.</p>
+</section>
+<section aria-labelledby="locked-h">
+  <h2 id="locked-h" class="type-h2">Locked teaser</h2>
+  <p>When the next case study sits behind a password, the button shows a lock in place of the arrow and a small helper line sits 12px under it, in <code>text/neutral/secondary</code>. The helper line is tied to the button, so a screen reader reads it with the button. A visitor who has unlocked the page sees the arrow and the real image. The script that swaps the lock for the arrow lives in the portfolio. It is not part of Arche yet.</p>
+</section>
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The block sits on <code>surface/neutral/base</code>. The heading and the title are <code>text/neutral/primary</code>, the category is <code>text/neutral/secondary</code> and the summary is <code>text/neutral/body</code>. The title link has no underline and shows the focus ring on keyboard focus.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the next case study</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Link the title and the button to the same page.</li>
+      <li>Use a 16:9 image that does not give away anything behind a password.</li>
+      <li>Leave the summary out if it adds nothing. The block still works.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Put a real image of a locked page in the page source. Use the public teaser image.</li>
+      <li>Make the image a separate link that a keyboard can reach.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The block is a <code>&lt;section&gt;</code> named by its heading. The title is a heading with one link in it.</li>
+    <li>The image link has <code>aria-hidden</code> and <code>tabindex="-1"</code>, so there is one link per teaser and it is announced once.</li>
+    <li>The image has empty alt text because the title says what the teaser is.</li>
+  </ul>
+</section>

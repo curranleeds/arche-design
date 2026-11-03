@@ -62,7 +62,10 @@ body {
     box-sizing: border-box;
     max-height: calc(100vh - 80px);
     overflow-y: auto;
-    padding: var(--arche-space-base-48) 0;
+    /* The nav scrolls, so it also crops sideways. The side padding gives the focus ring (width plus offset) room inside the crop. The matching negative margin keeps the links where they were. */
+    --arche-docs-nav-ring: calc(var(--arche-focus-ring-width) + var(--arche-focus-ring-offset));
+    padding: var(--arche-space-base-48) var(--arche-docs-nav-ring);
+    margin-inline: calc(-1 * var(--arche-docs-nav-ring));
   }
 }
 /* The Menu button lives in the header bar. It needs JavaScript, so it stays hidden until the "js" class is on <html>, and it is not needed from 1024px up. */
@@ -150,8 +153,8 @@ body {
 .docs-content p { margin: 0 0 var(--arche-space-base-16); max-width: 66ch; text-wrap: pretty; }
 .docs-content ul, .docs-content ol { margin: 0 0 var(--arche-space-base-16); padding-left: var(--arche-space-base-24); max-width: 66ch; }
 .docs-content li { margin-bottom: var(--arche-space-fine-8); }
-.docs-content a:not(.link):not(.button) { color: var(--arche-text-brand-primary); font-weight: 600; text-underline-offset: 0.2em; }
-.docs-content a:not(.link):not(.button):focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: var(--arche-focus-ring-offset); }
+.docs-content a:not(.link):not(.button):not(.demo a) { color: var(--arche-text-brand-primary); font-weight: 600; text-underline-offset: 0.2em; }
+.docs-content a:not(.link):not(.button):not(.demo a):focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: var(--arche-focus-ring-offset); }
 .docs-content code, .tok {
   padding: 1px 6px;
   background: var(--arche-surface-brand-primary-subtle);

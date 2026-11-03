@@ -1,0 +1,67 @@
+---
+title: "Image tile"
+eyebrow: "Components"
+lead: "One picture that opens the image viewer, with an expand chip on top of it and a caption under it."
+permalink: /components/image-tile/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Image tile</h2>
+  <p>The tile is a <code>&lt;figure&gt;</code>. A 16:9 picture sits inside one button that opens the <a href="/components/lightbox/">lightbox</a>. A 32px expand chip sits on the picture, 12px in from the bottom-right corner. The caption is under the picture, 16px away. The chip is a hint, not a second control: the whole picture is the button. The picture below is a placeholder.</p>
+  {% demo "Image tile with a placeholder picture and caption", "block" %}
+  <figure class="cs-tile" style="max-width:420px">
+    <div class="cs-tile__frame">
+      <button type="button" class="cs-tile__open" aria-label="Enlarge image: Caption text">
+        <div class="placeholder-image"><p class="type-small">Placeholder image, 16:9</p></div>
+        <span class="cs-chip" aria-hidden="true">{% icon "open_in_full" %}</span>
+      </button>
+    </div>
+    <figcaption class="cs-tile__caption type-small">Caption text. Say what the picture shows and why it is there.</figcaption>
+  </figure>
+  {% enddemo %}
+</section>
+<section aria-labelledby="chip-h">
+  <h2 id="chip-h" class="type-h2">The expand chip</h2>
+  <p>The chip is 32px square with a 16px expand icon. It is always visible, including on touch screens. Its look follows the picture, not the chip: hovering or pressing anywhere on the picture changes it.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Expand chip states, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">State</th><th scope="col">Fill</th><th scope="col">Border</th><th scope="col">Icon</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Default</th><td><code>surface/neutral/raised</code></td><td><code>border/neutral/strong</code></td><td><code>icon/brand/default</code></td></tr>
+        <tr><th scope="row">Hover</th><td><code>surface/brand/primary</code></td><td><code>border/brand/default</code></td><td><code>icon/on-brand/default</code></td></tr>
+        <tr><th scope="row">Pressed</th><td><code>interactive/button/secondary/on-brand/fill/pressed</code></td><td><code>border/brand/default</code></td><td><code>icon/on-brand/default</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The default border is the strong neutral so it keeps 3:1 against the chip and the tint, in Light and Dark. Hover and pressed switch to the brand border because their fills are brand colors.</p>
+</section>
+<section aria-labelledby="focus-h">
+  <h2 id="focus-h" class="type-h2">Focus, caption and fit</h2>
+  <ul>
+    <li><strong>Focus.</strong> A 2px ring with a 2px offset goes around the picture, so it is drawn 4px outside it.</li>
+    <li><strong>Caption.</strong> The caption uses the small body style in <code>text/neutral/primary</code>.</li>
+    <li><strong>Fit.</strong> The picture is cropped to 16:9. A tall picture can use the contain fit: it shows whole, centered on <code>surface/brand/primary/subtle</code>, so the tile keeps its 16:9 shape.</li>
+    <li><strong>Sizes.</strong> The big tile fills the content width, the small tiles are a third of the width on desktop, and the strip tiles are 264px wide on mobile. See <a href="/components/image-gallery/">Image gallery</a>.</li>
+  </ul>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the image tile</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Write a caption that says what the picture shows.</li>
+      <li>Write alt text that describes the picture for someone who cannot see it. The caption and the alt text are different things.</li>
+      <li>Show screens and diagrams in true color.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Add a second button for enlarging. The picture is the button.</li>
+      <li>Rely on the chip alone to say the picture opens. The button has its own label.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The button has a label that starts "Enlarge image:" and then the caption.</li>
+    <li>The picture inside has empty alt text. The real alt text sits in a visually hidden paragraph that the button points to with <code>aria-describedby</code>, so it is read once.</li>
+    <li>The chip is hidden from screen readers (<code>aria-hidden</code>), because it only repeats what the button says.</li>
+  </ul>
+</section>

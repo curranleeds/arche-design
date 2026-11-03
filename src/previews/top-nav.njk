@@ -1,0 +1,53 @@
+---
+layout: false
+title: "Top nav preview"
+permalink: /previews/top-nav/
+eleventyExcludeFromCollections: true
+---
+{% from "components.njk" import button %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Top nav preview · Arche Design System</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // Same saved Light or Dark choice as the docs pages, applied before first paint.
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+    <script src="/assets/js/theme.js" defer></script>
+  </head>
+  <body class="preview-body">
+    <header class="site-nav">
+      <a class="site-nav__home" href="#" aria-label="Site name, home">
+        {% set logoOnBrand = false %}{% include "logo.njk" %}
+        <span class="site-nav__wordmark" aria-hidden="true">Site name</span>
+      </a>
+      <div class="site-nav__end">
+        <nav class="site-nav__links" aria-label="Main (example)">
+          <ul>
+            <li><a class="nav-link" href="#" aria-current="page">Page one</a></li>
+            <li><a class="nav-link" href="#">Page two</a></li>
+            <li><a class="nav-link" href="#">Page three</a></li>
+            <li><a class="nav-link" href="#">Page four</a></li>
+          </ul>
+        </nav>
+        <span class="site-nav__divider" aria-hidden="true"></span>
+        <div class="site-nav__theme">{% include "theme-toggle.njk" %}</div>
+        {{ button("Menu", type="secondary", extraClass="site-nav__menu", attrs='aria-haspopup="dialog" aria-expanded="false"') }}
+      </div>
+    </header>
+  </body>
+</html>

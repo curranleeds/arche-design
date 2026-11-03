@@ -1,0 +1,53 @@
+---
+title: "Disclaimer"
+eyebrow: "Components"
+lead: "A plain note at the end of a case study that says whose work and whose content the page shows."
+permalink: /components/disclaimer/
+---
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">Disclaimer</h2>
+  <p>The disclaimer is a plain block with no color of its own. A small label sits on the left and the text on the right, like the <a href="/components/section-split/">Section split</a>. It comes after the Outcome and the Credits and before the next case study. The text below is placeholder text.</p>
+  {% demo "Disclaimer with placeholder text", "block" %}
+  <aside class="cs-disclaimer" aria-labelledby="disclaimer-demo-h">
+    <div class="cs-row">
+      <p class="cs-disclaimer__label type-label" id="disclaimer-demo-h">Disclaimer</p>
+      <p class="cs-disclaimer__body type-body">One or two sentences about whose work this is and who owns the content shown.</p>
+    </div>
+  </aside>
+  {% enddemo %}
+</section>
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Disclaimer spacing by breakpoint, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Layout</th><th scope="col">Padding above and below</th><th scope="col">Gap between label and text</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>Label above the text</td><td>48px</td><td>40px</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>Label in columns 1 and 2, text in columns 3 to 8</td><td>48px</td><td>16px</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>Label in columns 1 to 8, text in columns 9 to 12</td><td>64px</td><td>16px</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The block sits on <code>surface/neutral/base</code>. The label and the text are both <code>text/neutral/primary</code>. The label uses the label style, which is uppercase.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the disclaimer</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Say whose work the page shows and who owns the content on the screens.</li>
+      <li>Keep it to a sentence or two.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Use it to add claims or results. Those belong in the Outcome.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The block is an <code>&lt;aside&gt;</code> named by its label (<code>aria-labelledby</code>), so a screen reader lists it as a note on the page.</li>
+  </ul>
+</section>

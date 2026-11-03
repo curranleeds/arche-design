@@ -1,0 +1,67 @@
+---
+title: "More case studies"
+eyebrow: "Components"
+lead: "A list of full-width rows at the end of a case study, each one a link to another case study."
+permalink: /components/more-case-studies/
+---
+{% from "components.njk" import button %}
+<section aria-labelledby="demo-h">
+  <h2 id="demo-h" class="type-h2">More case studies</h2>
+  <p>The block is a heading, a list of <a href="/components/list-row/">list rows</a> and a tertiary button that goes back to all the work. Each row is one link, with a title, a category and an arrow. A row that leads to a locked page shows a lock in place of the arrow and a helper line under it. A row with no category leaves the category out. The text below is placeholder text.</p>
+  {% demo "More case studies with one open row and one locked row", "block" %}
+  <section class="cs-more" aria-labelledby="more-demo-h">
+    <h3 class="cs-more__heading type-subhead" id="more-demo-h">More case studies</h3>
+    <ul class="cs-more__list" role="list">
+      <li>
+        <a class="cs-row-link" href="#">
+          <span class="cs-row-link__text">
+            <span class="cs-row-link__title type-h3">Case study title</span>
+            <span class="cs-row-link__category type-label">Category</span>
+          </span>
+          <span class="cs-row-link__arrow" aria-hidden="true">{% icon "arrow_forward" %}</span>
+        </a>
+      </li>
+      <li>
+        <a class="cs-row-link cs-row-link--locked" href="#">
+          <span class="cs-row-link__text">
+            <span class="cs-row-link__title type-h3">Locked case study title</span>
+            <span class="cs-row-link__category type-label">Category</span>
+          </span>
+          <span class="cs-row-link__arrow" aria-hidden="true">{% icon "lock" %}</span>
+          <span class="cs-row-link__helper type-small">Password required.</span>
+        </a>
+      </li>
+    </ul>
+    {{ button("All work", type="tertiary", href="#", icon="arrow_forward", iconPosition="trailing") }}
+  </section>
+  {% enddemo %}
+</section>
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
+  <p>The block sits on <code>surface/neutral/base</code> with 48px above and below (64px from 1024px up) and the page padding at the sides. The heading, the list and the button are 40px apart. A 1px <code>border/neutral/emphasis</code> rule runs above each row. The rows have 16px of side padding, and the list is pulled back by the same 16px so the row text lines up with the grid and the hover fill reaches past it. The row sizes, columns and states are on the <a href="/components/list-row/">List row</a> page.</p>
+</section>
+<section aria-labelledby="locked-h">
+  <h2 id="locked-h" class="type-h2">Locked rows</h2>
+  <p>A locked row is taller because of the helper line, and its height follows how many lines that line wraps to. With the helper text "Password required. Email me for access.", measured in the browser, the row is 152px tall at 375px wide and from 768px to 1023px, 148px at 1024px, 116px at 1100px and wider, and 104px between 600px and 767px. The demo above uses the shorter "Password required.", so its rows are shorter. The lock takes the arrow's place and does not move on hover. The helper line is inside the link, so it is part of the link's name, and the lock is decoration. A visitor who has unlocked the page sees the arrow. The script that does the swap lives in the portfolio. It is not part of Arche yet.</p>
+</section>
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using more case studies</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>List only case studies that exist.</li>
+      <li>Use the same title in the row as on the case study page.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>List the case study the reader is already on.</li>
+      <li>Make a row two links. The whole row is one link.</li>
+    </ul></div>
+  </div>
+</section>
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The block is a <code>&lt;section&gt;</code> named by its heading. The rows are a real list.</li>
+    <li>Each row has one link. The arrow and the lock are hidden from screen readers.</li>
+    <li>The hover fill, pressed fill and focus ring follow the tertiary button roles. The focus ring is drawn inside the row so it is not clipped.</li>
+  </ul>
+</section>

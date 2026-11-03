@@ -1,0 +1,69 @@
+---
+title: "Logo"
+eyebrow: "Components"
+lead: "The \"CL\" box mark, in a page version and an on-blue version. It is a placeholder until the final logo is chosen."
+permalink: /components/logo/
+---
+<section aria-labelledby="logo-h">
+  <h2 id="logo-h" class="type-h2">Logo</h2>
+  <p>The mark is a solid box with the letters "CL" in a second color, 53px wide and 32px tall. <strong>It is a placeholder.</strong> The final logo has not been chosen. The mark's colors come from tokens.</p>
+  <figure class="demo">
+    <div class="demo__stage demo__stage--tint">{% set logoOnBrand = false %}{% include "logo.njk" %}</div>
+    <figcaption class="demo__caption type-small">On the page: a <code>logo/on-page/primary/box</code> box with <code>logo/on-page/primary/letters</code> letters.</figcaption>
+  </figure>
+  <figure class="demo">
+    <div class="demo__stage demo__stage--brand">{% set logoOnBrand = true %}{% include "logo.njk" %}</div>
+    <figcaption class="demo__caption type-small">On a blue surface: the colors swap, using <code>logo/on-brand/primary/box</code> and <code>logo/on-brand/primary/letters</code>.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Logo colors by surface, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Surface</th><th scope="col">Box</th><th scope="col">Letters</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Page</th><td>Greece Blue 500</td><td>White</td></tr>
+        <tr><th scope="row">Blue (brand)</th><td>White</td><td>Greece Blue 500</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The primary mark has the same colors in Light and Dark. Tokens also exist for a secondary version with a single <code>line</code> color, and for a version on the secondary surface. The code has no markup for the secondary version yet.</p>
+</section>
+
+<section aria-labelledby="markup-h">
+  <h2 id="markup-h" class="type-h2">The HTML</h2>
+  <p>The mark is an inline SVG with the class <code>logo</code>. Add <code>logo--on-brand</code> on a blue surface. The shapes are filled by the <code>logo__box</code> and <code>logo__letters</code> classes, so the colors come from the tokens and not from the SVG.</p>
+  <details class="demo__code">
+    <summary>View HTML</summary>
+    <pre tabindex="0"><code>&lt;a class="site-nav__home" href="/" aria-label="Site name, home"&gt;
+  &lt;svg class="logo" width="53" height="32" viewBox="0 0 53 32" aria-hidden="true" focusable="false"&gt;
+    &lt;rect class="logo__box" width="53" height="32"/&gt;
+    &lt;path class="logo__letters" d="…"/&gt;   &lt;!-- the letter C --&gt;
+    &lt;path class="logo__letters" d="…"/&gt;   &lt;!-- the letter L --&gt;
+  &lt;/svg&gt;
+&lt;/a&gt;</code></pre>
+  </details>
+</section>
+
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the logo</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Wrap it in a link to the home page and put the name on the link with <code>aria-label</code>.</li>
+      <li>Use <code>logo--on-brand</code> on any blue surface, such as the footer and the menu overlay.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Use the page version on a blue surface. The box would be the same color as the surface.</li>
+      <li>Recolor the SVG by hand. Change the tokens.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The SVG is hidden from screen readers (<code>aria-hidden="true"</code>), and it cannot take focus. The link around it carries the accessible name.</li>
+    <li>It appears in the <a href="/components/top-nav/">top nav</a>, the <a href="/components/menu-overlay/">menu overlay</a> and the <a href="/components/site-footer/">site footer</a>.</li>
+  </ul>
+</section>

@@ -1,0 +1,38 @@
+---
+layout: false
+title: "Skip link preview"
+permalink: /previews/skip-link/
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skip link preview · Arche Design System</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // Same saved Light or Dark choice as the docs pages, applied before first paint.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
+    <link rel="stylesheet" href="/css/docs.css" />
+  </head>
+  <body class="preview-body">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div class="preview-pad">
+      <p class="type-small">Click an empty spot in this frame, then press Tab.</p>
+      <main id="main">
+        <p class="type-body">Main content. Press Enter on the skip link and the page jumps here.</p>
+      </main>
+    </div>
+  </body>
+</html>

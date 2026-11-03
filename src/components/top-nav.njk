@@ -1,0 +1,121 @@
+---
+title: "Top nav"
+eyebrow: "Components"
+lead: "The sticky header on every page: the logo, four links, the theme toggle, and a Menu button on small screens."
+permalink: /components/top-nav/
+---
+<section aria-labelledby="nav-h">
+  <h2 id="nav-h" class="type-h2">Top nav</h2>
+  <p>The header sits at the top of every page and stays with you as you scroll. It has the logo at the left. At the right, below 1024px it has a secondary Menu button, which opens the <a href="/components/menu-overlay/">menu overlay</a>. From 1024px up it has the four links, a divider and the theme toggle instead, and the site name appears beside the logo. The frames below are fixed widths, so each shows its own layout on any screen.</p>
+  <figure class="preview-frame">
+    <div class="preview-frame__scroller" tabindex="0" role="region" aria-label="Top nav at mobile width, scrollable">
+      <iframe src="/previews/top-nav/" width="375" height="96" title="Top nav at mobile width" loading="lazy"></iframe>
+    </div>
+    <figcaption class="preview-frame__caption type-small">Mobile, 375px wide: 72px tall. Logo and Menu button.</figcaption>
+  </figure>
+  <figure class="preview-frame">
+    <div class="preview-frame__scroller" tabindex="0" role="region" aria-label="Top nav at tablet width, scrollable">
+      <iframe src="/previews/top-nav/" width="768" height="104" title="Top nav at tablet width" loading="lazy"></iframe>
+    </div>
+    <figcaption class="preview-frame__caption type-small">Tablet, 768px wide: 80px tall. Same parts as mobile.</figcaption>
+  </figure>
+  <figure class="preview-frame">
+    <div class="preview-frame__scroller" tabindex="0" role="region" aria-label="Top nav at desktop width, scrollable">
+      <iframe src="/previews/top-nav/" width="1280" height="104" title="Top nav at desktop width" loading="lazy"></iframe>
+    </div>
+    <figcaption class="preview-frame__caption type-small">Desktop, 1280px wide: 80px tall. Logo and site name, four links, a divider and the theme toggle. The first link is the current page. The frames have no script, so the Menu button does nothing here.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="layout-h">
+  <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Top nav layout by breakpoint, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Height</th><th scope="col">What shows</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>72px</td><td>Logo, Menu button.</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>80px</td><td>Logo, Menu button.</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>80px</td><td>Logo, site name, four links, divider, theme toggle. The Menu button is hidden.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The side padding is the page padding. The height includes the 1px rule along the bottom. On desktop the logo and the name are 12px apart. The links, the divider and the theme toggle are 40px apart, and the links are 40px apart from each other. The divider is 24px tall with a 1px rule. The site name uses the heading typeface in bold, 24px on a 32px line, and is hidden from screen readers because the link around it has an <code>aria-label</code>.</p>
+</section>
+
+<section aria-labelledby="links-h">
+  <h2 id="links-h" class="type-h2">Nav links</h2>
+  <p>Each link is a <code>nav-link</code>: 48px tall, with 12px above and below and 16px at the sides, in the Body SemiBold style. It reads the <code>interactive/link/text/nav/*</code> roles.</p>
+  <ul>
+    <li><strong>Default:</strong> text color only.</li>
+    <li><strong>Hover:</strong> the hover text color and a 4px neutral rule along the bottom. Only on devices that can hover.</li>
+    <li><strong>Pressed:</strong> the pressed text color and a 4px brand rule along the bottom.</li>
+    <li><strong>Focus:</strong> the 4px focus ring with a 2px gap.</li>
+    <li><strong>Current page:</strong> a 4px bar in <code>interactive/link/nav/indicator</code>, as wide as the text. It sits 4px above the bottom edge, with 16px in from each side. Set <code>aria-current="page"</code> as well.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="scroll-h">
+  <h2 id="scroll-h" class="type-h2">Scrolling</h2>
+  <p>The header is <code>position: sticky</code> at the top, above the page and above the case study jump nav. Scrolling down slides it out of view. Scrolling up brings it back. The CSS has the <code>.is-hidden</code> class that does the sliding, over the medium motion duration. A small script adds and removes that class, and the script belongs to the site, not to Arche.</p>
+  <p>The portfolio's script follows these rules. It never hides the header while focus is inside it, and tabbing into the header brings it back. With reduced motion turned on, it never hides the header. It also publishes the header's visible height as <code>--arche-site-nav-offset</code>, so a sticky bar below it can sit just under it.</p>
+</section>
+
+<section aria-labelledby="nojs-h">
+  <h2 id="nojs-h" class="type-h2">Without JavaScript</h2>
+  <p>The Menu button and the theme toggle need a script. Without one, below 1024px the Menu button, divider and toggle are hidden and the four links show as a row under the logo, spread across the width. The header grows taller to hold them. The page then follows the browser's Light or Dark setting.</p>
+</section>
+
+<section aria-labelledby="color-h">
+  <h2 id="color-h" class="type-h2">Color</h2>
+  <p>The header is <code>surface/neutral/base</code> with a 1px <code>border/neutral/default</code> rule along the bottom. The logo link and the site name use <code>text/brand/primary</code>. It follows the Light or Dark theme like the rest of the page.</p>
+</section>
+
+<section aria-labelledby="markup-h">
+  <h2 id="markup-h" class="type-h2">The HTML</h2>
+  <details class="demo__code">
+    <summary>View HTML</summary>
+    <pre tabindex="0"><code>&lt;header class="site-nav"&gt;
+  &lt;a class="site-nav__home" href="/" aria-label="Site name, home"&gt;
+    &lt;!-- logo --&gt;
+    &lt;span class="site-nav__wordmark" aria-hidden="true"&gt;Site name&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;div class="site-nav__end"&gt;
+    &lt;nav class="site-nav__links" aria-label="Main"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a class="nav-link" href="/" aria-current="page"&gt;Page one&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="nav-link" href="/two/"&gt;Page two&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;span class="site-nav__divider" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;div class="site-nav__theme"&gt;&lt;!-- theme toggle --&gt;&lt;/div&gt;
+    &lt;!-- secondary Menu button, class site-nav__menu --&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+  </details>
+</section>
+
+<section aria-labelledby="use-h">
+  <h2 id="use-h" class="type-h2">Using the top nav</h2>
+  <div class="rules">
+    <div class="rule"><h3 class="type-h3">Do</h3><ul>
+      <li>Use one header, the same on every page.</li>
+      <li>Mark the current page with <code>aria-current="page"</code>.</li>
+      <li>Keep the same links in the header and the menu overlay.</li>
+    </ul></div>
+    <div class="rule"><h3 class="type-h3">Don't</h3><ul>
+      <li>Mark more than one link as the current page.</li>
+      <li>Hide the header while focus is inside it.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section aria-labelledby="a11y-h">
+  <h2 id="a11y-h" class="type-h2">Accessibility</h2>
+  <ul>
+    <li>The header is a <code>&lt;header&gt;</code> and the links are in a <code>&lt;nav&gt;</code> labelled "Main".</li>
+    <li>The logo link has an <code>aria-label</code>. The logo and the visible name are hidden from screen readers so the link is not read twice.</li>
+    <li>The Menu button says it opens a dialog (<code>aria-haspopup="dialog"</code>) and whether it is open (<code>aria-expanded</code>).</li>
+    <li>The first thing a keyboard user reaches is the <a href="/components/skip-link/">skip link</a>, which comes before the header.</li>
+    <li>Every link is 48px tall, and the Menu button is 48px tall.</li>
+  </ul>
+</section>
