@@ -76,6 +76,8 @@ npm start
 
 `npm install` downloads the build tool (Eleventy). `npm start` builds the site and serves it at http://localhost:8080, and rebuilds when you save a file. `npm run build` writes the finished site to `_site/`.
 
+**Accessibility check.** `npm run check:a11y` builds the site, then runs axe-core (a rule checker that reads each page's code in a real browser) on every page in Light and Dark, and three keyboard checks. The first time, run `npx playwright install chromium` so it has a browser. It is not part of `npm run build`. Findings the project has accepted, with the reason for each, are in `scripts/a11y-exceptions.json`. The check does not replace a keyboard pass and a screen reader pass by hand.
+
 ## What is in here
 
 | Path | What it is |

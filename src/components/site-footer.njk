@@ -11,7 +11,7 @@ permalink: /components/site-footer/
   {% demo "Site footer with placeholder links and text", "block" %}
   <footer class="site-footer">
     <div class="site-footer__main">
-      <a class="site-nav__home site-footer__home" href="#" aria-label="Home">
+      <a class="site-nav__home site-footer__home" href="#" aria-label="Site name, home">
         <span class="site-footer__wordmark" aria-hidden="true">Site name</span>
       </a>
       <div class="site-footer__links">
@@ -75,7 +75,8 @@ permalink: /components/site-footer/
   <h2 id="a11y-h" class="type-h2">Accessibility</h2>
   <ul>
     <li>The footer is a <code>&lt;footer&gt;</code>. Its two link groups are <code>&lt;nav&gt;</code> landmarks labelled "Footer" and "Elsewhere".</li>
-    <li>The logo link has an <code>aria-label</code>. The visible site name is hidden from screen readers so it is not read twice.</li>
+    <li>The logo link has an <code>aria-label</code> that starts with the visible site name ("Site name, home"), so someone using voice control can say what they see. The visible name is hidden from screen readers so it is not read twice.</li>
+    <li>Below 1024px the site name is not shown, so the logo link is hidden too: it cannot take keyboard focus and screen readers skip it.</li>
     <li>External links open in a new tab and say so in hidden text.</li>
     <li>The theme switch is two radio buttons, so the arrow keys work without a script. Without JavaScript the switch is hidden, and the page follows the browser's setting. See <a href="/components/theme-controls/">Theme controls</a>.</li>
   </ul>

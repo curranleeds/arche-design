@@ -10,6 +10,24 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## Unreleased
+
+Fixed
+- No visible change: below 1024px the site footer's logo link has no visible name, so it now leaves the tab order and the screen reader's view too (`visibility: hidden`, so nothing moves). Before, keyboard focus could land on it with nothing to see. This is in `components.css`, so a site that copies it gets the fix when it updates to the next release.
+- Docs fix: with the menu open below 1024px, pressing Tab past its last link moved focus to the page behind the panel, out of sight. The menu now closes when focus leaves it.
+- Docs fix: the Credits demo heading was white on yellow in Dark (1.5:1) because a docs heading rule overrode the component's color. Headings inside a demo now keep the component's own color. The Section split name, the Outcome name and the Stat strip heading also show their own colors now, where the docs rule had made them near-black or white.
+- Docs fix: the page hero is a region named "Page introduction", so it no longer shares its name with the page's first section (25 pages listed the same landmark name twice).
+- Docs fix: "The HTML" code blocks on ten pages showed the browser's 1px focus outline. They now show the same 4px ring as the other code blocks.
+- Docs fix: the Site footer demo's logo link is named "Site name, home", so its name starts with the visible name. The Email demo has `autocomplete="email"`.
+
+Changed
+- Link card: the card's own text names the link (title, line of text and button label), with no `aria-labelledby` and no `aria-hidden` on the button look. Before, the name was the title only, so the visible button text was not in it. The Link card page and the Overview cards follow this.
+- The standard is WCAG 2.2 AA, named on the Accessibility page and in the side nav.
+
+Added
+- `npm run check:a11y`: axe-core on every page in Light and Dark, and three keyboard checks. It adds two dev dependencies, `playwright` and `@axe-core/playwright`. It is not part of `npm run build`.
+- Accessibility page: a list of accepted exceptions with the reason for each, and a note on how the automated scan runs.
+
 ## 0.8.0
 
 Changed

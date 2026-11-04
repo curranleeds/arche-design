@@ -1,0 +1,48 @@
+{
+  "about": "Findings that npm run check:a11y does not count as failures. Each entry names an axe rule, the pages it applies to ('*' at the end means every page that starts with that path) and the reason. An optional 'targets' list limits an entry to elements whose selector contains one of those words. 'accepted' are listed on the Accessibility page. 'held' are known problems waiting on a design decision: they are printed as warnings every run, so they are not forgotten.",
+  "accepted": [
+    {
+      "rule": "landmark-one-main",
+      "pages": ["/previews/*"],
+      "reason": "The preview pages are frames embedded in component pages. They are not meant to be opened alone, so they have no main landmark."
+    },
+    {
+      "rule": "page-has-heading-one",
+      "pages": ["/previews/*"],
+      "reason": "The preview pages are frames embedded in component pages. The page that holds the frame has the h1."
+    },
+    {
+      "rule": "region",
+      "pages": ["/previews/*"],
+      "reason": "The preview pages are frames embedded in component pages. They show one component without the page around it."
+    },
+    {
+      "rule": "landmark-unique",
+      "pages": [
+        "/components/credits/",
+        "/components/menu-overlay/",
+        "/components/more-case-studies/",
+        "/components/next-case-study/",
+        "/components/outcome/",
+        "/components/section-split/",
+        "/components/skip-link/",
+        "/components/top-nav/"
+      ],
+      "reason": "The live demo on each of these pages is a component that is itself a landmark (a header, a nav, a main or a named section), so it repeats a landmark the page already has."
+    },
+    {
+      "rule": "label-content-name-mismatch",
+      "pages": ["/components/image-tile/"],
+      "targets": ["cs-tile__open"],
+      "reason": "Scanner false alarm in the demo. The only visible text in the placeholder is the words 'Placeholder image'. A real tile holds a picture, not text, so the name 'Enlarge image: caption' is correct."
+    }
+  ],
+  "held": [
+    {
+      "rule": "color-contrast",
+      "pages": ["/components/form-field/"],
+      "targets": ["ff-send"],
+      "reason": "The read-only (sending) field text is grey at 2.84:1. Waiting on a design decision for the read-only color. Remove this entry when it is fixed."
+    }
+  ]
+}

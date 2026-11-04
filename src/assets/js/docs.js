@@ -44,6 +44,14 @@
     }
   });
 
+  // If keyboard focus moves out of the open menu (Tab past the last link, or Shift+Tab past the Menu
+  // button), close it. Otherwise focus would land on the page behind the panel, out of sight.
+  document.addEventListener('focusin', function (event) {
+    if (!isOpen()) return;
+    if (menu.contains(event.target) || button.contains(event.target)) return;
+    setOpen(false, false);
+  });
+
   // Links marked data-focus-h1 (the menu and the next-page band) leave the flag for the next page.
   document.addEventListener('click', function (event) {
     var link = event.target.closest ? event.target.closest('a[data-focus-h1]') : null;
