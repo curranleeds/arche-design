@@ -591,6 +591,19 @@ html:has(.cs-lightbox[open]) { overflow: hidden; }
 @media (min-width: 768px) { .cs-outcome { padding-block: var(--arche-space-base-64); } }
 @media (min-width: 1024px) { .cs-outcome { gap: var(--arche-space-base-64); padding-block: var(--arche-space-base-80); } }
 
+/* End mark: one flat 4px rule under the Outcome body text, as wide as the text column (the last
+   column of the first row, so it follows that column at every breakpoint), 24px below the last
+   line. It sits inside the body column, so it shows only when the body shows. It reads
+   accent/rule, so each mode and Light or Dark sets its own color. Decorative: aria-hidden in markup. */
+.cs-outcome__end-mark {
+  display: block;
+  height: var(--arche-stroke-4);
+  margin-top: var(--arche-space-base-24);
+  background: var(--arche-accent-rule);
+}
+/* The mark brings its own 24px, so the last paragraph above it adds none. */
+.cs-outcome .cs-copy p:last-of-type { margin-bottom: 0; }
+
 .cs-quote {
   position: relative;
   display: flex;

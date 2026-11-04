@@ -10,6 +10,18 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.9.0
+
+Added
+- Outcome: Canon's end mark. A flat 4px rule under the Outcome body text, as wide as the text column (343px on mobile, 524px on tablet, 421px on desktop), 24px below the last line. New class `.cs-outcome__end-mark`, added as the last child of the body column: `<span class="cs-outcome__end-mark" aria-hidden="true"></span>`. It reads `accent/rule` (Norway Red 500 in Canon Light, Norway Red 400 in Canon Dark), so each mode sets its own color. It sits inside the body column, so it shows only when the body shows. It is decoration: `aria-hidden`, no text, not focusable.
+- Outcome page: an "End mark" section with the size at each breakpoint, the contrast on the blue tint (4.57:1 in Light, 3.28:1 in Dark), and a Do and a Don't. Once per page, only under the Outcome body text, never on other text, controls or cards.
+
+Changed
+- The Outcome's last body paragraph no longer adds its own bottom margin (the mark brings the 24px). Nothing changes when there is no mark except that last paragraph's 16px bottom margin inside the Outcome, which had no visible effect because the block's own gap follows it.
+- Spacing and grid page and Color modes page: the end mark wording says that on a case study the mark sits under the Outcome body text.
+
+A site that uses Arche updates `case-study.css` (its hash changes) and adds the span to its Outcome markup. Without the span, nothing changes.
+
 ## 0.8.3
 
 Docs only. No component CSS, token or shared file changes, so nothing needs updating in a site that uses Arche.
