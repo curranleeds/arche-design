@@ -10,7 +10,7 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
-## Unreleased
+## 0.8.1
 
 Fixed
 - No visible change: below 1024px the site footer's logo link has no visible name, so it now leaves the tab order and the screen reader's view too (`visibility: hidden`, so nothing moves). Before, keyboard focus could land on it with nothing to see. This is in `components.css`, so a site that copies it gets the fix when it updates to the next release.
