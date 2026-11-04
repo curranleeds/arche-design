@@ -18,6 +18,15 @@
 @media (min-width: 768px) { :root { --arche-page-gutter: var(--arche-space-base-32); } }
 @media (min-width: 1024px) { :root { --arche-page-gutter: var(--arche-space-base-64); } }
 
+/* ---------- Text selection ----------
+   The highlight when someone selects text. Reads the selection roles, so it follows the mode
+   (Yellow 500 in Canon, Klarheit and Omtanke; a blue tint in Ethos and Nøktern). Without this
+   rule the browser uses the visitor's system highlight color. */
+::selection {
+  background: var(--arche-selection-background);
+  color: var(--arche-selection-text);
+}
+
 /* ---------- Utilities ---------- */
 
 /* Hidden from sight, still read by screen readers and still focusable. */
