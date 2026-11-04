@@ -27,20 +27,20 @@ button type-button button--{{ type }}{% if onBrand %} button--on-brand{% endif %
   {%- if download %}<span class="visually-hidden"> (PDF)</span>{% endif -%}
 </a>
 {% endmacro %}
-{% macro field(id, name, label, type="text", multiline=false, value="", error="", errorMessage="", autocomplete="", disabled=false, readonly=false, force="") %}
+{% macro field(id, name, label, type="text", multiline=false, value="", error="", errorMessage="", autocomplete="", disabled=false, sending=false, readonly=false, force="") %}
 <div class="field{% if multiline %} field--multiline{% endif %}">
   <div class="field__control"{% if force %} data-force-control="{{ force }}"{% endif %}>
     {%- if multiline %}
     <textarea class="field__input" id="{{ id }}" name="{{ name }}" placeholder=" " required
       {%- if autocomplete %} autocomplete="{{ autocomplete }}"{% endif %}
       {%- if error %} aria-invalid="true"{% endif %} aria-describedby="{{ id }}-error"
-      {%- if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}
+      {%- if disabled %} disabled{% endif %}{% if sending or readonly %} readonly{% endif %}
       {%- if force %} data-force="{{ force }}"{% endif %}>{{ value }}</textarea>
     {%- else %}
     <input class="field__input" id="{{ id }}" name="{{ name }}" type="{{ type }}" placeholder=" " required value="{{ value }}"
       {%- if autocomplete %} autocomplete="{{ autocomplete }}"{% endif %}
       {%- if error %} aria-invalid="true"{% endif %} aria-describedby="{{ id }}-error"
-      {%- if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}
+      {%- if disabled %} disabled{% endif %}{% if sending or readonly %} readonly{% endif %}
       {%- if force %} data-force="{{ force }}"{% endif %}>
     {%- endif %}
     <label class="field__label" for="{{ id }}">{{ label }}</label>

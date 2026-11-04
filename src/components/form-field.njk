@@ -8,7 +8,9 @@ permalink: /components/form-field/
 <section aria-labelledby="basic-h">
   <h2 id="basic-h" class="type-h2">Single line and message</h2>
   <p>The label sits inside the field and floats up when the field has focus or text. It is a real <code>&lt;label&gt;</code> connected to a real <code>&lt;input&gt;</code>, so browsers and screen readers treat it as a normal field. Fields that ask about the person filling in the form, such as name and email, also carry an <code>autocomplete</code> value (<code>name</code>, <code>email</code>), so browsers and password managers can fill them in. Click into these to try it.</p>
-  {% demo "Single-line and multi-line fields", "form" %}
+  <p>Every field here is required, and the field carries the <code>required</code> attribute, so a screen reader says so. Sighted people get a sentence instead. Put <strong>All fields are required.</strong> above the first field of the form, as in the demo below.</p>
+  {% demo "Single-line and multi-line fields, with the required sentence above the first field", "form" %}
+  <p>All fields are required.</p>
   {{ field("ff-name", "name", "Name", autocomplete="name") }}
   {{ field("ff-message", "message", "Message", multiline=true) }}
   {% enddemo %}
@@ -22,10 +24,20 @@ permalink: /components/form-field/
 </section>
 <section aria-labelledby="other-h">
   <h2 id="other-h" class="type-h2">Disabled and sending</h2>
-  <p>While a form is sending, fields are read-only, not disabled, so their values still submit. Disabled fields use grey text and a quiet rule.</p>
-  {% demo "Disabled and read-only (sending)", "form" %}
+  <p>A disabled field uses the faint grey text (<code>text/neutral/disabled</code>) and a quiet rule. WCAG does not ask disabled controls to meet contrast.</p>
+  {% demo "Disabled field", "form" %}
   {{ field("ff-dis", "disabled", "Disabled", disabled=true) }}
-  {{ field("ff-send", "sending", "Sending", value="Typed text", readonly=true) }}
+  {% enddemo %}
+  <p>While a form is sending, its fields are in the sending state. They are read-only, not disabled, so their values still submit and the fields can still be reached with the keyboard. The text is still the person's own words, so it uses secondary text (<code>text/neutral/secondary</code>), which meets 4.5:1 contrast, not the disabled grey. In the macro, <code>sending=true</code> turns a field read-only. Any read-only field uses the sending look, whether or not a form is sending.</p>
+  <p>Set <code>aria-busy="true"</code> on the <code>&lt;form&gt;</code> while it submits, and remove it afterward, whether the send worked or failed. It tells a screen reader the form is busy. The demo below leaves it off on purpose, so this page does not stay busy. It is shown here as code only.</p>
+  <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;form aria-busy="true"&gt;
+  &lt;input class="field__input" readonly ...&gt;
+&lt;/form&gt;</code></pre>
+  {% demo "Sending: single-line and multi-line fields", "form" %}
+  <form>
+  {{ field("ff-send", "sending", "Sending", value="Typed text", sending=true) }}
+  {{ field("ff-send-message", "sending-message", "Message", multiline=true, value="Typed text", sending=true) }}
+  </form>
   {% enddemo %}
 </section>
 <section aria-labelledby="states-h">
@@ -38,7 +50,8 @@ permalink: /components/form-field/
         <tr><th scope="row">Hover</th><td>2px</td><td>No fill change</td></tr>
         <tr><th scope="row">Focus</th><td>2px</td><td>4px focus ring, label floats up</td></tr>
         <tr><th scope="row">Error</th><td>1px alert (2px on focus)</td><td>Icon and "Error:" message below</td></tr>
-        <tr><th scope="row">Disabled or sending</th><td>1px, quiet</td><td>Grey text, no hover change</td></tr>
+        <tr><th scope="row">Disabled</th><td>1px, quiet</td><td>Faint grey text (<code>text/neutral/disabled</code>), no hover change</td></tr>
+        <tr><th scope="row">Sending</th><td>1px, quiet</td><td>Secondary text (<code>text/neutral/secondary</code>), no hover change. Read-only, still sent. Set <code>aria-busy="true"</code> on the form while it submits</td></tr>
       </tbody>
     </table>
   </div>
