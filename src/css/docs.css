@@ -263,10 +263,12 @@ body {
 .rule ul { margin: 0; padding-left: var(--arche-space-base-16); }
 .rule li { margin-bottom: var(--arche-space-fine-8); }
 
-/* The stat strip and quote bring page padding from case-study pages; inside a demo they fill the stage. */
-.demo__stage--block .cs-stats { padding-inline: var(--arche-space-base-24); }
-.demo__stage--block .cs-quote { margin: 0; padding-inline: var(--arche-space-base-24); }
-.demo__stage--block .cs-more { padding-inline: var(--arche-space-base-24); padding-block: var(--arche-space-base-24); }
+/* The stat strip, quote and list block bring page padding from case-study pages; when one is the whole demo
+   (a direct child of the stage) it fills the stage, so it gets the stage padding. Inside another block, such as
+   the Outcome demo, the parent already sets the side padding, so these rules must not add a second one. */
+.demo__stage--block > .cs-stats { padding-inline: var(--arche-space-base-24); }
+.demo__stage--block > .cs-quote { margin: 0; padding-inline: var(--arche-space-base-24); }
+.demo__stage--block > .cs-more { padding-inline: var(--arche-space-base-24); padding-block: var(--arche-space-base-24); }
 
 /* Lists used as layouts must beat the prose list rules above (.docs-content ul). */
 .docs-content .cards,
