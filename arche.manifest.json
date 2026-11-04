@@ -1,5 +1,5 @@
 {
-  "arche": "0.8.2",
+  "arche": "0.9.0",
   "algorithm": "sha256",
   "files": {
     "src/_includes/components.njk": "5becd1bccd485a25c645cd0161e55bb6c9897e31246f720a6162f99c05614607",
@@ -23,7 +23,7 @@
     "src/assets/icons/play_arrow.svg": "6acb7ed5743a2588699146c0949c2e91e0003bf43dd991b528c369508e3a1cda",
     "src/assets/icons/priority_high.svg": "9a0b7ef6d635c310258ee757d60c8c8e386d1d5519b59a9e97b787125609dbd8",
     "src/assets/js/theme.js": "a15c9f300621c2e0873edf13040b2637e9702a3a6467acb3ab05ba8e9f789e88",
-    "src/css/case-study.css": "2805d2bbe48976182589fa667ffb0809a7468683bc9e5e8ff6459f11378658e4",
+    "src/css/case-study.css": "ff4e7e2f30331cb4067cc136a6f36da0c7f4cf201b8e3c234dd1998db677eb61",
     "src/css/components.css": "9f8298647c8c5951823fb301a56a9b9e3dec2b68a7e3b10886b65fb86f1f4c99",
     "src/css/fonts.css": "a2ecf9c8acd209a0ef1ee59de9b6f6102b427f4855c25464910e75f28916f724",
     "src/css/tokens.css": "a456ff45dc5adc53f0bb803db3f213448cdbaed0ba17a90f1fa31c4a8552d08b"

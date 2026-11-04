@@ -16,6 +16,7 @@ permalink: /components/outcome/
       </div>
       <div class="cs-copy type-body">
         <p>Body text goes here. Say what changed, with numbers that you can source.</p>
+        <span class="cs-outcome__end-mark" aria-hidden="true"></span>
       </div>
     </div>
     <figure class="cs-quote">
@@ -48,6 +49,22 @@ permalink: /components/outcome/
   </div>
   <p>The parts, in order, are the label and body (the same two-column row as the section split), the stats, the quote and the what's-next block. The side padding is the page padding. In the what's-next block the heading and text sit 16px apart when stacked.</p>
 </section>
+<section aria-labelledby="endmark-h">
+  <h2 id="endmark-h" class="type-h2">End mark</h2>
+  <p>In Canon, the page ends with one flat red rule. In the Outcome it sits directly under the body text, in the same column as that text. It is not under the stats, the quote or the what's-next block: those read as an epilogue to the story, and the mark belongs to the body.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="End mark by breakpoint, scrollable">
+    <table class="docs-table type-small">
+      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Width</th><th scope="col">Gap above</th><th scope="col">Thickness</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mobile</th><td>343px (the full text column)</td><td>24px</td><td>4px</td></tr>
+        <tr><th scope="row">Tablet (768px up)</th><td>524px (columns 3 to 8)</td><td>24px</td><td>4px</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>421px (columns 9 to 12)</td><td>24px</td><td>4px</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The gap is <code>base/24</code>, measured from the last line of the body text to the top of the rule. The rule has square corners and no outline. Because it sits inside the body column, it follows that column on every breakpoint, and it is gone when the body is. The next part keeps its usual gap (48px on mobile and tablet, 64px on desktop), measured from the bottom of the row. When the body column is the taller one, that is the bottom of the rule. It reads <code>accent/rule</code>: <code>norway/red/500</code> in Canon Light and <code>norway/red/400</code> in Canon Dark. On the blue tint it measures 4.57:1 in Light and 3.28:1 in Dark, both above the 3:1 that a graphic needs.</p>
+  <p>Add the mark as the last child of the body column: <code>&lt;span class="cs-outcome__end-mark" aria-hidden="true"&gt;&lt;/span&gt;</code>. Use it once per page. A case study has one Outcome, so it has one mark.</p>
+</section>
 <section aria-labelledby="color-h">
   <h2 id="color-h" class="type-h2">Color</h2>
   <p>The block is always on <code>surface/brand/primary/subtle</code>. It has no plain tone. The label, statement and body use the same roles as the section split. The what's-next heading is <code>text/neutral/primary</code>.</p>
@@ -59,10 +76,12 @@ permalink: /components/outcome/
       <li>Put results first and keep every number sourced, with a time window in the stat footnote.</li>
       <li>Leave the quote out if you have no real one. Do not write one.</li>
       <li>Use the what's-next block for plans, and say they are plans.</li>
+      <li>Put the end mark under the Outcome body text, once per page.</li>
     </ul></div>
     <div class="rule"><h3 class="type-h3">Don't</h3><ul>
       <li>Claim an outcome the work did not reach.</li>
       <li>Name a person in the quote's attribution unless they agreed to it.</li>
+      <li>Put the end mark under the stats, the quote or the what's-next block, or use it on other text, controls or cards.</li>
     </ul></div>
   </div>
 </section>
@@ -72,5 +91,6 @@ permalink: /components/outcome/
     <li>The block is a <code>&lt;section&gt;</code> named by its heading. On a case study page the name is an <code>h2</code>, the stats heading and the what's-next heading are <code>h3</code>. The demo here is one level lower.</li>
     <li>The quote is a <code>&lt;figure&gt;</code> with a <code>&lt;blockquote&gt;</code> and a <code>&lt;figcaption&gt;</code>, so the attribution stays tied to the quote.</li>
     <li>The stats are a description list, so a screen reader hears each label with its number.</li>
+    <li>The end mark is decoration. It has <code>aria-hidden="true"</code>, holds no text and is not focusable.</li>
   </ul>
 </section>
