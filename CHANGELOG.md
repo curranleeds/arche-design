@@ -22,6 +22,17 @@ Changed
 
 A site that uses Arche updates `case-study.css` (its hash changes) and adds the span to its Outcome markup. Without the span, nothing changes.
 
+## 0.8.3
+
+Docs only. No component CSS, token or shared file changes, so nothing needs updating in a site that uses Arche.
+
+Fixed
+- Outcome page: the demo's quote was indented 24px further than the label and text above it. A demo rule meant for the Quote, Stat strip and List row pages (where the block fills the stage) also applied inside the Outcome demo, which already pads its sides. The rule now applies only when the block is the whole demo, so the Outcome demo lines up at mobile, tablet and desktop widths. The Quote, Stat strip, List row and More case studies pages look as before.
+- Quote page, Outcome page and the tablet preview: the demo quotes now carry the curly quotation marks (“ and ”), as in the design file. Before, they had none. The component CSS does not add the marks; they are part of the quote text.
+
+Added
+- Quote page: a "Quotation marks" line in the Do list. Type the curly marks into the quote text and do not add them a second time.
+
 ## 0.8.2
 
 Fixed
