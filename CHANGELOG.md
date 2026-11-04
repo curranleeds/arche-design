@@ -10,6 +10,13 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.9.1
+
+Added
+- Text selection: a `::selection` rule in `components.css`. Selected text now uses `--arche-selection-background` and `--arche-selection-text`, so the highlight follows the mode: Yellow 500 with near-black text in Canon, Klarheit and Omtanke, and a blue tint in Ethos and Nøktern. The tokens already existed in every mode, but nothing applied them, so browsers showed the visitor's system highlight color.
+
+A site that uses Arche updates `components.css` (its hash changes). No markup changes and no token changes.
+
 ## 0.9.0
 
 Added
