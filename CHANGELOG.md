@@ -10,6 +10,17 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.8.2
+
+Fixed
+- Form field, sending state: while a form is sending, the fields' text and labels now use `text/neutral/secondary` (5.7:1 in Light, 6.0:1 in Dark) instead of the disabled grey (2.8:1), because the person's own words are still on screen and still sent. Disabled fields keep `text/neutral/disabled`. This is in `components.css`, so a site that copies it gets the fix when it updates to this release. No token name or value changed.
+
+Changed
+- Form field macro: a new `sending=true` option turns a field read-only for the sending state. `readonly=true` still works and does the same.
+- Form field page: the sending state has its own demo (single-line and multi-line fields) and its own row in the States table. The page says to set `aria-busy="true"` on the form while it submits and remove it afterward, and shows that in a code sample only, so the demo does not stay busy. It also says any read-only field uses the sending look.
+- Form field page: the first demo has the sentence "All fields are required." above the first field, and the page explains it (WCAG 3.3.2).
+- `npm run check:a11y`: the held entry for the read-only field is removed, so the check holds no known problems.
+
 ## 0.8.1
 
 Fixed

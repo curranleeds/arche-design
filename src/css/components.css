@@ -555,16 +555,21 @@ textarea.field__input { resize: none; }
   box-shadow: inset 0 calc(-1 * var(--arche-stroke-2)) 0 var(--arche-border-system-alert);
 }
 
-/* Sending (read-only) and disabled: greyed text, quiet 1px rule, no hover change. */
+/* Sending (read-only) and disabled: quiet 1px rule, no hover change. */
 .field__control:has(.field__input:disabled, .field__input[readonly]),
 .field__control:has(.field__input:disabled, .field__input[readonly]):hover {
   box-shadow: inset 0 calc(-1 * var(--arche-stroke-1)) 0 var(--arche-border-neutral-default);
 }
+/* Disabled is the faint grey: WCAG does not ask disabled controls to meet contrast. */
 .field__input:disabled,
-.field__input[readonly],
-.field__input:disabled + .field__label,
-.field__input[readonly] + .field__label {
+.field__input:disabled + .field__label {
   color: var(--arche-text-neutral-disabled);
+}
+/* Sending is the read-only state. The person's text is still on screen and still sent, so it
+   reads at secondary text contrast (4.5:1 or more), not the disabled grey. */
+.field__input[readonly],
+.field__input[readonly] + .field__label {
+  color: var(--arche-text-neutral-secondary);
 }
 .field__input:disabled { cursor: not-allowed; }
 

@@ -37,12 +37,5 @@
       "reason": "Scanner false alarm in the demo. The only visible text in the placeholder is the words 'Placeholder image'. A real tile holds a picture, not text, so the name 'Enlarge image: caption' is correct."
     }
   ],
-  "held": [
-    {
-      "rule": "color-contrast",
-      "pages": ["/components/form-field/"],
-      "targets": ["ff-send"],
-      "reason": "The read-only (sending) field text is grey at 2.84:1. Waiting on a design decision for the read-only color. Remove this entry when it is fixed."
-    }
-  ]
+  "held": []
 }
