@@ -148,8 +148,10 @@ body {
 @media (min-width: 1024px) { .docs-main { padding-top: var(--arche-space-base-64); } }
 .docs-content { margin-top: 0; }
 .docs-content > section + section { margin-top: var(--arche-space-base-64); }
-.docs-content h2 { margin: 0 0 var(--arche-space-base-16); padding-top: var(--arche-space-base-16); border-top: var(--arche-stroke-2) solid var(--arche-border-neutral-emphasis); color: var(--arche-text-neutral-primary); }
-.docs-content h3 { margin: var(--arche-space-base-32) 0 var(--arche-space-fine-12); color: var(--arche-text-neutral-primary); }
+.docs-content h2 { margin: 0 0 var(--arche-space-base-16); padding-top: var(--arche-space-base-16); border-top: var(--arche-stroke-2) solid var(--arche-border-neutral-emphasis); }
+.docs-content h3 { margin: var(--arche-space-base-32) 0 var(--arche-space-fine-12); }
+/* The heading color is set outside demos only. Inside a demo the component's own color applies (the Credits heading is dark on yellow in Dark). */
+.docs-content h2:not(.demo *), .docs-content h3:not(.demo *) { color: var(--arche-text-neutral-primary); }
 .docs-content p { margin: 0 0 var(--arche-space-base-16); max-width: 66ch; text-wrap: pretty; }
 .docs-content ul, .docs-content ol { margin: 0 0 var(--arche-space-base-16); padding-left: var(--arche-space-base-24); max-width: 66ch; }
 .docs-content li { margin-bottom: var(--arche-space-fine-8); }
@@ -248,7 +250,7 @@ body {
 .demo__code summary { display: flex; align-items: center; min-height: 44px; padding: 0 var(--arche-space-fine-16); cursor: pointer; font-weight: 600; color: var(--arche-text-brand-primary); }
 .demo__code summary:focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: calc(-1 * var(--arche-focus-ring-width)); }
 .demo__code pre { margin: 0; padding: var(--arche-space-fine-16); overflow-x: auto; background: var(--arche-surface-brand-primary-subtle); border-top: var(--arche-stroke-1) solid var(--arche-border-neutral-default); }
-.demo__code pre:focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: calc(-1 * var(--arche-focus-ring-width)); }
+.demo__code pre:focus-visible, pre.demo__code:focus-visible { outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring); outline-offset: calc(-1 * var(--arche-focus-ring-width)); }
 .demo__code code { padding: 0; background: none; font-size: 0.8125rem; line-height: 1.6; white-space: pre; overflow-wrap: normal; }
 .demo__caption { margin-top: var(--arche-space-fine-8); color: var(--arche-text-neutral-secondary); }
 

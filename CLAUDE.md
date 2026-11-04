@@ -26,3 +26,4 @@ Public documentation site for the Arche Design System (pronounced AR-kee, from t
 - Norway Red has three jobs and no others: the logo, Canon's end mark and Nøktern's Cross. It is never on text, controls, validation or cards.
 - Archivo and Work Sans have no Greek script. Use Latin letters for Greek words.
 - Preview: `npm start`. Production build: `npm run build`.
+- Accessibility check: `npm run check:a11y` (axe-core and three keyboard checks, Light and Dark; needs `npx playwright install chromium` once). Not part of the build. The standard is WCAG 2.2 AA. Accepted exceptions and held items live in `scripts/a11y-exceptions.json` with a reason each; do not add an entry without Curran's yes.

@@ -10,7 +10,7 @@ module.exports = [
       { title: "Type", url: "/foundations/type/", description: "Two typefaces, fifteen styles, and how they step across three breakpoints." },
       { title: "Spacing and grid", url: "/foundations/spacing/", description: "The spacing values, the 12-column grid, and the three breakpoints." },
       { title: "Motion and focus", url: "/foundations/motion/", description: "One easing curve, three durations, and the focus ring." },
-      { title: "Accessibility", url: "/foundations/accessibility/", description: "The WCAG 2.1 AA checks built into the components." },
+      { title: "Accessibility", url: "/foundations/accessibility/", description: "The WCAG 2.2 AA checks built into the components." },
     ],
   },
   {

@@ -7,7 +7,7 @@ permalink: /components/form-field/
 {% from "components.njk" import field %}
 <section aria-labelledby="basic-h">
   <h2 id="basic-h" class="type-h2">Single line and message</h2>
-  <p>The label sits inside the field and floats up when the field has focus or text. It is a real <code>&lt;label&gt;</code> connected to a real <code>&lt;input&gt;</code>, so browsers and screen readers treat it as a normal field. Click into these to try it.</p>
+  <p>The label sits inside the field and floats up when the field has focus or text. It is a real <code>&lt;label&gt;</code> connected to a real <code>&lt;input&gt;</code>, so browsers and screen readers treat it as a normal field. Fields that ask about the person filling in the form, such as name and email, also carry an <code>autocomplete</code> value (<code>name</code>, <code>email</code>), so browsers and password managers can fill them in. Click into these to try it.</p>
   {% demo "Single-line and multi-line fields", "form" %}
   {{ field("ff-name", "name", "Name", autocomplete="name") }}
   {{ field("ff-message", "message", "Message", multiline=true) }}
@@ -17,7 +17,7 @@ permalink: /components/form-field/
   <h2 id="err-h" class="type-h2">Error</h2>
   <p>An error adds a red rule along the bottom, an icon, and a message in words that starts with "Error:". The field is marked <code>aria-invalid</code> and the message is linked with <code>aria-describedby</code>. The focus ring stays black, never red.</p>
   {% demo "Field with an error", "form" %}
-  {{ field("ff-email", "email", "Email", type="email", error="Error: Enter a valid email address.") }}
+  {{ field("ff-email", "email", "Email", type="email", autocomplete="email", error="Error: Enter a valid email address.") }}
   {% enddemo %}
 </section>
 <section aria-labelledby="other-h">

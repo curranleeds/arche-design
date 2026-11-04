@@ -875,6 +875,8 @@ body { display: flex; flex-direction: column; min-height: 100vh; min-height: 100
   font-size: 1.75rem;
   line-height: 2rem;
 }
+/* With the name hidden the link has nothing to show, so it leaves the tab order and the screen reader's view too. visibility keeps its box, so the layout does not move. */
+@media (max-width: 1023.98px) { .site-footer__home { visibility: hidden; } }
 /* Mobile: two columns, each link 32px tall with 40px between. */
 .site-footer__links { display: grid; grid-template-columns: 1fr 1fr; gap: var(--arche-space-fine-16); }
 .site-footer__links ul { display: flex; flex-direction: column; align-items: flex-start; gap: var(--arche-space-base-40); }

@@ -6,7 +6,7 @@ description: "Documentation for the Arche Design System: the tokens, type, color
 ---
 <section aria-labelledby="what-h">
   <h2 id="what-h" class="type-h2">What Arche is</h2>
-  <p>Arche is the system my personal brand runs on. It has a token layer (color, type, spacing, motion), a set of components built on those tokens, and the rules for using both. It supports light and dark mode and meets WCAG AA.</p>
+  <p>Arche is the system my personal brand runs on. It has a token layer (color, type, spacing, motion), a set of components built on those tokens, and the rules for using both. It supports light and dark mode, and the main text, button and border color pairs are checked against WCAG AA contrast in every mode.</p>
   <p>It started as the design system for my portfolio site, and it is written so other designers and teams could use it. This site is its documentation. Every color, size and contrast ratio on these pages is read from the same token file the system is built from, so the numbers on these pages match the system.</p>
   <dl class="facts">
     <div><dt class="type-body">Primitive colors</dt><dd class="type-stat">{{ tokens.counts.primitives }}</dd></div>
@@ -19,9 +19,9 @@ description: "Documentation for the Arche Design System: the tokens, type, color
 <section aria-labelledby="start-h">
   <h2 id="start-h" class="type-h2">Where to start</h2>
   <ul class="cards" role="list">
-    <li><a class="link-card" href="/foundations/color/" aria-labelledby="card-color"><h3 class="link-card__title type-h3" id="card-color">Color</h3><p class="link-card__text type-body">Brand families, neutrals and status colors, plus the role tokens that make dark mode and color modes work.</p><span class="button type-button button--primary link-card__button" aria-hidden="true"><span class="button__label">View Color</span></span></a></li>
-    <li><a class="link-card" href="/foundations/type/" aria-labelledby="card-type"><h3 class="link-card__title type-h3" id="card-type">Type</h3><p class="link-card__text type-body">Archivo and Work Sans. Fifteen styles, each with one job.</p><span class="button type-button button--primary link-card__button" aria-hidden="true"><span class="button__label">View Type</span></span></a></li>
-    <li><a class="link-card" href="/components/button/" aria-labelledby="card-components"><h3 class="link-card__title type-h3" id="card-components">Components</h3><p class="link-card__text type-body">Buttons, links, form fields and case-study blocks, with live states and the HTML behind them.</p><span class="button type-button button--primary link-card__button" aria-hidden="true"><span class="button__label">View Components</span></span></a></li>
+    <li><a class="link-card" href="/foundations/color/"><h3 class="link-card__title type-h3">Color</h3><p class="link-card__text type-body">Brand families, neutrals and status colors, plus the role tokens that make dark mode and color modes work.</p><span class="button type-button button--primary link-card__button"><span class="button__label">View Color</span></span></a></li>
+    <li><a class="link-card" href="/foundations/type/"><h3 class="link-card__title type-h3">Type</h3><p class="link-card__text type-body">Archivo and Work Sans. Fifteen styles, each with one job.</p><span class="button type-button button--primary link-card__button"><span class="button__label">View Type</span></span></a></li>
+    <li><a class="link-card" href="/components/button/"><h3 class="link-card__title type-h3">Components</h3><p class="link-card__text type-body">Buttons, links, form fields and case-study blocks, with live states and the HTML behind them.</p><span class="button type-button button--primary link-card__button"><span class="button__label">View Components</span></span></a></li>
   </ul>
 </section>
 
@@ -64,7 +64,7 @@ description: "Documentation for the Arche Design System: the tokens, type, color
     <li><strong>Components use role tokens, never raw colors.</strong> A button asks for <code>--arche-interactive-button-primary-fill-default</code>, not for a blue. That is how dark mode works without touching a component, and how the color modes work too.</li>
     <li><strong>One style, one job.</strong> Each type style does a single thing. When something needs emphasis, I change the weight inside the style instead of inventing a size between two others.</li>
     <li><strong>Color is never the only signal.</strong> Every state also changes weight, stroke, shape or text.</li>
-    <li><strong>Accessibility is the floor.</strong> WCAG AA contrast, a visible 4px focus ring, touch targets of at least 32px (48px for buttons) and real labels, on every component.</li>
+    <li><strong>Accessibility is the floor.</strong> WCAG AA contrast, a visible focus ring, touch targets of at least 32px (48px for buttons) and real labels, built into the base components.</li>
   </ol>
 </section>
 
