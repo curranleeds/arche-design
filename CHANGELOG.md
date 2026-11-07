@@ -36,7 +36,7 @@ Changed
 Known
 - When the jump nav is pinned under the header, the top 2px of its focus ring sit under the header.
 
-The jump nav has no progress line. It never shipped in Arche, and the interactive/progress role in the token file is unused.
+The jump nav has no progress line. It never shipped in Arche, and the `interactive/progress` role in the token file is unused.
 
 A site that uses Arche updates `case-study.css`, `components.css` and `tokens.css` (the lock file records new hashes). Markup changes are listed under Breaking. A hero that should be the band gets `cs-hero--band`; a hero that should have the image beside the text gets `cs-hero--beside`, and its text column is 5 columns wide, narrower than the old 6.
 

@@ -1,5 +1,5 @@
 {
-  "arche": "0.9.1",
+  "arche": "0.10.0",
   "algorithm": "sha256",
   "files": {
     "src/_includes/components.njk": "5becd1bccd485a25c645cd0161e55bb6c9897e31246f720a6162f99c05614607",
