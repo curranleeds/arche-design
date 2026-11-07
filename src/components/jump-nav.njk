@@ -44,9 +44,9 @@ permalink: /components/jump-nav/
 </section>
 <section aria-labelledby="state-h">
   <h2 id="state-h" class="type-h2">States</h2>
-  <p>The link for the section you are reading is marked with <code>aria-current="location"</code>. Three things mark it together: a yellow fill, SemiBold text and a 4px rule inside the bottom edge. Colour is never the only signal, because the weight changes too. The rule is drawn inside the link, so the link keeps its 48px height and the label does not move.</p>
+  <p>The link for the section you are reading is marked with <code>aria-current="location"</code>. Three things mark it together: a yellow fill, SemiBold text and a 4px rule inside the bottom edge. Color is never the only signal, because the weight changes too. The rule is drawn inside the link, so the link keeps its 48px height and the label does not move.</p>
   <p>On desktop, hover is different from current: a light tint, Regular text and no rule. The row does not shift when the current link changes, because every link reserves the width of its SemiBold label. To get that, put the label in a <code>data-text</code> attribute on <code>cs-jump__text</code>, as in the example. Focus is a 4px ring outside the link with a 2px gap that shows the page color, so the ring never touches the yellow.</p>
-  <p>On mobile and tablet the bar shows the current section on a yellow chip, 8px wider than the label on each side, with the same 4px rule at its bottom edge. "On this page" is not on the chip. In the open list the current row is the full-width yellow row with the rule. Focus on the bar is a ring drawn inside the bar, so it is never clipped.</p>
+  <p>On mobile and tablet the bar shows the current section on a yellow chip, 8px wider than the label on each side, with the same 4px rule at its bottom edge. The chip holds only the section label, without the "On this page" prefix. In the open list the current row is the full-width yellow row with the rule. Focus on the bar is a ring drawn inside the bar, so it is never clipped.</p>
 </section>
 <section aria-labelledby="color-h">
   <h2 id="color-h" class="type-h2">Color</h2>
@@ -73,6 +73,7 @@ permalink: /components/jump-nav/
   <ul>
     <li>The nav is a <code>&lt;nav&gt;</code> with the label "On this page". The bar is a real <code>&lt;button&gt;</code> with <code>aria-expanded</code> and <code>aria-controls</code>.</li>
     <li>Without JavaScript the bar is hidden and the list shows as a plain list of links, and the nav does not pin.</li>
+    <li>When the bar is pinned, the top 2px of the focus ring sit under the header.</li>
     <li>The script that opens the list and updates the current section lives in the portfolio. It is not part of Arche yet.</li>
   </ul>
 </section>

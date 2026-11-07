@@ -7,7 +7,7 @@ permalink: /components/case-study-hero/
 {% from "components.njk" import button %}
 <section aria-labelledby="demo-h">
   <h2 id="demo-h" class="type-h2">Case study hero</h2>
-  <p>A tertiary back button comes first, then the text and a 16:9 image. The text has an eyebrow, the page's one <code>h1</code>, a subtitle and up to a few secondary buttons that open in a new tab. The hero has two settings. <strong>Tone</strong> is plain (the default, on the page surface) or band (a blue band). <strong>Layout</strong> is below (the default) or beside. Beside works on desktop only; tablet and mobile always put the image below the text. The text and image in the demos are placeholders.</p>
+  <p>A tertiary back button comes first, then the text and a 16:9 image. The text has an eyebrow, the page's one <code>h1</code>, a subtitle and one or two buttons that open in a new tab. The hero has two settings. <strong>Tone</strong> is plain (the default, on the page surface) or band (a blue band). <strong>Layout</strong> is below (the default) or beside. Beside works on desktop only; tablet and mobile always put the image below the text. The text and image in the demos are placeholders.</p>
   <h3 class="type-h3">Plain tone, image below</h3>
   {% demo "Case study hero, plain tone, image below, with placeholder text and image", "block" %}
   <header class="cs-hero">
@@ -48,7 +48,8 @@ permalink: /components/case-study-hero/
         <div class="cs-hero__lede">
           <p class="cs-hero__subtitle type-lead">One or two sentences that say what the project was and what changed.</p>
           <div class="cs-hero__actions">
-            {{ button("Link label", type="secondary", onBrand=true, href="#", icon="open_in_new", iconPosition="trailing", external=true) }}
+            {{ button("First link label", type="primary", onBrand=true, href="#", icon="open_in_new", iconPosition="trailing", external=true) }}
+            {{ button("Second link label", type="secondary", onBrand=true, href="#", icon="open_in_new", iconPosition="trailing", external=true) }}
           </div>
         </div>
       </div>
@@ -74,7 +75,8 @@ permalink: /components/case-study-hero/
         <div class="cs-hero__lede">
           <p class="cs-hero__subtitle type-lead">One or two sentences that say what the project was and what changed.</p>
           <div class="cs-hero__actions">
-            {{ button("Link label", type="secondary", onBrand=true, href="#", icon="open_in_new", iconPosition="trailing", external=true) }}
+            {{ button("First link label", type="primary", onBrand=true, href="#", icon="open_in_new", iconPosition="trailing", external=true) }}
+            {{ button("Second link label", type="secondary", onBrand=true, href="#", icon="open_in_new", iconPosition="trailing", external=true) }}
           </div>
         </div>
       </div>
@@ -104,8 +106,8 @@ permalink: /components/case-study-hero/
 <section aria-labelledby="color-h">
   <h2 id="color-h" class="type-h2">Color</h2>
   <p><strong>Plain tone.</strong> The hero sits on <code>surface/neutral/base</code>. The eyebrow is <code>text/neutral/secondary</code>, the title is <code>text/brand/primary</code> and the subtitle is <code>text/neutral/body</code>. There is no band and no matte.</p>
-  <p><strong>Band tone.</strong> The back row and the text sit on <code>surface/brand/primary</code>, the same in Light and Dark. The eyebrow is <code>text/on-brand/secondary</code>, the title is <code>text/on-brand/primary</code> (white) and the subtitle is <code>text/on-brand/body</code>. The back link is white (<code>text/on-brand/primary</code>, with <code>icon/on-brand/default</code> for the arrow) and sits inside the band. The image sits in a white matte, <code>surface/on-brand/matte</code>: 16px of padding on desktop and tablet, 12px on mobile. The image stays 16:9 inside it, so a screenshot with any background reads cleanly.</p>
-  <p>Buttons in the hero actions use the on-brand secondary button when the hero is on the band. The title is white on the band and blue on the page. Neither uses yellow.</p>
+  <p><strong>Band tone.</strong> The back row and the text sit on <code>surface/brand/primary</code>, the same in Light and Dark. The eyebrow is <code>text/on-brand/secondary</code>, the title is <code>text/on-brand/primary</code> (white) and the subtitle is <code>text/on-brand/body</code>. The back link is white (<code>text/on-brand/primary</code>, with <code>icon/on-brand/default</code> for the arrow) and sits inside the band. The image sits in a white matte, <code>surface/on-brand/matte</code>: 16px of padding on desktop and tablet, 12px on mobile. The image stays 16:9 inside it, so a screenshot with any background reads cleanly. On the band, the back link's hover and pressed fills use the on-brand secondary button fills.</p>
+  <p>Buttons in the hero actions use the on-brand buttons when the hero is on the band: the primary first, then the secondary. The title is white on the band and blue on the page. Neither uses yellow.</p>
 </section>
 <section aria-labelledby="use-h">
   <h2 id="use-h" class="type-h2">Using the case study hero</h2>
