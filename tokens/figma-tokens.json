@@ -1,6 +1,6 @@
 {
   "source": "Figma file (Arche Design System), read 2026-10-27 (after the link card, CTA band and page hero work)",
-  "note": "Snapshot. Figma wins if this drifts. Code syntax is not set on any variable. Text styles and grid styles are unchanged from the 2026-10-24 read. 0.6.0 changes: Canon on-brand primary button hover and pressed, and five new roles (on-brand link default, hover, pressed, disabled, and the on-brand primary button indicator).",
+  "note": "Snapshot. Figma wins if this drifts. Code syntax is not set on any variable. Text styles and grid styles are unchanged from the 2026-10-24 read. 0.6.0 changes: Canon on-brand primary button hover and pressed, and five new roles (on-brand link default, hover, pressed, disabled, and the on-brand primary button indicator). 0.10.0 changes: two new roles, surface/on-brand/matte and interactive/button/tertiary/on-secondary/indicator (read from Figma 2026-11-06).",
   "collections": {
     "Primitives": {
       "modes": [
@@ -3377,6 +3377,48 @@
             "hex": "#9EBDD6"
           }
         },
+        "interactive/button/tertiary/on-secondary/indicator": {
+          "Canon Light": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Canon Dark": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Ethos Light": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Ethos Dark": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Noktern Light": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Noktern Dark": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Omtanke Light": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          },
+          "Omtanke Dark": {
+            "primitive": "neutral/900",
+            "hex": "#1A1A1A"
+          }
+        },
         "interactive/button/secondary/on-brand/border": {
           "Canon Light": {
             "primitive": "neutral/white",
@@ -3546,6 +3588,48 @@
           }
         },
         "surface/on-brand/switch-selected": {
+          "Canon Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Canon Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Klarheit Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Klarheit Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Ethos Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Ethos Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Noktern Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Noktern Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Omtanke Light": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          },
+          "Omtanke Dark": {
+            "primitive": "neutral/white",
+            "hex": "#FFFFFF"
+          }
+        },
+        "surface/on-brand/matte": {
           "Canon Light": {
             "primitive": "neutral/white",
             "hex": "#FFFFFF"

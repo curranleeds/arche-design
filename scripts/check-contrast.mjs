@@ -93,6 +93,18 @@ add("interactive/button/secondary/on-brand/border", "surface/brand/primary", LAR
 add("border/focus/ring-on-brand", "surface/brand/primary", LARGE, "focus ring on the band");
 add("border/focus/ring-on-secondary", "surface/brand/secondary-band", LARGE, "focus ring on the secondary band");
 
+// Jump nav and Jump link: the current link and the chip (yellow fill, near-black rule), and hover
+add("interactive/button/tertiary/on-secondary/indicator", "surface/brand/secondary-band", LARGE, "current-section rule on the yellow fill");
+add("text/neutral/primary", "interactive/button/tertiary/fill/active", TEXT, "jump link label, hover");
+add("text/neutral/primary", "interactive/button/tertiary/fill/pressed", TEXT, "jump link label, pressed");
+// Menu overlay: the yellow current-page bar against the band
+add("surface/brand/secondary-band", "surface/brand/primary", LARGE, "current-page bar against the band");
+// Case study hero, band tone: white matte against the band, back link on its hover and pressed fills
+add("surface/on-brand/matte", "surface/brand/primary", LARGE, "hero matte against the band");
+add("icon/on-brand/default", "surface/brand/primary", LARGE, "hero back arrow on the band");
+add("text/on-brand/primary", "interactive/button/secondary/on-brand/fill/hover", TEXT, "hero back link on the band, hover");
+add("text/on-brand/primary", "interactive/button/secondary/on-brand/fill/pressed", TEXT, "hero back link on the band, pressed");
+
 // Marks and highlights
 add("accent/rule", "surface/neutral/base", LARGE, "accent rule on the page");
 add("accent/numeral", "surface/neutral/base", LARGE, "stat numerals on the page");
