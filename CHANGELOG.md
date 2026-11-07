@@ -8,14 +8,13 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 
 - **Patch (0.2.1):** fixes that change no token names or values.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
-- **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
+- **While Arche is below 1.0:** a removed or renamed token, or a markup change a site must make, also bumps the minor version, and the changelog entry must say "Breaking:".
 
 ## 0.10.0
 
 Breaking:
 - The case study hero's desktop default is now the image below the text. It was the text in columns 1 to 6 and the image in columns 7 to 12. A hero that should keep text beside the image adds `cs-hero--beside`, which is 5 and 7 columns (see below), not the old 6 and 6.
 - Jump links need two markup changes: `data-text` (the link's label) on `cs-jump__text`, and `aria-current="location"` on the current link. Without `data-text` the row shifts a few pixels when the current link changes.
-- The progress line: the jump nav has none, and it never shipped in Arche (no release has had a progress element or a rule for one; the docs have said "no progress line" since 0.8.0). The `interactive/progress` role is still in the token file and `tokens.css`, and nothing reads it.
 
 Added
 - Case study hero, band tone: `cs-hero--band` puts the back row, title, subtitle and image on the brand blue (the same in Light and Dark), with a white title and the back link in white inside the band. The image sits in a white matte, 16px of padding on desktop and tablet and 12px on mobile; the image stays 16:9 inside it. The plain tone (no class) is as before.
@@ -36,6 +35,8 @@ Changed
 
 Known
 - When the jump nav is pinned under the header, the top 2px of its focus ring sit under the header.
+
+The jump nav has no progress line. It never shipped in Arche, and the interactive/progress role in the token file is unused.
 
 A site that uses Arche updates `case-study.css`, `components.css` and `tokens.css` (the lock file records new hashes). Markup changes are listed under Breaking. A hero that should be the band gets `cs-hero--band`; a hero that should have the image beside the text gets `cs-hero--beside`, and its text column is 5 columns wide, narrower than the old 6.
 
