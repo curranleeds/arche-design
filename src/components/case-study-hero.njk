@@ -1,14 +1,15 @@
 ---
 title: "Case study hero"
 eyebrow: "Components"
-lead: "The opening of a case study page: a back button, an eyebrow, a title, a subtitle, optional buttons and a 16:9 image."
+lead: "The opening of a case study page: a back button, an eyebrow, a title, a subtitle, optional buttons and a 16:9 image. Two tones (plain or a blue band) and, on desktop, two layouts (image below or beside the text)."
 permalink: /components/case-study-hero/
 ---
 {% from "components.njk" import button %}
 <section aria-labelledby="demo-h">
   <h2 id="demo-h" class="type-h2">Case study hero</h2>
-  <p>The hero sits on the page surface. A tertiary back button comes first, then a band with the text on the left and the image on the right. The text has an eyebrow, the page's one <code>h1</code>, a subtitle and up to a few secondary buttons that open in a new tab. The image is 16:9. The text and image below are placeholders.</p>
-  {% demo "Case study hero with placeholder text and a placeholder image", "block" %}
+  <p>A tertiary back button comes first, then the text and a 16:9 image. The text has an eyebrow, the page's one <code>h1</code>, a subtitle and up to a few secondary buttons that open in a new tab. The hero has two settings. <strong>Tone</strong> is plain (the default, on the page surface) or band (a blue band). <strong>Layout</strong> is below (the default) or beside. Beside works on desktop only; tablet and mobile always put the image below the text. The text and image in the demos are placeholders.</p>
+  <h3 class="type-h3">Plain tone, image below</h3>
+  {% demo "Case study hero, plain tone, image below, with placeholder text and image", "block" %}
   <header class="cs-hero">
     <div class="cs-hero__back">
       {{ button("All work", type="tertiary", href="#", icon="arrow_back", iconPosition="leading") }}
@@ -32,24 +33,79 @@ permalink: /components/case-study-hero/
     </div>
   </header>
   {% enddemo %}
+  <h3 class="type-h3">Band tone, image below</h3>
+  {% demo "Case study hero, band tone, image below, with placeholder text and image", "block" %}
+  <header class="cs-hero cs-hero--band">
+    <div class="cs-hero__back">
+      {{ button("All work", type="tertiary", href="#", icon="arrow_back", iconPosition="leading") }}
+    </div>
+    <div class="cs-hero__band">
+      <div class="cs-hero__text">
+        <div class="cs-hero__heading">
+          <p class="cs-hero__eyebrow type-label">Project type, Role</p>
+          <p class="cs-hero__title type-h1">Case study title</p>
+        </div>
+        <div class="cs-hero__lede">
+          <p class="cs-hero__subtitle type-lead">One or two sentences that say what the project was and what changed.</p>
+          <div class="cs-hero__actions">
+            {{ button("Link label", type="secondary", onBrand=true, href="#", icon="open_in_new", iconPosition="trailing", external=true) }}
+          </div>
+        </div>
+      </div>
+      <div class="cs-hero__image">
+        <div class="placeholder-image"><p class="type-small">Placeholder image, 16:9</p></div>
+      </div>
+    </div>
+  </header>
+  {% enddemo %}
+  <h3 class="type-h3">Band tone, image beside (desktop)</h3>
+  <p>Below 1024px this one looks like the one above. Widen the window to see the image move beside the text.</p>
+  {% demo "Case study hero, band tone, image beside the text on desktop, with placeholder text and image", "block" %}
+  <header class="cs-hero cs-hero--band cs-hero--beside">
+    <div class="cs-hero__back">
+      {{ button("All work", type="tertiary", href="#", icon="arrow_back", iconPosition="leading") }}
+    </div>
+    <div class="cs-hero__band">
+      <div class="cs-hero__text">
+        <div class="cs-hero__heading">
+          <p class="cs-hero__eyebrow type-label">Project type, Role</p>
+          <p class="cs-hero__title type-h1">Case study title</p>
+        </div>
+        <div class="cs-hero__lede">
+          <p class="cs-hero__subtitle type-lead">One or two sentences that say what the project was and what changed.</p>
+          <div class="cs-hero__actions">
+            {{ button("Link label", type="secondary", onBrand=true, href="#", icon="open_in_new", iconPosition="trailing", external=true) }}
+          </div>
+        </div>
+      </div>
+      <div class="cs-hero__image">
+        <div class="placeholder-image"><p class="type-small">Placeholder image, 16:9</p></div>
+      </div>
+    </div>
+  </header>
+  {% enddemo %}
 </section>
 <section aria-labelledby="layout-h">
   <h2 id="layout-h" class="type-h2">Layout and spacing</h2>
   <div class="table-wrap" tabindex="0" role="region" aria-label="Case study hero layout by breakpoint, scrollable">
     <table class="docs-table type-small">
-      <thead><tr><th scope="col">Breakpoint</th><th scope="col">Layout</th><th scope="col">Band padding above and below</th><th scope="col">Gap between text and image</th><th scope="col">Gap inside the text</th></tr></thead>
+      <thead><tr><th scope="col">Breakpoint and layout</th><th scope="col">Arrangement</th><th scope="col">Band padding above and below</th><th scope="col">Gap between text and image</th><th scope="col">Gap between text groups</th></tr></thead>
       <tbody>
         <tr><th scope="row">Mobile</th><td>Text, then the image full width</td><td>32px</td><td>24px</td><td>32px</td></tr>
         <tr><th scope="row">Tablet (768px up)</th><td>Text, then the image full width</td><td>48px</td><td>32px</td><td>40px</td></tr>
-        <tr><th scope="row">Desktop (1024px up)</th><td>12 columns: text in columns 1 to 6, image in columns 7 to 12</td><td>64px</td><td>24px (column gap)</td><td>32px, with the eyebrow and title at the top and the subtitle at the bottom</td></tr>
+        <tr><th scope="row">Desktop (1024px up), below</th><td>12 columns: text 8 columns wide, then the image across all 12</td><td>64px</td><td>48px</td><td>40px</td></tr>
+        <tr><th scope="row">Desktop, beside</th><td>12 columns: text in columns 1 to 5, image in columns 6 to 12, text stacked from the top</td><td>64px</td><td>24px (column gap)</td><td>40px</td></tr>
       </tbody>
     </table>
   </div>
-  <p>The sides use the page padding, so the text lines up with the header. The back row is 8px above and below on mobile and 16px from 768px up. The back button is pulled left by 12px so its arrow lines up with the grid and not with the button's own inset. The eyebrow and title are 16px apart, and the subtitle and buttons are 24px apart. The buttons stack at full width on mobile and sit in a row from 768px up, 16px apart.</p>
+  <p>The text groups are the eyebrow and title, the subtitle, and the buttons. The sides use the page padding, so the text lines up with the header. The back row is 8px above and below on mobile and 16px from 768px up. The back button is pulled left by 12px so its arrow lines up with the grid and not with the button's own inset. The eyebrow and title are 16px apart. The buttons stack at full width on mobile and sit in a row from 768px up, 16px apart.</p>
+  <p>The two settings are classes on the <code>cs-hero</code> element. Add <code>cs-hero--band</code> for the band tone and <code>cs-hero--beside</code> for the beside layout. With neither class you get the plain tone with the image below. On tablet and mobile <code>cs-hero--beside</code> changes nothing.</p>
 </section>
 <section aria-labelledby="color-h">
   <h2 id="color-h" class="type-h2">Color</h2>
-  <p>The hero sits on <code>surface/neutral/base</code>. The eyebrow is <code>text/neutral/secondary</code>, the title is <code>text/brand/primary</code> and the subtitle is <code>text/neutral/body</code>. The hero adds no colors of its own. It has no band color, which sets it apart from the <a href="/components/page-hero/">Page hero</a>.</p>
+  <p><strong>Plain tone.</strong> The hero sits on <code>surface/neutral/base</code>. The eyebrow is <code>text/neutral/secondary</code>, the title is <code>text/brand/primary</code> and the subtitle is <code>text/neutral/body</code>. There is no band and no matte.</p>
+  <p><strong>Band tone.</strong> The back row and the text sit on <code>surface/brand/primary</code>, the same in Light and Dark. The eyebrow is <code>text/on-brand/secondary</code>, the title is <code>text/on-brand/primary</code> (white) and the subtitle is <code>text/on-brand/body</code>. The back link is white (<code>text/on-brand/primary</code>, with <code>icon/on-brand/default</code> for the arrow) and sits inside the band. The image sits in a white matte, <code>surface/on-brand/matte</code>: 16px of padding on desktop and tablet, 12px on mobile. The image stays 16:9 inside it, so a screenshot with any background reads cleanly.</p>
+  <p>Buttons in the hero actions use the on-brand secondary button when the hero is on the band. The title is white on the band and blue on the page. Neither uses yellow.</p>
 </section>
 <section aria-labelledby="use-h">
   <h2 id="use-h" class="type-h2">Using the case study hero</h2>
@@ -59,11 +115,14 @@ permalink: /components/case-study-hero/
       <li>Give the image a text alternative that says what it shows.</li>
       <li>Put the width and height on the image so the page does not jump while it loads.</li>
       <li>Use the eyebrow for the type of project and the role.</li>
+      <li>Choose the tone and layout for each case study. The band is a deliberate choice, not a default.</li>
     </ul></div>
     <div class="rule"><h3 class="type-h3">Don't</h3><ul>
       <li>Use the buttons for links inside the site. They are secondary buttons that open a new tab.</li>
       <li>Use an image that is not 16:9. The hero crops it to 16:9, so the edges can be lost.</li>
       <li>Leave the alt text empty. The image carries content.</li>
+      <li>Put a matte on the plain tone. The matte belongs to the band.</li>
+      <li>Lazy-load the hero image. Give it <code>fetchpriority="high"</code>.</li>
     </ul></div>
   </div>
 </section>
@@ -72,12 +131,14 @@ permalink: /components/case-study-hero/
   <ul>
     <li>The hero is a <code>&lt;header&gt;</code> with one <code>h1</code>.</li>
     <li>Each button that opens a new tab says so to a screen reader with the hidden text "(opens in new tab)", and shows the open-in-new icon.</li>
-    <li>The back button is a link with a visible label, so the arrow is not the only signal.</li>
+    <li>The back button is a link with a visible label, so the arrow is not the only signal. On the band it is white on blue (9.62:1).</li>
+    <li>On the band, the title, eyebrow, subtitle and back link all clear 4.5:1 against the blue.</li>
   </ul>
 </section>
 <section aria-labelledby="html-h">
   <h2 id="html-h" class="type-h2">The HTML</h2>
-  <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;header class="cs-hero"&gt;
+  <pre class="demo__code" style="padding:16px;overflow-x:auto;background:var(--arche-surface-brand-primary-subtle)" tabindex="0"><code>&lt;!-- Plain tone, image below. Add cs-hero--band and/or cs-hero--beside for the other settings. --&gt;
+&lt;header class="cs-hero"&gt;
   &lt;div class="cs-hero__back"&gt;
     &lt;!-- tertiary button, arrow_back icon, "All work" --&gt;
   &lt;/div&gt;

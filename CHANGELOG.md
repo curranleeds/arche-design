@@ -10,6 +10,27 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.10.0
+
+Added
+- Case study hero, band tone: `cs-hero--band` puts the back row, title, subtitle and image on the brand blue (the same in Light and Dark), with a white title and the back link in white inside the band. The image sits in a white matte, 16px of padding on desktop and tablet and 12px on mobile; the image stays 16:9 inside it. The plain tone (no class) is as before.
+- Case study hero, layouts: `cs-hero--beside` (desktop only) puts the text in columns 1 to 5 and the image in columns 6 to 12, with the text stacked from the top. Without it the image sits below the text on every screen, with the text 8 columns wide on desktop. Tablet and mobile always put the image below.
+- New roles: `surface/on-brand/matte` (white in every mode) and `interactive/button/tertiary/on-secondary/indicator` (near-black in every mode). Roles are now 118.
+- Jump link: the reserved-width label. A link reserves the width of its SemiBold label, so the row does not shift when the current link changes. Put the label in `data-text` on `cs-jump__text`.
+- `npm run check:contrast`: 80 more pairs (614 in all) for the current-section mark, the menu overlay marker and the hero band.
+
+Changed
+- Jump nav, desktop: the links now follow the Jump link look instead of the tertiary button. The current link has a yellow fill, SemiBold text and a 4px near-black rule inside its bottom edge (the link keeps its 48px height). Hover is a light tint with Regular text and no rule. The focus ring sits outside the link with a 2px gap that shows the page color. Mark the current link with `aria-current="location"`.
+- Jump nav, tablet and mobile: a yellow chip sits behind the current section's label on the bar, with the same 4px rule at its bottom edge. The current row in the open list is the full-width yellow row with the rule. Focus on the bar and on list rows is unchanged.
+- Menu overlay: the current-page bar is yellow (`surface/brand/secondary-band`), the same size and shape as before.
+- Case study hero: the desktop default is now the image below the text (it was text in columns 1 to 6 and image in columns 7 to 12; add `cs-hero--beside` for the side-by-side layout). The text groups (eyebrow and title, subtitle, buttons) are now spaced the same, 40px from tablet up and 32px on mobile; the gap between the subtitle and the buttons was 24px.
+- Credits page: roles are written "Role: phrase.", one per line, roles only. The page gives the limit, 60 words and 400 characters counting the blank lines, and the example fits it. A case study gets a Credits band whenever other roles contributed.
+- Docs: the Case study hero, Jump nav, Menu overlay and Credits pages describe the above. The docs home counts follow the token file.
+
+The jump nav has no progress line. The `interactive/progress` role is still in the token file and `tokens.css`, and nothing reads it.
+
+A site that uses Arche updates `case-study.css`, `components.css` and `tokens.css` (their hashes change). Markup changes: jump links should carry `aria-current="location"` and `data-text`; a hero that should be the band or beside gets the new classes; a hero that should keep text on the left and image on the right on desktop adds `cs-hero--beside`.
+
 ## 0.9.1
 
 Added
