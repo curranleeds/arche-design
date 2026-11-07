@@ -1,20 +1,22 @@
 ---
 title: "Credits"
 eyebrow: "Components"
-lead: "The yellow band near the end of a case study: a heading on the left and one role per line on the right."
+lead: "The yellow band near the end of a case study: a heading on the left and one role per line on the right. Roles only, never names."
 permalink: /components/credits/
 ---
 <section aria-labelledby="demo-h">
   <h2 id="demo-h" class="type-h2">Credits</h2>
-  <p>Credits is the only full-width band on a case study that uses the secondary yellow. It is optional. When it is used it sits under the <a href="/components/outcome/">Outcome</a> and above the <a href="/components/disclaimer/">Disclaimer</a>. It lists roles, one per line. It uses the same two-column row as the <a href="/components/section-split/">Section split</a>. The text below is placeholder text.</p>
+  <p>Credits is the only yellow band on a case study. The jump nav uses yellow only for its current link. Every case study gets one when other roles contributed to the work. A solo project gets none. It sits under the <a href="/components/outcome/">Outcome</a> and above the <a href="/components/disclaimer/">Disclaimer</a>. It lists roles, one per line, written as "Role: phrase." It uses the same two-column row as the <a href="/components/section-split/">Section split</a>. The text below is placeholder text.</p>
   {% demo "Credits with placeholder roles", "block" %}
   <section class="cs-credits" aria-labelledby="credits-demo-h">
     <div class="cs-row">
       <h3 class="cs-credits__heading type-h2" id="credits-demo-h">Credits</h3>
       <ul class="cs-credits__list type-body" role="list">
-        <li>Role name, organization type: what they did.</li>
-        <li>Role name, organization type: what they did.</li>
-        <li>Role name, organization type: what they did.</li>
+        <li>Product manager: set the goals and the order of the work.</li>
+        <li>Engineers: built the designs and shipped them.</li>
+        <li>Researcher: ran the interviews and shared what they heard.</li>
+        <li>Content designer: wrote and edited the words on screen.</li>
+        <li>Data analyst: measured what changed after launch.</li>
       </ul>
     </div>
   </section>
@@ -32,23 +34,26 @@ permalink: /components/credits/
       </tbody>
     </table>
   </div>
-  <p>The side padding is the page padding. Lines in the list are 16px apart.</p>
+  <p>The side padding is the page padding. Roles in the list are 16px apart, which reads as the blank line between paragraphs.</p>
+  <h3 class="type-h3">How much fits</h3>
+  <p>The list holds up to 60 words and 400 characters. Count the blank lines between roles as characters. The example above is 5 roles, 43 words and 273 characters, counting the four blank lines. If a list is longer, cut the phrases before you cut a role.</p>
 </section>
 <section aria-labelledby="color-h">
   <h2 id="color-h" class="type-h2">Color</h2>
-  <p>The band is <code>surface/brand/secondary/band</code>. The heading is <code>text/on-secondary/primary</code> and the list is <code>text/on-secondary/body</code>. The text is near-black on yellow in both Light and Dark.</p>
+  <p>The band is <code>surface/brand/secondary-band</code>. The heading is <code>text/on-secondary/primary</code> and the list is <code>text/on-secondary/body</code>. The text is near-black on yellow in both Light and Dark.</p>
 </section>
 <section aria-labelledby="use-h">
   <h2 id="use-h" class="type-h2">Using the credits</h2>
   <div class="rules">
     <div class="rule"><h3 class="type-h3">Do</h3><ul>
-      <li>List roles, not names, and say what each role did.</li>
-      <li>Add a person's name only if they have agreed to be named.</li>
-      <li>Leave the band out when it does not apply.</li>
+      <li>Write one role per line as "Role: phrase." and say what the role did.</li>
+      <li>List roles, not names.</li>
+      <li>Leave the band out on a solo project.</li>
+      <li>Use <code>border/focus/ring-on-secondary</code> for any link on the band. A white ring fails on yellow.</li>
     </ul></div>
     <div class="rule"><h3 class="type-h3">Don't</h3><ul>
       <li>Use the yellow band for anything other than credits.</li>
-      <li>Name a client contact without their agreement.</li>
+      <li>Name a person, a client or an employer. Roles only.</li>
     </ul></div>
   </div>
 </section>

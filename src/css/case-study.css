@@ -45,11 +45,20 @@
   .cs-row > :last-child { grid-column: 9 / span 4; }
 }
 
-/* ---------- Hero (plain tone) ----------
-   Back row on the page surface, then the band: text left (6 columns), 16:9 image right
-   (644 x 362 at 1440). Tablet and mobile: text first, image full width below.
-   Eyebrow, title and subtitle are .type-label, .type-h1 and .type-lead. */
-.cs-hero { background: var(--arche-surface-neutral-base); }
+/* ---------- Hero ----------
+   Two settings, each a modifier class on .cs-hero:
+     Tone:   plain (default, the page surface) or .cs-hero--band (the blue band, white title,
+             back link inside the band, image in a white matte).
+     Layout: below (default: text, then the image across all columns) or .cs-hero--beside
+             (desktop only: text in columns 1 to 5, image in columns 6 to 12). Tablet and mobile
+             always stack text, then image.
+   Back row, then the band. Eyebrow, title and subtitle are .type-label, .type-h1 and .type-lead.
+   Groups in the text (eyebrow and title, subtitle, actions) sit base/40 apart (base/32 on mobile). */
+.cs-hero {
+  --arche-cs-hero-gap: var(--arche-space-base-32);
+  background: var(--arche-surface-neutral-base);
+}
+@media (min-width: 768px) { .cs-hero { --arche-cs-hero-gap: var(--arche-space-base-40); } }
 .cs-hero__back {
   padding: var(--arche-space-base-8) var(--arche-page-pad);
 }
@@ -63,14 +72,15 @@
   gap: var(--arche-space-base-24);
   padding: var(--arche-space-base-32) var(--arche-page-pad);
 }
-.cs-hero__text { display: flex; flex-direction: column; gap: var(--arche-space-base-32); }
+.cs-hero__text { display: flex; flex-direction: column; gap: var(--arche-cs-hero-gap); }
 .cs-hero__heading { display: flex; flex-direction: column; gap: var(--arche-space-base-16); }
 .cs-hero__eyebrow { margin: 0; color: var(--arche-text-neutral-secondary); }
 .cs-hero__title { margin: 0; color: var(--arche-text-brand-primary); text-wrap: balance; }
 .cs-hero__subtitle { margin: 0; color: var(--arche-text-neutral-body); text-wrap: pretty; }
-/* Subtitle and the optional action buttons (secondary, open in a new tab). The buttons stack
-   full width on mobile and sit in a row from 768 up. 24px between subtitle and buttons. */
-.cs-hero__lede { display: flex; flex-direction: column; gap: var(--arche-space-base-24); }
+/* Subtitle and the optional action buttons (secondary, open in a new tab). The lede keeps the
+   same gap as the rest of the text. The buttons stack full width on mobile and sit in a row
+   from 768 up. */
+.cs-hero__lede { display: flex; flex-direction: column; gap: var(--arche-cs-hero-gap); }
 .cs-hero__actions { display: flex; flex-direction: column; gap: var(--arche-space-base-16); }
 .cs-hero__actions .button { width: 100%; }
 @media (min-width: 768px) {
@@ -89,19 +99,52 @@
 }
 @media (min-width: 768px) {
   .cs-hero__band { gap: var(--arche-space-base-32); padding-block: var(--arche-space-base-48); }
-  .cs-hero__text { gap: var(--arche-space-base-40); }
 }
 @media (min-width: 1024px) {
   .cs-hero__band {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: var(--arche-space-base-24);
+    row-gap: var(--arche-space-base-48);
     padding-block: var(--arche-space-base-64);
   }
-  /* Eyebrow and title at the top, subtitle at the bottom, next to the image. */
-  .cs-hero__text { grid-column: 1 / span 6; justify-content: space-between; gap: var(--arche-space-base-32); }
-  .cs-hero__image { grid-column: 7 / span 6; }
+  /* Below: text 8 columns wide, then the image across all 12. */
+  .cs-hero__text { grid-column: 1 / span 8; }
+  .cs-hero__image { grid-column: 1 / -1; }
+  /* Beside: text columns 1 to 5, image columns 6 to 12, text stacked from the top. */
+  .cs-hero--beside .cs-hero__band { row-gap: 0; align-items: start; }
+  .cs-hero--beside .cs-hero__text { grid-column: 1 / span 5; }
+  .cs-hero--beside .cs-hero__image { grid-column: 6 / span 7; }
 }
+
+/* Tone: band. The whole header (back row and band) sits on the brand surface, the same in Light
+   and Dark. Text reads the on-brand roles. The image sits in a white matte: fine/16 on desktop
+   and tablet, fine/12 on mobile; the image stays 16:9 inside it. */
+.cs-hero--band { background: var(--arche-surface-brand-primary); }
+.cs-hero--band .cs-hero__eyebrow { color: var(--arche-text-on-brand-secondary); }
+.cs-hero--band .cs-hero__title { color: var(--arche-text-on-brand-primary); }
+.cs-hero--band .cs-hero__subtitle { color: var(--arche-text-on-brand-body); }
+.cs-hero--band .cs-hero__image {
+  box-sizing: border-box;
+  padding: var(--arche-space-fine-12);
+  background: var(--arche-surface-on-brand-matte);
+}
+@media (min-width: 768px) { .cs-hero--band .cs-hero__image { padding: var(--arche-space-fine-16); } }
+/* The back link is a tertiary button recolored for the band (there is no on-brand tertiary yet).
+   Label and arrow are white; hover and pressed use the on-brand button fills. */
+.cs-hero--band .cs-hero__back .button--tertiary { color: var(--arche-text-on-brand-primary); }
+.cs-hero--band .cs-hero__back .button--tertiary .icon { color: var(--arche-icon-on-brand-default); }
+@media (hover: hover) {
+  .cs-hero--band .cs-hero__back .button--tertiary:not(:disabled, [aria-disabled="true"]):hover {
+    background: var(--arche-interactive-button-secondary-on-brand-fill-hover);
+    color: var(--arche-text-on-brand-primary);
+  }
+}
+.cs-hero--band .cs-hero__back .button--tertiary:not(:disabled, [aria-disabled="true"]):active {
+  background: var(--arche-interactive-button-secondary-on-brand-fill-pressed);
+  color: var(--arche-text-on-brand-primary);
+}
+.cs-hero--band .cs-hero__back .button--tertiary:focus-visible { outline-color: var(--arche-border-focus-ring-on-brand); }
 
 /* ---------- Stat strip ----------
    Numbers are dark brand blue on the light-blue tint.
@@ -154,8 +197,10 @@
 }
 
 /* ---------- Jump nav ----------
-   Desktop: a row of section links that pins under the main header. Tablet and mobile:
-   a bar ("On this page" + the current section) that opens a list. No progress line.
+   Desktop: a row of Jump links that pins under the main header. Tablet and mobile: a bar
+   ("On this page" + the current section) that opens a list. The current section is marked in
+   yellow with a 4px rule: a fill behind the whole link on desktop and in the list, a chip behind
+   the current section's label on the bar. No progress line.
    The main header hides on scroll down and returns on scroll up; this bar
    follows it through --arche-site-nav-offset (set by nav.js). z-index 10, under the header's 20. */
 .cs-jump {
@@ -188,7 +233,18 @@
 }
 .cs-jump__labels { display: flex; flex-direction: column; gap: var(--arche-space-fine-4); }
 .cs-jump__hint { color: var(--arche-text-neutral-secondary); }
-.cs-jump__current { color: var(--arche-text-neutral-primary); }
+/* The chip: a yellow field behind the current section's label only, 8px wider on each side, with
+   a 4px rule inside its bottom edge. It is drawn behind the label and takes no space, so the label
+   does not move. Mobile: 2px above the label, 4px below. Tablet: 4px above and below. */
+.cs-jump__current { position: relative; z-index: 0; color: var(--arche-text-on-secondary-primary); }
+.cs-jump__current::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -2px calc(-1 * var(--arche-space-fine-8)) -4px;
+  background: var(--arche-surface-brand-secondary-band);
+  box-shadow: inset 0 calc(-1 * var(--arche-stroke-4)) 0 var(--arche-interactive-button-tertiary-on-secondary-indicator);
+}
 .cs-jump__trigger .icon { color: var(--arche-icon-brand-default); transition: transform var(--arche-motion-medium) var(--arche-motion-ease); }
 .cs-jump.is-open .cs-jump__trigger .icon { transform: rotate(180deg); }
 
@@ -209,7 +265,11 @@
   border-bottom: var(--arche-stroke-2) solid var(--arche-border-neutral-emphasis);
 }
 .cs-jump__list { min-height: 0; margin: 0; padding: 0; overflow: hidden; list-style: none; }
-.cs-jump__link {
+
+/* Jump link: one section link. Body Regular; the current one is Body SemiBold on a yellow fill
+   with a 4px rule inside its bottom edge (an inset shadow, so the link keeps its 48px height and
+   the label does not move). The doubled class beats the .type-* utilities in the markup. */
+.cs-jump .cs-jump__link {
   position: relative;
   display: flex;
   box-sizing: border-box;
@@ -217,22 +277,36 @@
   align-items: center;
   padding: 0 var(--arche-page-pad);
   color: var(--arche-text-neutral-primary);
+  font-family: var(--arche-type-body-font);
+  font-weight: var(--arche-type-body-weight);
+  font-size: var(--arche-type-body-size);
+  line-height: var(--arche-type-body-line);
   text-decoration: none;
+}
+/* Reserves the width of the SemiBold label on every link, so the row does not shift when the
+   current link changes. It needs the label in data-text on .cs-jump__text; without it nothing
+   is reserved and the row shifts by a few pixels. Hidden from everyone: no height, no pointer,
+   not read aloud. */
+.cs-jump__text { display: inline-block; }
+.cs-jump__text::after {
+  content: attr(data-text);
+  content: attr(data-text) / "";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  font-weight: var(--arche-type-body-semibold-weight);
 }
 .cs-jump__link:focus-visible {
   outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring);
   outline-offset: calc(-1 * var(--arche-focus-ring-width));
 }
-.cs-jump__link[aria-current] { background: var(--arche-interactive-button-tertiary-fill-active); font-weight: 600; }
-.cs-jump__link[aria-current] .cs-jump__text { position: relative; }
-.cs-jump__link[aria-current] .cs-jump__text::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -8px;
-  left: 0;
-  height: var(--arche-stroke-4);
-  background: var(--arche-interactive-button-tertiary-indicator);
+.cs-jump .cs-jump__link[aria-current]:not([aria-current="false"]) {
+  background: var(--arche-surface-brand-secondary-band);
+  color: var(--arche-text-on-secondary-primary);
+  font-weight: var(--arche-type-body-semibold-weight);
+  box-shadow: inset 0 calc(-1 * var(--arche-stroke-4)) 0 var(--arche-interactive-button-tertiary-on-secondary-indicator);
 }
 /* Dims the page behind an open list. */
 .cs-jump__scrim {
@@ -252,7 +326,7 @@ html:not(.js) .cs-jump__panel { grid-template-rows: 1fr; visibility: visible; }
 @media (min-width: 768px) {
   .cs-jump__trigger { gap: var(--arche-space-fine-16); }
   .cs-jump__labels { flex-direction: row; align-items: center; gap: var(--arche-space-fine-12); margin-right: auto; }
-  .cs-jump__link { font-size: var(--arche-type-body-semibold-size); }
+  .cs-jump__current::before { inset-block: -4px; }
 }
 @media (min-width: 1024px) {
   /* The 24px above the links is page space; when pinned, only 4px of it shows. */
@@ -277,29 +351,23 @@ html:not(.js) .cs-jump__panel { grid-template-rows: 1fr; visibility: visible; }
     padding: var(--arche-space-base-24) var(--arche-page-pad) var(--arche-space-fine-4);
     overflow: visible;
   }
-  .cs-jump__link {
-    padding: 0 var(--arche-space-fine-16);
-    font-family: var(--arche-type-button-font);
-    font-weight: var(--arche-type-button-weight);
-    font-size: var(--arche-type-button-size);
-    line-height: var(--arche-type-button-line);
-    color: var(--arche-interactive-button-tertiary-label-default);
-    transition: background-color var(--arche-motion-fast) var(--arche-motion-ease), color var(--arche-motion-fast) var(--arche-motion-ease);
-  }
-  @media (hover: hover) {
-    .cs-jump__link:hover {
-      background: var(--arche-interactive-button-tertiary-fill-hover);
-      color: var(--arche-interactive-button-tertiary-label-hover);
-    }
-  }
-  .cs-jump__link:active {
-    background: var(--arche-interactive-button-tertiary-fill-pressed);
-    color: var(--arche-interactive-button-tertiary-label-pressed);
-  }
-  .cs-jump__link[aria-current] { color: var(--arche-interactive-button-tertiary-label-active); }
-  .cs-jump__link[aria-current] .cs-jump__text { position: static; }
-  .cs-jump__link[aria-current] .cs-jump__text::after { right: 0; bottom: 0; left: 0; }
+  .cs-jump .cs-jump__link { padding: 0 var(--arche-space-fine-16); }
+  /* Focus: the ring sits outside the link with a 2px gap that shows the page color, so it never
+     touches the yellow. */
   .cs-jump__link:focus-visible { outline-offset: var(--arche-focus-ring-offset); }
+  /* Hover and pressed are not the current look: a light tint, Regular text, no rule. The current
+     link keeps its yellow (the rule above comes later in the cascade and is more specific). */
+  @media (hover: hover) {
+    .cs-jump .cs-jump__link:hover { background: var(--arche-interactive-button-tertiary-fill-active); }
+  }
+  .cs-jump .cs-jump__link:active { background: var(--arche-interactive-button-tertiary-fill-pressed); }
+}
+
+/* Forced colors drop fills and shadows, so the current link and the chip carry a border as well as
+   the SemiBold weight. */
+@media (forced-colors: active) {
+  .cs-jump .cs-jump__link[aria-current]:not([aria-current="false"]) { border-bottom: var(--arche-stroke-4) solid CanvasText; box-shadow: none; }
+  .cs-jump__current::before { border-bottom: var(--arche-stroke-4) solid CanvasText; box-shadow: none; }
 }
 
 /* ---------- Section split ----------

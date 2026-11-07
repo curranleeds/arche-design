@@ -1,7 +1,7 @@
 ---
 title: "Jump nav"
 eyebrow: "Components"
-lead: "A list of links to the sections of a long page. A bar that opens a list on mobile and tablet, a row of links on desktop."
+lead: "A list of links to the sections of a long page, with the current section marked in yellow. A bar that opens a list on mobile and tablet, a row of links on desktop."
 permalink: /components/jump-nav/
 ---
 <section aria-labelledby="demo-h">
@@ -20,9 +20,9 @@ permalink: /components/jump-nav/
     </div>
     <div class="cs-jump__panel" id="jump-demo-panel">
       <ul class="cs-jump__list">
-        <li><a class="cs-jump__link type-body-semibold" href="#" aria-current="true"><span class="cs-jump__text">Section one</span></a></li>
-        <li><a class="cs-jump__link type-body-semibold" href="#"><span class="cs-jump__text">Section two</span></a></li>
-        <li><a class="cs-jump__link type-body-semibold" href="#"><span class="cs-jump__text">Section three</span></a></li>
+        <li><a class="cs-jump__link" href="#" aria-current="location"><span class="cs-jump__text" data-text="Section one">Section one</span></a></li>
+        <li><a class="cs-jump__link" href="#"><span class="cs-jump__text" data-text="Section two">Section two</span></a></li>
+        <li><a class="cs-jump__link" href="#"><span class="cs-jump__text" data-text="Section three">Section three</span></a></li>
       </ul>
     </div>
   </nav>
@@ -36,7 +36,7 @@ permalink: /components/jump-nav/
       <tbody>
         <tr><th scope="row">Mobile</th><td>Bar that opens a list</td><td>Bar 56px tall. "On this page" sits above the current section, 4px apart. Each link in the list is 48px tall.</td></tr>
         <tr><th scope="row">Tablet (768px up)</th><td>Bar that opens a list</td><td>Same bar. "On this page" and the current section sit side by side, 12px apart.</td></tr>
-        <tr><th scope="row">Desktop (1024px up)</th><td>Row of links</td><td>24px above the row and 4px below. Links are 16px apart with 16px of padding at the sides. The text uses the button type style.</td></tr>
+        <tr><th scope="row">Desktop (1024px up)</th><td>Row of links</td><td>24px above the row and 4px below. Each link is 48px tall, 16px apart, with 16px of padding at the sides. The text is Body Regular, and Body SemiBold on the current link.</td></tr>
       </tbody>
     </table>
   </div>
@@ -44,22 +44,26 @@ permalink: /components/jump-nav/
 </section>
 <section aria-labelledby="state-h">
   <h2 id="state-h" class="type-h2">States</h2>
-  <p>On desktop the links follow the tertiary button roles: default, hover and pressed each have a fill and a label color. The link for the section you are reading is marked with <code>aria-current</code>. It gets the tertiary active fill, semibold text and a 4px indicator in <code>interactive/button/tertiary/indicator</code>. On mobile and tablet the current link uses the same fill. Focus is a ring drawn inside the link or the bar, so it is never clipped.</p>
+  <p>The link for the section you are reading is marked with <code>aria-current="location"</code>. Three things mark it together: a yellow fill, SemiBold text and a 4px rule inside the bottom edge. Color is never the only signal, because the weight changes too. The rule is drawn inside the link, so the link keeps its 48px height and the label does not move.</p>
+  <p>On desktop, hover is different from current: a light tint, Regular text and no rule. The row does not shift when the current link changes, because every link reserves the width of its SemiBold label. To get that, put the label in a <code>data-text</code> attribute on <code>cs-jump__text</code>, as in the example. Focus is a 4px ring outside the link with a 2px gap that shows the page color, so the ring never touches the yellow.</p>
+  <p>On mobile and tablet the bar shows the current section on a yellow chip, 8px wider than the label on each side, with the same 4px rule at its bottom edge. The chip holds only the section label, without the "On this page" prefix. In the open list the current row is the full-width yellow row with the rule. Focus on the bar is a ring drawn inside the bar, so it is never clipped.</p>
 </section>
 <section aria-labelledby="color-h">
   <h2 id="color-h" class="type-h2">Color</h2>
-  <p>The bar sits on <code>surface/neutral/base</code> with a 1px <code>border/neutral/default</code> rule along the bottom. "On this page" is <code>text/neutral/secondary</code> and the current section is <code>text/neutral/primary</code>. The chevron is <code>icon/brand/default</code> and turns over when the list is open. The open list ends with a 2px <code>border/neutral/emphasis</code> rule.</p>
+  <p>The bar sits on <code>surface/neutral/base</code> with a 1px <code>border/neutral/default</code> rule along the bottom. "On this page" is <code>text/neutral/secondary</code> and the other links are <code>text/neutral/primary</code>. The current link and the chip use <code>surface/brand/secondary-band</code> for the fill, <code>text/on-secondary/primary</code> for the label and <code>interactive/button/tertiary/on-secondary/indicator</code> for the rule. The desktop hover tint is <code>interactive/button/tertiary/fill/active</code>. The chevron is <code>icon/brand/default</code> and turns over when the list is open. The open list ends with a 2px <code>border/neutral/emphasis</code> rule.</p>
 </section>
 <section aria-labelledby="use-h">
   <h2 id="use-h" class="type-h2">Using the jump nav</h2>
   <div class="rules">
     <div class="rule"><h3 class="type-h3">Do</h3><ul>
       <li>Name each link after its section heading, so the reader sees the same word twice.</li>
+      <li>Mark the current section with <code>aria-current="location"</code>.</li>
       <li>Give every target section an <code>id</code> that the link points to.</li>
       <li>Use it on long pages with several named sections.</li>
     </ul></div>
     <div class="rule"><h3 class="type-h3">Don't</h3><ul>
       <li>Add a progress line. The nav marks the current section and nothing else.</li>
+      <li>Draw the rule as a separate element. Keep it inside the link so the height stays 48px.</li>
       <li>Use it as the main site navigation. It only moves within one page.</li>
     </ul></div>
   </div>
@@ -69,8 +73,10 @@ permalink: /components/jump-nav/
   <ul>
     <li>The nav is a <code>&lt;nav&gt;</code> with the label "On this page". The bar is a real <code>&lt;button&gt;</code> with <code>aria-expanded</code> and <code>aria-controls</code>.</li>
     <li>Without JavaScript the bar is hidden and the list shows as a plain list of links, and the nav does not pin.</li>
+    <li>When the bar is pinned, the top 2px of the focus ring sit under the header.</li>
     <li>The script that opens the list and updates the current section lives in the portfolio. It is not part of Arche yet.</li>
   </ul>
+  <p>In Light, the yellow fill alone is 1.50:1 against the page, so the 4px rule (17.40:1 against the page) and the SemiBold weight carry the mark. In Dark, the rule is the same color as the page, so the yellow fill (11.59:1 against the page) carries it. In both modes the label is near-black on yellow at 11.59:1.</p>
 </section>
 <section aria-labelledby="html-h">
   <h2 id="html-h" class="type-h2">The HTML</h2>
@@ -86,7 +92,7 @@ permalink: /components/jump-nav/
   &lt;/div&gt;
   &lt;div class="cs-jump__panel" id="jump-panel"&gt;
     &lt;ul class="cs-jump__list"&gt;
-      &lt;li&gt;&lt;a class="cs-jump__link type-body-semibold" href="#section-one"&gt;&lt;span class="cs-jump__text"&gt;Section one&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="cs-jump__link" href="#section-one" aria-current="location"&gt;&lt;span class="cs-jump__text" data-text="Section one"&gt;Section one&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
   &lt;div class="cs-jump__scrim"&gt;&lt;/div&gt;

@@ -807,7 +807,8 @@ html:has(.menu-overlay[open]) { overflow: hidden; }
   bottom: var(--arche-space-fine-4);
   left: var(--arche-space-fine-16);
   height: var(--arche-stroke-4);
-  background: var(--arche-surface-on-brand-switch-selected);
+  /* Yellow, the same role as the Credits band and the jump nav's current section. */
+  background: var(--arche-surface-brand-secondary-band);
 }
 
 /* Figma's overlay Elsewhere links are 15/22 on mobile (Body SemiBold). */

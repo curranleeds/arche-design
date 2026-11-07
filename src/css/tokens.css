@@ -243,6 +243,7 @@
   --arche-interactive-button-tertiary-label-pressed: var(--arche-greece-blue-700);
   --arche-interactive-button-tertiary-label-active: var(--arche-greece-blue-500);
   --arche-interactive-button-tertiary-indicator: var(--arche-greece-blue-500);
+  --arche-interactive-button-tertiary-on-secondary-indicator: var(--arche-neutral-900);
   --arche-interactive-button-secondary-on-brand-border: var(--arche-neutral-white);
   --arche-interactive-button-secondary-on-brand-label: var(--arche-neutral-white);
   --arche-interactive-button-secondary-on-brand-fill-pressed: var(--arche-greece-blue-700);
@@ -252,6 +253,7 @@
 
   /* surface */
   --arche-surface-on-brand-switch-selected: var(--arche-neutral-white);
+  --arche-surface-on-brand-matte: var(--arche-neutral-white);
 
   /* text */
   --arche-text-on-brand-title: var(--arche-sweden-yellow-500);
