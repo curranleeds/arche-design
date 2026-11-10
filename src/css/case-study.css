@@ -302,6 +302,37 @@
   outline: var(--arche-focus-ring-width) solid var(--arche-border-focus-ring);
   outline-offset: calc(-1 * var(--arche-focus-ring-width));
 }
+/* Below 1024px the ring is drawn inside the link. On the yellow current row it is near-black in Light.
+   In Dark the page is near-black too, so the ring is two bands inside the row, 4px in all: the outer
+   2px is the normal ring color (white), the inner 2px is near-black. The white band shows against the
+   page, the near-black band against the yellow. (On desktop the ring sits outside the link.) */
+@media (max-width: 1023.98px) {
+  .cs-jump__link[aria-current]:not([aria-current="false"]):focus-visible {
+    outline-color: var(--arche-border-focus-ring-on-secondary);
+  }
+  :root[data-theme="dark"] .cs-jump__link[aria-current]:not([aria-current="false"]):focus-visible {
+    outline-color: var(--arche-border-focus-ring);
+    outline-width: calc(var(--arche-focus-ring-width) / 2);
+    outline-offset: calc(-1 * var(--arche-focus-ring-width) / 2);
+    box-shadow: inset 0 0 0 var(--arche-focus-ring-width) var(--arche-border-focus-ring-on-secondary);
+  }
+}
+@media (max-width: 1023.98px) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .cs-jump__link[aria-current]:not([aria-current="false"]):focus-visible {
+    outline-color: var(--arche-border-focus-ring);
+    outline-width: calc(var(--arche-focus-ring-width) / 2);
+    outline-offset: calc(-1 * var(--arche-focus-ring-width) / 2);
+    box-shadow: inset 0 0 0 var(--arche-focus-ring-width) var(--arche-border-focus-ring-on-secondary);
+  }
+}
+/* Forced colors drops the shadow, so the two bands would shrink to the 2px outline alone.
+   Give the current row the full 4px outline back (the system picks its color). */
+@media (forced-colors: active) and (max-width: 1023.98px) {
+  :root:root .cs-jump__link[aria-current]:not([aria-current="false"]):focus-visible {
+    outline-width: var(--arche-focus-ring-width);
+    outline-offset: calc(-1 * var(--arche-focus-ring-width));
+  }
+}
 .cs-jump .cs-jump__link[aria-current]:not([aria-current="false"]) {
   background: var(--arche-surface-brand-secondary-band);
   color: var(--arche-text-on-secondary-primary);
@@ -329,9 +360,9 @@ html:not(.js) .cs-jump__panel { grid-template-rows: 1fr; visibility: visible; }
   .cs-jump__current::before { inset-block: -4px; }
 }
 @media (min-width: 1024px) {
-  /* The 24px above the links is page space; when pinned, only 4px of it shows. */
+  /* The 24px above the links is page space; when pinned, only 8px of it shows, so the whole 4px ring fits. */
   .cs-jump {
-    top: calc(var(--arche-site-nav-offset, var(--arche-cs-nav-fallback)) - 20px);
+    top: calc(var(--arche-site-nav-offset, var(--arche-cs-nav-fallback)) - 16px);
     background: var(--arche-surface-neutral-base);
     border-bottom: var(--arche-stroke-1) solid var(--arche-border-neutral-default);
   }

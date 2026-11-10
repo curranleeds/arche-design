@@ -40,13 +40,13 @@ permalink: /components/jump-nav/
       </tbody>
     </table>
   </div>
-  <p>The list opens like an accordion: it grows from nothing to its full height. The page behind an open list is dimmed with <code>surface/overlay/scrim</code>. The nav pins under the main header and follows it as the header hides and returns. Its z-index is 10, under the header's 20. On desktop the 24px above the links counts as page space, so only 4px of it shows while the nav is pinned.</p>
+  <p>The list opens like an accordion: it grows from nothing to its full height. The page behind an open list is dimmed with <code>surface/overlay/scrim</code>. The nav pins under the main header and follows it as the header hides and returns. Its z-index is 10, under the header's 20. On desktop the 24px above the links counts as page space, so only 8px of it shows while the nav is pinned, enough for the whole focus ring.</p>
 </section>
 <section aria-labelledby="state-h">
   <h2 id="state-h" class="type-h2">States</h2>
   <p>The link for the section you are reading is marked with <code>aria-current="location"</code>. Three things mark it together: a yellow fill, SemiBold text and a 4px rule inside the bottom edge. Color is never the only signal, because the weight changes too. The rule is drawn inside the link, so the link keeps its 48px height and the label does not move.</p>
   <p>On desktop, hover is different from current: a light tint, Regular text and no rule. The row does not shift when the current link changes, because every link reserves the width of its SemiBold label. To get that, put the label in a <code>data-text</code> attribute on <code>cs-jump__text</code>, as in the example. Focus is a 4px ring outside the link with a 2px gap that shows the page color, so the ring never touches the yellow.</p>
-  <p>On mobile and tablet the bar shows the current section on a yellow chip, 8px wider than the label on each side, with the same 4px rule at its bottom edge. The chip holds only the section label, without the "On this page" prefix. In the open list the current row is the full-width yellow row with the rule. Focus on the bar is a ring drawn inside the bar, so it is never clipped.</p>
+  <p>On mobile and tablet the bar shows the current section on a yellow chip, 8px wider than the label on each side, with the same 4px rule at its bottom edge. The chip holds only the section label, without the "On this page" prefix. In the open list the current row is the full-width yellow row with the rule. Focus on the bar is a ring drawn inside the bar, so it is never clipped. Focus on the current row in the list is drawn inside the row, 4px in all. In Light it is one near-black ring (<code>border/focus/ring-on-secondary</code>). In Dark it has two bands: the outer 2px is the normal ring color (<code>border/focus/ring</code>, white) and the inner 2px is near-black (<code>border/focus/ring-on-secondary</code>), so the ring shows against both the dark page and the yellow.</p>
 </section>
 <section aria-labelledby="color-h">
   <h2 id="color-h" class="type-h2">Color</h2>
@@ -73,7 +73,6 @@ permalink: /components/jump-nav/
   <ul>
     <li>The nav is a <code>&lt;nav&gt;</code> with the label "On this page". The bar is a real <code>&lt;button&gt;</code> with <code>aria-expanded</code> and <code>aria-controls</code>.</li>
     <li>Without JavaScript the bar is hidden and the list shows as a plain list of links, and the nav does not pin.</li>
-    <li>When the bar is pinned, the top 2px of the focus ring sit under the header.</li>
     <li>The script that opens the list and updates the current section lives in the portfolio. It is not part of Arche yet.</li>
   </ul>
   <p>In Light, the yellow fill alone is 1.50:1 against the page, so the 4px rule (17.40:1 against the page) and the SemiBold weight carry the mark. In Dark, the rule is the same color as the page, so the yellow fill (11.59:1 against the page) carries it. In both modes the label is near-black on yellow at 11.59:1.</p>
