@@ -8,8 +8,8 @@ permalink: /foundations/accessibility/
   <h2 id="floor-h" class="type-h2">The floor</h2>
   <ul>
     <li><strong>Contrast.</strong> 4.5:1 for text, 3:1 for large text and interface parts. Checked in Light and Dark on the <a href="/foundations/color/#contrast-h">color page</a>.</li>
-    <li><strong>Focus.</strong> A visible focus ring on every interactive element, including on blue and in dark mode. It is 4px with a 2px gap, except on the image tile (see the accepted exceptions below).</li>
-    <li><strong>Targets.</strong> Buttons and nav links are 48px tall, form fields are 56px, and text links are at least 32px tall. WCAG 2.2 AA asks for 24px at minimum, and 44px is the AAA level.</li>
+    <li><strong>Focus.</strong> A visible focus ring on every interactive element, including on blue and in dark mode. It is 4px with a 2px gap, except on the image tile (see the accepted exceptions below). On the jump nav below 1024px wide the ring sits inside the link instead of outside it.</li>
+    <li><strong>Targets.</strong> Buttons and the Top nav links are 48px tall, the docs side nav links are 44px, form fields are 56px, and text links are at least 32px tall. WCAG 2.2 AA asks for 24px at minimum, and 44px is the AAA level.</li>
     <li><strong>Labels.</strong> Every field has a real <code>&lt;label&gt;</code>. Icon-only buttons have an <code>aria-label</code>.</li>
     <li><strong>Color is never the only signal.</strong> Errors add a message and a thicker rule. Current page adds a bar. Links are underlined.</li>
     <li><strong>Keyboard.</strong> A skip link is the first focusable element on every page. Tab order follows reading order.</li>
@@ -23,16 +23,27 @@ permalink: /foundations/accessibility/
 </section>
 <section aria-labelledby="test-h">
   <h2 id="test-h" class="type-h2">How I check</h2>
-  <p>Contrast is calculated from the token file on every build. Keyboard and screen-reader behavior is checked by hand on each component before it is documented.</p>
-  <p>An automated scan runs with <code>npm run check:a11y</code>. It uses axe-core, a rule checker that reads each page's code in a real browser, on every page in Light and Dark. It also runs three keyboard checks: the skip link is the first Tab stop, the open menu closes when focus leaves it, and the footer's hidden logo link cannot take focus. It is not part of <code>npm run build</code> because it needs a browser. A scan cannot judge everything, so it does not replace a keyboard pass and a screen reader pass by hand.</p>
+  <p>Contrast is calculated from the token file on every build, and the build stops if a pair fails. Keyboard, reflow and structure checks are run by script, not by hand.</p>
+  <p>An automated scan runs with <code>npm run check:a11y</code>. It uses axe-core, a rule checker that reads each page's code in a real browser, on every page in Light and Dark. It also runs three keyboard checks: the skip link is the first Tab stop, the open menu closes when focus leaves it, and the footer's hidden logo link cannot take focus. It is not part of <code>npm run build</code> because it needs a browser. A scan cannot judge everything, so it does not replace a pass by hand.</p>
+  <p>On November 9, 2026 I re-ran the scripted checks on version 0.10.0 in Chromium, in the Canon mode. They covered:</p>
+  <ul>
+    <li>Contrast, focus rings and target size, in Light and Dark.</li>
+    <li>Keyboard use at 1280, 768, 375 and 320px wide, and reflow at 320px.</li>
+    <li>Page structure: titles, headings, landmarks and labels.</li>
+    <li>Dragging (WCAG 2.5.7): nothing needs a dragging movement.</li>
+    <li>Consistent navigation and identification (3.2.3 and 3.2.4) across the documentation pages.</li>
+    <li>Moving or auto-updating content (2.2.2 and 1.4.2): none.</li>
+  </ul>
+  <p>The scripted checks ran in Chromium only. Separately, on November 9, 2026, I tested 21 tasks with VoiceOver in Safari 26.6.2 on macOS. They covered the skip link, landmarks, headings, the side nav, the theme toggle, the Form field, the menu, the Button, the Color tables, the code viewers, the Image tile, the Top nav, and the newer components (the page hero band, the jump nav, the menu overlay, Credits and Outcome). That is one screen reader in one browser, so it says nothing about other screen readers.</p>
+  <p>Not tested: Firefox, Windows, any other screen reader, real phones, real browser zoom, and the other four color modes beyond an axe scan of each mode page.</p>
 </section>
 <section aria-labelledby="exceptions-h">
   <h2 id="exceptions-h" class="type-h2">Accepted exceptions</h2>
   <p>These are places where the system does not meet the rules above, and I have accepted that. Each has its reason.</p>
   <ul>
     <li><strong>Disabled controls.</strong> Disabled text and borders are below 4.5:1 on purpose. WCAG 1.4.3 does not ask inactive controls to meet contrast, and the build's contrast check leaves them out.</li>
-    <li><strong>Sideways scrolling at 320px wide.</strong> Data tables, code blocks, the fixed-width preview frames and the image swipe strip scroll sideways inside their own box. WCAG 1.4.10 allows this for content that needs two dimensions, such as data tables and code. The preview frames show a fixed-width layout on purpose. Each one can be reached and scrolled with the keyboard.</li>
-    <li><strong>Preview pages opened alone.</strong> The pages under <code>/previews/</code> have no <code>h1</code>, no <code>main</code> landmark and no skip link. They are frames inside component pages, each frame has a title, and they are not in the navigation. They are not meant to be opened alone.</li>
+    <li><strong>Sideways scrolling at 320px wide.</strong> Data tables, code blocks, the fixed-width preview frames and the image swipe strip scroll sideways inside their own box. WCAG 1.4.10 allows this for content that needs two dimensions, such as data tables and code. The preview frames show a fixed-width layout on purpose. The tables, code blocks and preview frames can be scrolled with the keyboard. The swipe strip is reached through its tile buttons, which scroll it into view.</li>
+    <li><strong>Preview pages opened alone.</strong> The pages under <code>/previews/</code> mostly have no <code>h1</code>, no <code>main</code> landmark and no skip link. (The skip link preview has a <code>main</code> and a skip link.) They are frames inside component pages, each frame has a title, and they are not in the navigation. They are not meant to be opened alone.</li>
     <li><strong>Repeated landmark names on eight component pages.</strong> Credits, Menu overlay, More case studies, Next case study, Outcome, Section split, Skip link and Top nav each show a live demo that is itself a landmark (a header, a nav, a main or a named section), so the page lists a landmark twice.</li>
     <li><strong>Image tile focus ring.</strong> The image tile's ring is 2px with a 2px gap, not 4px. It is documented on the <a href="/components/image-tile/">Image tile</a> page. It is still clearly visible and keeps at least 3:1 against what is around it.</li>
   </ul>

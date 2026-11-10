@@ -34,7 +34,7 @@ description: "The five color modes of the Arche Design System: Canon, Klarheit, 
 <section aria-labelledby="changes-h">
   <h2 id="changes-h" class="type-h2">What a mode changes</h2>
   <p>A mode changes only the semantic color roles, such as <code>--arche-surface-brand-primary</code> or <code>--arche-text-brand-primary</code>. Primitives, type, spacing, grid, corner radius, motion and component structure are identical in every mode. Components read roles, never primitives, so they follow the mode without changes.</p>
-  <p>Status colors do not change by mode. Alert, Success and Warning mean the same thing everywhere. In every mode, the main text, button, border and mark pairs pass WCAG AA in Light and Dark. The check runs with every build.</p>
+  <p>Status colors do not change by mode. Alert, Success and Warning mean the same thing everywhere. In every mode, the text, button, border and mark pairs the build checks meet the WCAG AA contrast ratios in Light and Dark. Disabled controls are left out, as WCAG allows. The check runs with every build and stops it if a pair fails.</p>
 </section>
 
 <section aria-labelledby="use-h">

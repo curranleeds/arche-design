@@ -10,7 +10,7 @@ This README tells how Arche came to be, what has been decided, and what is still
 
 **October 2026: a brand becomes a system.** I built my personal brand and portfolio site on a small design system: a Figma file with variables for color, spacing and role tokens, 45 text styles, and a set of components. The site's CSS is generated from that Figma file, so the design and the code share one source.
 
-Once it worked for the portfolio, I saw it could do more than one job. A design system that holds up in regulated healthcare work (WCAG AA, visible focus, clear states, dark mode) is useful beyond a portfolio. The first step was to document it in public, so this site came first. It doubles as a portfolio piece and as a demo of how I think about systems.
+Once it worked for the portfolio, I saw it could do more than one job. I built it toward the standards regulated healthcare work asks for (WCAG 2.2 AA, visible focus, clear states, dark mode), and the Accessibility page says what has and has not been tested. A system like that is useful beyond a portfolio. The first step was to document it in public, so this site came first. It doubles as a portfolio piece and as a demo of how I think about systems.
 
 **One system, five color modes.** I then rethought the system as one system with several color modes, not one fixed palette. Each mode takes its character from one of the four national traditions in my heritage, Swiss, Norwegian, Swedish and Greek, plus a default. That pushed the name too: a system with modes for several traditions needed a name that belonged to none of them.
 
