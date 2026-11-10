@@ -10,7 +10,7 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token, or a markup change a site must make, also bumps the minor version, and the changelog entry must say "Breaking:".
 
-## Unreleased
+## 0.10.1
 
 Changed
 - Jump nav, desktop, pinned: it now pins 16px above the header offset, so 8px of the space above the links shows (it was 4px). The whole 4px focus ring is now visible when the nav is pinned, whether the header is showing or hidden. The links do not move.
