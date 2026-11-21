@@ -54,7 +54,7 @@
    a small script shows it in place of the lock. */
 .is-gate-hidden { display: none; }
 
-/* ---------- Theme toggle (Figma: theme toggle 179:1681) ----------
+/* ---------- Theme toggle ----------
    Ghost (tertiary) button. Shows the mode it switches TO: "Dark" with a moon
    in light mode, "Light" with a sun in dark mode. The right label is chosen by
    CSS from the current theme, so it is correct before any JavaScript runs.
@@ -112,7 +112,7 @@
   outline-offset: var(--arche-focus-ring-offset);
 }
 
-/* ---------- Theme switch (Figma: theme switch 179:1932) ----------
+/* ---------- Theme switch ----------
    320 x 44 segmented control, "Light | Dark", for blue surfaces. Native radio
    buttons: the inputs are hidden but focusable, the label text is the visible
    segment. The selected segment has a white fill and a blue label. */
@@ -181,7 +181,7 @@
 /* ==========================================================================
    Button, text link, nav link and form field
    Markup comes from the macros in src/_includes/components.njk.
-   Specs: Figma Components page (button 175:1618, link 175:3676, form field 175:4186).
+   Specs: the Arche Design System Figma file, Components page.
    ========================================================================== */
 
 /* ---------- Button ----------
@@ -627,7 +627,7 @@ textarea.field__input { resize: none; }
 
 /* ==========================================================================
    Logo, text link on blue, site header (top nav) and menu overlay
-   Specs: Figma top nav 209:7007, menu overlay 184:2138, logo.
+   Specs: the Figma top nav, menu overlay and logo.
    Breakpoints (spacing.md): mobile up to 767, tablet 768 to 1023, desktop 1024 up.
    ========================================================================== */
 
@@ -859,7 +859,7 @@ html:has(.menu-overlay[open]) { overflow: hidden; }
 }
 
 /* ==========================================================================
-   Site footer (Figma footer 196:2738)
+   Site footer
    Full-bleed Blue 500 in both modes. Mobile first: logo, then two columns of links,
    then the theme switch, then the copyright. From 768 up: logo at left centered on
    two right-aligned link rows; a bottom row with the copyright at left and the theme
@@ -890,8 +890,8 @@ body { display: flex; flex-direction: column; min-height: 100vh; min-height: 100
   font-size: 1.75rem;
   line-height: 2rem;
 }
-/* With the name hidden the link has nothing to show, so it leaves the tab order and the screen reader's view too. visibility keeps its box, so the layout does not move. */
-@media (max-width: 1023.98px) { .site-footer__home { visibility: hidden; } }
+/* With the name hidden, a link that holds only the name has nothing to show, so it leaves the tab order and the screen reader's view too. visibility keeps its box, so the layout does not move. A link that also holds the logo mark stays visible: the mark is still there to see and to click. */
+@media (max-width: 1023.98px) { .site-footer__home:not(:has(.logo)) { visibility: hidden; } }
 /* Mobile: two columns, each link 32px tall with 40px between. */
 .site-footer__links { display: grid; grid-template-columns: 1fr 1fr; gap: var(--arche-space-fine-16); }
 .site-footer__links ul { display: flex; flex-direction: column; align-items: flex-start; gap: var(--arche-space-base-40); }
@@ -920,7 +920,7 @@ html:not(.js) .site-footer__theme { display: none; }
 
 /* ==========================================================================
    Skip link, page hero band and About page
-   Specs: Figma About frames (297:11048 desktop, 297:11097 tablet, 297:11166 mobile).
+   Specs: the Figma About frames (desktop, tablet and mobile).
    ========================================================================== */
 
 /* First thing a keyboard user tabs to: jumps past the header to <main id="main">.
@@ -1055,6 +1055,8 @@ html:not(.js) .site-footer__theme { display: none; }
   line-height: var(--arche-type-body-line);
 }
 .contact-form__status:empty { display: none; }
+/* While the form is sending, the text is neutral, not the alert red. */
+.contact-form__status--sending { color: var(--arche-text-neutral-primary); }
 .contact-form__status a {
   color: inherit;
   text-decoration: underline;

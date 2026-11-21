@@ -243,6 +243,9 @@ body {
 .docs-content .docs-next .docs-next__title { margin: 0; padding: 0; border-top: 0; color: var(--arche-text-on-brand-primary); }
 .docs-content .docs-next .docs-next__desc { margin: var(--arche-space-fine-12) 0 var(--arche-space-base-24); max-width: 52ch; }
 .docs-content .docs-next .docs-next__back { margin: var(--arche-space-base-24) 0 0; }
+/* The docs' paragraph rule would override the helper line's own gap and width inside a demo. */
+.docs-content .cs-next__helper { margin: var(--arche-space-base-24) 0 0; max-width: none; }
+@media (min-width: 768px) { .docs-content .cs-next__helper { margin-top: var(--arche-space-base-32); } }
 @media (min-width: 1024px) { .docs-content .docs-next .docs-next__desc { margin-bottom: 0; } }
 .demo__stage .link-card { width: 100%; max-width: 416px; }
 .demo__stage--form, .demo__stage--form form { display: grid; gap: var(--arche-space-base-24); max-width: 420px; }

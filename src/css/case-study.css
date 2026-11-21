@@ -421,7 +421,7 @@ html:not(.js) .cs-jump__panel { grid-template-rows: 1fr; visibility: visible; }
 .cs-split__name { margin: 0; color: var(--arche-text-brand-primary); }
 .cs-split__statement { margin: 0; color: var(--arche-text-neutral-primary); text-wrap: balance; }
 
-/* ---------- Image tile (Figma: case study image tile 349:4303) ----------
+/* ---------- Image tile ----------
    One <figure>: a 16:9 picture inside one button that opens the lightbox, an expand
    chip (a visual hint, not a second control), and the caption bottom-left, 16px under.
    Focus is a 2px ring with a 2px offset around the image, drawn 4px outside it. */
@@ -823,9 +823,10 @@ html:has(.cs-lightbox[open]) { overflow: hidden; }
 .cs-next__summary { margin: 0; color: var(--arche-text-neutral-body); text-wrap: pretty; }
 .cs-next__action { align-self: stretch; padding-top: var(--arche-space-base-8); }
 .cs-next__action .button { width: 100%; }
-/* Locked state: the helper line sits 12px under the button. */
-.cs-next__helper { margin: var(--arche-space-fine-12) 0 0; color: var(--arche-text-neutral-secondary); }
+/* Locked state: the helper line (see .gate-helper below) sits 24px under the button on phones and 32px from 768px up, the same gap as the password page's access line. */
+.cs-next__helper { margin: var(--arche-space-base-24) 0 0; }
 @media (min-width: 768px) {
+  .cs-next__helper { margin-top: var(--arche-space-base-32); }
   .cs-next__inner { gap: var(--arche-space-base-24); padding-top: var(--arche-space-base-40); }
   .cs-next__content { gap: var(--arche-space-base-24); }
   .cs-next__text { max-width: 524px; margin-left: auto; width: 100%; }
@@ -841,6 +842,27 @@ html:has(.cs-lightbox[open]) { overflow: hidden; }
   }
   .cs-next__image { grid-column: 1 / span 8; }
   .cs-next__text { grid-column: 9 / span 4; max-width: none; margin-left: 0; }
+}
+
+/* ---------- Gate helper ----------
+   The line under a locked card's button: a short lead, then an email address as a link.
+   Body text in text/neutral/body. The link has the Link look (color, underline, hover, focus ring) but takes
+   the body-semibold text style, so it is the same size as the lead at every width. The link sits 8px after
+   the lead and wraps underneath it when the card is narrow. The gap above the line is set by the card
+   that holds it (see .cs-next__helper). */
+.gate-helper { color: var(--arche-text-neutral-body); }
+.gate-helper__text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--arche-space-fine-8);
+}
+.gate-helper .link {
+  font-family: var(--arche-type-body-semibold-font);
+  font-weight: var(--arche-type-body-semibold-weight);
+  font-size: var(--arche-type-body-semibold-size);
+  line-height: var(--arche-type-body-semibold-line);
+  letter-spacing: var(--arche-type-body-semibold-letter-spacing);
 }
 
 /* ---------- More case studies ----------
@@ -916,14 +938,15 @@ html:has(.cs-lightbox[open]) { overflow: hidden; }
 .cs-more .button { align-self: flex-start; }
 
 /* Locked row: a lock where the arrow was, the helper line under it. The row is
-   taller because of that line: 124px on desktop, 120px on mobile. */
+   taller because of that line; its height follows how many lines the line wraps to
+   (see the More case studies page for measured heights). */
 .cs-row-link--locked { flex-wrap: wrap; row-gap: 0; padding-block: 16px; }
 /* The text takes the room left of the lock, so a long title wraps instead of pushing the lock to its own line. */
 .cs-row-link--locked .cs-row-link__text { flex: 1 1 0; }
 .cs-row-link__helper { flex: 0 0 100%; margin: 0; text-align: right; color: var(--arche-text-neutral-secondary); }
 .cs-row-link--locked:hover .cs-row-link__arrow { transform: none; }
 @media (min-width: 768px) { .cs-row-link--locked { padding-block: 24px; } }
-/* Tablet locked row: 152px tall with a two-line helper. The title and category are centered against the lock and its helper line,
+/* Tablet locked row: 132px tall in the docs demo. The title and category are centered against the lock and its helper line,
    and the helper sits under the lock in columns 7 and 8. */
 @media (min-width: 768px) and (max-width: 1023px) {
   .cs-row-link--locked { padding-block: var(--arche-space-base-32); row-gap: 0; }
