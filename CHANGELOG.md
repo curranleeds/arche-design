@@ -10,6 +10,18 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token, or a markup change a site must make, also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.10.2
+
+Fixed
+- Locked teaser helper line: Arche now has the pattern. A short lead and an email address as a link sit under the lock button (`.gate-helper`, `.gate-helper__text`). The text is body text in `text/neutral/body`, the address is a text link in the same size set in SemiBold, 8px after the lead, wrapping beneath it when the card is narrow. On the Next case study card the line sits 24px under the button on phones and 32px from 768px up (it was 12px, in `text/neutral/secondary`). A site that already builds this line itself can delete its own rules after updating; it needs no markup change.
+- Contact form: the "Sending…" text is neutral (`text/neutral/primary`), not the alert red.
+- Site footer: below 1024px the footer's home link hides only when it holds nothing but the name. A link that also holds the logo mark stays visible and in the tab order.
+- Next case study page: shows the locked state with the helper line.
+- More case studies page: the locked row heights are measured again for the helper text "Password required.": 104px from 600px to 767px, 132px from 768px to 1023px, 128px at 1024px, 116px from 1100px wide. They change with how many lines the title wraps to.
+- List row preview: the locked row says "Password required.", as on the pages.
+- Docs: the site has a favicon, a circle in Greece Blue 500, until the system has a logo.
+- CSS comments no longer carry Figma node ids.
+
 ## 0.10.1
 
 Changed
