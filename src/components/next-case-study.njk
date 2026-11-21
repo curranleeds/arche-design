@@ -4,7 +4,7 @@ eyebrow: "Components"
 lead: "A teaser at the end of a case study: a 2px rule, a heading, a 16:9 image and the next case study's title, summary and button."
 permalink: /components/next-case-study/
 ---
-{% from "components.njk" import button %}
+{% from "components.njk" import button, textLink %}
 <section aria-labelledby="demo-h">
   <h2 id="demo-h" class="type-h2">Next case study</h2>
   <p>The next case study teaser leads the reader on. It starts with a 2px rule and a heading. Below that, a 16:9 image sits beside the text: a category, the title, an optional summary and a secondary button. The image and the title go to the same place, so the image link is hidden from keyboards and screen readers and the title is the one link. The text and image below are placeholders.</p>
@@ -41,11 +41,39 @@ permalink: /components/next-case-study/
       </tbody>
     </table>
   </div>
-  <p>The rule is 2px in <code>border/neutral/emphasis</code>. The text parts are 16px apart. The button has 8px of room above it.</p>
+  <p>The rule is 2px in <code>border/neutral/emphasis</code>. The text parts are 16px apart. The button has 8px of room above it. In the locked state the helper line adds its own gap under the button (see Locked teaser).</p>
 </section>
 <section aria-labelledby="locked-h">
   <h2 id="locked-h" class="type-h2">Locked teaser</h2>
-  <p>When the next case study sits behind a password, the button shows a lock in place of the arrow and a small helper line sits 12px under it, in <code>text/neutral/secondary</code>. The helper line is tied to the button, so a screen reader reads it with the button. A visitor who has unlocked the page sees the arrow and the real image. The script that swaps the lock for the arrow lives in the portfolio. It is not part of Arche yet.</p>
+  <p>When the next case study sits behind a password, the button shows a lock in place of the arrow, and a helper line sits under it. The helper line is a short lead, then an email address as a link. The address is plain text in the page, so a visitor can read it and follow the link. The button points at the helper line, so a screen reader reads the line with the button. A visitor who has unlocked the page sees the arrow and the real image. The script that swaps the lock for the arrow lives in the portfolio. It is not part of Arche yet.</p>
+  {% demo "Locked next case study teaser with placeholder text and a placeholder address", "block" %}
+  <section class="cs-next" aria-labelledby="next-locked-h">
+    <div class="cs-next__inner">
+      <h3 class="cs-next__heading type-subhead" id="next-locked-h">Next case study</h3>
+      <div class="cs-next__content">
+        <a class="cs-next__image" href="#" aria-hidden="true" tabindex="-1">
+          <div class="placeholder-image"><p class="type-small">Placeholder image, 16:9</p></div>
+        </a>
+        <div class="cs-next__text">
+          <p class="cs-next__category type-label">Category</p>
+          <h4 class="cs-next__title type-h2"><a href="#">Locked case study title</a></h4>
+          <p class="cs-next__summary type-lead">One sentence about the next case study.</p>
+          <div class="cs-next__action">
+            {{ button("Read case study", type="secondary", href="#", icon="lock", iconPosition="leading", extraClass="cs-next__button", attrs='aria-describedby="locked-helper"') }}
+            <p class="gate-helper cs-next__helper type-body"><span class="gate-helper__text" id="locked-helper"><span>Password required. Email me for access:</span> {{ textLink("name@example.com", "mailto:name@example.com") | trim | safe }}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% enddemo %}
+  <h3 class="type-h3">Helper line spacing</h3>
+  <ul>
+    <li>The lead is body text in <code>text/neutral/body</code>. The address is a text link in the same size, set in SemiBold.</li>
+    <li>The address sits <code>fine/8</code> after the lead and wraps underneath it when the card is narrow.</li>
+    <li>The line sits <code>base/24</code> under the button on phones and <code>base/32</code> from 768px up.</li>
+    <li>The address keeps the text link's underline, hover and focus ring. Its target is 30px tall on phones and 32px from 768px up, above the 24px minimum.</li>
+  </ul>
 </section>
 <section aria-labelledby="color-h">
   <h2 id="color-h" class="type-h2">Color</h2>
