@@ -10,6 +10,11 @@ Arche uses three numbers: major.minor.patch, for example 0.2.1.
 - **Minor (0.3.0):** new tokens or components, or a changed token value (a visible change).
 - **While Arche is below 1.0:** a removed or renamed token, or a markup change a site must make, also bumps the minor version, and the changelog entry must say "Breaking:".
 
+## 0.10.3
+
+Fixed
+- Locked teaser helper line: its rules (`.gate-helper`, `.gate-helper__text`) moved from `case-study.css` to `components.css`. A page that loads `components.css` but not `case-study.css`, such as a home page with locked cards, now gets the helper line's layout and link size. Nothing about the line changes where `case-study.css` was already loaded.
+
 ## 0.10.2
 
 Fixed

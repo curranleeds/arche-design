@@ -844,27 +844,6 @@ html:has(.cs-lightbox[open]) { overflow: hidden; }
   .cs-next__text { grid-column: 9 / span 4; max-width: none; margin-left: 0; }
 }
 
-/* ---------- Gate helper ----------
-   The line under a locked card's button: a short lead, then an email address as a link.
-   Body text in text/neutral/body. The link has the Link look (color, underline, hover, focus ring) but takes
-   the body-semibold text style, so it is the same size as the lead at every width. The link sits 8px after
-   the lead and wraps underneath it when the card is narrow. The gap above the line is set by the card
-   that holds it (see .cs-next__helper). */
-.gate-helper { color: var(--arche-text-neutral-body); }
-.gate-helper__text {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  column-gap: var(--arche-space-fine-8);
-}
-.gate-helper .link {
-  font-family: var(--arche-type-body-semibold-font);
-  font-weight: var(--arche-type-body-semibold-weight);
-  font-size: var(--arche-type-body-semibold-size);
-  line-height: var(--arche-type-body-semibold-line);
-  letter-spacing: var(--arche-type-body-semibold-letter-spacing);
-}
-
 /* ---------- More case studies ----------
    A list of rows, each one link: title, category, arrow. The 16px side padding lets the
    hover fill reach past the grid, so the row is pulled back 16px to line the text up. */
