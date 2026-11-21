@@ -1,5 +1,5 @@
 {
-  "arche": "0.10.2",
+  "arche": "0.10.3",
   "algorithm": "sha256",
   "files": {
     "src/_includes/components.njk": "5becd1bccd485a25c645cd0161e55bb6c9897e31246f720a6162f99c05614607",
@@ -23,8 +23,8 @@
     "src/assets/icons/play_arrow.svg": "6acb7ed5743a2588699146c0949c2e91e0003bf43dd991b528c369508e3a1cda",
     "src/assets/icons/priority_high.svg": "9a0b7ef6d635c310258ee757d60c8c8e386d1d5519b59a9e97b787125609dbd8",
     "src/assets/js/theme.js": "a15c9f300621c2e0873edf13040b2637e9702a3a6467acb3ab05ba8e9f789e88",
-    "src/css/case-study.css": "856e0142bb41b9db00353d15cb7d71550b075b8b1d4a39f4225a0ef2554d6528",
-    "src/css/components.css": "47d31f04c82f08f78da3c1273e7f08fa882f59061c678f90e6479e274ba6596f",
+    "src/css/case-study.css": "b7ccdf4848a35f58a9c45271533127f1e3cf5c2a7f5007e67145b18f61d6b646",
+    "src/css/components.css": "3c079a50617b5b8a599971eaa9c552273214f8c854d9685aaa748aa35cc9dfc6",
     "src/css/fonts.css": "a2ecf9c8acd209a0ef1ee59de9b6f6102b427f4855c25464910e75f28916f724",
     "src/css/tokens.css": "eb77d5ac845faf427881fcbd418c5649c87607b5bc972b2d0fd3bdf2955535dc"
   }
